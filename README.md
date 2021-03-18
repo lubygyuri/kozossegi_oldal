@@ -58,16 +58,11 @@ A projekt a következő emberekből áll:
 `Nem csak az adott egység felelősének feladata az adott részegység elkészítése, pl. a mérföldkövekhez tartozó prezentációt mindenki szerkesztheti, de elvárható,
 hogy a prezentációért felelős tag adja elő.`
 
-|                                              |        Név        |  E-mail cím (stud-os) |
-|:--------------------------------------------:|:-----------------:|:---------------------:|
-|                  Megrendelő                  | `Gyakorlatvezető` | `{keratt,lac,tampfla,markusa}@inf.u-szeged.hu/Lakos.Bence@stud.u-szeged.hu` |
-|               Projekt menedzser              |                   |                       |
-| `Adatbázisért és adatkapcsolatokért felelős` |                   |                       |
-|      `Felhasználói felületekért felelős`     |                   |                       |
-|   `A rendszer működési logikájáért felelős`  |                   |                       |
-|           `Dokumentációért felelős`          |                   |                       |
-|           `Prezentációért felelős`           |                   |                       |
-|                 `Projekt tag`                |                   |                       |
+|                                              |        Név        |  E-mail cím (stud-os)  |
+|:--------------------------------------------:|:-----------------:|:---------------------: |
+|                 `Projekt tag`                |    Kovács Soma    |kovacssoma2000@gmail.com|
+|                 `Projekt tag`                |  Lublóváry György | lubigyurma@gmail.com   |
+|                 `Projekt tag`                |    Cseri Gábor    | cserigabi4@gmail.com   |
 
 ## 6. A munka feltételei
 ### 6.1. Munkakörnyezet
