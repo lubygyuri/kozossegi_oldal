@@ -7,10 +7,8 @@ A projektünk témája egy közösségi oldal elkészítése, ahol az emberek a 
 Ez a projektterv a `KÖZÖSSÉGI OLDAL` projektet mutatja be, mely 2021-02-16-tól 2021-05-07-ig tart. A projektet egy 3 fős csapat keretein belül kell elkészítenünk, amit a megrendelő felé 3 alkalman keresztül kell bemutatnunk és elkészítenünk.
 
 ### 2.1. Rendszerspecifikáció
-`Ide írd le részletesen, hogy mit fog tudni a rendszer (funkcionalitás, célok), amit a projekt keretében megvalósítotok. Mik a megrendelő és a felhasználók igényei? 
-Miért van szükség a projektre? (4-6 mondat)`
 
-### 2.2. Funkcionális követelmények
+### 2.1.1 Funkcionális követelmények
 - Felhasználók regisztrálása, profilok létrehozása
 - Fényképek feltöltése, megjegyzés hozzáfűzése
 - Ismerősök bejelölése, ismeretség visszaigazolása
@@ -26,7 +24,7 @@ Miért van szükség a projektre? (4-6 mondat)`
 - Fényképalbumok létrehozása, albumjellemzők (fényképek száma, felhasznált tárhely)
 - Meghívások kezelése, statisztika a meghívásokról (kinek hány olyan ismerőse van, akit ő hívott meg) 
 
-### 2.3. Nem funkcionális követelmények
+### 2.1.2 Nem funkcionális követelmények
 - Támogatott böngészők: Chrome, Opera, Firefox, Brave, Edge. (legfrissebb verzió)
 - Adatbázis válaszidő kevesebb mint 300ms.
 - AJAX frissítés.
