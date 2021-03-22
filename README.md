@@ -35,7 +35,7 @@ A projekt megrendelője Körmöczi László Ádám. A `KÖZÖSSÉGI OLDAL` proje
 ### 3.1 Projektcsapat
 A projekt a következő emberekből áll:
 
-|                                            |         Név         |  E-mail cím (stud-os)  |
+|                                            |         Név         |        E-mail cím      |
 |:------------------------------------------:|:-------------------:|:---------------------: |
 |                 Projekt tag                | Kovács Soma Kristóf |kovacssoma2000@gmail.com|
 |                 Projekt tag                |   Lublóváry György  | lubigyurma@gmail.com   |
