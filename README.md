@@ -72,9 +72,13 @@ A `KÖZÖSSÉGI OLDAL projekt 2021. február 16-án` indult. A következőkben a
 ### 6.1. Dokumentáció (1. mérföldkő)
 Ennek a feladatnak az a célja, hogy bemutassa a dokumentációt és a hozzájuk tartozó adatbázisterveket.
 
-#### 6.1.1. Logikai adatfolyam diagram (1. és 2. szintű)
-TESZT
-![kép leírás](teszt.png)
+#### 6.1.1. Logikai adatfolyam diagram 1.szintű
+![kép leírás](Diagramok/Logikai01.png)
+#### 6.1.1.1 Logikai adatfolyam diagram 2.szintű
+![kép leírás](Diagramok/Logikai_Bejelentkezes.png)
+![kép leírás](Diagramok/Logikai_Csoport.png)
+![kép leírás](Diagramok/Logikai_KepFeltoltes.png)
+![kép leírás](Diagramok/Logikai_Uzenofal.png)
 
 #### 6.1.2. Fizikai adatfolyam diagram (1. és 2. szintű)
 
