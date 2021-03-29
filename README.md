@@ -93,8 +93,7 @@ Ennek a feladatnak az a célja, hogy bemutassa a dokumentációt és a hozzájuk
 
 
 #### 6.1.2. Egyed-esemény mátrix
-
-
+![Egyed-Esemény Mátrix](Diagramok/eematrix.png)
 #### 6.1.2. Szerep-funkció mátrix
 ![kép leírás](Diagramok/SzerepFunkcioMatrix.png)
 
