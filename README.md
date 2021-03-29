@@ -103,6 +103,9 @@ Ennek a feladatnak az a célja, hogy bemutassa a dokumentációt és a hozzájuk
 #### 6.1.2. Funkció meghatározás
 ![regisztracio](Diagramok/regisztraciokovetelmeny.png)
 ![bejelentkezes](Diagramok/bejelentkezes-követelmeny.png)
+![uzenofal](Diagramok/uzenofal-kovetelmeny.png)
+![meghivo](Diagramok/meghivo-kovetelmeny.png)
+![uzenet](Diagramok/uzenet-kovetelmeny.png)
 
 #### 6.1.2. Egyed-esemény mátrix
 ![Egyed-Esemény Mátrix](Diagramok/eematrix.png)
