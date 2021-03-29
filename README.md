@@ -82,7 +82,7 @@ Ennek a feladatnak az a célja, hogy bemutassa a dokumentációt és a hozzájuk
 
 #### 6.1.2. Fizikai adatfolyam diagram 1. szintű
 ![logikai](Diagramok/Fizikai01.png)
-#### 6.1.2.1 Logikai adatfolyam diagram 2.szintű
+#### 6.1.2.1 Fizikai adatfolyam diagram 2.szintű
 ![Fizikai_Bejelentkezes](Diagramok/Fizikai_Bejelentkezes.png)
 ![Fizikai_Csoport](Diagramok/Fizikai_Csoport.png)
 ![Fizikai_KepFeltoltes](Diagramok/Fizikai_KepFeltoltes.png)
