@@ -38,7 +38,7 @@ A projekt a következő emberekből áll:
 |                                            |         Név         |        E-mail cím      |
 |:------------------------------------------:|:-------------------:|:---------------------: |
 |                 Projekt tag                | Kovács Soma Kristóf |kovacssoma2000@gmail.com|
-|                 Projekt tag                |   Lublóváry György  | lubigyurma@gmail.com   |
+|                 Projekt tag                |Lublóváry György Máté| lubigyurma@gmail.com   |
 |                 Projekt tag                |      Cseri Gábor    | cserigabi4@gmail.com   |
 
 ## 4. A munka feltételei
