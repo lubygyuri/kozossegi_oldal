@@ -110,6 +110,13 @@ Ennek a feladatnak az a célja, hogy bemutassa a dokumentációt és a hozzájuk
 ![csoportok kezelese](Diagramok/Kovetelmenyek/csoportokkovetelmeny.png)
 ![uzenet](Diagramok/Kovetelmenyek/uzenet-kovetelmeny.png)
 ![szuletesnap jelzes](Diagramok/Kovetelmenyek/szuletesnapokkovetelmeny.png)
+![fenykepek albumok kezelese](Diagramok/Kovetelmenyek/fenykepeke_es_albumok_kovetelmeny.png)
+![bejegyzes torlese](Diagramok/Kovetelmenyek/bejegyzes_torlese_kovetelmeny.png)
+![felhasznalo torlese](Diagramok/Kovetelmenyek/felhasznalo_torlese_kovetelmeny.png)
+![kijelentkezes](Diagramok/Kovetelmenyek/kijelentkezes_kovetelmeny.png)
+
+
+
 
 
 
