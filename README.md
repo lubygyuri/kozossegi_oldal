@@ -73,12 +73,12 @@ A `KÖZÖSSÉGI OLDAL projekt 2021. február 16-án` indult. A következőkben a
 Ennek a feladatnak az a célja, hogy bemutassa a dokumentációt és a hozzájuk tartozó adatbázisterveket.
 
 #### 6.1.1. Logikai adatfolyam diagram 1.szintű
-![logikai](Diagramok/Logikai01.png)
+![logikai](Diagramok/Logikai.png)
 #### 6.1.1.1 Logikai adatfolyam diagram 2.szintű
-![Logikai_Bejelentkezes](Diagramok/Logikai_Bejelentkezes.png)
-![Logikai_Csoport](Diagramok/Logikai_Csoport.png)
-![Logikai_KepFeltoltes](Diagramok/Logikai_KepFeltoltes.png)
-![Logikai_Uzenofal](Diagramok/Logikai_Uzenofal.png)
+![Logikai_Bejelentkezes](Diagramok/Logikai_Bejelentkezes2.png)
+![Logikai_Csoport](Diagramok/Logikai_Csoport2.png)
+![Logikai_KepFeltoltes](Diagramok/Logikai_KepFeltoltes2.png)
+![Logikai_Uzenofal](Diagramok/Logikai_Uzenofal2.png)
 
 #### 6.1.2. Fizikai adatfolyam diagram 1. szintű
 ![logikai](Diagramok/Fizikai01.png)
