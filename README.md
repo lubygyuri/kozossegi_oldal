@@ -92,6 +92,11 @@ Ennek a feladatnak az a célja, hogy bemutassa a dokumentációt és a hozzájuk
 #### 6.1.2. Egyedmodell
 
 
+
+#### 6.1.2. Egyed-Kapcsolat Diagram
+![ek_diagram](Diagramok/ek_diagram.png)
+
+
 #### 6.1.2. Relációs adatelemzés
 
 
