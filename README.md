@@ -101,11 +101,17 @@ Ennek a feladatnak az a célja, hogy bemutassa a dokumentációt és a hozzájuk
 
 
 #### 6.1.2. Funkció meghatározás
-![regisztracio](Diagramok/regisztraciokovetelmeny.png)
-![bejelentkezes](Diagramok/bejelentkezes-követelmeny.png)
-![uzenofal](Diagramok/uzenofal-kovetelmeny.png)
-![meghivo](Diagramok/meghivo-kovetelmeny.png)
-![uzenet](Diagramok/uzenet-kovetelmeny.png)
+![regisztracio](Diagramok/Kovetelmenyek/regisztraciokovetelmeny.png)
+![bejelentkezes](Diagramok/Kovetelmenyek/bejelentkezes-követelmeny.png)
+![adatlap modositas](Diagramok/Kovetelmenyek/adatlapmodositaskovetelmeny.png)
+![uzenofal](Diagramok/Kovetelmenyek/uzenofal-kovetelmeny.png)
+![ismerosok kezelese](Diagramok/Kovetelmenyek/ismeroskezeleskovetelmeny.png)
+![meghivo](Diagramok/Kovetelmenyek/meghivo-kovetelmeny.png)
+![csoportok kezelese](Diagramok/Kovetelmenyek/csoportokkovetelmeny.png)
+![uzenet](Diagramok/Kovetelmenyek/uzenet-kovetelmeny.png)
+![szuletesnap jelzes](Diagramok/Kovetelmenyek/szuletesnapokkovetelmeny.png)
+
+
 
 #### 6.1.2. Egyed-esemény mátrix
 ![Egyed-Esemény Mátrix](Diagramok/eematrix.png)
