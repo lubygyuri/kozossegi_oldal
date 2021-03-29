@@ -90,7 +90,8 @@ Ennek a feladatnak az a célja, hogy bemutassa a dokumentációt és a hozzájuk
 
 
 #### 6.1.2. Funkció meghatározás
-
+![regisztracio](Diagramok/regisztraciokovetelmeny.png)
+![bejelentkezes](Diagramok/bejelentkezes-követelmeny.png)
 
 #### 6.1.2. Egyed-esemény mátrix
 ![Egyed-Esemény Mátrix](Diagramok/eematrix.png)
