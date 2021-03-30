@@ -92,11 +92,11 @@ Ennek a feladatnak az a célja, hogy bemutassa a dokumentációt és a hozzájuk
 
 #### 6.1.4. Relációs adatelemzés
 
-Egyed-Kapcsolat Diagram:
+##### Egyed-Kapcsolat Diagram:
 
 ![ek_diagram](Diagramok/ek_diagram.png)
 
-Relációs adatmodell:
+##### Relációs adatmodell:
 
 ###### ADMIN(**azonosító**, email, jelszó)
 ###### FELHASZNÁLÓ(**azonosító**, email, jelszó, vezetéknév, keresztnév, születési_dátum, neme, csatlakozás_dátuma)
@@ -108,6 +108,11 @@ Relációs adatmodell:
 ###### KOMMENT LIKE(***komment_azonosító***, ***felhasználó_azonosító***)
 ###### KLUB(**azonosító**, leírás, láthatóság, létrehozás_dátuma)
 ###### TAGOK (***klub_azonosító***, ***felhasználó_azonosító***)
+
+##### Normalizálás: 
+- **1NF**: A leképezés után összetett attribútum nincs, csak a KLUB-ban lévő tagok  maradt többértékű attribútum, ehhez fel kell vennünk egy új relációs sémát, amihez külső kulcsként hozzávesszük az őt tartalmazó relációséma kulcsát. Így, teljesül az NF1.
+- **2NF**: Az egyedekből leképezett sémákra triviálisan teljesül, mert minden kulcsuk egyelemű. A BEJEGYZÉS LIKE, a KOMMENT LIKE és a TAGOK sémákban is triviálisan teljesül, mert nincs bennük másodlagos attribútum. A BARÁT sémában a státusz nyilvánvalóan teljesen függ a kulcstól. Tehát a sémák 2NF-ben vannak.
+- **3NF**: Mindegyik séma 3NF-ban van, mert mindegyik másodlagos attribútum közvetlenül függ a kulcstól.
 
 
 #### 6.1.5. Funkció meghatározás
