@@ -92,55 +92,54 @@ Ennek a feladatnak az a célja, hogy bemutassa a dokumentációt és a hozzájuk
 
 #### 6.1.4. Relációs adatelemzés
 
-##### Egyed-Kapcsolat Diagram:
+##### 6.1.4.1. Egyed-Kapcsolat Diagram:
 
 ![ek_diagram](Diagramok/ek_diagram.png)
 
-##### Relációs adatmodell:
+##### 6.1.4.2. Relációs adatmodell:
+ADMIN(**azonosító**, email, jelszó)  
+FELHASZNÁLÓ(**azonosító**, email, jelszó, vezetéknév, keresztnév, születési_dátum, neme, csatlakozás_dátuma)  
+BARÁT (**azonosító**, státusz, *kérelmező*, *kérelmezett*)  
+PROFIL(**azonosító**, profilkép, iskola, munkahely, *felhasználó_azonosító*)  
+BEJEGYZÉS(**azonosító**, üzenet, létrehozás_dátuma, *felhasználó_azonosító*)  
+BEJEGYZÉS LIKE(***bejegyzés_azonosító***, ***felhasználó_azonosító***)  
+KOMMENT(**azonosító**, tartalom, létrehozás_dátuma, *felhasználó_azonosító*, *bejegyzés_azonosító*)  
+KOMMENT LIKE(***komment_azonosító***, ***felhasználó_azonosító***)  
+KLUB(**azonosító**, leírás, láthatóság, létrehozás_dátuma)  
+TAGOK (***klub_azonosító***, ***felhasználó_azonosító***)
 
-###### ADMIN(**azonosító**, email, jelszó)
-###### FELHASZNÁLÓ(**azonosító**, email, jelszó, vezetéknév, keresztnév, születési_dátum, neme, csatlakozás_dátuma)
-###### BARÁT (**azonosító**, státusz, *kérelmező*, *kérelmezett*)
-###### PROFIL(**azonosító**, profilkép, iskola, munkahely, *felhasználó_azonosító*)
-###### BEJEGYZÉS(**azonosító**, üzenet, létrehozás_dátuma, *felhasználó_azonosító*)
-###### BEJEGYZÉS LIKE(***bejegyzés_azonosító***, ***felhasználó_azonosító***)
-###### KOMMENT(**azonosító**, tartalom, létrehozás_dátuma, *felhasználó_azonosító*, *bejegyzés_azonosító*)
-###### KOMMENT LIKE(***komment_azonosító***, ***felhasználó_azonosító***)
-###### KLUB(**azonosító**, leírás, láthatóság, létrehozás_dátuma)
-###### TAGOK (***klub_azonosító***, ***felhasználó_azonosító***)
-
-##### Normalizálás: 
+##### 6.1.4.3. Normalizálás: 
 - **1NF**: A leképezés után összetett attribútum nincs, csak a KLUB-ban lévő tagok  maradt többértékű attribútum, ehhez fel kell vennünk egy új relációs sémát, amihez külső kulcsként hozzávesszük az őt tartalmazó relációséma kulcsát. Így, teljesül az NF1.
 - **2NF**: Az egyedekből leképezett sémákra triviálisan teljesül, mert minden kulcsuk egyelemű. A BEJEGYZÉS LIKE, a KOMMENT LIKE és a TAGOK sémákban is triviálisan teljesül, mert nincs bennük másodlagos attribútum. A BARÁT sémában a státusz nyilvánvalóan teljesen függ a kulcstól. Tehát a sémák 2NF-ben vannak.
 - **3NF**: Mindegyik séma 3NF-ban van, mert mindegyik másodlagos attribútum közvetlenül függ a kulcstól.
 
 
 #### 6.1.5. Funkció meghatározás
-##### Regisztráció
+##### 6.1.5.1. Regisztráció
 ![regisztraciokovetelmeny](Diagramok/Kovetelmenyek/regisztraciokovetelmeny.png)
-##### Bejelentkezés
+##### 6.1.5.2. Bejelentkezés
 ![bejelentkezes_kovetelmeny](Diagramok/Kovetelmenyek/bejelentkezes-követelmeny.png)
-##### Adatlapmódosítás
+##### 6.1.5.3. Adatlapmódosítás
 ![adatlapmodositas](Diagramok/Kovetelmenyek/adatlapmodositaskovetelmeny.png)
-##### Ismerősök kezelése
+##### 6.1.5.4. Ismerősök kezelése
 ![ismeros_kezeles](Diagramok/Kovetelmenyek/ismeroskezeleskovetelmeny.png)
-##### Fényképek és albumok
+##### 6.1.5.5. Fényképek és albumok
 ![fenykepek_es_albumok](Diagramok/Kovetelmenyek/fenykepeke_es_albumok_kovetelmeny.png)
-##### Klubok
+##### 6.1.5.6. Klubok
 ![csoportok_kovetelmeny](Diagramok/Kovetelmenyek/csoportokkovetelmeny.png)
-##### Üzenőfal
+##### 6.1.5.7. Üzenőfal
 ![uzenofal-kovetelmeny](Diagramok/Kovetelmenyek/uzenofal-kovetelmeny.png)
-##### Üzenet
+##### 6.1.5.8. Üzenet
 ![uzenet-kovetelmeny](Diagramok/Kovetelmenyek/uzenet-kovetelmeny.png)
-##### Felhasználó törlése
+##### 6.1.5.9. Felhasználó törlése
 ![felhasznalo_torlese_kovetelmeny](Diagramok/Kovetelmenyek/felhasznalo_torlese_kovetelmeny.png)
-##### Bejegyzés törlése
+##### 6.1.5.10. Bejegyzés törlése
 ![bejegyzes_torlese](Diagramok/Kovetelmenyek/bejegyzes_torlese_kovetelmeny.png)
-##### Születésnapok
+##### 6.1.5.11. Születésnapok
 ![szuletesnapokkovetelmeny](Diagramok/Kovetelmenyek/szuletesnapokkovetelmeny.png)
-##### Meghívás
+##### 6.1.5.12. Meghívás
 ![meghivo_kovetelmeny](Diagramok/Kovetelmenyek/meghivo-kovetelmeny.png)
-##### Kijelentkezés
+##### 6.1.5.13. Kijelentkezés
 ![kijelentkezes_kovetelmeny](Diagramok/Kovetelmenyek/kijelentkezes_kovetelmeny.png)
 
 #### 6.1.6. Egyed-esemény mátrix
