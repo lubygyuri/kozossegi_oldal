@@ -84,7 +84,7 @@ Ennek a feladatnak az a célja, hogy bemutassa a dokumentációt és a hozzájuk
 ![fizikai](Diagramok/Fizikai01.png)
 ![Fizikai_Bejelentkezes](Diagramok/Fizikai_Bejelentkezes.png)
 ![Fizikai_Csoport](Diagramok/Fizikai_Csoport.png)
-![Fizikai_Kep_Feltoltes](Diagramok/Fizikai_Kep_Feltoltes.png)
+![Fizikai_KepFeltoltes](Diagramok/Fizikai_KepFeltoltes.png)
 ![Fizikai_Uzenofal](Diagramok/Fizikai_Uzenofal.png)
 
 #### 6.1.3. Egyedmodell
