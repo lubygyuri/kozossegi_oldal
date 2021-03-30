@@ -152,7 +152,7 @@ TAGOK (***klub_azonosító***, ***felhasználó_azonosító***)
 ![kijelentkezes_kovetelmeny](Diagramok/Kovetelmenyek/kijelentkezes_kovetelmeny.png)
 
 #### 6.1.6. Egyed-esemény mátrix
-![Egyed-Esemény Mátrix](Diagramok/eematrix.png)
+![Egyed-Esemény Mátrix](Diagramok/egyedesemenymatrix.png)
 #### 6.1.7. Szerep-funkció mátrix
 ![kép leírás](Diagramok/SzerepFunkcio.png)
 
