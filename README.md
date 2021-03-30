@@ -38,7 +38,7 @@ A projekt a következő emberekből áll:
 |                                            |         Név         |        E-mail cím      |
 |:------------------------------------------:|:-------------------:|:---------------------: |
 |                 Projekt tag                | Kovács Soma Kristóf |kovacssoma2000@gmail.com|
-|                 Projekt tag                |Lublóváry György Máté| lubigyurma@gmail.com   |
+|                 Projekt tag                |Lublóváry György Máté  | lubigyurma@gmail.com   |
 |                 Projekt tag                |      Cseri Gábor    | cserigabi4@gmail.com   |
 
 ## 4. A munka feltételei
@@ -80,50 +80,33 @@ Ennek a feladatnak az a célja, hogy bemutassa a dokumentációt és a hozzájuk
 ![Logikai_KepFeltoltes](Diagramok/Logikai_KepFeltoltes.png)
 ![Logikai_Uzenofal](Diagramok/Logikai_Uzenofal.png)
 
-#### 6.1.2. Fizikai adatfolyam diagram 1. szintű
-![logikai](Diagramok/Fizikai01.png)
-#### 6.1.2.1 Fizikai adatfolyam diagram 2.szintű
-![Fizikai_Bejelentkezes](Diagramok/Fizikai_Bejelentkezes.png)
-![Fizikai_Csoport](Diagramok/Fizikai_Csoport.png)
-![Fizikai_KepFeltoltes](Diagramok/Fizikai_KepFeltoltes.png)
-![Fizikai_Uzenofal](Diagramok/Fizikai_Uzenofal.png)
+#### 6.1.2. Fizikai adatfolyam diagram (1. és 2. szintű)
 
 
 #### 6.1.2. Egyedmodell
 
 
-
-#### 6.1.2. Egyed-Kapcsolat Diagram
-![ek_diagram](Diagramok/ek_diagram.png)
-
-
 #### 6.1.2. Relációs adatelemzés
+
+## ADMIN(**azonosító**, email, jelszó)
+## FELHASZNÁLÓ(**azonosító**, email, jelszó, vezetéknév, keresztnév, születési_dátum, neme, csatlakozás_dátuma)
+## BARÁT (**azonosító**, státusz, *kérelmező*, *kérelmezett*)
+## PROFIL(**azonosító**, profilkép, iskola, munkahely, *felhasználó_azonosító*)
+## BEJEGYZÉS(**azonosító**, üzenet, létrehozás_dátuma, *felhasználó_azonosító*)
+## BEJEGYZÉS LIKE(***bejegyzés_azonosító***, ***felhasználó_azonosító***)
+## KOMMENT(**azonosító**, tartalom, létrehozás_dátuma, *felhasználó_azonosító*, *bejegyzés_azonosító*)
+## KOMMENT LIKE(***komment_azonosító***, ***felhasználó_azonosító***)
+## KLUB(**azonosító**, leírás, láthatóság, létrehozás_dátuma)
+## TAGOK (***klub_azonosító***, ***felhasználó_azonosító***)
 
 
 #### 6.1.2. Funkció meghatározás
-![regisztracio](Diagramok/Kovetelmenyek/regisztraciokovetelmeny.png)
-![bejelentkezes](Diagramok/Kovetelmenyek/bejelentkezes-követelmeny.png)
-![adatlap modositas](Diagramok/Kovetelmenyek/adatlapmodositaskovetelmeny.png)
-![uzenofal](Diagramok/Kovetelmenyek/uzenofal-kovetelmeny.png)
-![ismerosok kezelese](Diagramok/Kovetelmenyek/ismeroskezeleskovetelmeny.png)
-![meghivo](Diagramok/Kovetelmenyek/meghivo-kovetelmeny.png)
-![csoportok kezelese](Diagramok/Kovetelmenyek/csoportokkovetelmeny.png)
-![uzenet](Diagramok/Kovetelmenyek/uzenet-kovetelmeny.png)
-![szuletesnap jelzes](Diagramok/Kovetelmenyek/szuletesnapokkovetelmeny.png)
-![fenykepek albumok kezelese](Diagramok/Kovetelmenyek/fenykepeke_es_albumok_kovetelmeny.png)
-![bejegyzes torlese](Diagramok/Kovetelmenyek/bejegyzes_torlese_kovetelmeny.png)
-![felhasznalo torlese](Diagramok/Kovetelmenyek/felhasznalo_torlese_kovetelmeny.png)
-![kijelentkezes](Diagramok/Kovetelmenyek/kijelentkezes_kovetelmeny.png)
-
-
-
-
 
 
 #### 6.1.2. Egyed-esemény mátrix
 ![Egyed-Esemény Mátrix](Diagramok/eematrix.png)
 #### 6.1.2. Szerep-funkció mátrix
-![kép leírás](Diagramok/SzerepFunkcio.png)
+![kép leírás](Diagramok/SzerepFunkcioMatrix.png)
 
 #### 6.1.2. Képrenyőtervek
 
