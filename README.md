@@ -74,39 +74,38 @@ Ennek a feladatnak az a célja, hogy bemutassa a dokumentációt és a hozzájuk
 
 #### 6.1.1. Logikai adatfolyam diagram 1.szintű
 ![logikai](Diagramok/Logikai01.png)
-#### 6.1.1.1 Logikai adatfolyam diagram 2.szintű
-##### Bejelentkezés
+
+#### 6.1.2. Logikai adatfolyam diagram 2.szintű
+##### 6.1.2.1. Bejelentkezés
 ![Logikai_Bejelentkezes](Diagramok/Logikai_Bejelentkezes.png)
-##### Csoportok
+##### 6.1.2.2. Csoportok
 ![Logikai_Csoport](Diagramok/Logikai_Csoport.png)
-##### Képfeltöltés
+##### 6.1.2.3. Képfeltöltés
 ![Logikai_KepFeltoltes](Diagramok/Logikai_KepFeltoltes.png)
-##### Üzenőfal
+##### 6.1.2.4. Üzenőfal
 ![Logikai_Uzenofal](Diagramok/Logikai_Uzenofal.png)
 
-#### 6.1.2. Fizikai adatfolyam diagram 1. szintű
+#### 6.1.3. Fizikai adatfolyam diagram 1. szintű
 ![fizikai](Diagramok/Fizikai01.png)
-#### 6.1.2.1 Fizikai adatfolyam diagram 2. szintű
-##### Bejelentkezés
+
+#### 6.1.4. Fizikai adatfolyam diagram 2. szintű
+##### 6.1.4.1. Bejelentkezés
 ![Fizikai_Bejelentkezes](Diagramok/Fizikai_Bejelentkezes.png)
-##### Csoportok
+##### 6.1.4.2. Csoportok
 ![Fizikai_Csoport](Diagramok/Fizikai_Csoport.png)
-##### Képfeltöltés
+##### 6.1.4.3. Képfeltöltés
 ![Fizikai_Kep_Feltoltes](Diagramok/Fizikai_KepFeltoltes.png)
-##### Üzenőfal
+##### 6.1.4.4. Üzenőfal
 ![Fizikai_Uzenofal](Diagramok/Fizikai_Uzenofal.png)
 
-#### 6.1.3. Egyedmodell
-
+#### 6.1.5. Egyedmodell
 ![em_diagram](Diagramok/em_diagram.png)
 
-#### 6.1.4. Relációs adatelemzés
-
-##### 6.1.4.1. Egyed-Kapcsolat Diagram:
-
+#### 6.1.6. Relációs adatelemzés
+##### 6.1.6.1. Egyed-Kapcsolat Diagram:
 ![ek_diagram](Diagramok/ek_diagram.png)
 
-##### 6.1.4.2. Relációs adatmodell:
+##### 6.1.6.2. Relációs adatmodell:
 ADMIN(**azonosító**, email, jelszó)  
 FELHASZNÁLÓ(**azonosító**, email, jelszó, vezetéknév, keresztnév, születési_dátum, neme, csatlakozás_dátuma)  
 BARÁT (**azonosító**, státusz, *kérelmező*, *kérelmezett*)  
@@ -118,53 +117,58 @@ KOMMENT LIKE(***komment_azonosító***, ***felhasználó_azonosító***)
 KLUB(**azonosító**, leírás, láthatóság, létrehozás_dátuma)  
 TAGOK (***klub_azonosító***, ***felhasználó_azonosító***)
 
-##### 6.1.4.3. Normalizálás: 
+##### 6.1.6.3. Normalizálás: 
 - **1NF**: A leképezés után összetett attribútum nincs, csak a KLUB-ban lévő tagok  maradt többértékű attribútum, ehhez fel kell vennünk egy új relációs sémát, amihez külső kulcsként hozzávesszük az őt tartalmazó relációséma kulcsát. Így, teljesül az NF1.
 - **2NF**: Az egyedekből leképezett sémákra triviálisan teljesül, mert minden kulcsuk egyelemű. A BEJEGYZÉS LIKE, a KOMMENT LIKE és a TAGOK sémákban is triviálisan teljesül, mert nincs bennük másodlagos attribútum. A BARÁT sémában a státusz nyilvánvalóan teljesen függ a kulcstól. Tehát a sémák 2NF-ben vannak.
 - **3NF**: Mindegyik séma 3NF-ban van, mert mindegyik másodlagos attribútum közvetlenül függ a kulcstól.
 
 
-#### 6.1.5. Funkció meghatározás
-##### 6.1.5.1. Regisztráció
+#### 6.1.7. Funkció meghatározás
+##### 6.1.7.1. Regisztráció
 ![regisztraciokovetelmeny](Diagramok/Kovetelmenyek/regisztraciokovetelmeny.png)
-##### 6.1.5.2. Bejelentkezés
+##### 6.1.7.2. Bejelentkezés
 ![bejelentkezes_kovetelmeny](Diagramok/Kovetelmenyek/bejelentkezes-követelmeny.png)
-##### 6.1.5.3. Adatlapmódosítás
+##### 6.1.7.3. Adatlapmódosítás
 ![adatlapmodositas](Diagramok/Kovetelmenyek/adatlapmodositaskovetelmeny.png)
-##### 6.1.5.4. Ismerősök kezelése
+##### 6.1.7.4. Ismerősök kezelése
 ![ismeros_kezeles](Diagramok/Kovetelmenyek/ismeroskezeleskovetelmeny.png)
-##### 6.1.5.5. Fényképek és albumok
+##### 6.1.7.5. Fényképek és albumok
 ![fenykepek_es_albumok](Diagramok/Kovetelmenyek/fenykepeke_es_albumok_kovetelmeny.png)
-##### 6.1.5.6. Klubok
+##### 6.1.7.6. Klubok
 ![csoportok_kovetelmeny](Diagramok/Kovetelmenyek/csoportokkovetelmeny.png)
-##### 6.1.5.7. Üzenőfal
+##### 6.1.7.7. Üzenőfal
 ![uzenofal-kovetelmeny](Diagramok/Kovetelmenyek/uzenofal-kovetelmeny.png)
-##### 6.1.5.8. Üzenet
+##### 6.1.7.8. Üzenet
 ![uzenet-kovetelmeny](Diagramok/Kovetelmenyek/uzenet-kovetelmeny.png)
-##### 6.1.5.9. Felhasználó törlése
+##### 6.1.7.9. Felhasználó törlése
 ![felhasznalo_torlese_kovetelmeny](Diagramok/Kovetelmenyek/felhasznalo_torlese_kovetelmeny.png)
-##### 6.1.5.10. Bejegyzés törlése
+##### 6.1.7.10. Bejegyzés törlése
 ![bejegyzes_torlese](Diagramok/Kovetelmenyek/bejegyzes_torlese_kovetelmeny.png)
-##### 6.1.5.11. Születésnapok
+##### 6.1.7.11. Születésnapok
 ![szuletesnapokkovetelmeny](Diagramok/Kovetelmenyek/szuletesnapokkovetelmeny.png)
-##### 6.1.5.12. Meghívás
+##### 6.1.7.12. Meghívás
 ![meghivo_kovetelmeny](Diagramok/Kovetelmenyek/meghivo-kovetelmeny.png)
-##### 6.1.5.13. Kijelentkezés
+##### 6.1.7.13. Kijelentkezés
 ![kijelentkezes_kovetelmeny](Diagramok/Kovetelmenyek/kijelentkezes_kovetelmeny.png)
 
-#### 6.1.6. Egyed-esemény mátrix
+#### 6.1.8. Egyed-esemény mátrix
 ![Egyed-Esemény Mátrix](Diagramok/egyedesemenymatrix.png)
-#### 6.1.7. Szerep-funkció mátrix
+#### 6.1.9. Szerep-funkció mátrix
 ![kép leírás](Diagramok/SzerepFunkcio.png)
 
-#### 6.1.8. Képrenyőtervek
+#### 6.1.10. Képrenyőtervek
+##### 6.1.10.1. Regisztráció
 ![menüterv](Diagramok/Regisztracio.png)
+##### 6.1.10.2. Bejelentkezés
 ![menüterv](Diagramok/bejelentkezes.png)
+##### 6.1.10.3. Üzenőfal
 ![menüterv](Diagramok/Uzenofal.png)
+##### 6.1.10.4. Profil
 ![menüterv](Diagramok/Profil.png)
+##### 6.1.10.5. Üzenetek
 ![menüterv](Diagramok/Uzenetek.png)
 
-#### 6.1.9. Menütervek
+#### 6.1.11. Menütervek
 ![menüterv](Diagramok/menuterv.png)
 
 
