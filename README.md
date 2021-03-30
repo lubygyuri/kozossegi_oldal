@@ -81,37 +81,72 @@ Ennek a feladatnak az a célja, hogy bemutassa a dokumentációt és a hozzájuk
 ![Logikai_Uzenofal](Diagramok/Logikai_Uzenofal.png)
 
 #### 6.1.2. Fizikai adatfolyam diagram (1. és 2. szintű)
+![fizikai](Diagramok/Fizikai01.png)
+![Fizikai_Bejelentkezes](Diagramok/Fizikai_Bejelentkezes.png)
+![Fizikai_Csoport](Diagramok/Fizikai_Csoport.png)
+![Fizikai_Kep_Feltoltes](Diagramok/Fizikai_Kep_Feltoltes.png)
+![Fizikai_Uzenofal](Diagramok/Fizikai_Uzenofal.png)
+
+#### 6.1.3. Egyedmodell
 
 
-#### 6.1.2. Egyedmodell
+#### 6.1.4. Relációs adatelemzés
+
+Egyed-Kapcsolat Diagram:
+
+![ek_diagram](Diagramok/ek_diagram.png)
+
+Relációs adatmodell:
+
+###### ADMIN(**azonosító**, email, jelszó)
+###### FELHASZNÁLÓ(**azonosító**, email, jelszó, vezetéknév, keresztnév, születési_dátum, neme, csatlakozás_dátuma)
+###### BARÁT (**azonosító**, státusz, *kérelmező*, *kérelmezett*)
+###### PROFIL(**azonosító**, profilkép, iskola, munkahely, *felhasználó_azonosító*)
+###### BEJEGYZÉS(**azonosító**, üzenet, létrehozás_dátuma, *felhasználó_azonosító*)
+###### BEJEGYZÉS LIKE(***bejegyzés_azonosító***, ***felhasználó_azonosító***)
+###### KOMMENT(**azonosító**, tartalom, létrehozás_dátuma, *felhasználó_azonosító*, *bejegyzés_azonosító*)
+###### KOMMENT LIKE(***komment_azonosító***, ***felhasználó_azonosító***)
+###### KLUB(**azonosító**, leírás, láthatóság, létrehozás_dátuma)
+###### TAGOK (***klub_azonosító***, ***felhasználó_azonosító***)
 
 
-#### 6.1.2. Relációs adatelemzés
+#### 6.1.5. Funkció meghatározás
+##### Regisztráció
+![regisztraciokovetelmeny](Diagramok/Kovetelmenyek/regisztraciokovetelmeny.png)
+##### Bejelentkezés
+![bejelentkezes_kovetelmeny](Diagramok/Kovetelmenyek/bejelentkezes-követelmeny.png)
+##### Adatlapmódosítás
+![adatlapmodositas](Diagramok/Kovetelmenyek/adatlapmodositaskovetelmeny.png)
+##### Ismerősök kezelése
+![ismeros_kezeles](Diagramok/Kovetelmenyek/ismeroskezeleskovetelmeny.png)
+##### Fényképek és albumok
+![fenykepek_es_albumok](Diagramok/Kovetelmenyek/fenykepeke_es_albumok_kovetelmeny.png)
+##### Klubok
+![csoportok_kovetelmeny](Diagramok/Kovetelmenyek/csoportokkovetelmeny.png)
+##### Üzenőfal
+![uzenofal-kovetelmeny](Diagramok/Kovetelmenyek/uzenofal-kovetelmeny.png)
+##### Üzenet
+![uzenet-kovetelmeny](Diagramok/Kovetelmenyek/uzenet-kovetelmeny.png)
+##### Felhasználó törlése
+![felhasznalo_torlese_kovetelmeny](Diagramok/Kovetelmenyek/felhasznalo_torlese_kovetelmeny.png)
+##### Bejegyzés törlése
+![bejegyzes_torlese](Diagramok/Kovetelmenyek/bejegyzes_torlese_kovetelmeny.png)
+##### Születésnapok
+![szuletesnapokkovetelmeny](Diagramok/Kovetelmenyek/szuletesnapokkovetelmeny.png)
+##### Meghívás
+![meghivo_kovetelmeny](Diagramok/Kovetelmenyek/meghivo-kovetelmeny.png)
+##### Kijelentkezés
+![kijelentkezes_kovetelmeny](Diagramok/Kovetelmenyek/kijelentkezes_kovetelmeny.png)
 
-## ADMIN(**azonosító**, email, jelszó)
-## FELHASZNÁLÓ(**azonosító**, email, jelszó, vezetéknév, keresztnév, születési_dátum, neme, csatlakozás_dátuma)
-## BARÁT (**azonosító**, státusz, *kérelmező*, *kérelmezett*)
-## PROFIL(**azonosító**, profilkép, iskola, munkahely, *felhasználó_azonosító*)
-## BEJEGYZÉS(**azonosító**, üzenet, létrehozás_dátuma, *felhasználó_azonosító*)
-## BEJEGYZÉS LIKE(***bejegyzés_azonosító***, ***felhasználó_azonosító***)
-## KOMMENT(**azonosító**, tartalom, létrehozás_dátuma, *felhasználó_azonosító*, *bejegyzés_azonosító*)
-## KOMMENT LIKE(***komment_azonosító***, ***felhasználó_azonosító***)
-## KLUB(**azonosító**, leírás, láthatóság, létrehozás_dátuma)
-## TAGOK (***klub_azonosító***, ***felhasználó_azonosító***)
-
-
-#### 6.1.2. Funkció meghatározás
-
-
-#### 6.1.2. Egyed-esemény mátrix
+#### 6.1.6. Egyed-esemény mátrix
 ![Egyed-Esemény Mátrix](Diagramok/eematrix.png)
-#### 6.1.2. Szerep-funkció mátrix
-![kép leírás](Diagramok/SzerepFunkcioMatrix.png)
+#### 6.1.7. Szerep-funkció mátrix
+![kép leírás](Diagramok/SzerepFunkcio.png)
 
-#### 6.1.2. Képrenyőtervek
+#### 6.1.8. Képrenyőtervek
 
 
-#### 6.1.2. Menütervek
+#### 6.1.9. Menütervek
 
 
 
