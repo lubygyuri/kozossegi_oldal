@@ -38,7 +38,7 @@ A projekt a következő emberekből áll:
 |                                            |         Név         |        E-mail cím      |
 |:------------------------------------------:|:-------------------:|:---------------------: |
 |                 Projekt tag                | Kovács Soma Kristóf |kovacssoma2000@gmail.com|
-|                 Projekt tag                |Lublóváry György Máté  | lubigyurma@gmail.com   |
+|                 Projekt tag                |Lublóváry György Máté| lubigyurma@gmail.com   |
 |                 Projekt tag                |      Cseri Gábor    | cserigabi4@gmail.com   |
 
 ## 4. A munka feltételei
@@ -84,7 +84,7 @@ Ennek a feladatnak az a célja, hogy bemutassa a dokumentációt és a hozzájuk
 ![fizikai](Diagramok/Fizikai01.png)
 ![Fizikai_Bejelentkezes](Diagramok/Fizikai_Bejelentkezes.png)
 ![Fizikai_Csoport](Diagramok/Fizikai_Csoport.png)
-![Fizikai_Kep_Feltoltes](Diagramok/Fizikai_Kep_Feltoltes.png)
+![Fizikai_Kep_Feltoltes](Diagramok/Fizikai_KepFeltoltes.png)
 ![Fizikai_Uzenofal](Diagramok/Fizikai_Uzenofal.png)
 
 #### 6.1.3. Egyedmodell
