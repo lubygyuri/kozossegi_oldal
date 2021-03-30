@@ -158,10 +158,13 @@ TAGOK (***klub_azonosító***, ***felhasználó_azonosító***)
 ![kép leírás](Diagramok/SzerepFunkcio.png)
 
 #### 6.1.8. Képrenyőtervek
-
+![kép leírás](Diagramok/SzerepFunkcio.png)
 
 #### 6.1.9. Menütervek
-![menüterv](Diagramok/menuterv.png)
+![menüterv](Diagramok/Regisztracio.png)
+![menüterv](Diagramok/bejelentkezes.png)
+![menüterv](Diagramok/Profil.png)
+![menüterv](Diagramok/Uzenetek.png)
 
 
 ### 6.2. Prototípus I. (2. mérföldkő)
