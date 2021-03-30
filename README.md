@@ -98,6 +98,7 @@ Ennek a feladatnak az a célja, hogy bemutassa a dokumentációt és a hozzájuk
 
 #### 6.1.3. Egyedmodell
 
+![em_diagram](Diagramok/em_diagram.png)
 
 #### 6.1.4. Relációs adatelemzés
 
