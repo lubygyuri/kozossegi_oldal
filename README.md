@@ -75,16 +75,25 @@ Ennek a feladatnak az a célja, hogy bemutassa a dokumentációt és a hozzájuk
 #### 6.1.1. Logikai adatfolyam diagram 1.szintű
 ![logikai](Diagramok/Logikai01.png)
 #### 6.1.1.1 Logikai adatfolyam diagram 2.szintű
+##### Bejelentkezés
 ![Logikai_Bejelentkezes](Diagramok/Logikai_Bejelentkezes.png)
+##### Csoportok
 ![Logikai_Csoport](Diagramok/Logikai_Csoport.png)
+##### Képfeltöltés
 ![Logikai_KepFeltoltes](Diagramok/Logikai_KepFeltoltes.png)
+##### Üzenőfal
 ![Logikai_Uzenofal](Diagramok/Logikai_Uzenofal.png)
 
-#### 6.1.2. Fizikai adatfolyam diagram (1. és 2. szintű)
+#### 6.1.2. Fizikai adatfolyam diagram 1. szintű
 ![fizikai](Diagramok/Fizikai01.png)
+#### 6.1.2.1 Fizikai adatfolyam diagram 2. szintű
+##### Bejelentkezés
 ![Fizikai_Bejelentkezes](Diagramok/Fizikai_Bejelentkezes.png)
+##### Csoportok
 ![Fizikai_Csoport](Diagramok/Fizikai_Csoport.png)
+##### Képfeltöltés
 ![Fizikai_Kep_Feltoltes](Diagramok/Fizikai_KepFeltoltes.png)
+##### Üzenőfal
 ![Fizikai_Uzenofal](Diagramok/Fizikai_Uzenofal.png)
 
 #### 6.1.3. Egyedmodell
