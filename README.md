@@ -160,6 +160,7 @@ TAGOK (***klub_azonosító***, ***felhasználó_azonosító***)
 #### 6.1.8. Képrenyőtervek
 ![menüterv](Diagramok/Regisztracio.png)
 ![menüterv](Diagramok/bejelentkezes.png)
+![menüterv](Diagramok/Uzenofal.png)
 ![menüterv](Diagramok/Profil.png)
 ![menüterv](Diagramok/Uzenetek.png)
 
