@@ -161,7 +161,7 @@ TAGOK (***klub_azonosító***, ***felhasználó_azonosító***)
 
 
 #### 6.1.9. Menütervek
-
+![menüterv](Diagramok/menuterv.png)
 
 
 ### 6.2. Prototípus I. (2. mérföldkő)
