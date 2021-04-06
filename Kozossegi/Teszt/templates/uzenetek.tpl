@@ -1,4 +1,4 @@
 {include file="header.tpl"}
 <div id="app">
-  <p>{{$value}}</p>
+    <p>{{$value}}</p>
 </div>
