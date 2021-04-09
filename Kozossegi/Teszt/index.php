@@ -12,7 +12,7 @@ $smarty = new Smarty;
 
 $smarty->assign("value", "dsadasdasd");
 
-$smarty->display('uzenetek.tpl');
+$smarty->display('index.tpl');
 
 
 
