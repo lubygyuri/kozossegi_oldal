@@ -2,7 +2,7 @@
 
 <div id="app2"  class="container px-4 mt-5">
 
-    <div class= "shadow-lg p-3 bg-white rounded align-self-baseline mr-2 w-50 p-3 mb-5">
+    <div class= "shadow-lg p-3 bg-white rounded align-self-baseline mr-2 w-50 p-3 mb-5 mx-auto">
         <b-img src="https://placekitten.com/g/30/30" class="d-inline-block align-top"></b-img>
         Teszt Elek
         <div class="form-floating mt-3 mb-3">
@@ -17,7 +17,7 @@
 
     {for $i=0 to $tomb|@count-1}
         {strip}
-            <div class= "shadow-lg p-3 bg-white rounded align-self-baseline mr-2 w-50 p-3 mb-5">
+            <div class= "shadow-lg p-3 bg-white rounded align-self-baseline mr-2 w-50 p-3 mb-5 mx-auto">
                 <b-row >
                     <b-navbar variant="faded" type="light">
                         <b-navbar-brand href="#">

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-11 12:18:34
+/* Smarty version 3.1.39, created on 2021-04-11 12:42:02
   from '/opt/lampp/htdocs/Kozossego_Oldal/kozossegi_oldal/Kozossegi/Teszt/templates/Uzenofal.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6072ccfa7bf296_83102200',
+  'unifunc' => 'content_6072d27ac10316_93760417',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '083c0661bce11cf08fa27e7c0ed75de46107cf17' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossego_Oldal/kozossegi_oldal/Kozossegi/Teszt/templates/Uzenofal.tpl',
-      1 => 1618136313,
+      1 => 1618137721,
       2 => 'file',
     ),
   ),
@@ -21,13 +21,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_6072ccfa7bf296_83102200 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6072d27ac10316_93760417 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 <div id="app2"  class="container px-4 mt-5">
 
-    <div class= "shadow-lg p-3 bg-white rounded align-self-baseline mr-2 w-50 p-3 mb-5">
+    <div class= "shadow-lg p-3 bg-white rounded align-self-baseline mr-2 w-50 p-3 mb-5 mx-auto">
         <b-img src="https://placekitten.com/g/30/30" class="d-inline-block align-top"></b-img>
         Teszt Elek
         <div class="form-floating mt-3 mb-3">
@@ -45,7 +45,7 @@ $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderin
 if ($_smarty_tpl->tpl_vars['i']->total > 0) {
 for ($_smarty_tpl->tpl_vars['i']->value = 0, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
 $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration === $_smarty_tpl->tpl_vars['i']->total;?>
-        <div class= "shadow-lg p-3 bg-white rounded align-self-baseline mr-2 w-50 p-3 mb-5"><b-row ><b-navbar variant="faded" type="light"><b-navbar-brand href="#"><b-img src="https://placekitten.com/g/30/30" class="d-inline-block align-top"></b-img><?php ob_start();
+        <div class= "shadow-lg p-3 bg-white rounded align-self-baseline mr-2 w-50 p-3 mb-5 mx-auto"><b-row ><b-navbar variant="faded" type="light"><b-navbar-brand href="#"><b-img src="https://placekitten.com/g/30/30" class="d-inline-block align-top"></b-img><?php ob_start();
 echo $_smarty_tpl->tpl_vars['tomb']->value[$_smarty_tpl->tpl_vars['i']->value]['nev'];
 $_prefixVariable1 = ob_get_clean();
 echo $_prefixVariable1;?>
