@@ -55,9 +55,38 @@
                         </b-button-group>
                         <template>
                             <b-collapse id="my-collapse">
-                                <b-card title="Collapsible card">
-                                    Hello world!
-                                </b-card>
+
+
+                                    <div class="border border-3 mt-2">
+                                        <b-img src="https://placekitten.com/g/30/30" class="d-inline-block align-top"></b-img>Random Ember
+                                        <div >
+                                            <p class="m-3"> Szia Lajos!</p>
+                                        </div>
+                                    </div>
+                                    <div class="border border-3 mt-2">
+                                        <b-img src="https://placekitten.com/g/30/30" class="d-inline-block align-top"></b-img>A legenda
+                                        <div >
+                                            <p class="m-3"> Szia bazdmeg!</p>
+                                        </div>
+                                    </div>
+                                    <div class="border border-3 mt-2">
+                                        <b-img src="https://placekitten.com/g/30/30" class="d-inline-block align-top"></b-img>Random Ember
+                                        <div >
+                                            <p class="m-3"> Kutyáidat sétáltatod?</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="border border-3 mt-2">
+                                    <b-img src="https://placekitten.com/g/30/30" class="d-inline-block align-top"></b-img>
+                                    Teszt Elek
+                                    <div class="form-floating mt-3 mb-1">
+                                        <textarea class="form-control" placeholder="Írjon kommentet" id="floatingTextarea2" style="height: 100px"></textarea>
+                                    </div>
+
+                                    <button type="button" class="btn btn-primary">Közzététel</button>
+                                    </div>
+
+
                             </b-collapse>
                         </template>
                     </b-col>

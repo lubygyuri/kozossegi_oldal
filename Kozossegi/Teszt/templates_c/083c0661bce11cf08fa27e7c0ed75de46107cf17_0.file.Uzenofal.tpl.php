@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-11 13:29:26
+/* Smarty version 3.1.39, created on 2021-04-11 13:54:55
   from '/opt/lampp/htdocs/Kozossego_Oldal/kozossegi_oldal/Kozossegi/Teszt/templates/Uzenofal.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6072dd96cdc632_13511249',
+  'unifunc' => 'content_6072e38fdcf7a3_21897387',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '083c0661bce11cf08fa27e7c0ed75de46107cf17' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossego_Oldal/kozossegi_oldal/Kozossegi/Teszt/templates/Uzenofal.tpl',
-      1 => 1618140565,
+      1 => 1618142094,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_6072dd96cdc632_13511249 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6072e38fdcf7a3_21897387 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -40,7 +40,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
             </label>
             <input id="file-input" type="file"/>
         </div>
-        
+
         <button type="button" class="btn btn-primary">Közzététel</button>
     </div>
 
@@ -63,7 +63,7 @@ echo $_prefixVariable2;?>
 echo $_smarty_tpl->tpl_vars['tomb']->value[$_smarty_tpl->tpl_vars['i']->value]['url'];
 $_prefixVariable3 = ob_get_clean();
 echo $_prefixVariable3;?>
-" class="rounded mx-auto d-block" fluid alt="Fluid image"></b-img><?php }?></div></b-row><b-row class="mt-5"><b-col cols="auto" class=""><b-button-group><b-button  variant="light"><b-icon icon="heart" aria-hidden="true"></b-icon> Tetszik</b-button><b-button v-b-toggle.my-collapse @click="asd" variant="light"><b-icon  icon="chat-left" aria-hidden="true"></b-icon> Hozzászólás</b-button><b-button  variant="light"><b-icon icon="box-arrow-up-right" aria-hidden="true"></b-icon> Megosztás</b-button></b-button-group><template><b-collapse id="my-collapse"><b-card title="Collapsible card">Hello world!</b-card></b-collapse></template></b-col></b-row></div>
+" class="rounded mx-auto d-block" fluid alt="Fluid image"></b-img><?php }?></div></b-row><b-row class="mt-5"><b-col cols="auto" class=""><b-button-group><b-button  variant="light"><b-icon icon="heart" aria-hidden="true"></b-icon> Tetszik</b-button><b-button v-b-toggle.my-collapse @click="asd" variant="light"><b-icon  icon="chat-left" aria-hidden="true"></b-icon> Hozzászólás</b-button><b-button  variant="light"><b-icon icon="box-arrow-up-right" aria-hidden="true"></b-icon> Megosztás</b-button></b-button-group><template><b-collapse id="my-collapse"><div class="border border-3 mt-2"><b-img src="https://placekitten.com/g/30/30" class="d-inline-block align-top"></b-img>Random Ember<div ><p class="m-3"> Szia Lajos!</p></div></div><div class="border border-3 mt-2"><b-img src="https://placekitten.com/g/30/30" class="d-inline-block align-top"></b-img>A legenda<div ><p class="m-3"> Szia bazdmeg!</p></div></div><div class="border border-3 mt-2"><b-img src="https://placekitten.com/g/30/30" class="d-inline-block align-top"></b-img>Random Ember<div ><p class="m-3"> Kutyáidat sétáltatod?</p></div></div><div class="border border-3 mt-2"><b-img src="https://placekitten.com/g/30/30" class="d-inline-block align-top"></b-img>Teszt Elek<div class="form-floating mt-3 mb-1"><textarea class="form-control" placeholder="Írjon kommentet" id="floatingTextarea2" style="height: 100px"></textarea></div><button type="button" class="btn btn-primary">Közzététel</button></div></b-collapse></template></b-col></b-row></div>
     <?php }
 }
 ?>
