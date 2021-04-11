@@ -8,8 +8,14 @@
         <div class="form-floating mt-3 mb-3">
             <textarea class="form-control" placeholder="Írjon bejegyzést" id="floatingTextarea2" style="height: 100px"></textarea>
         </div>
-        <label for="kep">Kép feltöltés</label>
-        <input type="file" id="myFile" name="kep">
+        <div class="image-upload">
+            <label for="file-input">
+                <p class="h6 mb-2"><b-icon icon="upload" aria-hidden="true" class="mr-2"></b-icon>Kép feltöltés</p>
+
+            </label>
+            <input id="file-input" type="file"/>
+        </div>
+
         <button type="button" class="btn btn-primary">Közzététel</button>
     </div>
 

@@ -1,8 +1,9 @@
 new Vue({
+
     el: "#app",
     data: {
         Komment: false,
-        like:true
+        like:true,
     },
     methods: {
         asd() {
@@ -44,5 +45,7 @@ new Vue({
         }
     },
 });
+
+
 
 
