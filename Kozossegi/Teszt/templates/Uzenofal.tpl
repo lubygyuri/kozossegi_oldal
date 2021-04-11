@@ -43,10 +43,12 @@
                 <b-row class="mt-5">
                     <b-col cols="auto" class="">
                         <b-button-group>
-                            <b-button  variant="light">
-                                <b-icon icon="heart" aria-hidden="true"></b-icon> Tetszik
+                            <b-button  variant="light" @click="asd">
+                                <b-icon icon="heart" aria-hidden="true" v-if="like"></b-icon>
+                                <b-icon icon="heart-fill" aria-hidden="true" v-if="!like"></b-icon>
+                                Tetszik
                             </b-button>
-                            <b-button v-b-toggle.my-collapse @click="asd" variant="light">
+                            <b-button v-b-toggle.my-collapse{{$i}} variant="light">
                                 <b-icon  icon="chat-left" aria-hidden="true"></b-icon> Hozzászólás
                             </b-button>
                             <b-button  variant="light">
@@ -54,9 +56,7 @@
                             </b-button>
                         </b-button-group>
                         <template>
-                            <b-collapse id="my-collapse">
-
-
+                            <b-collapse id="my-collapse{{$i}}">
                                     <div class="border border-3 mt-2">
                                         <b-img src="https://placekitten.com/g/30/30" class="d-inline-block align-top"></b-img>Random Ember
                                         <div >
@@ -91,10 +91,6 @@
                         </template>
                     </b-col>
                 </b-row>
-
-                {* <b-row class="mt-5" v-if="Komment">
-                 Komment
-                 </b-row>*}
             </div>
         {/strip}
     {/for}
