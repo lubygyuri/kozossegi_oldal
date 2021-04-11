@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-09 10:36:34
+/* Smarty version 3.1.39, created on 2021-04-11 12:18:34
   from '/opt/lampp/htdocs/Kozossego_Oldal/kozossegi_oldal/Kozossegi/Teszt/templates/Uzenofal.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60701212e85ec2_91543913',
+  'unifunc' => 'content_6072ccfa7bf296_83102200',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '083c0661bce11cf08fa27e7c0ed75de46107cf17' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossego_Oldal/kozossegi_oldal/Kozossegi/Teszt/templates/Uzenofal.tpl',
-      1 => 1617957393,
+      1 => 1618136313,
       2 => 'file',
     ),
   ),
@@ -21,11 +21,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_60701212e85ec2_91543913 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6072ccfa7bf296_83102200 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 <div id="app2"  class="container px-4 mt-5">
+
+    <div class= "shadow-lg p-3 bg-white rounded align-self-baseline mr-2 w-50 p-3 mb-5">
+        <b-img src="https://placekitten.com/g/30/30" class="d-inline-block align-top"></b-img>
+        Teszt Elek
+        <div class="form-floating mt-3 mb-3">
+            <textarea class="form-control" placeholder="Írjon bejegyzést" id="floatingTextarea2" style="height: 100px"></textarea>
+        </div>
+        <label for="kep">Kép feltöltés</label>
+        <input type="file" id="myFile" name="kep">
+        <button type="button" class="btn btn-primary">Közzététel</button>
+    </div>
+
+
+
     <?php
 $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['i']->step = 1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? count($_smarty_tpl->tpl_vars['tomb']->value)-1+1 - (0) : 0-(count($_smarty_tpl->tpl_vars['tomb']->value)-1)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
 if ($_smarty_tpl->tpl_vars['i']->total > 0) {

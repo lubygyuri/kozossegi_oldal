@@ -1,6 +1,20 @@
 {include file="header.tpl"}
 
 <div id="app2"  class="container px-4 mt-5">
+
+    <div class= "shadow-lg p-3 bg-white rounded align-self-baseline mr-2 w-50 p-3 mb-5">
+        <b-img src="https://placekitten.com/g/30/30" class="d-inline-block align-top"></b-img>
+        Teszt Elek
+        <div class="form-floating mt-3 mb-3">
+            <textarea class="form-control" placeholder="Írjon bejegyzést" id="floatingTextarea2" style="height: 100px"></textarea>
+        </div>
+        <label for="kep">Kép feltöltés</label>
+        <input type="file" id="myFile" name="kep">
+        <button type="button" class="btn btn-primary">Közzététel</button>
+    </div>
+
+
+
     {for $i=0 to $tomb|@count-1}
         {strip}
             <div class= "shadow-lg p-3 bg-white rounded align-self-baseline mr-2 w-50 p-3 mb-5">
