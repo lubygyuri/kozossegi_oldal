@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-11 20:45:03
+/* Smarty version 3.1.39, created on 2021-04-13 22:47:33
   from '/opt/lampp/htdocs/Kozossego_Oldal/kozossegi_oldal/Kozossegi/Teszt/templates/Uzenofal.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_607343afa54263_93337254',
+  'unifunc' => 'content_6076036577d9c3_81638500',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '083c0661bce11cf08fa27e7c0ed75de46107cf17' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossego_Oldal/kozossegi_oldal/Kozossegi/Teszt/templates/Uzenofal.tpl',
-      1 => 1618166700,
+      1 => 1618346853,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_607343afa54263_93337254 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6076036577d9c3_81638500 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -71,7 +71,27 @@ echo $_prefixVariable4;?>
 echo $_smarty_tpl->tpl_vars['i']->value;
 $_prefixVariable5 = ob_get_clean();
 echo $_prefixVariable5;?>
-"><div class="border border-3 mt-2"><b-img src="https://placekitten.com/g/30/30" class="d-inline-block align-top"></b-img>Random Ember<div ><p class="m-3"> Szia Lajos!</p></div></div><div class="border border-3 mt-2"><b-img src="https://placekitten.com/g/30/30" class="d-inline-block align-top"></b-img>A legenda<div ><p class="m-3"> Szia bazdmeg!</p></div></div><div class="border border-3 mt-2"><b-img src="https://placekitten.com/g/30/30" class="d-inline-block align-top"></b-img>Random Ember<div ><p class="m-3"> Kutyáidat sétáltatod?</p></div></div><div class="border border-3 mt-2"><b-img src="https://placekitten.com/g/30/30" class="d-inline-block align-top"></b-img>Teszt Elek<div class="form-floating mt-3 mb-1"><textarea class="form-control" placeholder="Írjon kommentet" id="floatingTextarea2" style="height: 100px"></textarea></div><button type="button" class="btn btn-primary">Közzététel</button></div></b-collapse></template></b-col></b-row></div>
+">
+                                    <div class="border border-3 mt-2" v-for="value in bejegyzes">
+                                        <b-img src="https://placekitten.com/g/30/30" class="d-inline-block align-top"></b-img>
+                                        <div v-for="v in value">
+                                            <div>{{ v }}</div>
+                                        </div>
+                                        <div >
+                                            <p class="m-3"></p>
+                                        </div>
+                                    </div>
+                                    <div class="border border-3 mt-2">
+                                    <b-img src="https://placekitten.com/g/30/30" class="d-inline-block align-top"></b-img>
+                                    Teszt Elek
+                                    <div class="form-floating mt-3 mb-1">
+                                        <textarea class="form-control" placeholder="Írjon kommentet" id="floatingTextarea2" style="height: 100px" v-model="text"></textarea>
+                                    </div>
+
+                                    <button type="button" class="btn btn-primary" @click="komm">Közzététel</button>
+                                    </div>
+
+                                </b-collapse></template></b-col></b-row></div>
     <?php }
 }
 ?>

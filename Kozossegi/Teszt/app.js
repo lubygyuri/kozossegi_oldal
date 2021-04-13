@@ -2,48 +2,65 @@ new Vue({
 
     el: "#app",
     data: {
-        Komment: false,
-        like:true,
+        adat: '',
     },
     methods: {
         asd() {
-            this.like= !this.like;
+            this.adat= 'igen';
         }
     },
-    computed: {
-        state() {
-            return this.name.length >= 4
-        },
-        invalidFeedback() {
-            if (this.name.length > 0) {
-                return 'Enter at least 4 characters.'
-            }
-            return 'Please enter something.'
-        }
-    },
+
 });
 new Vue({
     el: "#app2",
     data: {
         Komment: false,
-        like:true
+        like:true,
+        text:'',
+        object: {
+            nev: 'Sanyi',
+            komment: 'szia',
+        },
+        object2: {
+            nev: 'Legenda',
+            komment: 'cso',
+        },
+        bejegyzes: [{
+            nev: 'Sanyi',
+            komment: 'szia',
+        },{
+            nev: 'Legenda',
+            komment: 'cso',
+        }]
     },
     methods: {
         asd() {
             this.like= !this.like;
-        }
-    },
-    computed: {
-        state() {
-            return this.name.length >= 4
         },
-        invalidFeedback() {
-            if (this.name.length > 0) {
-                return 'Enter at least 4 characters.'
-            }
-            return 'Please enter something.'
-        }
+        Submit(){
+            var t= this.text;
+            var list = ['Nev', t, '']
+            this.PhpHivas('TesztKozzetetel.php',list);
+        },
+        komm(){
+          this.bejegyzes.push({nev:'Teszt elek', komment: this.text});
+            this.text='';
+        },
+        PhpHivas(url, list){
+            var self=this;
+            axios({
+                method: 'post',
+                url: url,
+                timeout: 10000,
+                data: list
+            }).then(function (response) {
+            }).catch(function (error) {
+                error => console.log(error);
+            });
+        },
     },
+
+
 });
 
 
