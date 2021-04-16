@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-16 17:30:16
+/* Smarty version 3.1.39, created on 2021-04-16 18:43:11
   from '/opt/lampp/htdocs/Kozossego_Oldal/kozossegi_oldal/Kozossegi/Teszt/templates/profil.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6079ad888c8d23_01832189',
+  'unifunc' => 'content_6079be9f265921_61170781',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '11cae28c8935cb5c66880e952afd25f6d037c378' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossego_Oldal/kozossegi_oldal/Kozossegi/Teszt/templates/profil.tpl',
-      1 => 1618586990,
+      1 => 1618591294,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:menu.tpl' => 1,
   ),
 ),false)) {
-function content_6079ad888c8d23_01832189 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6079be9f265921_61170781 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -45,7 +45,7 @@ $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smar
                         <span><i class="fas fa-birthday-cake"></i>2000.08.05.</span>
                     </div>
                     <div class="flex-row">
-                        <div class="profile-card more-details col-md-4">
+                        <div class="profile-card more-details">
                             <h3>Infos</h3>
                             <ul>
                                 <li><i class="fas fa-user"></i>Male (Gender)</li>
@@ -53,9 +53,20 @@ $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smar
                                 <li><i class="fas fa-graduation-cap"></i>SZTE (University)</li>
                             </ul>
                         </div>
-                        <div class="profile-card profile-posting col-md-7">
-                            <h3>Poszt</h3>
-                            <textarea name="" id="" cols="30" rows="10" placeholder="Posztolj..."></textarea>
+                        <div class="profile-card profile-posting">
+                            <h3>Bejegyzés Írása</h3>
+                            <div class="form-floating mt-3 mb-3">
+                                <textarea class="form-control" placeholder="Írjon bejegyzést" id="floatingTextarea2"></textarea>
+                            </div>
+                            <div class="flex-row">
+                                <div class="image-upload">
+                                    <label for="file-input">
+                                        <p class="h6 mb-2"><b-icon icon="upload" aria-hidden="true" class="mr-2"></b-icon>Kép feltöltés</p>
+                                    </label>
+                                    <input id="file-input" type="file"/>
+                                </div>
+                                <button type="button" class="btn btn-primary">Közzététel</button>
+                            </div>
                         </div>
                     </div>
                 </div>

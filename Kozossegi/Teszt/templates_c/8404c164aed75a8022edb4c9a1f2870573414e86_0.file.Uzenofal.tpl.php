@@ -1,28 +1,30 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-16 15:01:18
+/* Smarty version 3.1.39, created on 2021-04-16 18:11:27
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\Uzenofal.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60798a9ea58fc3_69351969',
+  'unifunc' => 'content_6079b72fc17516_14849987',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8404c164aed75a8022edb4c9a1f2870573414e86' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\Uzenofal.tpl',
-      1 => 1618577638,
+      1 => 1618587046,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
+    'file:menu.tpl' => 1,
   ),
 ),false)) {
-function content_60798a9ea58fc3_69351969 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6079b72fc17516_14849987 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+$_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 <div id="app2"  class="container px-4 mt-5">
