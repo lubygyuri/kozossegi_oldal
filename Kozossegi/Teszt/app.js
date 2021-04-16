@@ -11,6 +11,7 @@ new Vue({
     },
 
 });
+
 new Vue({
     el: "#app2",
     data: {
@@ -59,8 +60,12 @@ new Vue({
             });
         },
     },
+});
 
-
+new Vue({
+    el: "#app3",
+    data: { },
+    methods: { },
 });
 
 
