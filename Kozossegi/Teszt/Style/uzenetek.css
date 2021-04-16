@@ -73,11 +73,43 @@
     border-left: 2px solid #999;
 }
 
+.chat-messages {
+    height: 90%;
+}
+
 .chat-toolbar {
-    position: relative;
-    bottom: 0;
-    right: 0;
+    height: 10%;
+    display: flex;
+    align-items: center;
     width: 100%;
     background-color: #999;
-    height: 30px;
+    padding: 10px;
+}
+
+.chat-toolbar form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.chat-toolbar form input {
+    width: 92%;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    padding: 3px;
+}
+
+.chat-toolbar form input[placeholder] {
+    padding-left: 10px;
+}
+
+.chat-toolbar form button {
+    width: 8%;
+    padding: 3px;
+    margin-left: 20px;
+    border: none;
+    border-radius: 5px;
 }

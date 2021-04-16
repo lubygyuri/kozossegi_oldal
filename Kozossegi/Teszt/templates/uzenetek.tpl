@@ -110,7 +110,10 @@
                             <h2>Hello</h2>
                         </div>
                         <div class="chat-toolbar">
-                            Toolbar
+                            <form action="#">
+                                    <input type="text" placeholder="Write something...">
+                                    <button><i class="far fa-paper-plane"></i></button>
+                            </form>
                         </div>
                     </div>
                 </div>
