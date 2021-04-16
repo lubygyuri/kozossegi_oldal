@@ -68,6 +68,12 @@ new Vue({
     methods: { },
 });
 
+new Vue({
+    el: "#app4",
+    data: { },
+    methods: { },
+});
+
 
 
 
