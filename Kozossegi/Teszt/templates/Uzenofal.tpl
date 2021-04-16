@@ -20,7 +20,7 @@
         </div>
         <button type="button" class="btn btn-primary">Közzététel</button>
     </div>
-    
+
     {for $i=0 to $tomb|@count-1}
         {strip}
             <div class= "shadow-lg p-3 bg-white rounded align-self-baseline mr-2 w-50 p-3 mb-5 mx-auto">

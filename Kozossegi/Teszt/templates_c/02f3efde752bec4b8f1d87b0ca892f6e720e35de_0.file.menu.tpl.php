@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-16 17:30:16
+/* Smarty version 3.1.39, created on 2021-04-16 18:55:17
   from '/opt/lampp/htdocs/Kozossego_Oldal/kozossegi_oldal/Kozossegi/Teszt/templates/menu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6079ad888cbed7_97662031',
+  'unifunc' => 'content_6079c1755ada23_84936654',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '02f3efde752bec4b8f1d87b0ca892f6e720e35de' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossego_Oldal/kozossegi_oldal/Kozossegi/Teszt/templates/menu.tpl',
-      1 => 1618586990,
+      1 => 1618592114,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6079ad888cbed7_97662031 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6079c1755ada23_84936654 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div id="app">
     <div class="header">
         <!-- Image and text -->
@@ -45,7 +45,7 @@ function content_6079ad888cbed7_97662031 (Smarty_Internal_Template $_smarty_tpl)
                     <a href="#"><b-icon icon="chat-square-dots-fill" aria-hidden="true" class="mr-2"></b-icon>Uzenetek</a>
                 </li>
                 <li class="nav-item mr-4 border border-4 p-2">
-                    <a href="#"><b-icon icon="people-fill" aria-hidden="true" class="mr-2"></b-icon>Csoportok</a>
+                    <a href="klub.php"><b-icon icon="people-fill" aria-hidden="true" class="mr-2"></b-icon>Klubbok</a>
                 </li>
                 <li class="nav-item mr-4 border border-4 p-2">
                     <a href="#"><b-icon icon="bell-fill" aria-hidden="true" class="mr-2"></b-icon>Ertesitesek</a>
