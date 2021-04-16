@@ -4,11 +4,9 @@
     box-sizing: border-box;
 
 }
-
 i {
     margin-right: 5px;
 }
-
 .header{
     background-image: linear-gradient(to right bottom, #7725a3, #613cab, #4b4baf, #3556af, #235fac);
     display: flex;
