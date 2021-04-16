@@ -121,6 +121,7 @@ b-navbar-brand{
 .flex-row {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .post-card {
