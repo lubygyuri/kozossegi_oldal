@@ -4,6 +4,7 @@
 <TITLE>Teszt Feladat</TITLE>
     <link rel="stylesheet" href="Style/style.css">
     <link rel="stylesheet" href="Style/login.css">
+    <link rel="stylesheet" href="Style/uzenetek.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

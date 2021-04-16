@@ -74,6 +74,12 @@ new Vue({
     methods: { },
 });
 
+new Vue({
+    el: "#app5",
+    data: { },
+    methods: { },
+});
+
 
 
 

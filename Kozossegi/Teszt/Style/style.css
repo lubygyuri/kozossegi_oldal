@@ -2,8 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
+
+a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 i {
     margin-right: 5px;
 }
@@ -15,12 +21,6 @@ i {
 
 b-navbar-brand{
     color: white;
-}
-
-a{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 .image-upload > input
