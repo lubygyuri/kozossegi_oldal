@@ -24,16 +24,16 @@
             <input type="date" name="birth-date" class="mt-2 h-25">
             <div class="flex-row mt-3 mb-3">
               <div class="register-genderclass rounded">
-                <input type="radio" id="male" name="gender" value="Férfi">
-                <label for="male">Male</label><br>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Férfi</label><br>
               </div>
               <div class="register-genderclass rounded" >
-                <input type="radio" id="female" name="gender" value="Nő">
-                <label for="female">Female</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Nő</label><br>
               </div>
               <div class="register-genderclass rounded">
-                <input type="radio" id="other" name="gender" value="Egyéb">
-                <label for="other">Other</label>
+                <input type="radio" id="other" name="gender" value="other" checked>
+                <label for="other">Egyéb</label>
               </div>
             </div>
           </div>

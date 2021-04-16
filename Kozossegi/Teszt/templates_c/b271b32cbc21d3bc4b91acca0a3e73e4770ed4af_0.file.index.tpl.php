@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-16 19:29:45
+/* Smarty version 3.1.39, created on 2021-04-16 19:55:51
   from 'D:\XAMPP\htdocs\adatbalapu\kozossegi_oldal\Kozossegi\Teszt\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6079c98969a1a1_14083838',
+  'unifunc' => 'content_6079cfa71516a5_79546711',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b271b32cbc21d3bc4b91acca0a3e73e4770ed4af' => 
     array (
       0 => 'D:\\XAMPP\\htdocs\\adatbalapu\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\index.tpl',
-      1 => 1618594183,
+      1 => 1618595749,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_6079c98969a1a1_14083838 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6079cfa71516a5_79546711 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div id="app4" class="container px-4 mt-5">
@@ -49,16 +49,16 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
             <input type="date" name="birth-date" class="mt-2 h-25">
             <div class="flex-row mt-3 mb-3">
               <div class="register-genderclass rounded">
-                <input type="radio" id="male" name="gender" value="Férfi">
-                <label for="male">Male</label><br>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Férfi</label><br>
               </div>
               <div class="register-genderclass rounded" >
-                <input type="radio" id="female" name="gender" value="Nő">
-                <label for="female">Female</label><br>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Nő</label><br>
               </div>
               <div class="register-genderclass rounded">
-                <input type="radio" id="other" name="gender" value="Egyéb">
-                <label for="other">Other</label>
+                <input type="radio" id="other" name="gender" value="other" checked>
+                <label for="other">Egyéb</label>
               </div>
             </div>
           </div>
