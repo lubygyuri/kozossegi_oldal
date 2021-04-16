@@ -6,8 +6,15 @@
         <div class="profile-container">
             <div class="messages-card mx-auto">
                 <div class="messages-header">
-                    <span>Example example</span>
-                    <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="profilkép">
+                    <form action="#" class="mx-auto">
+                        <input type="search" placeholder="Search">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+
+                    <div class="header-details-container">
+                        <span>Example example</span>
+                        <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="profilkép">
+                    </div>
                 </div>
                 <div class="messages-main">
                     <div class="messages-friends-container">
@@ -72,47 +79,28 @@
                                     </div>
                                 </div>
                             </li>
-                            <li>
-                                <img src="https://images.unsplash.com/photo-1492681290082-e932832941e6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="profilkép">
-                                <div class="friend-details">
-                                    <span>Example6 Example6</span>
-                                    <div class="flex-row">
-                                        <p>Lorem ipsum dolor...</p>
-                                        <small>21:11</small>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <img src="https://images.unsplash.com/photo-1492681290082-e932832941e6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="profilkép">
-                                <div class="friend-details">
-                                    <span>Example6 Example6</span>
-                                    <div class="flex-row">
-                                        <p>Lorem ipsum dolor...</p>
-                                        <small>21:11</small>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <img src="https://images.unsplash.com/photo-1492681290082-e932832941e6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="profilkép">
-                                <div class="friend-details">
-                                    <span>Example6 Example6</span>
-                                    <div class="flex-row">
-                                        <p>Lorem ipsum dolor...</p>
-                                        <small>21:11</small>
-                                    </div>
-                                </div>
-                            </li>
                         </ul>
                     </div>
 
                     <div class="chat-section">
-                        <div class="chat-messages">
-                            <h2>Hello</h2>
+                        <div class="chat-partner">
+                            <img src="https://images.unsplash.com/photo-1492681290082-e932832941e6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="profilkép">
+                            <span>Example2 example2</span>
                         </div>
+
+                        <div class="chat-messages">
+                            <div class="incoming-messages">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet deleniti ex iste iusto mollitia, nisi quis repellendus reprehenderit sunt unde?</p>
+                            </div>
+                            <div class="outgoing-messages">
+                                <p>Lorem ipsum dolor sit amet.</p>
+                            </div>
+                        </div>
+
                         <div class="chat-toolbar">
                             <form action="#">
-                                    <input type="text" placeholder="Write something...">
-                                    <button><i class="far fa-paper-plane"></i></button>
+                                <input type="text" placeholder="Write something...">
+                                <button><i class="far fa-paper-plane"></i></button>
                             </form>
                         </div>
                     </div>

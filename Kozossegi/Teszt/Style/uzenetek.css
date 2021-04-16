@@ -16,6 +16,46 @@
     padding: 5px 10px;
 }
 
+.header-details-container {
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.messages-header form {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.messages-header form input {
+    width: 100%;
+    padding: 2px;
+    outline: none;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+.messages-header form input[placeholder] {
+    padding-left: 10px;
+}
+
+.messages-header form button {
+    border: none;
+    outline: none;
+    transform: translateX(-30px);
+    background-color: #fff;
+    opacity: 0.4;
+}
+
+.chat-search {
+    display: flex;
+    justify-content: flex-start;
+}
+
 .messages-header img{
     width: 50px;
     height: 50px;
@@ -31,6 +71,8 @@
 
 .messages-friends-container {
     width: 30%;
+    max-height: 440px;
+    overflow-y: auto;
 }
 
 .messages-friends-container ul {
@@ -50,7 +92,8 @@
     border-bottom: 2px solid #999;
 }
 
-.messages-friends-container ul li img {
+.messages-friends-container ul li img,
+.chat-partner img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -73,8 +116,46 @@
     border-left: 2px solid #999;
 }
 
+.chat-partner {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    background-color: #30a30a19;
+    padding-left: 10px;
+}
+
 .chat-messages {
-    height: 90%;
+    height: calc(90% - 60px);
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.incoming-messages p {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: #333;
+    color: #fff;
+    margin-bottom: 15px;
+    max-width: 60%;
+}
+
+.outgoing-messages p {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    float: right;
+    padding: 5px 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: #2361dd;
+    color: #fff;
+    margin-bottom: 15px;
+    max-width: 60%;
 }
 
 .chat-toolbar {
