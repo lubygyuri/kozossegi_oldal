@@ -6,11 +6,11 @@
         <b-col>
             <div class="shadow-lg p-3 bg-white rounded align-self-baseline w-75 p-3 mb-5 mt-5 ml-4">
                 <b-list-group>
-                    <b-list-group-item>Cras justo odio</b-list-group-item>
-                    <b-list-group-item active>Dapibus ac facilisis in</b-list-group-item>
-                    <b-list-group-item>Morbi leo risus</b-list-group-item>
-                    <b-list-group-item>Porta ac consectetur ac</b-list-group-item>
-                    <b-list-group-item>Vestibulum at eros</b-list-group-item>
+                    <b-list-group-item>Klub 1</b-list-group-item>
+                    <b-list-group-item active>Klub 2</b-list-group-item>
+                    <b-list-group-item>Klub 3</b-list-group-item>
+                    <b-list-group-item>Klub 4</b-list-group-item>
+                    <b-list-group-item>Klub 5</b-list-group-item>
                 </b-list-group>
 
             </div>
@@ -97,16 +97,17 @@
                     </div>
         </b-col>
         <b-col>
-        <div class="shadow-lg p-3 bg-white rounded align-self-baseline w-75 p-3 mb-5 mt-5 ml-4">
-        <div class="more-details">
-        <ul>
-            <li>Klub 1</li>
-            <li>Klub 2</li>
-            <li>Klub 3</li>
-        </ul>
-        </div>
-
-        </div>
+                <div class="shadow-lg p-3 bg-white rounded align-self-baseline w-75 p-3 mb-5 mt-5 ml-4">
+                    <div class="input-group rounded">
+                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                               aria-describedby="search-addon" />
+                        <span class="input-group-text border-0" id="search-addon">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </div>
+                    <b-button class="mt-3">Csatlakozás</b-button>
+                    <b-button class="mt-3">Új hozzáadás</b-button>
+                 </div>
         </b-col>
 
 

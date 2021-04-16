@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-16 18:55:17
+/* Smarty version 3.1.39, created on 2021-04-16 21:11:33
   from '/opt/lampp/htdocs/Kozossego_Oldal/kozossegi_oldal/Kozossegi/Teszt/templates/menu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6079c1755ada23_84936654',
+  'unifunc' => 'content_6079e1659d4135_91992777',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '02f3efde752bec4b8f1d87b0ca892f6e720e35de' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossego_Oldal/kozossegi_oldal/Kozossegi/Teszt/templates/menu.tpl',
-      1 => 1618592114,
+      1 => 1618600292,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6079c1755ada23_84936654 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6079e1659d4135_91992777 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div id="app">
     <div class="header">
         <!-- Image and text -->
@@ -51,8 +51,14 @@ function content_6079c1755ada23_84936654 (Smarty_Internal_Template $_smarty_tpl)
                     <a href="#"><b-icon icon="bell-fill" aria-hidden="true" class="mr-2"></b-icon>Ertesitesek</a>
                 </li>
             </ul>
+            <div class="input-group rounded">
+                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                       aria-describedby="search-addon" />
+                <span class="input-group-text border-0" id="search-addon">
+                            <i class="fas fa-search"></i>
+                        </span>
+            </div>
         </div>
-
     </nav>
 
 </div><?php }

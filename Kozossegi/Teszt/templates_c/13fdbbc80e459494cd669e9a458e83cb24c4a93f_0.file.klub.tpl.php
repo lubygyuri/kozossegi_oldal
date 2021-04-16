@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-16 19:31:23
+/* Smarty version 3.1.39, created on 2021-04-16 21:12:59
   from '/opt/lampp/htdocs/Kozossego_Oldal/kozossegi_oldal/Kozossegi/Teszt/templates/klub.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6079c9ebc7bec0_91430229',
+  'unifunc' => 'content_6079e1bb7bd199_66786240',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '13fdbbc80e459494cd669e9a458e83cb24c4a93f' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossego_Oldal/kozossegi_oldal/Kozossegi/Teszt/templates/klub.tpl',
-      1 => 1618594281,
+      1 => 1618600337,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:menu.tpl' => 1,
   ),
 ),false)) {
-function content_6079c9ebc7bec0_91430229 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6079e1bb7bd199_66786240 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -32,11 +32,11 @@ $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smar
         <b-col>
             <div class="shadow-lg p-3 bg-white rounded align-self-baseline w-75 p-3 mb-5 mt-5 ml-4">
                 <b-list-group>
-                    <b-list-group-item>Cras justo odio</b-list-group-item>
-                    <b-list-group-item active>Dapibus ac facilisis in</b-list-group-item>
-                    <b-list-group-item>Morbi leo risus</b-list-group-item>
-                    <b-list-group-item>Porta ac consectetur ac</b-list-group-item>
-                    <b-list-group-item>Vestibulum at eros</b-list-group-item>
+                    <b-list-group-item>Klub 1</b-list-group-item>
+                    <b-list-group-item active>Klub 2</b-list-group-item>
+                    <b-list-group-item>Klub 3</b-list-group-item>
+                    <b-list-group-item>Klub 4</b-list-group-item>
+                    <b-list-group-item>Klub 5</b-list-group-item>
                 </b-list-group>
 
             </div>
@@ -109,16 +109,17 @@ echo $_prefixVariable5;?>
                     </div>
         </b-col>
         <b-col>
-        <div class="shadow-lg p-3 bg-white rounded align-self-baseline w-75 p-3 mb-5 mt-5 ml-4">
-        <div class="more-details">
-        <ul>
-            <li>Klub 1</li>
-            <li>Klub 2</li>
-            <li>Klub 3</li>
-        </ul>
-        </div>
-
-        </div>
+                <div class="shadow-lg p-3 bg-white rounded align-self-baseline w-75 p-3 mb-5 mt-5 ml-4">
+                    <div class="input-group rounded">
+                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                               aria-describedby="search-addon" />
+                        <span class="input-group-text border-0" id="search-addon">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </div>
+                    <b-button class="mt-3">Csatlakozás</b-button>
+                    <b-button class="mt-3">Új hozzáadás</b-button>
+                 </div>
         </b-col>
 
 
