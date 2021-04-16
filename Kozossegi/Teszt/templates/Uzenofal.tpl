@@ -1,4 +1,5 @@
 {include file="header.tpl"}
+{include file="menu.tpl"}
 
 <div id="app2"  class="container px-4 mt-5">
 

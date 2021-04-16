@@ -1,5 +1,31 @@
-{include file="header.tpl"}
-{include file="menu.tpl"}
+<?php
+/* Smarty version 3.1.39, created on 2021-04-16 17:30:16
+  from '/opt/lampp/htdocs/Kozossego_Oldal/kozossegi_oldal/Kozossegi/Teszt/templates/profil.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.39',
+  'unifunc' => 'content_6079ad888c8d23_01832189',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '11cae28c8935cb5c66880e952afd25f6d037c378' => 
+    array (
+      0 => '/opt/lampp/htdocs/Kozossego_Oldal/kozossegi_oldal/Kozossegi/Teszt/templates/profil.tpl',
+      1 => 1618586990,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:header.tpl' => 1,
+    'file:menu.tpl' => 1,
+  ),
+),false)) {
+function content_6079ad888c8d23_01832189 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+$_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 <div id="app3">
     <div class="profile-area">
         <div class="profile-container">
@@ -36,4 +62,5 @@
             </div>
         </div>
     </div>
-</div>
+</div><?php }
+}
