@@ -122,3 +122,28 @@ a{
     display: flex;
     justify-content: space-between;
 }
+
+.post-card {
+    width: 80%;
+}
+
+.post-header {
+    width: 100%;
+    background-color: #999;
+    display: flex;
+}
+
+.post-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #000;
+}
+
+.post-header-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    width: 100%;
+}
