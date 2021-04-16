@@ -57,12 +57,32 @@
 
                     {* Posztok *}
                     <div class="profile-card post-card mx-auto">
+                        {* Posztok fejléce *}
                         <div class="post-header">
+                            {* Profilkép *}
                             <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="profilkép">
+                            {* Poszt adatok *}
                             <div class="post-header-details">
                                 <span>Example example</span>
                                 <span class="small">12:32</span>
                             </div>
+                        </div>
+
+                        {* Posztok main *}
+                        <div class="post-main">
+                            <div class="image-container">
+                                {* Poszt képe *}
+                                <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="">
+                            </div>
+                            {* Posztok szövege *}
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda culpa deleniti deserunt nemo ratione. Animi aspernatur autem cupiditate dolore eligendi est, illum iste iure mollitia necessitatibus optio praesentium quam rerum sequi similique tempore veritatis voluptatum.</p>
+                        </div>
+
+                        {* Akció gombok *}
+                        <div class="post-footer">
+                            <button><i class="far fa-heart"></i>Tetszik</button>
+                            <button><i class="far fa-comment-alt"></i>Hozzászólás</button>
+                            <button><i class="fas fa-external-link-alt"></i>Megosztás</button>
                         </div>
                     </div>
 

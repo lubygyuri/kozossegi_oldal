@@ -130,6 +130,8 @@ a{
     width: 100%;
     background-color: #999;
     display: flex;
+    padding: 5px 20px;
+    height: 60px;
 }
 
 .post-header img {
@@ -137,12 +139,52 @@ a{
     height: 50px;
     border-radius: 50%;
     border: 2px solid #000;
+    margin-right: 20px;
 }
 
 .post-header-details {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 20px;
     width: 100%;
 }
+
+.post-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.post-main img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-height: 300px;
+}
+
+.post-main p {
+    padding: 10px 20px;
+    text-align: justify;
+    margin-bottom: 0;
+}
+
+.post-footer {
+    border-top: 2px solid #999;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.post-footer button {
+    width: 100%;
+    border: none;
+    padding: 5px 10px;
+}
+
+.post-footer button:hover {
+    background-color: #999;
+}
+

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-16 19:15:22
+/* Smarty version 3.1.39, created on 2021-04-16 21:08:46
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\profil.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6079c62ae3b713_73133589',
+  'unifunc' => 'content_6079e0be54e6e0_76031782',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '740e58fd08c10b9345a3c7d0b573e8ff59b0f785' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\profil.tpl',
-      1 => 1618593320,
+      1 => 1618600123,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:menu.tpl' => 1,
   ),
 ),false)) {
-function content_6079c62ae3b713_73133589 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6079e0be54e6e0_76031782 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -74,12 +74,25 @@ $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smar
                     </div>
 
                                         <div class="profile-card post-card mx-auto">
-                        <div class="post-header">
-                            <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="profilkép">
-                            <div class="post-header-details">
+                                                <div class="post-header">
+                                                        <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="profilkép">
+                                                        <div class="post-header-details">
                                 <span>Example example</span>
                                 <span class="small">12:32</span>
                             </div>
+                        </div>
+
+                        <div class="post-main">
+                            <div class="image-container">
+                                <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="">
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda culpa deleniti deserunt nemo ratione. Animi aspernatur autem cupiditate dolore eligendi est, illum iste iure mollitia necessitatibus optio praesentium quam rerum sequi similique tempore veritatis voluptatum.</p>
+                        </div>
+
+                        <div class="post-footer">
+                            <button><i class="far fa-heart"></i>Tetszik</button>
+                            <button><i class="far fa-comment-alt"></i>Hozzászólás</button>
+                            <button><i class="fas fa-external-link-alt"></i>Megosztás</button>
                         </div>
                     </div>
 
