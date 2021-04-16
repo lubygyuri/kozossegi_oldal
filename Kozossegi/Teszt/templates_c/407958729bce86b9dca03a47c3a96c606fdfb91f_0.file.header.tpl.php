@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-16 16:23:30
+/* Smarty version 3.1.39, created on 2021-04-16 17:31:07
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60799de29994c6_90193553',
+  'unifunc' => 'content_6079adbb1ec219_92365690',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '407958729bce86b9dca03a47c3a96c606fdfb91f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\header.tpl',
-      1 => 1618583008,
+      1 => 1618587046,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60799de29994c6_90193553 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6079adbb1ec219_92365690 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html >
 <HTML lang="hu">
 <HEAD>
@@ -52,41 +52,7 @@ function content_60799de29994c6_90193553 (Smarty_Internal_Template $_smarty_tpl)
 >
 </HEAD>
 <BODY>
-    <div id="app">
-        <div class="header">
-            <!-- Image and text -->
-            <b-navbar variant="faded" type="dark">
-                <b-navbar-brand href="index.php">
-                    <img src="https://placekitten.com/g/30/30" class="d-inline-block align-top" alt="Kitten">
-                    fsociety
-                </b-navbar-brand>
-            </b-navbar>
-        </div>
 
-        <nav class="navbar border border-4 navbar-expand-lg">
-            <div class="container-fluid">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item mr-4 border border-4 p-2">
-                        <a href="Uzenofal.php" ><b-icon icon="house-fill" aria-hidden="true" class="mr-2"></b-icon>Kezdolap</a>
-                    </li>
-                    <li class="nav-item mr-4 border border-4 p-2">
-                        <a href="profil.php"><b-icon icon="person-fill" aria-hidden="true" class="mr-2"></b-icon>Profil</a>
-                    </li>
-                    <li class="nav-item mr-4 border border-4 p-2">
-                        <a href="#"><b-icon icon="chat-square-dots-fill" aria-hidden="true" class="mr-2"></b-icon>Uzenetek</a>
-                    </li>
-                    <li class="nav-item mr-4 border border-4 p-2">
-                        <a href="#"><b-icon icon="people-fill" aria-hidden="true" class="mr-2"></b-icon>Csoportok</a>
-                    </li>
-                    <li class="nav-item mr-4 border border-4 p-2">
-                        <a href="#"><b-icon icon="bell-fill" aria-hidden="true" class="mr-2"></b-icon>Ertesitesek</a>
-                    </li>
-                </ul>
-            </div>
-
-        </nav>
-
-    </div>
 
 
 

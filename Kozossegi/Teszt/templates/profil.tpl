@@ -19,7 +19,7 @@
                         <span><i class="fas fa-birthday-cake"></i>2000.08.05.</span>
                     </div>
                     <div class="flex-row">
-                        <div class="profile-card more-details col-md-4">
+                        <div class="profile-card more-details">
                             <h3>Infos</h3>
                             <ul>
                                 <li><i class="fas fa-user"></i>Male (Gender)</li>
@@ -27,9 +27,20 @@
                                 <li><i class="fas fa-graduation-cap"></i>SZTE (University)</li>
                             </ul>
                         </div>
-                        <div class="profile-card profile-posting col-md-7">
-                            <h3>Poszt</h3>
-                            <textarea name="" id="" cols="30" rows="10" placeholder="Posztolj..."></textarea>
+                        <div class="profile-card profile-posting">
+                            <h3>Bejegyzés Írása</h3>
+                            <div class="form-floating mt-3 mb-3">
+                                <textarea class="form-control" placeholder="Írjon bejegyzést" id="floatingTextarea2"></textarea>
+                            </div>
+                            <div class="flex-row">
+                                <div class="image-upload">
+                                    <label for="file-input">
+                                        <p class="h6 mb-2"><b-icon icon="upload" aria-hidden="true" class="mr-2"></b-icon>Kép feltöltés</p>
+                                    </label>
+                                    <input id="file-input" type="file"/>
+                                </div>
+                                <button type="button" class="btn btn-primary">Közzététel</button>
+                            </div>
                         </div>
                     </div>
                 </div>

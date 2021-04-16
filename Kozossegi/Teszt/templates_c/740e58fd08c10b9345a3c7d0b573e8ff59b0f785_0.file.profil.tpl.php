@@ -1,28 +1,30 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-16 17:12:55
+/* Smarty version 3.1.39, created on 2021-04-16 18:12:58
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\profil.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6079a977544de9_26613641',
+  'unifunc' => 'content_6079b78a73ee54_01974615',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '740e58fd08c10b9345a3c7d0b573e8ff59b0f785' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\profil.tpl',
-      1 => 1618585965,
+      1 => 1618589574,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
+    'file:menu.tpl' => 1,
   ),
 ),false)) {
-function content_6079a977544de9_26613641 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6079b78a73ee54_01974615 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+$_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div id="app3">
     <div class="profile-area">
@@ -43,7 +45,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
                         <span><i class="fas fa-birthday-cake"></i>2000.08.05.</span>
                     </div>
                     <div class="flex-row">
-                        <div class="profile-card more-details col-md-4">
+                        <div class="profile-card more-details">
                             <h3>Infos</h3>
                             <ul>
                                 <li><i class="fas fa-user"></i>Male (Gender)</li>
@@ -51,9 +53,20 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
                                 <li><i class="fas fa-graduation-cap"></i>SZTE (University)</li>
                             </ul>
                         </div>
-                        <div class="profile-card profile-posting col-md-7">
-                            <h3>Poszt</h3>
-                            <textarea name="" id="" cols="30" rows="10" placeholder="Posztolj..."></textarea>
+                        <div class="profile-card profile-posting">
+                            <h3>Bejegyzés Írása</h3>
+                            <div class="form-floating mt-3 mb-3">
+                                <textarea class="form-control" placeholder="Írjon bejegyzést" id="floatingTextarea2"></textarea>
+                            </div>
+                            <div class="flex-row">
+                                <div class="image-upload">
+                                    <label for="file-input">
+                                        <p class="h6 mb-2"><b-icon icon="upload" aria-hidden="true" class="mr-2"></b-icon>Kép feltöltés</p>
+                                    </label>
+                                    <input id="file-input" type="file"/>
+                                </div>
+                                <button type="button" class="btn btn-primary">Közzététel</button>
+                            </div>
                         </div>
                     </div>
                 </div>
