@@ -1,4 +1,29 @@
-{include file="header.tpl"}
+<?php
+/* Smarty version 3.1.39, created on 2021-04-16 19:29:45
+  from 'D:\XAMPP\htdocs\adatbalapu\kozossegi_oldal\Kozossegi\Teszt\templates\index.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.39',
+  'unifunc' => 'content_6079c98969a1a1_14083838',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'b271b32cbc21d3bc4b91acca0a3e73e4770ed4af' => 
+    array (
+      0 => 'D:\\XAMPP\\htdocs\\adatbalapu\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\index.tpl',
+      1 => 1618594183,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:header.tpl' => 1,
+  ),
+),false)) {
+function content_6079c98969a1a1_14083838 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 <div id="app4" class="container px-4 mt-5">
 
   <div class="shadow-lg p-3 bg-white rounded align-self-baseline mr-2 w-50 p-3 mb-5 mx-auto">
@@ -45,4 +70,5 @@
   </div>
 
 
-</div>
+</div><?php }
+}

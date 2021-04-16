@@ -1,0 +1,33 @@
+.login-flex-c{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#sign-in{
+    width: 100%;
+    font-weight: bolder;
+}
+
+#register-id{
+    width: 75%;
+}
+
+.kulsodiv{
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-backdrop
+{
+    opacity:0.5 !important;
+}
+
+.register-genderclass{
+    border: 2px solid grey;
+    margin: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
