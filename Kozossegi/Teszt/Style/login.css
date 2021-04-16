@@ -15,7 +15,7 @@
     width: 75%;
 }
 
-.kulsodiv{
+.kulso-form{
     display: flex;
     flex-direction: column;
 }
@@ -30,4 +30,9 @@
     margin: auto;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+#cancel{
+    width: 25%;
+    margin-left: 5px;
 }
