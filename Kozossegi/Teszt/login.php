@@ -21,6 +21,9 @@ if(isset($_POST["submit"])){
     }
 
 //    TODO: session start
+    $smarty->assign("keresztnev", $valid["KERESZTNEV"]);
+    $smarty->assign("email", $valid["EMAIL"]);
+    $smarty->assign("szuletesiDatum", $valid["SZULETESI_DATUM"]);
     $smarty->display("profil.tpl");
 } else {
     $smarty->display("index.tpl");

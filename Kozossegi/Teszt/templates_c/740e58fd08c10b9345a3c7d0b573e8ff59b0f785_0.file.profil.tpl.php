@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-16 21:14:30
+/* Smarty version 3.1.39, created on 2021-04-19 00:18:33
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\profil.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6079e21652cf93_81641931',
+  'unifunc' => 'content_607cb039725b17_89112882',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '740e58fd08c10b9345a3c7d0b573e8ff59b0f785' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\profil.tpl',
-      1 => 1618600259,
+      1 => 1618784306,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:menu.tpl' => 1,
   ),
 ),false)) {
-function content_6079e21652cf93_81641931 (Smarty_Internal_Template $_smarty_tpl) {
+function content_607cb039725b17_89112882 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -40,11 +40,23 @@ $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smar
 
                                 <div class="profile-main">
                                         <div class="profile-name">
-                        <h2>Example Example</h2>
+                        <h2><?php ob_start();
+echo $_smarty_tpl->tpl_vars['keresztnev']->value;
+$_prefixVariable1 = ob_get_clean();
+echo $_prefixVariable1;?>
+</h2>
                     </div>
                                         <div class="personal-details">
-                        <span><i class="fas fa-envelope"></i>example@example.com</span>
-                        <span><i class="fas fa-birthday-cake"></i>2000.08.05.</span>
+                        <span><i class="fas fa-envelope"></i><?php ob_start();
+echo $_smarty_tpl->tpl_vars['email']->value;
+$_prefixVariable2 = ob_get_clean();
+echo $_prefixVariable2;?>
+</span>
+                        <span><i class="fas fa-birthday-cake"></i><?php ob_start();
+echo $_smarty_tpl->tpl_vars['szuletesiDatum']->value;
+$_prefixVariable3 = ob_get_clean();
+echo $_prefixVariable3;?>
+</span>
                     </div>
 
                                         <div class="flex-row">
