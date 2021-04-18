@@ -139,3 +139,33 @@
 {*        </div>*}
 {*    </div>*}
 {*</li>*}
+{*<li>*}
+{*    <img src="https://images.unsplash.com/photo-1492681290082-e932832941e6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="profilkép">*}
+{*    <div class="friend-details">*}
+{*        <span>Example6 Example6</span>*}
+{*        <div class="flex-row">*}
+{*            <p>Lorem ipsum dolor...</p>*}
+{*            <small>21:11</small>*}
+{*        </div>*}
+{*    </div>*}
+{*</li>*}
+{*<li>*}
+{*    <img src="https://images.unsplash.com/photo-1492681290082-e932832941e6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="profilkép">*}
+{*    <div class="friend-details">*}
+{*        <span>Example6 Example6</span>*}
+{*        <div class="flex-row">*}
+{*            <p>Lorem ipsum dolor...</p>*}
+{*            <small>21:11</small>*}
+{*        </div>*}
+{*    </div>*}
+{*</li>*}
+{*<li>*}
+{*    <img src="https://images.unsplash.com/photo-1492681290082-e932832941e6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="profilkép">*}
+{*    <div class="friend-details">*}
+{*        <span>Example6 Example6</span>*}
+{*        <div class="flex-row">*}
+{*            <p>Lorem ipsum dolor...</p>*}
+{*            <small>21:11</small>*}
+{*        </div>*}
+{*    </div>*}
+{*</li>*}

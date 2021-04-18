@@ -2,12 +2,12 @@
 <div id="app4" class="container px-4 mt-5">
 
   <div class="shadow-lg p-3 bg-white rounded align-self-baseline mr-2 w-50 p-3 mb-5 mx-auto">
-      <form action="#" class="kulso-form">
+      <form action="login.php" class="kulso-form" method="post">
           <h1 class="h3 mb-3 font-weight-bold text-center">Üdvözöllek!</h1>
           <input type="email" name="email" placeholder="E-mail cím" class="mt-3 p-2 h-25">
           <input type="password" name="password" placeholder="Jelszó" class="mb-3 mt-2 p-2 h-25">
           <div class="login-flex-c">
-            <b-button id="sign-in" variant="primary" class="p-2">Bejelentkezés</b-button>
+            <input type="submit" name="submit" id="sign-in" variant="primary" class="p-2">Bejelentkezés</input>
             <b-button id="register-id" variant="success" class="m-3 p2" @click="$bvModal.show('bv-modal-example')">Regisztráció</b-button>
           </div>
       </form>
@@ -15,7 +15,7 @@
         <b-modal id="bv-modal-example" hide-footer title="Regisztráció">
           <p class="mt-2">Kérlek töltsd ki az alábbi adatokat:</p>
           <div>
-            <form action="#" class="kulso-form">
+            <form action="regisztracio.php" class="kulso-form" method="post">
               <input type="text" name="firstname" placeholder="Vezetéknév" class="mt-3 p-2 h-25">
               <input type="text" name="lastname" placeholder="Keresztnév" class="mt-3 p-2 h-25">
               <input type="email" name="email" placeholder="E-mail cím" class="mt-3 p-2 h-25">
@@ -37,7 +37,7 @@
                 </div>
               </div>
               <div class="flex-row">
-                <b-button id="register-id" variant="success" class="mt-3 p2">Regisztráció</b-button>
+                <input type="submit" id="register-id" variant="success" class="mt-3 p2" name="submit">Regisztráció</input>
                 <b-button id="cancel" variant="warning" class="mt-3 p2" @click="$bvModal.hide('bv-modal-example')">Cancel</b-button>
               </div>
             </form>
