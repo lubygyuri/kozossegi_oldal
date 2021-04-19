@@ -10,21 +10,20 @@ if(isset($_POST["submit"])){
     $felhasznalo->setEmail($_POST["email"]);
     $felhasznalo->setJelszo($_POST["password"]);
 
-//    TODO: Error handling
+    $validation = new ValidatorController();
+    $errors = $validation->validateLogin($felhasznalo->getEmail(), $felhasznalo->getJelszo());
 
-    $controller = new FelhasznaloController();
-    $valid = $controller->login($felhasznalo);
-
-    if (null == $valid) {
-        $smarty->display("index.tpl");
+    if (count($errors) == 0) {
+        $controller = new FelhasznaloController();
+        $controller->login($felhasznalo);
+        //    TODO: session start
+        $smarty->display("profil.tpl");
         exit();
     }
 
-//    TODO: session start
-    $smarty->assign("keresztnev", $valid["KERESZTNEV"]);
-    $smarty->assign("email", $valid["EMAIL"]);
-    $smarty->assign("szuletesiDatum", $valid["SZULETESI_DATUM"]);
-    $smarty->display("profil.tpl");
+    $smarty->assign("errors", $errors);
+    $smarty->display("index.tpl");
+    exit();
 } else {
     $smarty->display("index.tpl");
     exit();

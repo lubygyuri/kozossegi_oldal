@@ -18,12 +18,12 @@
                 <div class="profile-main">
                     {* Teljes név *}
                     <div class="profile-name">
-                        <h2>{{$keresztnev}}</h2>
+                        <h2>Example example</h2>
                     </div>
                     {* Személyes adatok *}
                     <div class="personal-details">
-                        <span><i class="fas fa-envelope"></i>{{$email}}</span>
-                        <span><i class="fas fa-birthday-cake"></i>{{$szuletesiDatum}}</span>
+                        <span><i class="fas fa-envelope"></i>example@example.com</span>
+                        <span><i class="fas fa-birthday-cake"></i>2000-08-05</span>
                     </div>
 
                     {* Adatok és bejegyzés szekció *}

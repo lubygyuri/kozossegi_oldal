@@ -36,3 +36,9 @@
     width: 25%;
     margin-left: 5px;
 }
+
+.error {
+    color: indianred;
+    font-weight: bold;
+    text-align: center;
+}

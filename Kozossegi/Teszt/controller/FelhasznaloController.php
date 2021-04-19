@@ -8,8 +8,7 @@ class FelhasznaloController extends DB {
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$email]);
 
-        $user = $stmt->fetchAll();
-        return $user;
+        return $stmt->fetch();
     }
 
     public function registration(Felhasznalo $felhasznalo) {
@@ -20,18 +19,7 @@ class FelhasznaloController extends DB {
     }
 
     public function login(Felhasznalo $felhasznalo) {
-        $user = $this->getUserFromDB($felhasznalo->getEmail());
-        $hashed_user_pwd = $user[0]["JELSZO"];
-
-        $validUser = password_verify($felhasznalo->getJelszo(), trim($hashed_user_pwd));
-
-//        TODO: Error ha nem egyezik a jelszo
-
-        if ($validUser) {
-            return $user[0];
-        }
-
-        return null;
+        return $this->getUserFromDB($felhasznalo->getEmail());
 //        session_start();
 //        $_SESSION["email"] = $user[0]["email"];
 //        header("Location: ../profile_page.php");
