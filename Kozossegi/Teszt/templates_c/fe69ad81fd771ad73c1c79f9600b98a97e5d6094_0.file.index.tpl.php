@@ -1,27 +1,28 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-19 20:09:19
+/* Smarty version 3.1.39, created on 2021-04-20 00:16:16
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_607dc74f947253_92341837',
+  'unifunc' => 'content_607e01303d4312_19011149',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fe69ad81fd771ad73c1c79f9600b98a97e5d6094' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\index.tpl',
-      1 => 1618855757,
+      1 => 1618870566,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
+    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_607dc74f947253_92341837 (Smarty_Internal_Template $_smarty_tpl) {
+function content_607e01303d4312_19011149 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div id="app4" class="container px-4 mt-5">
@@ -89,5 +90,8 @@ echo $_prefixVariable1;?>
   </div>
 
 
-</div><?php }
+</div>
+
+<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}
 }

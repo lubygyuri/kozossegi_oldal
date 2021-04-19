@@ -3,8 +3,7 @@
         <!-- Image and text -->
         <b-navbar variant="faded" type="dark">
             <b-navbar-brand href="index.php">
-                <img src="https://placekitten.com/g/30/30" class="d-inline-block align-top" alt="Kitten">
-                fsociety
+                <img src="style/logo.png" class="d-inline-block align-top" alt="fsociety">
             </b-navbar-brand>
         </b-navbar>
     </div>
@@ -31,7 +30,7 @@
             </li>
             <div class="input-group rounded">
                 <input type="search" class="form-control rounded mr-2" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
-                <button class="input-group-text border-0" id="search-addon"><i class="fas fa-search"></i></button>
+                <button class="btn btn-primary" id="search-addon"><i class="fas fa-search"></i></button>
             </div>
         </ul>
     </nav>

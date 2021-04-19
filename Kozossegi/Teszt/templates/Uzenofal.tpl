@@ -85,3 +85,5 @@
         {/strip}
     {/for}
 </div>
+
+{include file="footer.tpl"}

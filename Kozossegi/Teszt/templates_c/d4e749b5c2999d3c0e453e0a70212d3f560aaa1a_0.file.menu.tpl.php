@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-19 21:38:08
+/* Smarty version 3.1.39, created on 2021-04-20 00:29:25
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\menu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_607ddc20319a05_40421510',
+  'unifunc' => 'content_607e0445264d70_68559667',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd4e749b5c2999d3c0e453e0a70212d3f560aaa1a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\menu.tpl',
-      1 => 1618861085,
+      1 => 1618871362,
       2 => 'file',
     ),
   ),
@@ -20,14 +20,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_607ddc20319a05_40421510 (Smarty_Internal_Template $_smarty_tpl) {
+function content_607e0445264d70_68559667 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div id="app">
     <div class="header">
         <!-- Image and text -->
         <b-navbar variant="faded" type="dark">
             <b-navbar-brand href="index.php">
-                <img src="https://placekitten.com/g/30/30" class="d-inline-block align-top" alt="Kitten">
-                fsociety
+                <img src="style/logo.png" class="d-inline-block align-top" alt="fsociety">
             </b-navbar-brand>
         </b-navbar>
     </div>
@@ -54,7 +53,7 @@ function content_607ddc20319a05_40421510 (Smarty_Internal_Template $_smarty_tpl)
             </li>
             <div class="input-group rounded">
                 <input type="search" class="form-control rounded mr-2" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
-                <button class="input-group-text border-0" id="search-addon"><i class="fas fa-search"></i></button>
+                <button class="btn btn-primary" id="search-addon"><i class="fas fa-search"></i></button>
             </div>
         </ul>
     </nav>

@@ -114,3 +114,5 @@
 
     </b-row>
 </div>
+
+{include file="footer.tpl"}

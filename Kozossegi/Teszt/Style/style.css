@@ -15,6 +15,10 @@ i {
     height: 150px;
 }
 
+.header img {
+    max-width: 250px;
+}
+
 b-navbar-brand{
     color: white;
 }
@@ -200,3 +204,15 @@ b-navbar-brand{
     background-color: #999;
 }
 
+/* Footer */
+footer {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    background-color: #2e2e2d;
+    padding: 5px;
+}
