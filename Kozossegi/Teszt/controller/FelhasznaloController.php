@@ -1,7 +1,7 @@
 <?php
 
 
-class FelhasznaloDAO extends DB {
+class FelhasznaloController extends DB {
 
     protected function getUserFromDB($email) {
         $sql = "SELECT * FROM LUBLO.FELHASZNALO WHERE EMAIL = ?";

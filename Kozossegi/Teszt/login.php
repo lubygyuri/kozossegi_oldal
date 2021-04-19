@@ -1,6 +1,6 @@
 <?php
 include_once 'includes/classAutoLoad.php';
-include_once 'includes/daoAutoLoad.php';
+include_once 'includes/controllerAutoLoad.php';
 
 require '../libs/Smarty.class.php';
 $smarty = new Smarty;
@@ -12,8 +12,8 @@ if(isset($_POST["submit"])){
 
 //    TODO: Error handling
 
-    $dao = new FelhasznaloDAO();
-    $valid = $dao->login($felhasznalo);
+    $controller = new FelhasznaloController();
+    $valid = $controller->login($felhasznalo);
 
     if (null == $valid) {
         $smarty->display("index.tpl");

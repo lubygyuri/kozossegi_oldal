@@ -1,8 +1,8 @@
 <?php
-spl_autoload_register('daoAutoLoad');
+spl_autoload_register('controllerAutoLoad');
 
-function daoAutoLoad($className) {
-    $path = "dao/";
+function controllerAutoLoad($className) {
+    $path = "controller/";
     $extension = ".php";
     $fullPath = $path . $className . $extension;
 
