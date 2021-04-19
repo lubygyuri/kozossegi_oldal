@@ -8,7 +8,7 @@
           <input type="email" name="email" placeholder="E-mail cím" class="mt-3 p-2 h-25" required>
           <input type="password" name="password" placeholder="Jelszó" class="mb-3 mt-2 p-2 h-25" required>
           <div class="login-flex-c">
-            <input type="submit" name="submit" id="sign-in" variant="primary" class="p-2">Bejelentkezés</input>
+            <button type="submit" name="submit" id="sign-in" class="p-2 btn btn-primary">Bejelentkezés</button>
             <b-button id="register-id" variant="success" class="m-3 p2" @click="$bvModal.show('bv-modal-example')">Regisztráció</b-button>
           </div>
       </form>
@@ -22,8 +22,8 @@
               <input type="email" name="email" placeholder="E-mail cím" class="mt-3 p-2 h-25" required>
               <input type="password" name="password" placeholder="Jelszó" class="mt-3 p-2 h-25" required>
               <input type="password" name="password-secure" placeholder="Jelszó megerősítése" class="mt-3 p-2 h-25">
-              <input type="date" name="birth-date" class="mt-2 h-25" required>
-              <div class="flex-row mt-3 mb-3">
+              <input type="date" name="birth-date" class="mt-3 p-2 h-25" required>
+              <div class="flex-row mt-3 p-2 h-25">
                 <div class="register-genderclass rounded">
                   <input type="radio" id="male" name="gender" value="male">
                   <label for="male">Férfi</label><br>
@@ -38,7 +38,7 @@
                 </div>
               </div>
               <div class="flex-row">
-                <input type="submit" id="register-id" variant="success" class="mt-3 p2" name="submit">Regisztráció</input>
+                <button type="submit" id="register-id" class="mt-3 p2 btn btn-success" name="submit">Regisztráció</button>
                 <b-button id="cancel" variant="warning" class="mt-3 p2" @click="$bvModal.hide('bv-modal-example')">Cancel</b-button>
               </div>
             </form>

@@ -20,16 +20,20 @@
     flex-direction: column;
 }
 
-.modal-backdrop
-{
+.modal-backdrop {
     opacity:0.5 !important;
 }
 
-.register-genderclass{
+.register-genderclass {
     border: 2px solid grey;
     margin: auto;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.register-genderclass label {
+    margin-bottom: 0;
+    padding: 5px 10px;
 }
 
 #cancel{

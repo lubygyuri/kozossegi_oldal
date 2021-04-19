@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-19 18:37:23
+/* Smarty version 3.1.39, created on 2021-04-19 20:01:51
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_607db1c3845d23_46425859',
+  'unifunc' => 'content_607dc58fc8a2e3_48482726',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fe69ad81fd771ad73c1c79f9600b98a97e5d6094' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\index.tpl',
-      1 => 1618850241,
+      1 => 1618855309,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_607db1c3845d23_46425859 (Smarty_Internal_Template $_smarty_tpl) {
+function content_607dc58fc8a2e3_48482726 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div id="app4" class="container px-4 mt-5">
@@ -32,7 +32,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
           <input type="email" name="email" placeholder="E-mail cím" class="mt-3 p-2 h-25" required>
           <input type="password" name="password" placeholder="Jelszó" class="mb-3 mt-2 p-2 h-25" required>
           <div class="login-flex-c">
-            <input type="submit" name="submit" id="sign-in" variant="primary" class="p-2">Bejelentkezés</input>
+            <button type="submit" name="submit" id="sign-in" class="p-2 btn btn-primary">Bejelentkezés</button>
             <b-button id="register-id" variant="success" class="m-3 p2" @click="$bvModal.show('bv-modal-example')">Regisztráció</b-button>
           </div>
       </form>
@@ -46,8 +46,8 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
               <input type="email" name="email" placeholder="E-mail cím" class="mt-3 p-2 h-25" required>
               <input type="password" name="password" placeholder="Jelszó" class="mt-3 p-2 h-25" required>
               <input type="password" name="password-secure" placeholder="Jelszó megerősítése" class="mt-3 p-2 h-25">
-              <input type="date" name="birth-date" class="mt-2 h-25" required>
-              <div class="flex-row mt-3 mb-3">
+              <input type="date" name="birth-date" class="mt-3 p-2 h-25" required>
+              <div class="flex-row mt-3 p-2 h-25">
                 <div class="register-genderclass rounded">
                   <input type="radio" id="male" name="gender" value="male">
                   <label for="male">Férfi</label><br>
@@ -62,7 +62,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
                 </div>
               </div>
               <div class="flex-row">
-                <input type="submit" id="register-id" variant="success" class="mt-3 p2" name="submit">Regisztráció</input>
+                <button type="submit" id="register-id" class="mt-3 p2 btn btn-success" name="submit">Regisztráció</button>
                 <b-button id="cancel" variant="warning" class="mt-3 p2" @click="$bvModal.hide('bv-modal-example')">Cancel</b-button>
               </div>
             </form>
