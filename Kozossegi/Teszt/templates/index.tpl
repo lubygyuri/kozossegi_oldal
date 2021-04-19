@@ -1,10 +1,10 @@
 {include file="header.tpl"}
-{* TODO: Smarty errors handling *}
 <div id="app4" class="container px-4 mt-5">
 
   <div class="shadow-lg p-3 bg-white rounded align-self-baseline mr-2 w-50 p-3 mb-5 mx-auto">
       <form action="login.php" class="kulso-form" method="post">
           <h1 class="h3 mb-3 font-weight-bold text-center">Üdvözöllek!</h1>
+
           <input type="email" name="email" placeholder="E-mail cím" class="mt-3 p-2 h-25" required>
           <input type="password" name="password" placeholder="Jelszó" class="mb-3 mt-2 p-2 h-25" required>
           <div class="login-flex-c">
@@ -45,10 +45,10 @@
           </div>
         </b-modal>
 
-
+    {*    Hibák megjelenítése  *}
     {if !is_null($errors)}
       {for $i=0 to $errors|@count-1}
-        <p class="error">{{$errors[$i]}}</p>
+        <div class="alert alert-danger" role="alert">{{$errors[$i]}}</div>
       {/for}
     {/if}
 

@@ -4,27 +4,37 @@
     box-sizing: border-box;
 }
 
-a {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 i {
     margin-right: 5px;
 }
+
+/* Header */
 .header{
     background-image: linear-gradient(to right bottom, #7725a3, #613cab, #4b4baf, #3556af, #235fac);
     display: flex;
-    height: 100px;
+    height: 150px;
 }
 
 b-navbar-brand{
     color: white;
 }
 
-.image-upload > input
-{
+/* Navigation bar */
+.nav {
+    padding: 5px 10px !important;
+    /* TODO: media-n kikapcsolni a nowrap-et */
+    flex-wrap: nowrap !important;
+    align-items: center;
+}
+
+.nav-item a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+}
+
+.image-upload > input {
     display: none;
 }
 

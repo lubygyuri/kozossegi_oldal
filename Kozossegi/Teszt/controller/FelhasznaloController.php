@@ -19,12 +19,9 @@ class FelhasznaloController extends DB {
     }
 
     public function login(Felhasznalo $felhasznalo) {
-//        Visszaadja az adott felhasználót egy asszociatív tömbként
-        return $this->getUserFromDB($felhasznalo->getEmail());
-//        session_start();
-//        $_SESSION["email"] = $user[0]["email"];
-//        header("Location: ../profile_page.php");
-//        exit();
+        $user = $this->getUserFromDB($felhasznalo->getEmail());
+//        Visszaadja az adott felhasználó azonosítóját
+        return $user["AZONOSITO"];
     }
 
 }
