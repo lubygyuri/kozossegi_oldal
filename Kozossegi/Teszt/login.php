@@ -15,13 +15,12 @@ if(isset($_POST["submit"])){
 
     if (count($errors) == 0) {
         $controller = new FelhasznaloController();
-        $user_id = $controller->login($felhasznalo);
+        $user_email = $controller->login($felhasznalo);
 
-//        TODO: session implementation
         session_start();
-        $_SESSION["azonosito"] = $user_id;
+        $_SESSION["email"] = $user_email;
 
-        $smarty->display("profil.tpl");
+        header("Location: profil.php");
         exit();
     }
 

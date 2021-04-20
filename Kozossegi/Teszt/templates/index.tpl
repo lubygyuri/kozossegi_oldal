@@ -25,15 +25,15 @@
               <input type="date" name="birth-date" class="mt-3 p-2 h-25" required>
               <div class="flex-row mt-3 p-2 h-25">
                 <div class="register-genderclass rounded">
-                  <input type="radio" id="male" name="gender" value="male">
+                  <input type="radio" id="male" name="gender" value="férfi">
                   <label for="male">Férfi</label><br>
                 </div>
                 <div class="register-genderclass rounded" >
-                  <input type="radio" id="female" name="gender" value="female">
+                  <input type="radio" id="female" name="gender" value="nő">
                   <label for="female">Nő</label><br>
                 </div>
                 <div class="register-genderclass rounded">
-                  <input type="radio" id="other" name="gender" value="other" checked>
+                  <input type="radio" id="other" name="gender" value="egyéb" checked>
                   <label for="other">Egyéb</label>
                 </div>
               </div>
@@ -46,7 +46,7 @@
         </b-modal>
 
     {*    Hibák megjelenítése  *}
-    {if !is_null($errors)}
+    {if $errors}
       {for $i=0 to $errors|@count-1}
         <div class="alert alert-danger" role="alert">{{$errors[$i]}}</div>
       {/for}

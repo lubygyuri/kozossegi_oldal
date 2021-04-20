@@ -1,5 +1,6 @@
 {include file="header.tpl"}
 {include file="menu.tpl"}
+{include file="../includes/classAutoLoad.php"}
 <div id="app3">
     <div class="profile-area">
         <div class="profile-container">
@@ -11,19 +12,19 @@
 
                 {* Profilkép *}
                 <div class="profile-image">
-                    <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="profilkép">
+                    <img src="{{$felhasznalo->getProfilkep()}}" alt="profilkép">
                 </div>
 
                 {* Main szekció *}
                 <div class="profile-main">
                     {* Teljes név *}
                     <div class="profile-name">
-                        <h2>Example example</h2>
+                        <h2>{{$felhasznalo->getVezeteknev()}} {{$felhasznalo->getKeresztnev()}}</h2>
                     </div>
                     {* Személyes adatok *}
                     <div class="personal-details">
-                        <span><i class="fas fa-envelope"></i>example@example.com</span>
-                        <span><i class="fas fa-birthday-cake"></i>2000-08-05</span>
+                        <span><i class="fas fa-envelope"></i>{{$felhasznalo->getEmail()}}</span>
+                        <span><i class="fas fa-birthday-cake"></i>{{date_format(date_create($felhasznalo->getSzuletesiDatum()), "Y-m-d")}}</span>
                     </div>
 
                     {* Adatok és bejegyzés szekció *}
@@ -32,9 +33,10 @@
                         <div class="profile-card more-details">
                             <h3>Infos</h3>
                             <ul>
-                                <li><i class="fas fa-user"></i>Male (Gender)</li>
-                                <li><i class="fas fa-suitcase"></i>Google (Job)</li>
-                                <li><i class="fas fa-graduation-cap"></i>SZTE (University)</li>
+                                <li><i class="fas fa-user"></i>{{ucwords($felhasznalo->getNeme())}} (Nem)</li>
+{*                                TODO: Csekkolni, hogy léteznek-e  *}
+                                <li><i class="fas fa-graduation-cap"></i>{{ucwords($felhasznalo->getIskola())}} (Tanulmányok)</li>
+                                <li><i class="fas fa-suitcase"></i>{{ucwords($felhasznalo->getMunkahely())}} (Munkahely)</li>
                             </ul>
                         </div>
                         {* Bejegyzés írása *}
@@ -56,35 +58,42 @@
                     </div>
 
                     {* Posztok *}
-                    <div class="profile-card post-card mx-auto">
-                        {* Posztok fejléce *}
-                        <div class="post-header">
-                            {* Profilkép *}
-                            <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="profilkép">
-                            {* Poszt adatok *}
-                            <div class="post-header-details">
-                                <span>Example example</span>
-                                <span class="small">12:32</span>
-                            </div>
-                        </div>
+                    {if $bejegyzesek}
+                        {for $i=0 to $bejegyzesek|@count-1}
+                            <div class="profile-card post-card mx-auto">
+                                {* Posztok fejléce *}
+                                <div class="post-header">
+                                    {* Profilkép *}
+                                    <img src="{{$felhasznalo->getProfilkep()}}" alt="profilkép">
+                                    {* Poszt adatok *}
+                                    <div class="post-header-details">
+                                        <span>{{$felhasznalo->getVezeteknev()}} {{$felhasznalo->getKeresztnev()}}</span>
+                                        <span class="small">{{$bejegyzesek[$i]->getLetrehozasDatuma()}}</span>
+                                    </div>
+                                </div>
 
-                        {* Posztok main *}
-                        <div class="post-main">
-                            <div class="image-container">
-                                {* Poszt képe *}
-                                <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="">
-                            </div>
-                            {* Posztok szövege *}
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda culpa deleniti deserunt nemo ratione. Animi aspernatur autem cupiditate dolore eligendi est, illum iste iure mollitia necessitatibus optio praesentium quam rerum sequi similique tempore veritatis voluptatum.</p>
-                        </div>
+                                {* Posztok main *}
+                                <div class="post-main">
+                                    <div class="image-container">
+                                        {* Poszt képe *}
+                                        {if $bejegyzesek[$i]->getKep()}
+                                            <img src="{{$bejegyzesek[$i]->getKep()}}" alt="poszt_kepe">
+                                        {/if}
+                                    </div>
+                                    {* Posztok szövege *}
+                                    <p>{{$bejegyzesek[$i]->getUzenet()}}</p>
+                                </div>
 
-                        {* Akció gombok *}
-                        <div class="post-footer">
-                            <button><i class="far fa-heart"></i>Tetszik</button>
-                            <button><i class="far fa-comment-alt"></i>Hozzászólás</button>
-                            <button><i class="fas fa-external-link-alt"></i>Megosztás</button>
-                        </div>
-                    </div>
+                                {* Akció gombok *}
+                                <div class="post-footer">
+                                    <button><i class="far fa-heart"></i>Tetszik</button>
+                                    <button><i class="far fa-comment-alt"></i>Hozzászólás</button>
+                                    <button><i class="fas fa-external-link-alt"></i>Megosztás</button>
+                                </div>
+                            </div>
+                        {/for}
+                    {/if}
+
 
                 </div>
             </div>

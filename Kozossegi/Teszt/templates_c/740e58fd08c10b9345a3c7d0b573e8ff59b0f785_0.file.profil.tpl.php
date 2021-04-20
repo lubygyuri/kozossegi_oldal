@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-20 19:24:29
+/* Smarty version 3.1.39, created on 2021-04-21 00:02:29
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\profil.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_607f0e4d331815_06691611',
+  'unifunc' => 'content_607f4f75a5c3a2_88188185',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '740e58fd08c10b9345a3c7d0b573e8ff59b0f785' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\profil.tpl',
-      1 => 1618871735,
+      1 => 1618956148,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'file:header.tpl' => 1,
     'file:menu.tpl' => 1,
+    'file:../includes/classAutoLoad.php' => 1,
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_607f0e4d331815_06691611 (Smarty_Internal_Template $_smarty_tpl) {
+function content_607f4f75a5c3a2_88188185 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+$_smarty_tpl->_subTemplateRender("file:../includes/classAutoLoad.php", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div id="app3">
     <div class="profile-area">
@@ -36,25 +38,57 @@ $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smar
                 </div>
 
                                 <div class="profile-image">
-                    <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="profilkép">
+                    <img src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['felhasznalo']->value->getProfilkep();
+$_prefixVariable1 = ob_get_clean();
+echo $_prefixVariable1;?>
+" alt="profilkép">
                 </div>
 
                                 <div class="profile-main">
                                         <div class="profile-name">
-                        <h2>Example example</h2>
+                        <h2><?php ob_start();
+echo $_smarty_tpl->tpl_vars['felhasznalo']->value->getVezeteknev();
+$_prefixVariable2 = ob_get_clean();
+echo $_prefixVariable2;?>
+ <?php ob_start();
+echo $_smarty_tpl->tpl_vars['felhasznalo']->value->getKeresztnev();
+$_prefixVariable3 = ob_get_clean();
+echo $_prefixVariable3;?>
+</h2>
                     </div>
                                         <div class="personal-details">
-                        <span><i class="fas fa-envelope"></i>example@example.com</span>
-                        <span><i class="fas fa-birthday-cake"></i>2000-08-05</span>
+                        <span><i class="fas fa-envelope"></i><?php ob_start();
+echo $_smarty_tpl->tpl_vars['felhasznalo']->value->getEmail();
+$_prefixVariable4 = ob_get_clean();
+echo $_prefixVariable4;?>
+</span>
+                        <span><i class="fas fa-birthday-cake"></i><?php ob_start();
+echo date_format(date_create($_smarty_tpl->tpl_vars['felhasznalo']->value->getSzuletesiDatum()),"Y-m-d");
+$_prefixVariable5 = ob_get_clean();
+echo $_prefixVariable5;?>
+</span>
                     </div>
 
                                         <div class="flex-row">
                                                 <div class="profile-card more-details">
                             <h3>Infos</h3>
                             <ul>
-                                <li><i class="fas fa-user"></i>Male (Gender)</li>
-                                <li><i class="fas fa-suitcase"></i>Google (Job)</li>
-                                <li><i class="fas fa-graduation-cap"></i>SZTE (University)</li>
+                                <li><i class="fas fa-user"></i><?php ob_start();
+echo ucwords($_smarty_tpl->tpl_vars['felhasznalo']->value->getNeme());
+$_prefixVariable6 = ob_get_clean();
+echo $_prefixVariable6;?>
+ (Nem)</li>
+                                <li><i class="fas fa-graduation-cap"></i><?php ob_start();
+echo ucwords($_smarty_tpl->tpl_vars['felhasznalo']->value->getIskola());
+$_prefixVariable7 = ob_get_clean();
+echo $_prefixVariable7;?>
+ (Tanulmányok)</li>
+                                <li><i class="fas fa-suitcase"></i><?php ob_start();
+echo ucwords($_smarty_tpl->tpl_vars['felhasznalo']->value->getMunkahely());
+$_prefixVariable8 = ob_get_clean();
+echo $_prefixVariable8;?>
+ (Munkahely)</li>
                             </ul>
                         </div>
                                                 <div class="profile-card profile-posting">
@@ -74,28 +108,65 @@ $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smar
                         </div>
                     </div>
 
-                                        <div class="profile-card post-card mx-auto">
-                                                <div class="post-header">
-                                                        <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="profilkép">
-                                                        <div class="post-header-details">
-                                <span>Example example</span>
-                                <span class="small">12:32</span>
-                            </div>
-                        </div>
+                                        <?php if ($_smarty_tpl->tpl_vars['bejegyzesek']->value) {?>
+                        <?php
+$_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['i']->step = 1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? count($_smarty_tpl->tpl_vars['bejegyzesek']->value)-1+1 - (0) : 0-(count($_smarty_tpl->tpl_vars['bejegyzesek']->value)-1)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
+if ($_smarty_tpl->tpl_vars['i']->total > 0) {
+for ($_smarty_tpl->tpl_vars['i']->value = 0, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
+$_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration === $_smarty_tpl->tpl_vars['i']->total;?>
+                            <div class="profile-card post-card mx-auto">
+                                                                <div class="post-header">
+                                                                        <img src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['felhasznalo']->value->getProfilkep();
+$_prefixVariable9 = ob_get_clean();
+echo $_prefixVariable9;?>
+" alt="profilkép">
+                                                                        <div class="post-header-details">
+                                        <span><?php ob_start();
+echo $_smarty_tpl->tpl_vars['felhasznalo']->value->getVezeteknev();
+$_prefixVariable10 = ob_get_clean();
+echo $_prefixVariable10;?>
+ <?php ob_start();
+echo $_smarty_tpl->tpl_vars['felhasznalo']->value->getKeresztnev();
+$_prefixVariable11 = ob_get_clean();
+echo $_prefixVariable11;?>
+</span>
+                                        <span class="small"><?php ob_start();
+echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getLetrehozasDatuma();
+$_prefixVariable12 = ob_get_clean();
+echo $_prefixVariable12;?>
+</span>
+                                    </div>
+                                </div>
 
-                                                <div class="post-main">
-                            <div class="image-container">
-                                                                <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="">
-                            </div>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda culpa deleniti deserunt nemo ratione. Animi aspernatur autem cupiditate dolore eligendi est, illum iste iure mollitia necessitatibus optio praesentium quam rerum sequi similique tempore veritatis voluptatum.</p>
-                        </div>
+                                                                <div class="post-main">
+                                    <div class="image-container">
+                                                                                <?php if ($_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getKep()) {?>
+                                            <img src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getKep();
+$_prefixVariable13 = ob_get_clean();
+echo $_prefixVariable13;?>
+" alt="poszt_kepe">
+                                        <?php }?>
+                                    </div>
+                                                                        <p><?php ob_start();
+echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getUzenet();
+$_prefixVariable14 = ob_get_clean();
+echo $_prefixVariable14;?>
+</p>
+                                </div>
 
-                                                <div class="post-footer">
-                            <button><i class="far fa-heart"></i>Tetszik</button>
-                            <button><i class="far fa-comment-alt"></i>Hozzászólás</button>
-                            <button><i class="fas fa-external-link-alt"></i>Megosztás</button>
-                        </div>
-                    </div>
+                                                                <div class="post-footer">
+                                    <button><i class="far fa-heart"></i>Tetszik</button>
+                                    <button><i class="far fa-comment-alt"></i>Hozzászólás</button>
+                                    <button><i class="fas fa-external-link-alt"></i>Megosztás</button>
+                                </div>
+                            </div>
+                        <?php }
+}
+?>
+                    <?php }?>
+
 
                 </div>
             </div>
