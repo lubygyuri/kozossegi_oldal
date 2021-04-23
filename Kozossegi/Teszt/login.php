@@ -15,10 +15,11 @@ if(isset($_POST["submit"])){
 
     if (count($errors) == 0) {
         $controller = new FelhasznaloController();
-        $user_email = $controller->login($felhasznalo);
+        $user = $controller->login($felhasznalo);
 
         session_start();
-        $_SESSION["email"] = $user_email;
+        $_SESSION["email"] = $user["EMAIL"];
+        $_SESSION["azonosito"] = $user["AZONOSITO"];
 
         header("Location: profil.php");
         exit();
