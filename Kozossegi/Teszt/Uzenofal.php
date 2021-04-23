@@ -13,6 +13,7 @@ if (!isset($_SESSION["email"])){
     exit();
 }
 
+// Bejegyzés közzététel
 if(isset($_POST["submit"])) {
     $_SESSION["azonosito"];
     $bejegyzes = new Bejegyzes();
@@ -23,7 +24,7 @@ if(isset($_POST["submit"])) {
     $controller->createPost($bejegyzes);
 }
 
-
+// Bejegyzések listázása
 $controller = new FelhasznaloController();
 $controller2 = new BejegyzesController();
 $posts = array();
@@ -47,9 +48,15 @@ if ($postsData) {
     }
 }
 
+// Bejelentkezett felhasználó megjelenítése
+$bejelentkezettF = new Felhasznalo();
+$bejelentkezettF->setProfilkep($_SESSION["profilkep"]);
+$bejelentkezettF->setKeresztnev($_SESSION["keresztnev"]);
+$bejelentkezettF->setVezeteknev($_SESSION["vezeteknev"]);
+
 
 $smarty->assign("bejegyzesek",$posts);
-
+$smarty->assign("belepettFelhasznalo", $bejelentkezettF);
 
 $smarty->display('Uzenofal.tpl');
 

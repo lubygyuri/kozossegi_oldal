@@ -20,6 +20,9 @@ if(isset($_POST["submit"])){
         session_start();
         $_SESSION["email"] = $user["EMAIL"];
         $_SESSION["azonosito"] = $user["AZONOSITO"];
+        $_SESSION["keresztnev"] = $user["KERESZTNEV"];
+        $_SESSION["vezeteknev"] = $user["VEZETEKNEV"];
+        $_SESSION["profilkep"] = $user["PROFILKEP"];
 
         header("Location: profil.php");
         exit();
