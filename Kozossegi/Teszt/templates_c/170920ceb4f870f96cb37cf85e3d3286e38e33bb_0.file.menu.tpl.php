@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-23 22:39:09
+/* Smarty version 3.1.39, created on 2021-04-24 01:27:09
   from '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/menu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6083306dc72fe7_69387901',
+  'unifunc' => 'content_608357cd8ea927_55646880',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '170920ceb4f870f96cb37cf85e3d3286e38e33bb' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/menu.tpl',
-      1 => 1619210297,
+      1 => 1619219974,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6083306dc72fe7_69387901 (Smarty_Internal_Template $_smarty_tpl) {
+function content_608357cd8ea927_55646880 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div id="app">
     <div class="header">
         <!-- Image and text -->
         <b-navbar variant="faded" type="dark">
-            <b-navbar-brand href="index.php">
+            <b-navbar-brand href="Uzenofal.php">
                 <img src="style/logo.png" class="d-inline-block align-top" alt="fsociety">
             </b-navbar-brand>
         </b-navbar>
