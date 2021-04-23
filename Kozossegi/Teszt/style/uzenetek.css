@@ -1,0 +1,198 @@
+.messages-card {
+    background-color: #fff;
+    width: 90%;
+    height: 100%;
+    border-radius: 15px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    max-height: 500px;
+}
+
+.messages-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    background-color: #999;
+    padding: 5px 10px;
+}
+
+.header-details-container {
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.messages-header form {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.messages-header form input {
+    width: 100%;
+    padding: 2px;
+    outline: none;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+.messages-header form input[placeholder] {
+    padding-left: 10px;
+}
+
+.messages-header form button {
+    border: none;
+    outline: none;
+    transform: translateX(-30px);
+    background-color: #fff;
+    opacity: 0.4;
+}
+
+.chat-search {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.messages-header img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    margin-left: 20px;
+}
+
+.messages-main {
+    display: flex;
+    height: 100%;
+}
+
+.messages-friends-container {
+    width: 30%;
+    max-height: 440px;
+    overflow-y: auto;
+}
+
+.messages-friends-container ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+    margin-bottom: 0;
+}
+
+.messages-friends-container ul li {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 5px 10px;
+    border-bottom: 2px solid #999;
+}
+
+.messages-friends-container ul li img,
+.chat-partner img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    margin-right: 10px;
+}
+
+.messages-friends-container ul li p {
+    margin-bottom: 0;
+    font-size: 12px;
+}
+
+.friend-details {
+    width: 100%;
+}
+
+.chat-section {
+    width: 70%;
+    height: 440px;
+    border-left: 2px solid #999;
+}
+
+.chat-partner {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    background-color: #30a30a19;
+    padding-left: 10px;
+}
+
+.chat-messages {
+    height: calc(90% - 60px);
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.incoming-messages p {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: #333;
+    color: #fff;
+    margin-bottom: 15px;
+    max-width: 60%;
+}
+
+.outgoing-messages p {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    float: right;
+    padding: 5px 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: #2361dd;
+    color: #fff;
+    margin-bottom: 15px;
+    max-width: 60%;
+}
+
+.chat-toolbar {
+    height: 10%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #999;
+    padding: 10px;
+}
+
+.chat-toolbar form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.chat-toolbar form input {
+    width: 92%;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    padding: 3px;
+}
+
+.chat-toolbar form input[placeholder] {
+    padding-left: 10px;
+}
+
+.chat-toolbar form button {
+    width: 8%;
+    padding: 3px;
+    margin-left: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+}
