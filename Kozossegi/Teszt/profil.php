@@ -44,6 +44,15 @@ if ($postsData) {
     }
 }
 
+// TODO: likeok megjelenítése, trigger használata + bejegyzes táblába likeok számának felvétele
+// TODO: kommentek lekérése
+// TODO: modell kiegészítése a likeok és a kommentek adattagokkal
+// SELECT count(*) FROM FELHASZNALO, BEJEGYZES, BEJEGYZES_LIKE
+// WHERE bejegyzes.felhasznalo_azonosito = felhasznalo.azonosito
+// AND bejegyzes_like.bejegyzes_azonosito = bejegyzes.azonosito
+// AND felhasznalo.azonosito = 1
+// AND bejegyzes.azonosito = 1
+
 $smarty->assign("bejegyzesek", $posts);
 $smarty->assign("felhasznalo", $felhasznalo);
 $smarty->display('profil.tpl');

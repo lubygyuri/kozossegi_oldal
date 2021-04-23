@@ -29,7 +29,7 @@ if (isset($_POST["submit"])) {
 //        TODO: smarty hülyeségtől megválni
         $smarty->assign("errors", $errors);
         $smarty->display("index.tpl");
-//        TODO: Sikeres bejelentkezés üzenet megjelenítése
+//        TODO: Sikeres regisztráció üzenet megjelenítése
         exit();
     }
 
