@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-23 22:39:09
+/* Smarty version 3.1.39, created on 2021-04-24 00:44:15
   from '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/profil.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6083306dc70517_63263750',
+  'unifunc' => 'content_60834dbf8a99d5_83362788',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '174b6949c410e5ae785cc93c6eb8403a5b3ede49' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/profil.tpl',
-      1 => 1619210297,
+      1 => 1619217853,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6083306dc70517_63263750 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60834dbf8a99d5_83362788 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:../includes/classAutoLoad.php", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
@@ -114,7 +114,7 @@ $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderin
 if ($_smarty_tpl->tpl_vars['i']->total > 0) {
 for ($_smarty_tpl->tpl_vars['i']->value = 0, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
 $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration === $_smarty_tpl->tpl_vars['i']->total;?>
-                            <div class="profile-card post-card mx-auto">
+                            <div class="profile-card post-card mx-auto w-50">
                                                                 <div class="post-header">
                                                                         <img src="<?php ob_start();
 echo $_smarty_tpl->tpl_vars['felhasznalo']->value->getProfilkep();
@@ -159,7 +159,6 @@ echo $_prefixVariable14;?>
                                                                 <div class="post-footer">
                                     <button><i class="far fa-heart"></i>Tetszik</button>
                                     <button><i class="far fa-comment-alt"></i>Hozzászólás</button>
-                                    <button><i class="fas fa-external-link-alt"></i>Megosztás</button>
                                 </div>
                             </div>
                         <?php }

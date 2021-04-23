@@ -6,10 +6,14 @@
     {*
         Közzététel
     *}
-    <div class= "shadow-lg p-3 bg-white rounded align-self-baseline mr-2 w-50 p-3 mb-5 mx-auto">
+    <div class= "shadow-lg pl-3 pr-3 pb-3 bg-white rounded align-self-baseline mr-2 w-50 mb-5 mx-auto">
         <form action="Uzenofal.php" method="post">
-        <b-img src="{{$belepettFelhasznalo->getProfilkep()}}"  rounded="circle" class="d-inline-block align-top"></b-img>
-            {{$belepettFelhasznalo->getVezeteknev()}} {{$belepettFelhasznalo->getKeresztnev()}}
+            <div class="post-header2">
+                <img src="{{$belepettFelhasznalo->getProfilkep()}}">
+                <div class="post-header-details">
+                <span>{{$belepettFelhasznalo->getVezeteknev()}} {{$belepettFelhasznalo->getKeresztnev()}} </span>
+                </div>
+            </div>
         <div class="form-floating mt-3 mb-3">
             <textarea class="form-control" placeholder="Írjon bejegyzést" id="floatingTextarea2" name="text" style="height: 100px"></textarea>
         </div>
@@ -25,15 +29,17 @@
     {if $bejegyzesek}
     {for $i=0 to $bejegyzesek|@count-1}
         {strip}
-            <div class= "shadow-lg p-3 bg-white rounded align-self-baseline mr-2 w-50 p-3 mb-5 mx-auto">
-                <b-row >
-                    <b-navbar variant="faded" type="light">
-                        <b-navbar-brand href="#">
-                            <b-img src="{{$bejegyzesek[$i]->getFelhasznaloAzonosito()->getProfilkep()}}"  rounded="circle" class="d-inline-block align-top mr-2 lg"></b-img>
-                            {{$bejegyzesek[$i]->getFelhasznaloAzonosito()->getVezeteknev()}} {{$bejegyzesek[$i]->getFelhasznaloAzonosito()->getKeresztnev()}}
-                        </b-navbar-brand>
-
-                    </b-navbar>
+            <div class= "shadow-lg pl-3 pr-3 pb-3 bg-white rounded align-self-baseline mr-2 w-50 mb-5 mx-auto">
+                <b-row>
+                    <div class="post-header">
+                        {* Profilkép *}
+                        <img src="{{$bejegyzesek[$i]->getFelhasznaloAzonosito()->getProfilkep()}}" alt="profilkép">
+                        {* Poszt adatok *}
+                        <div class="post-header-details">
+                            <span>{{$bejegyzesek[$i]->getFelhasznaloAzonosito()->getVezeteknev()}} {{$bejegyzesek[$i]->getFelhasznaloAzonosito()->getKeresztnev()}}</span>
+                            <span class="small">{{$bejegyzesek[$i]->getLetrehozasDatuma()}}</span>
+                        </div>
+                    </div>
                     <div >
                         <p class="m-3"> {{$bejegyzesek[$i]->getUzenet()}}</p>
                         {if $bejegyzesek[$i]->getKep()}
@@ -52,9 +58,6 @@
                             <b-button v-b-toggle.my-collapse{{$i}} variant="btn-outline-primary">
                                 <b-icon  icon="chat-left" aria-hidden="true"></b-icon> Hozzászólás
                             </b-button>
-                            <b-button  variant="btn-outline-primary">
-                                <b-icon icon="box-arrow-up-right" aria-hidden="true"></b-icon> Megosztás
-                            </b-button>
                         </b-button-group>
                         <template>
                             <b-collapse id="my-collapse{{$i}}" class="mt-4">
@@ -64,7 +67,7 @@
                                             <b-img src="https://placekitten.com/g/30/30" rounded="circle"  class="d-inline-block align-top" v-if="j==0"></b-img>
                                            <span> {{ v }}</span>
                                         </div>
-                                        <div >
+                                        <div>
                                             <p class="m-3"></p>
                                         </div>
                                     </div>

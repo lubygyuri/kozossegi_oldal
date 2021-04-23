@@ -60,7 +60,7 @@
                     {* Posztok *}
                     {if $bejegyzesek}
                         {for $i=0 to $bejegyzesek|@count-1}
-                            <div class="profile-card post-card mx-auto">
+                            <div class="profile-card post-card mx-auto w-50">
                                 {* Posztok fejléce *}
                                 <div class="post-header">
                                     {* Profilkép *}
@@ -88,7 +88,6 @@
                                 <div class="post-footer">
                                     <button><i class="far fa-heart"></i>Tetszik</button>
                                     <button><i class="far fa-comment-alt"></i>Hozzászólás</button>
-                                    <button><i class="fas fa-external-link-alt"></i>Megosztás</button>
                                 </div>
                             </div>
                         {/for}
