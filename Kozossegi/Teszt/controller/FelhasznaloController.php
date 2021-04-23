@@ -20,16 +20,17 @@ class FelhasznaloController extends DB {
 
     public function login(Felhasznalo $felhasznalo) {
         $user = $this->getUserFromDB($felhasznalo->getEmail());
-//        Visszaadja az adott felhasználó email-jét
-        return $user["EMAIL"];
+//        Visszaadja az adott felhasználót
+        return $user;
     }
 
-    public function getPostsByUserId($userId) {
-        $sql = "SELECT * FROM LUBLO.BEJEGYZES, LUBLO.FELHASZNALO WHERE LUBLO.BEJEGYZES.FELHASZNALO_AZONOSITO = LUBLO.FELHASZNALO.AZONOSITO AND LUBLO.FELHASZNALO.AZONOSITO = ?";
+    public function getFelhasznalo($userId) {
+        $sql = "SELECT * FROM LUBLO.FELHASZNALO WHERE AZONOSITO = ?";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$userId]);
-
-        return $stmt->fetchAll();
+        return $stmt->fetch();
     }
+
+
 
 }

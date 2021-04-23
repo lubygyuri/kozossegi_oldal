@@ -7,10 +7,11 @@
         Közzététel
     *}
     <div class= "shadow-lg p-3 bg-white rounded align-self-baseline mr-2 w-50 p-3 mb-5 mx-auto">
+        <form action="Uzenofal.php" method="post">
         <b-img src="https://placekitten.com/g/30/30"  rounded="circle" class="d-inline-block align-top"></b-img>
         Teszt Elek
         <div class="form-floating mt-3 mb-3">
-            <textarea class="form-control" placeholder="Írjon bejegyzést" id="floatingTextarea2" style="height: 100px"></textarea>
+            <textarea class="form-control" placeholder="Írjon bejegyzést" id="floatingTextarea2" name="text" style="height: 100px"></textarea>
         </div>
         <div class="image-upload">
             <label for="file-input">
@@ -18,24 +19,25 @@
             </label>
             <input id="file-input" type="file"/>
         </div>
-        <button type="button" class="btn btn-primary">Közzététel</button>
+            <button type="submit" class="btn btn-primary" name="submit">Közzététel</button>
+        </form>
     </div>
-
-    {for $i=0 to $tomb|@count-1}
+    {if $bejegyzesek}
+    {for $i=0 to $bejegyzesek|@count-1}
         {strip}
             <div class= "shadow-lg p-3 bg-white rounded align-self-baseline mr-2 w-50 p-3 mb-5 mx-auto">
                 <b-row >
                     <b-navbar variant="faded" type="light">
                         <b-navbar-brand href="#">
-                            <b-img src="https://placekitten.com/g/30/30"  rounded="circle" class="d-inline-block align-top mr-2 lg"></b-img>
-                            {{$tomb[$i]['nev']}}
+                            <b-img src="{{$bejegyzesek[$i]->getFelhasznaloAzonosito()->getProfilkep()}}"  rounded="circle" class="d-inline-block align-top mr-2 lg"></b-img>
+                            {{$bejegyzesek[$i]->getFelhasznaloAzonosito()->getVezeteknev()}} {{$bejegyzesek[$i]->getFelhasznaloAzonosito()->getKeresztnev()}}
                         </b-navbar-brand>
 
                     </b-navbar>
                     <div >
-                        <p class="m-3"> {{$tomb[$i]['szoveg']}}</p>
-                        {if $tomb[$i]['url'] ne ''}
-                            <b-img src=" {{$tomb[$i]['url']}}" class="rounded mx-auto d-block" fluid alt="Fluid image"></b-img>
+                        <p class="m-3"> {{$bejegyzesek[$i]->getUzenet()}}</p>
+                        {if $bejegyzesek[$i]->getKep()}
+                            <b-img src="{{$bejegyzesek[$i]->getKep()}}" class="rounded mx-auto d-block" fluid alt="Fluid image"></b-img>
                         {/if}
                     </div>
                 </b-row>
@@ -84,6 +86,7 @@
             </div>
         {/strip}
     {/for}
+    {/if}
 </div>
 
 {include file="footer.tpl"}

@@ -16,6 +16,8 @@ if (!isset($_SESSION["email"])){
 
 // Profilhoz tartozó adatok lekérése
 $controller = new FelhasznaloController();
+$controller2 = new BejegyzesController();
+
 $data = $controller->getUserFromDB($_SESSION["email"]);
 
 $felhasznalo = new Felhasznalo();
@@ -28,10 +30,11 @@ $felhasznalo->setIskola($data["ISKOLA"]);
 $felhasznalo->setMunkahely($data["MUNKAHELY"]);
 $felhasznalo->setProfilkep($data["PROFILKEP"]);
 
+
 // Adott profil posztjainak lekérése
 $userId = $data["AZONOSITO"];
 $posts = array();
-$postsData = $controller->getPostsByUserId($userId);
+$postsData = $controller2->getPostsByUserId($userId);
 
 if ($postsData) {
     foreach ($postsData as $postData) {
