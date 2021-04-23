@@ -2,7 +2,7 @@
     <div class="header">
         <!-- Image and text -->
         <b-navbar variant="faded" type="dark">
-            <b-navbar-brand href="index.php">
+            <b-navbar-brand href="Uzenofal.php">
                 <img src="style/logo.png" class="d-inline-block align-top" alt="fsociety">
             </b-navbar-brand>
         </b-navbar>
