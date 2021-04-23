@@ -8,7 +8,7 @@ class DB {
 
 
     protected function connect() {
-        $db = "oci:dbname=" . $this->tns;
+        $db = "oci:dbname=" . $this->tns . ';charset=UTF8';
         $pdo = new PDO($db, $this->db_username, $this->db_password);
         $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         return $pdo;
