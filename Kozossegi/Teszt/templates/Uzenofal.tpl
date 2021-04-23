@@ -8,8 +8,8 @@
     *}
     <div class= "shadow-lg p-3 bg-white rounded align-self-baseline mr-2 w-50 p-3 mb-5 mx-auto">
         <form action="Uzenofal.php" method="post">
-        <b-img src="https://placekitten.com/g/30/30"  rounded="circle" class="d-inline-block align-top"></b-img>
-        Teszt Elek
+        <b-img src="{{$belepettFelhasznalo->getProfilkep()}}"  rounded="circle" class="d-inline-block align-top"></b-img>
+            {{$belepettFelhasznalo->getVezeteknev()}} {{$belepettFelhasznalo->getKeresztnev()}}
         <div class="form-floating mt-3 mb-3">
             <textarea class="form-control" placeholder="Írjon bejegyzést" id="floatingTextarea2" name="text" style="height: 100px"></textarea>
         </div>
