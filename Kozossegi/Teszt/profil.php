@@ -26,6 +26,7 @@ if (isset($_POST['profileImgUpload'])) {
     $_SESSION["profilkep"] = $link;
 }
 
+// TODO: Labelek megvalósítása
 // Profil adatainak megváltoztatása
 if (isset($_POST["save"])) {
     $mentendoFelhasznalo = new Felhasznalo();
@@ -50,6 +51,23 @@ $felhasznalo->setNeme($data["NEME"]);
 $felhasznalo->setIskola($data["ISKOLA"]);
 $felhasznalo->setMunkahely($data["MUNKAHELY"]);
 $felhasznalo->setProfilkep($data["PROFILKEP"]);
+
+
+// Bejegyzés közzététel
+if(isset($_POST["createPost"])) {
+    $bejegyzes = new Bejegyzes();
+    $bejegyzes->setUzenet($_POST['text']);
+    $bejegyzes->setFelhasznaloAzonosito($_SESSION["azonosito"]);
+
+//    TODO: Nem működik mert külső kulcsként kezeljük a képet, szerintem engedjük el (Gyuri)
+    if ($_POST["postImg"]) {
+        $bejegyzes->setKep($controller3->kepFeltoltes('postImg'));
+    } else {
+        $bejegyzes->setKep('');
+    }
+
+    $controller2->createPost($bejegyzes);
+}
 
 
 // Adott profil posztjainak lekérése

@@ -15,7 +15,7 @@ if (!isset($_SESSION["email"])){
 
 // Bejegyzés közzététel
 if(isset($_POST["submit"])) {
-    $_SESSION["azonosito"];
+    $_SESSION["azonosito"]; /* TODO: Szerintem ez egy felesleges sor (Gyuri) */
     $bejegyzes = new Bejegyzes();
     $bejegyzes->setUzenet($_POST['text']);
     $bejegyzes->setFelhasznaloAzonosito($_SESSION["azonosito"]);

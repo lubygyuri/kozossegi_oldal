@@ -116,20 +116,22 @@
                         </div>
                         {* Bejegyzés írása *}
                         <div class="profile-card profile-posting">
-                            <h3>Bejegyzés Írása</h3>
-                            <div class="form-floating mt-3 mb-3">
-                                <textarea class="form-control" placeholder="Írjon bejegyzést" id="floatingTextarea2"></textarea>
-                            </div>
-                            <div class="flex-row">
-                                <div class="image-upload">
-                                    <label for="file-input" class="h6">
-                                        <i class="fas fa-upload"></i>
-                                        Kép feltöltés
-                                    </label>
-                                    <input id="file-input" type="file"/>
+                            <form action="profil.php" method="post">
+                                <h3>Bejegyzés Írása</h3>
+                                <div class="form-floating mt-3 mb-3">
+                                    <textarea class="form-control" placeholder="Írjon bejegyzést" name="text" id="floatingTextarea2"></textarea>
                                 </div>
-                                <button type="button" class="btn btn-primary">Közzététel</button>
-                            </div>
+                                <div class="flex-row">
+                                    <div class="image-upload">
+                                        <label for="file-input" class="h6">
+                                            <i class="fas fa-upload"></i>
+                                            Kép feltöltés
+                                        </label>
+                                        <input id="file-input" type="file" name="postImg"/>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary" name="createPost">Közzététel</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
 

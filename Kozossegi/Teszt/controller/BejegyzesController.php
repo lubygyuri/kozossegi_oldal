@@ -17,7 +17,7 @@ class BejegyzesController extends DB{
         return $stmt->fetchAll();
     }
     public function createPost(Bejegyzes $bejegyzes) {
-        $sql = "INSERT INTO LUBLO.BEJEGYZES (azonosito, uzenet, letrehozas_datuma, felhasznalo_azonosito, kep) VALUES (2, ?, CURRENT_DATE, ?, ?)";
+        $sql = "INSERT INTO LUBLO.BEJEGYZES (azonosito, uzenet, letrehozas_datuma, felhasznalo_azonosito, kep) VALUES (7, ?, CURRENT_DATE, ?, ?)";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$bejegyzes->getUzenet(),$bejegyzes->getFelhasznaloAzonosito(),$bejegyzes->getKep()]);
     }
