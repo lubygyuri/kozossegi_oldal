@@ -1,6 +1,6 @@
 {include file="header.tpl"}
 
-<div id="app4" class="container px-4 mt-5">
+<div id="app4" class="container p-5" style="height: 96vh">
 
   <div class="shadow-lg p-3 bg-white rounded align-self-baseline mr-2 w-50 p-3 mb-5 mx-auto">
       <form action="login.php" class="kulso-form" method="post">
@@ -49,7 +49,11 @@
     {*    Hibák megjelenítése  *}
     {if $errors}
       {for $i=0 to $errors|@count-1}
-        <div class="alert alert-danger" role="alert">{{$errors[$i]}}</div>
+        {if strpos($errors[$i], "Sikeres")===0}
+          <div class="alert alert-success" role="alert">{{$errors[$i]}}</div>
+        {else}
+          <div class="alert alert-danger" role="alert">{{$errors[$i]}}</div>
+        {/if}
       {/for}
     {/if}
 

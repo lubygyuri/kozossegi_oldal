@@ -96,8 +96,7 @@
                             </div>
                         {/for}
                     {/if}
-
-
+                    
                 </div>
             </div>
         </div>

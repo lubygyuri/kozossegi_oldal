@@ -15,7 +15,7 @@ if (isset($_POST["submit"])) {
     $felhasznalo->setJelszo($_POST['password']);
     $felhasznalo->setSzuletesiDatum($_POST['birth-date']);
     $felhasznalo->setNeme($_POST['gender']);
-//    TODO: alapértelmezett profilkép beállítása
+//    TODO: alapértelmezett profilkép beégetésének elhagyása
     $felhasznalo->setProfilkep("style/defaultprof.jpg");
 
     $jelszoIsmet = $_POST['password-secure'];
@@ -27,9 +27,9 @@ if (isset($_POST["submit"])) {
         $controller = new FelhasznaloController();
         $controller->registration($felhasznalo);
 //        TODO: smarty hülyeségtől megválni
+        array_push($errors, "Sikeres regisztráció!");
         $smarty->assign("errors", $errors);
         $smarty->display("index.tpl");
-//        TODO: Sikeres regisztráció üzenet megjelenítése
         exit();
     }
 

@@ -48,7 +48,7 @@
                         {/if}
                     </div>
                 </b-row>
-                <b-row class="mt-5">
+                <b-row>
                     <b-col cols="auto" class="w-100">
                         <b-button-group class="w-100">
                             <b-button  variant="btn-outline-primary" @click="asd">
