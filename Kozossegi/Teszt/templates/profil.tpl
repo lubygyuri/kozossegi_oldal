@@ -1,6 +1,5 @@
 {include file="header.tpl"}
 {include file="menu.tpl"}
-{include file="../includes/classAutoLoad.php"}
 
 <div id="app3">
     <div class="profile-area">
@@ -28,7 +27,7 @@
                         <span><i class="fas fa-birthday-cake"></i>{{date_format(date_create($felhasznalo->getSzuletesiDatum()), "Y-m-d")}}</span>
                     </div>
 
-                    {* Adatok és bejegyzés szekció *}
+                    {*Beállítások sávja*}
 
                     {* Profilkép feltöltés *}
                         <div class="flex-row p-3 border-top border-bottom">
@@ -42,54 +41,55 @@
                                     <button type="submit" class="btn btn-primary" name="profileImgUpload">Feltöltés</button>
                                 </div>
                             </form>
-
                             {* Adatok módosítása *}
+
+
                             
 {* Működő update profile *}
-{*                            <div>*}
-{*                                <b-button variant="success" class="m-3 p2" @click="$bvModal.show('bv-modal-example')">Adatok módosítása</b-button>*}
+                                <b-button variant="success" @click="$bvModal.show('bv-modal-example')">Adatok módosítása</b-button>
 
-{*                                <b-modal id="'bv-modal-example'" hide-footer title="Adatok módosítása">*}
-{*                                    <p class="mt-2">Módosításhoz változtatsd meg a kívánt mezőt:</p>*}
-{*                                    <div>*}
-{*                                        <form action="profil.php" class="kulso-form" method="post">*}
-{*                                            <input type="text" name="firstname" placeholder="Vezetéknév" class="mt-3 p-2 h-25" value={{$felhasznalo->getVezeteknev()}}>*}
-{*                                            <input type="text" name="lastname" placeholder="Keresztnév" class="mt-3 p-2 h-25" value={{$felhasznalo->getKeresztnev()}}>*}
-{*                                            <div class="flex-row mt-3 p-2 h-25">*}
-{*                                                <div class="register-genderclass rounded">*}
-{*                                                    {if $felhasznalo->getNeme() == "férfi"}*}
-{*                                                        <input type="radio" id="male" name="gender" value="férfi" checked>*}
-{*                                                    {else}*}
-{*                                                        <input type="radio" id="male" name="gender" value="férfi" >*}
-{*                                                    {/if}*}
-{*                                                    <label for="male">Férfi</label><br>*}
-{*                                                </div>*}
-{*                                                <div class="register-genderclass rounded" >*}
-{*                                                    {if $felhasznalo->getNeme() == "nő"}*}
-{*                                                        <input type="radio" id="female" name="gender" value="nő" checked>*}
-{*                                                    {else}*}
-{*                                                        <input type="radio" id="female" name="gender" value="nő">*}
-{*                                                    {/if}*}
-{*                                                    <label for="female">Nő</label><br>*}
-{*                                                </div>*}
-{*                                                <div class="register-genderclass rounded">*}
-{*                                                    {if $felhasznalo->getNeme() == "egyéb"}*}
-{*                                                        <input type="radio" id="other" name="gender" value="egyéb" checked>*}
-{*                                                    {else}*}
-{*                                                        <input type="radio" id="other" name="gender" value="egyéb">*}
-{*                                                    {/if}*}
-{*                                                    <label for="other">Egyéb</label>*}
-{*                                                </div>*}
-{*                                            </div>*}
-{*                                            <div class="flex-row">*}
-{*                                                <button type="submit" id="register-id" class="mt-3 p2 btn btn-success" name="save">Mentés</button>*}
-{*                                                <b-button id="cancel" variant="warning" class="mt-3 p2" @click="$bvModal.hide('bv-modal-example')">Mégse</b-button>*}
-{*                                            </div>*}
-{*                                        </form>*}
-{*                                    </div>*}
-{*                                </b-modal>*}
-{*                            </div>*}
-                        </div>
+                                <b-modal id="bv-modal-example" hide-footer title="Adatok módosítása">
+                                    <p class="mt-2">Módosításhoz változtatsd meg a kívánt mezőt:</p>
+                                    <div>
+                                        <form action="profil.php" class="kulso-form" method="post">
+                                            <input type="text" name="firstname" placeholder="Vezetéknév" class="mt-3 p-2 h-25" value={{$felhasznalo->getVezeteknev()}}>
+                                            <input type="text" name="lastname" placeholder="Keresztnév" class="mt-3 p-2 h-25" value={{$felhasznalo->getKeresztnev()}}>
+                                            <div class="flex-row mt-3 p-2 h-25">
+                                                <div class="register-genderclass rounded">
+                                                    {if $felhasznalo->getNeme() == "férfi"}
+                                                        <input type="radio" id="male" name="gender" value="férfi" checked>
+                                                    {else}
+                                                        <input type="radio" id="male" name="gender" value="férfi" >
+                                                    {/if}
+                                                    <label for="male">Férfi</label><br>
+                                                </div>
+                                                <div class="register-genderclass rounded" >
+                                                    {if $felhasznalo->getNeme() == "nő"}
+                                                        <input type="radio" id="female" name="gender" value="nő" checked>
+                                                    {else}
+                                                        <input type="radio" id="female" name="gender" value="nő">
+                                                    {/if}
+                                                    <label for="female">Nő</label><br>
+                                                </div>
+                                                <div class="register-genderclass rounded">
+                                                    {if $felhasznalo->getNeme() == "egyéb"}
+                                                        <input type="radio" id="other" name="gender" value="egyéb" checked>
+                                                    {else}
+                                                        <input type="radio" id="other" name="gender" value="egyéb">
+                                                    {/if}
+                                                    <label for="other">Egyéb</label>
+                                                </div>
+                                            </div>
+                                            <div class="flex-row">
+                                                <button type="submit" id="register-id" class="mt-3 p2 btn btn-success" name="save">Mentés</button>
+                                                <b-button id="cancel" variant="warning" class="mt-3 p2" @click="$bvModal.hide('bv-modal-example')">Mégse</b-button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </b-modal>
+                            </div>
+
+                    {* Adatok és bejegyzés szekció *}
 
                     <div class="flex-row">
                         {* Adatok *}
@@ -159,7 +159,6 @@
                             </div>
                         {/for}
                     {/if}
-                    
                 </div>
             </div>
         </div>
