@@ -41,19 +41,28 @@
                                     <button type="submit" class="btn btn-primary" name="profileImgUpload">Feltöltés</button>
                                 </div>
                             </form>
-                            {* Adatok módosítása *}
 
-
-                            
-{* Működő update profile *}
-                                <b-button variant="success" @click="$bvModal.show('bv-modal-example')">Adatok módosítása</b-button>
+                        {* Adatok módosítása *}
+                            {* Működő update profile *}
+                                <b-button variant="primary" @click="$bvModal.show('bv-modal-example')">Adatok módosítása</b-button>
 
                                 <b-modal id="bv-modal-example" hide-footer title="Adatok módosítása">
                                     <p class="mt-2">Módosításhoz változtatsd meg a kívánt mezőt:</p>
                                     <div>
                                         <form action="profil.php" class="kulso-form" method="post">
-                                            <input type="text" name="firstname" placeholder="Vezetéknév" class="mt-3 p-2 h-25" value={{$felhasznalo->getVezeteknev()}}>
-                                            <input type="text" name="lastname" placeholder="Keresztnév" class="mt-3 p-2 h-25" value={{$felhasznalo->getKeresztnev()}}>
+                                            <input type="text" name="firstname" class="mt-3 p-2 h-25" value={{$felhasznalo->getVezeteknev()}}>
+                                            <input type="text" name="lastname" class="mt-3 p-2 h-25" value={{$felhasznalo->getKeresztnev()}}>
+                                            {if $felhasznalo->getIskola()}
+                                                <input type="text" name="school" class="mt-3 p-2 h-25" value="{{$felhasznalo->getIskola()}}">
+                                            {else}
+                                                <input type="text" name="school" class="mt-3 p-2 h-25" placeholder="Tanulmányok">
+                                            {/if}
+                                            {if $felhasznalo->getMunkahely()}
+                                                <input type="text" name="job" class="mt-3 p-2 h-25" value="{{$felhasznalo->getMunkahely()}}">
+                                            {else}
+                                                <input type="text" name="job" class="mt-3 p-2 h-25" placeholder="Munkahely">
+                                            {/if}
+
                                             <div class="flex-row mt-3 p-2 h-25">
                                                 <div class="register-genderclass rounded">
                                                     {if $felhasznalo->getNeme() == "férfi"}

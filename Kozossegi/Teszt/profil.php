@@ -52,6 +52,8 @@ if (isset($_POST["save"])) {
     $mentendoFelhasznalo->setVezeteknev($_POST["firstname"]);
     $mentendoFelhasznalo->setKeresztnev($_POST["lastname"]);
     $mentendoFelhasznalo->setNeme($_POST["gender"]);
+    $mentendoFelhasznalo->setIskola($_POST["school"]);
+    $mentendoFelhasznalo->setMunkahely($_POST["job"]);
     $controller->updateProfile($mentendoFelhasznalo);
 }
 

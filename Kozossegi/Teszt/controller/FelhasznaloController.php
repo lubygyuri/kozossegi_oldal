@@ -38,9 +38,9 @@ class FelhasznaloController extends DB {
     }
 
     public function updateProfile(Felhasznalo $felhasznalo) {
-        $sql = "UPDATE LUBLO.FELHASZNALO SET VEZETEKNEV = ?, KERESZTNEV = ?, NEME = ? WHERE AZONOSITO = ?";
+        $sql = "UPDATE LUBLO.FELHASZNALO SET VEZETEKNEV = ?, KERESZTNEV = ?, NEME = ?, ISKOLA = ?, MUNKAHELY = ? WHERE AZONOSITO = ?";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$felhasznalo->getVezeteknev(), $felhasznalo->getKeresztnev(), $felhasznalo->getNeme(), $felhasznalo->getAzonosito()]);
+        $stmt->execute([$felhasznalo->getVezeteknev(), $felhasznalo->getKeresztnev(), $felhasznalo->getNeme(), $felhasznalo->getIskola(), $felhasznalo->getMunkahely(), $felhasznalo->getAzonosito()]);
     }
 
 
