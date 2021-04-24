@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-24 12:22:52
+/* Smarty version 3.1.39, created on 2021-04-24 15:19:49
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\profil.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6083f17c02dee6_55995158',
+  'unifunc' => 'content_60841af5218916_47897998',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '740e58fd08c10b9345a3c7d0b573e8ff59b0f785' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\profil.tpl',
-      1 => 1619259617,
+      1 => 1619270386,
       2 => 'file',
     ),
   ),
@@ -24,11 +24,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6083f17c02dee6_55995158 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60841af5218916_47897998 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:../includes/classAutoLoad.php", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
+
 <div id="app3">
     <div class="profile-area">
         <div class="profile-container">
@@ -70,12 +71,23 @@ echo $_prefixVariable5;?>
 </span>
                     </div>
 
-                                        <div class="flex-row">
-                        <form action="profil.php" method="post" enctype="multipart/form-data">
-                            <input type="file" name="profileImg">
-                            <button type="submit" name="profileImgUpload">Profilkép feltöltése</button>
-                        </form>
-                    </div>
+                    
+                                            <div class="flex-row p-3 border-top border-bottom">
+                            <form action="profil.php" method="post" enctype="multipart/form-data">
+                                <div class="image-upload align-items-end">
+                                    <label for="file-input" class="h6 mr-2">
+                                        <i class="fas fa-upload"></i>
+                                        Profilkép csere
+                                    </label>
+                                    <input id="file-input" type="file" name="profileImg"/>
+                                    <button type="submit" class="btn btn-primary" name="profileImgUpload">Feltöltés</button>
+                                </div>
+                            </form>
+
+                                                        
+
+                        </div>
+
                     <div class="flex-row">
                                                 <div class="profile-card more-details">
                             <h3>Adatok</h3>
@@ -108,7 +120,7 @@ echo $_prefixVariable8;?>
                             </div>
                             <div class="flex-row">
                                 <div class="image-upload">
-                                    <label for="file-input">
+                                    <label for="file-input" class="h6">
                                         <i class="fas fa-upload"></i>
                                         Kép feltöltés
                                     </label>

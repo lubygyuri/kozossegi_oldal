@@ -37,5 +37,11 @@ class FelhasznaloController extends DB {
         $stmt->execute([$profileImg, $userId]);
     }
 
+    public function updateProfile(Felhasznalo $felhasznalo) {
+        $sql = "UPDATE LUBLO.FELHASZNALO SET VEZETEKNEV = ?, KERESZTNEV = ?, NEME = ? WHERE AZONOSITO = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$felhasznalo->getVezeteknev(), $felhasznalo->getKeresztnev(), $felhasznalo->getNeme(), $felhasznalo->getAzonosito()]);
+    }
+
 
 }

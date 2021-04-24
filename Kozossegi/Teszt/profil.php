@@ -45,6 +45,16 @@ if (isset($_POST['profileImgUpload'])) {
     $_SESSION["profilkep"] = $response->data->link;
 }
 
+// Profil adatainak megváltoztatása
+if (isset($_POST["save"])) {
+    $mentendoFelhasznalo = new Felhasznalo();
+    $mentendoFelhasznalo->setAzonosito($_SESSION["azonosito"]);
+    $mentendoFelhasznalo->setVezeteknev($_POST["firstname"]);
+    $mentendoFelhasznalo->setKeresztnev($_POST["lastname"]);
+    $mentendoFelhasznalo->setNeme($_POST["gender"]);
+    $controller->updateProfile($mentendoFelhasznalo);
+}
+
 // Profilhoz tartozó adatok lekérése
 $data = $controller->getUserFromDB($_SESSION["email"]);
 

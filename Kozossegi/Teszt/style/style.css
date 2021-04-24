@@ -47,6 +47,10 @@ b-navbar-brand{
     justify-content: space-between;
 }
 
+.image-upload label {
+    cursor: pointer;
+}
+
 /* Profil */
 .profile-area {
     padding: 40px 0;
