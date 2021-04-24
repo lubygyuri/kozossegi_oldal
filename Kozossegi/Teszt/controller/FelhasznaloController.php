@@ -31,6 +31,11 @@ class FelhasznaloController extends DB {
         return $stmt->fetch();
     }
 
+    public function updateProfileImg($profileImg, $userId) {
+        $sql = "UPDATE LUBLO.FELHASZNALO SET PROFILKEP = ? WHERE AZONOSITO = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$profileImg, $userId]);
+    }
 
 
 }

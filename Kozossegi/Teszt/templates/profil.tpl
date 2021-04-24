@@ -29,6 +29,12 @@
 
                     {* Adatok és bejegyzés szekció *}
                     <div class="flex-row">
+                        <form action="profil.php" method="post" enctype="multipart/form-data">
+                            <input type="file" name="profileImg">
+                            <button type="submit" name="profileImgUpload">Profilkép feltöltése</button>
+                        </form>
+                    </div>
+                    <div class="flex-row">
                         {* Adatok *}
                         <div class="profile-card more-details">
                             <h3>Adatok</h3>
