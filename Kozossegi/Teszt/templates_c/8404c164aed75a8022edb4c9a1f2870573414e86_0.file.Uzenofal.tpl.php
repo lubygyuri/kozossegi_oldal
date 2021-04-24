@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-24 00:56:44
+/* Smarty version 3.1.39, created on 2021-04-24 02:13:54
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\Uzenofal.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_608350aca18463_77852677',
+  'unifunc' => 'content_608362c2ec1a73_39239838',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8404c164aed75a8022edb4c9a1f2870573414e86' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\Uzenofal.tpl',
-      1 => 1619218590,
+      1 => 1619223233,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_608350aca18463_77852677 (Smarty_Internal_Template $_smarty_tpl) {
+function content_608362c2ec1a73_39239838 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -51,15 +51,16 @@ echo $_prefixVariable3;?>
                 </div>
             </div>
         <div class="form-floating mt-3 mb-3">
-            <textarea class="form-control" placeholder="Írjon bejegyzést" id="floatingTextarea2" name="text" style="height: 100px"></textarea>
+            <textarea class="form-control" placeholder="Írjon bejegyzést..." id="floatingTextarea2" name="text" style="height: 100px"></textarea>
         </div>
         <div class="image-upload">
-            <label for="file-input">
-                <p class="h6 mb-2"><b-icon icon="upload" aria-hidden="true" class="mr-2"></b-icon>Kép feltöltés</p>
+            <label for="file-input" class="h6 mb-2">
+                <i class="fas fa-upload"></i>
+                Kép feltöltés
             </label>
             <input id="file-input" type="file"/>
-        </div>
             <button type="submit" class="btn btn-primary" name="submit">Közzététel</button>
+        </div>
         </form>
     </div>
     <?php if ($_smarty_tpl->tpl_vars['bejegyzesek']->value) {?>

@@ -15,15 +15,16 @@
                 </div>
             </div>
         <div class="form-floating mt-3 mb-3">
-            <textarea class="form-control" placeholder="Írjon bejegyzést" id="floatingTextarea2" name="text" style="height: 100px"></textarea>
+            <textarea class="form-control" placeholder="Írjon bejegyzést..." id="floatingTextarea2" name="text" style="height: 100px"></textarea>
         </div>
         <div class="image-upload">
-            <label for="file-input">
-                <p class="h6 mb-2"><b-icon icon="upload" aria-hidden="true" class="mr-2"></b-icon>Kép feltöltés</p>
+            <label for="file-input" class="h6 mb-2">
+                <i class="fas fa-upload"></i>
+                Kép feltöltés
             </label>
             <input id="file-input" type="file"/>
-        </div>
             <button type="submit" class="btn btn-primary" name="submit">Közzététel</button>
+        </div>
         </form>
     </div>
     {if $bejegyzesek}

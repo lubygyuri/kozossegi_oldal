@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-21 02:03:32
+/* Smarty version 3.1.39, created on 2021-04-24 01:45:59
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_607f6bd46f9472_02481677',
+  'unifunc' => 'content_60835c37b77cc6_62847587',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fe69ad81fd771ad73c1c79f9600b98a97e5d6094' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\index.tpl',
-      1 => 1618963410,
+      1 => 1619221559,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_607f6bd46f9472_02481677 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60835c37b77cc6_62847587 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -66,7 +66,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
               </div>
               <div class="flex-row">
                 <button type="submit" id="register-id" class="mt-3 p2 btn btn-success" name="submit">Regisztráció</button>
-                <b-button id="cancel" variant="warning" class="mt-3 p2" @click="$bvModal.hide('bv-modal-example')">Cancel</b-button>
+                <b-button id="cancel" variant="warning" class="mt-3 p2" @click="$bvModal.hide('bv-modal-example')">Mégse</b-button>
               </div>
             </form>
           </div>

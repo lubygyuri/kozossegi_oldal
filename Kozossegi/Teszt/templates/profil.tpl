@@ -31,12 +31,15 @@
                     <div class="flex-row">
                         {* Adatok *}
                         <div class="profile-card more-details">
-                            <h3>Infos</h3>
+                            <h3>Adatok</h3>
                             <ul>
                                 <li><i class="fas fa-user"></i>{{ucwords($felhasznalo->getNeme())}} (Nem)</li>
-{*                                TODO: Csekkolni, hogy léteznek-e  *}
-                                <li><i class="fas fa-graduation-cap"></i>{{ucwords($felhasznalo->getIskola())}} (Tanulmányok)</li>
-                                <li><i class="fas fa-suitcase"></i>{{ucwords($felhasznalo->getMunkahely())}} (Munkahely)</li>
+                                {if $felhasznalo->getIskola()}
+                                    <li><i class="fas fa-graduation-cap"></i>{{ucwords($felhasznalo->getIskola())}} (Tanulmányok)</li>
+                                {/if}
+                                {if $felhasznalo->getMunkahely()}
+                                    <li><i class="fas fa-suitcase"></i>{{ucwords($felhasznalo->getMunkahely())}} (Munkahely)</li>
+                                {/if}
                             </ul>
                         </div>
                         {* Bejegyzés írása *}
@@ -48,7 +51,8 @@
                             <div class="flex-row">
                                 <div class="image-upload">
                                     <label for="file-input">
-                                        <p class="h6 mb-2"><b-icon icon="upload" aria-hidden="true" class="mr-2"></b-icon>Kép feltöltés</p>
+                                        <i class="fas fa-upload"></i>
+                                        Kép feltöltés
                                     </label>
                                     <input id="file-input" type="file"/>
                                 </div>

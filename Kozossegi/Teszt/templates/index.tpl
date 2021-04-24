@@ -40,7 +40,7 @@
               </div>
               <div class="flex-row">
                 <button type="submit" id="register-id" class="mt-3 p2 btn btn-success" name="submit">Regisztráció</button>
-                <b-button id="cancel" variant="warning" class="mt-3 p2" @click="$bvModal.hide('bv-modal-example')">Cancel</b-button>
+                <b-button id="cancel" variant="warning" class="mt-3 p2" @click="$bvModal.hide('bv-modal-example')">Mégse</b-button>
               </div>
             </form>
           </div>

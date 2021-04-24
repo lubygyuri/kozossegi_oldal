@@ -42,6 +42,11 @@ b-navbar-brand{
     display: none;
 }
 
+.image-upload {
+    display: flex;
+    justify-content: space-between;
+}
+
 /* Profil */
 .profile-area {
     padding: 40px 0;
@@ -135,7 +140,7 @@ b-navbar-brand{
 .flex-row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .post-card {
