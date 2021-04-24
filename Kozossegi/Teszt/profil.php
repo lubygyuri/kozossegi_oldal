@@ -17,32 +17,13 @@ if (!isset($_SESSION["email"])){
 // Globális controllerek példányosítása
 $controller = new FelhasznaloController();
 $controller2 = new BejegyzesController();
+$controller3 = new KepController();
 
 // Profilkép feltöltése
 if (isset($_POST['profileImgUpload'])) {
-    $image = base64_encode(file_get_contents($_FILES['profileImg']['tmp_name']));
-
-    $options = array('http'=>array(
-        'method'=>"POST",
-        'header'=>"Authorization: Bearer b94ae91d008b3dea84bafd56d9be06a1c8790c60\n".
-            "Content-Type: application/x-www-form-urlencoded",
-        'content'=>$image
-    ));
-
-    $context = stream_context_create($options);
-
-    $imgurURL = "https://api.imgur.com/3/image";
-
-    if ($_FILES['profileImg']['size'] > 10240000) {
-        die("A kép túl nagy, maximum 10MB lehet.");
-    }
-
-    $response = file_get_contents($imgurURL, false, $context);
-
-    $response = json_decode($response);
-
-    $controller->updateProfileImg($response->data->link ,$_SESSION["azonosito"]);
-    $_SESSION["profilkep"] = $response->data->link;
+    $link = $controller3->kepFeltoltes('profileImg');
+    $controller->updateProfileImg($link ,$_SESSION["azonosito"]);
+    $_SESSION["profilkep"] = $link;
 }
 
 // Profil adatainak megváltoztatása
