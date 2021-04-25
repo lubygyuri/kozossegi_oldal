@@ -22,7 +22,7 @@ $controller3 = new KepController();
 // Profilkép feltöltése
 if (isset($_POST['profileImgUpload'])) {
     $link = $controller3->kepFeltoltes('profileImg');
-    $controller->updateProfileImg($link ,$_SESSION["azonosito"]);
+    $controller->updateProfileImg($link ,$_SESSION["email"]);
     $_SESSION["profilkep"] = $link;
 }
 
@@ -30,13 +30,29 @@ if (isset($_POST['profileImgUpload'])) {
 // Profil adatainak megváltoztatása
 if (isset($_POST["save"])) {
     $mentendoFelhasznalo = new Felhasznalo();
-    $mentendoFelhasznalo->setAzonosito($_SESSION["azonosito"]);
+    $mentendoFelhasznalo->setEmail($_SESSION["email"]);
     $mentendoFelhasznalo->setVezeteknev($_POST["firstname"]);
     $mentendoFelhasznalo->setKeresztnev($_POST["lastname"]);
     $mentendoFelhasznalo->setNeme($_POST["gender"]);
     $mentendoFelhasznalo->setIskola($_POST["school"]);
     $mentendoFelhasznalo->setMunkahely($_POST["job"]);
     $controller->updateProfile($mentendoFelhasznalo);
+}
+
+// Bejegyzés közzététel
+if(isset($_POST["createPost"])) {
+    $bejegyzes = new Bejegyzes();
+    $bejegyzes->setUzenet($_POST['text']);
+    $bejegyzes->setFelhasznaloAzonosito($_SESSION["email"]);
+
+//    TODO: Nem működik mert külső kulcsként kezeljük a képet, szerintem engedjük el (Gyuri)
+    if ($_POST["postImg"]) {
+        $bejegyzes->setKep($controller3->kepFeltoltes('postImg'));
+    } else {
+        $bejegyzes->setKep('');
+    }
+
+    $controller2->createPost($bejegyzes);
 }
 
 // Profilhoz tartozó adatok lekérése
@@ -52,28 +68,10 @@ $felhasznalo->setIskola($data["ISKOLA"]);
 $felhasznalo->setMunkahely($data["MUNKAHELY"]);
 $felhasznalo->setProfilkep($data["PROFILKEP"]);
 
-
-// Bejegyzés közzététel
-if(isset($_POST["createPost"])) {
-    $bejegyzes = new Bejegyzes();
-    $bejegyzes->setUzenet($_POST['text']);
-    $bejegyzes->setFelhasznaloAzonosito($_SESSION["azonosito"]);
-
-//    TODO: Nem működik mert külső kulcsként kezeljük a képet, szerintem engedjük el (Gyuri)
-    if ($_POST["postImg"]) {
-        $bejegyzes->setKep($controller3->kepFeltoltes('postImg'));
-    } else {
-        $bejegyzes->setKep('');
-    }
-
-    $controller2->createPost($bejegyzes);
-}
-
-
 // Adott profil posztjainak lekérése
-$userId = $data["AZONOSITO"];
+$userEmail = $data["EMAIL"];
 $posts = array();
-$postsData = $controller2->getPostsByUserId($userId);
+$postsData = $controller2->getPostsByUserEmail($userEmail);
 
 if ($postsData) {
     foreach ($postsData as $postData) {
@@ -90,9 +88,9 @@ if ($postsData) {
 // TODO: kommentek lekérése
 // TODO: modell kiegészítése a likeok és a kommentek adattagokkal
 // SELECT count(*) FROM FELHASZNALO, BEJEGYZES, BEJEGYZES_LIKE
-// WHERE bejegyzes.felhasznalo_azonosito = felhasznalo.azonosito
+// WHERE bejegyzes.felhasznalo_azonosito = felhasznalo.email
 // AND bejegyzes_like.bejegyzes_azonosito = bejegyzes.azonosito
-// AND felhasznalo.azonosito = 1
+// AND felhasznalo.email = example@example.com
 // AND bejegyzes.azonosito = 1
 
 $smarty->assign("bejegyzesek", $posts);

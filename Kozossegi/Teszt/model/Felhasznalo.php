@@ -2,7 +2,6 @@
 
 
 class Felhasznalo {
-    private $azonosito;
     private $email;
     private $jelszo;
     private $vezeteknev;
@@ -13,22 +12,6 @@ class Felhasznalo {
     private $munkahely;
     private $csatlakozasDatuma;
     private $profilkep;
-
-    /**
-     * @return mixed
-     */
-    public function getAzonosito()
-    {
-        return $this->azonosito;
-    }
-
-    /**
-     * @param mixed $azonosito
-     */
-    public function setAzonosito($azonosito)
-    {
-        $this->azonosito = $azonosito;
-    }
 
     /**
      * @return mixed

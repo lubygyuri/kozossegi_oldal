@@ -25,6 +25,9 @@ class KepController {
         $response = json_decode($response);
 
 //        Visszaadja a kep elérési útvonalát
+
+//        TODO: A kép méretének visszaadása
+
         return $response->data->link;
     }
 

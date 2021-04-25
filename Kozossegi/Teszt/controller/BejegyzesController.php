@@ -3,10 +3,10 @@
 
 class BejegyzesController extends DB{
 
-    public function getPostsByUserId($userId) {
-        $sql = "SELECT * FROM LUBLO.BEJEGYZES, LUBLO.FELHASZNALO WHERE LUBLO.BEJEGYZES.FELHASZNALO_AZONOSITO = LUBLO.FELHASZNALO.AZONOSITO AND LUBLO.FELHASZNALO.AZONOSITO = ?";
+    public function getPostsByUserEmail($userEmail) {
+        $sql = "SELECT * FROM LUBLO.BEJEGYZES, LUBLO.FELHASZNALO WHERE LUBLO.BEJEGYZES.FELHASZNALO_AZONOSITO = LUBLO.FELHASZNALO.EMAIL AND LUBLO.FELHASZNALO.EMAIL = ?";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$userId]);
+        $stmt->execute([$userEmail]);
 
         return $stmt->fetchAll();
     }
