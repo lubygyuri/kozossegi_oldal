@@ -12,7 +12,7 @@ class FelhasznaloController extends DB {
     }
 
     public function registration(Felhasznalo $felhasznalo) {
-        $sql = "INSERT INTO LUBLO.FELHASZNALO (azonosito, email, jelszo, vezeteknev, keresztnev, szuletesi_datum, neme, csatlakozas_datuma, profilkep) VALUES (1, ?, ?, ?, ?, to_date(?, 'YYYY-MM-DD'), ?, CURRENT_DATE, ?)";
+        $sql = "INSERT INTO LUBLO.FELHASZNALO (azonosito, email, jelszo, vezeteknev, keresztnev, szuletesi_datum, neme, csatlakozas_datuma, profilkep) VALUES (3, ?, ?, ?, ?, to_date(?, 'YYYY-MM-DD'), ?, CURRENT_DATE, ?)";
         $stmt = $this->connect()->prepare($sql);
         $hashed_jelszo = password_hash($felhasznalo->getJelszo(), PASSWORD_DEFAULT);
         $stmt->execute([$felhasznalo->getEmail(), $hashed_jelszo, $felhasznalo->getVezeteknev(), $felhasznalo->getKeresztnev(),$felhasznalo->getSzuletesiDatum(), $felhasznalo->getNeme(), $felhasznalo->getProfilkep()]);
