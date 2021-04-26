@@ -28,10 +28,16 @@
             <li class="nav-item mr-4 border border-4 rounded">
                 <a class="nav-link" href="logout.php"><b-icon icon="door-closed-fill" aria-hidden="true" class="mr-2"></b-icon>Kijelentkezés</a>
             </li>
-            <div class="input-group rounded">
-                <input type="search" class="form-control rounded mr-2" placeholder="Keresés..." aria-label="Search" aria-describedby="search-addon"/>
-                <button class="btn btn-primary" id="search-addon"><i class="fas fa-search"></i></button>
-            </div>
+
+            <form>
+                <div class="input-group rounded">
+                    <input onkeyup="kereses()" type="search" id="searchbox" class="form-control rounded mr-2 sbox" placeholder="Keresés..." autocomplete="off">
+                    <button class="btn btn-primary" id="search-addon"><i class="fas fa-search"></i></button>
+                </div>
+                <div id="keresesDiv">
+
+                </div>
+            </form>
         </ul>
     </nav>
 

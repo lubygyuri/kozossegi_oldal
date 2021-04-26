@@ -225,6 +225,11 @@ b-navbar-brand{
     background-color: #999;
 }
 
+/* Search */
+nav form {
+    width: 100%;
+}
+
 /* Footer */
 footer {
     display: flex !important;

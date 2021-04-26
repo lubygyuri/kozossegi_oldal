@@ -67,8 +67,8 @@ new Vue({
     methods: { },
 });
 
+var xhttp = new XMLHttpRequest();
 function like(id) {
-    var xhttp = new XMLHttpRequest();
     /*document.getElementById(x).removeAttribute("onclick");*/
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -79,7 +79,6 @@ function like(id) {
     xhttp.send();
 }
 function komment(id) {
-    var xhttp = new XMLHttpRequest();
     /*document.getElementById(x).removeAttribute("onclick");*/
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -91,6 +90,22 @@ function komment(id) {
     document.getElementById("textarea"+id).value='';
     xhttp.open("GET", "komment.php?id="+id+"&text="+test, true);
     xhttp.send();
+}
+
+function kereses() {
+    var searchValue = document.getElementById('searchbox').value;
+
+    if (searchValue.length !== 0) {
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("keresesDiv").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "kereses.php?search="+searchValue, true);
+        xhttp.send();
+    } else {
+        document.getElementById("keresesUl").remove();
+    }
 }
 
 

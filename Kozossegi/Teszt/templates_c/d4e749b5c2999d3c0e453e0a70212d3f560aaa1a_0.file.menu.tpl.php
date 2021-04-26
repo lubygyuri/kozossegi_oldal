@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-24 01:47:11
+/* Smarty version 3.1.39, created on 2021-04-26 18:20:52
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\menu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60835c7fe60ab4_28344843',
+  'unifunc' => 'content_6086e8645bfc65_59225399',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd4e749b5c2999d3c0e453e0a70212d3f560aaa1a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\menu.tpl',
-      1 => 1619221631,
+      1 => 1619454050,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60835c7fe60ab4_28344843 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6086e8645bfc65_59225399 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div id="app">
     <div class="header">
         <!-- Image and text -->
@@ -51,10 +51,16 @@ function content_60835c7fe60ab4_28344843 (Smarty_Internal_Template $_smarty_tpl)
             <li class="nav-item mr-4 border border-4 rounded">
                 <a class="nav-link" href="logout.php"><b-icon icon="door-closed-fill" aria-hidden="true" class="mr-2"></b-icon>Kijelentkezés</a>
             </li>
-            <div class="input-group rounded">
-                <input type="search" class="form-control rounded mr-2" placeholder="Keresés..." aria-label="Search" aria-describedby="search-addon"/>
-                <button class="btn btn-primary" id="search-addon"><i class="fas fa-search"></i></button>
-            </div>
+
+            <form>
+                <div class="input-group rounded">
+                    <input onkeyup="kereses()" type="search" id="searchbox" class="form-control rounded mr-2 sbox" placeholder="Keresés..." autocomplete="off">
+                    <button class="btn btn-primary" id="search-addon"><i class="fas fa-search"></i></button>
+                </div>
+                <div id="keresesDiv">
+
+                </div>
+            </form>
         </ul>
     </nav>
 
