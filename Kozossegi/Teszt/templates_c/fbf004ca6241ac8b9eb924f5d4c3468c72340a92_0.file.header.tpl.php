@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-23 22:39:09
+/* Smarty version 3.1.39, created on 2021-04-26 10:07:29
   from '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6083306dc72344_97336875',
+  'unifunc' => 'content_608674c1827e04_75736029',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fbf004ca6241ac8b9eb924f5d4c3468c72340a92' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/header.tpl',
-      1 => 1619210303,
+      1 => 1619424040,
       2 => 'file',
     ),
   ),
@@ -20,11 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6083306dc72344_97336875 (Smarty_Internal_Template $_smarty_tpl) {
+function content_608674c1827e04_75736029 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html >
 <HTML lang="hu">
 <HEAD>
-<TITLE>Teszt Feladat</TITLE>
+<TITLE>fsociety</TITLE>
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/login.css">
     <link rel="stylesheet" href="style/uzenetek.css">

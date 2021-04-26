@@ -20,15 +20,15 @@ if(isset($_POST["submit"])) {
     $bejegyzes->setUzenet($_POST['text']);
     $bejegyzes->setFelhasznaloAzonosito($_SESSION["email"]);
     $bejegyzes->setKep('');
-    $controller = new BejegyzesController();
-    $controller->createPost($bejegyzes);
+    $felhasznaloController = new BejegyzesController();
+    $felhasznaloController->createPost($bejegyzes);
 }
 
 // Bejegyzések listázása
-$controller = new FelhasznaloController();
-$controller2 = new BejegyzesController();
+$felhasznaloController = new FelhasznaloController();
+$bejegyzesController = new BejegyzesController();
 $posts = array();
-$postsData = $controller2->getPostAll();
+$postsData = $bejegyzesController->getPostAll();
 
 if ($postsData) {
     foreach ($postsData as $postData) {
@@ -37,7 +37,7 @@ if ($postsData) {
         $post->setUzenet($postData["UZENET"]);
         $post->setLetrehozasIdeje($postData["LETREHOZAS_DATUMA"]);
         $post->setKep($postData["KEP"]);
-        $user =$controller->getUserFromDB($postData["FELHASZNALO_AZONOSITO"]);
+        $user =$felhasznaloController->getUserFromDB($postData["FELHASZNALO_AZONOSITO"]);
         $felhasznalo = new Felhasznalo();
         $felhasznalo->setProfilkep($user['PROFILKEP']);
         $felhasznalo->setVezeteknev($user['VEZETEKNEV']);

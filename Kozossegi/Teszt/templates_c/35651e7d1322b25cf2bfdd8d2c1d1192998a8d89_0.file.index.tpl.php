@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-23 16:48:16
+/* Smarty version 3.1.39, created on 2021-04-26 10:07:29
   from '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6082de301e79d1_39345521',
+  'unifunc' => 'content_608674c1825f96_42039778',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '35651e7d1322b25cf2bfdd8d2c1d1192998a8d89' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/index.tpl',
-      1 => 1619189160,
+      1 => 1619424040,
       2 => 'file',
     ),
   ),
@@ -22,11 +22,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6082de301e79d1_39345521 (Smarty_Internal_Template $_smarty_tpl) {
+function content_608674c1825f96_42039778 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-<div id="app4" class="container px-4 mt-5">
+<div id="app4" class="container p-5" style="height: 96vh">
 
   <div class="shadow-lg p-3 bg-white rounded align-self-baseline mr-2 w-50 p-3 mb-5 mx-auto">
       <form action="login.php" class="kulso-form" method="post">
@@ -66,7 +66,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
               </div>
               <div class="flex-row">
                 <button type="submit" id="register-id" class="mt-3 p2 btn btn-success" name="submit">Regisztráció</button>
-                <b-button id="cancel" variant="warning" class="mt-3 p2" @click="$bvModal.hide('bv-modal-example')">Cancel</b-button>
+                <b-button id="cancel" variant="warning" class="mt-3 p2" @click="$bvModal.hide('bv-modal-example')">Mégse</b-button>
               </div>
             </form>
           </div>
@@ -78,11 +78,19 @@ $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderin
 if ($_smarty_tpl->tpl_vars['i']->total > 0) {
 for ($_smarty_tpl->tpl_vars['i']->value = 0, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
 $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration === $_smarty_tpl->tpl_vars['i']->total;?>
-        <div class="alert alert-danger" role="alert"><?php ob_start();
+        <?php if (strpos($_smarty_tpl->tpl_vars['errors']->value[$_smarty_tpl->tpl_vars['i']->value],"Sikeres") === 0) {?>
+          <div class="alert alert-success" role="alert"><?php ob_start();
 echo $_smarty_tpl->tpl_vars['errors']->value[$_smarty_tpl->tpl_vars['i']->value];
 $_prefixVariable1 = ob_get_clean();
 echo $_prefixVariable1;?>
 </div>
+        <?php } else { ?>
+          <div class="alert alert-danger" role="alert"><?php ob_start();
+echo $_smarty_tpl->tpl_vars['errors']->value[$_smarty_tpl->tpl_vars['i']->value];
+$_prefixVariable2 = ob_get_clean();
+echo $_prefixVariable2;?>
+</div>
+        <?php }?>
       <?php }
 }
 ?>

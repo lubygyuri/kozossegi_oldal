@@ -1,29 +1,13 @@
 <?php
 
 
-class Bejegyzes {
+class Komment
+{
     private $azonosito;
     private $uzenet;
     private $letrehozasIdeje;
     private $felhasznaloAzonosito;
-    private $kep;
-    private $kommentek =array();
-
-    /**
-     * @return mixed
-     */
-    public function getKommentek()
-    {
-        return $this->kommentek;
-    }
-
-    /**
-     * @param mixed $kommentek
-     */
-    public function setKommentek($kommentek)
-    {
-        $this->kommentek = $kommentek;
-    }
+    private $bejegyzes_azonosito;
 
     /**
      * @return mixed
@@ -70,9 +54,7 @@ class Bejegyzes {
      */
     public function setLetrehozasIdeje($letrehozasIdeje)
     {
-
         $this->letrehozasIdeje = $letrehozasIdeje;
-
     }
 
     /**
@@ -94,18 +76,19 @@ class Bejegyzes {
     /**
      * @return mixed
      */
-    public function getKep()
+    public function getBejegyzesAzonosito()
     {
-        return $this->kep;
+        return $this->bejegyzes_azonosito;
     }
 
     /**
-     * @param mixed $kep
+     * @param mixed $bejegyzes_azonosito
      */
-    public function setKep($kep)
+    public function setBejegyzesAzonosito($bejegyzes_azonosito)
     {
-        $this->kep = $kep;
+        $this->bejegyzes_azonosito = $bejegyzes_azonosito;
     }
+
 
 
 }
