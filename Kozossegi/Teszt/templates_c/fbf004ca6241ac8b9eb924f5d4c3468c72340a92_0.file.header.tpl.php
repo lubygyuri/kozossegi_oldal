@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-26 10:07:29
+/* Smarty version 3.1.39, created on 2021-04-26 18:31:02
   from '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_608674c1827e04_75736029',
+  'unifunc' => 'content_6086eac63f4092_50148983',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fbf004ca6241ac8b9eb924f5d4c3468c72340a92' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/header.tpl',
-      1 => 1619424040,
+      1 => 1619454635,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_608674c1827e04_75736029 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6086eac63f4092_50148983 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html >
 <HTML lang="hu">
 <HEAD>
@@ -30,6 +30,9 @@ function content_608674c1827e04_75736029 (Smarty_Internal_Template $_smarty_tpl)
     <link rel="stylesheet" href="style/uzenetek.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <?php echo '<script'; ?>
+ src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"><?php echo '</script'; ?>
+>
     <?php echo '<script'; ?>
  src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"><?php echo '</script'; ?>
 >

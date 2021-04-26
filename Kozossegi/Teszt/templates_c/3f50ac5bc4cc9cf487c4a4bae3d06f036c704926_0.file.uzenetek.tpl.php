@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-26 10:12:17
+/* Smarty version 3.1.39, created on 2021-04-26 23:26:24
   from '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/uzenetek.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_608675e1e243d2_56082834',
+  'unifunc' => 'content_608730004667b8_30134874',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3f50ac5bc4cc9cf487c4a4bae3d06f036c704926' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/uzenetek.tpl',
-      1 => 1619424040,
+      1 => 1619439917,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_608675e1e243d2_56082834 (Smarty_Internal_Template $_smarty_tpl) {
+function content_608730004667b8_30134874 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -40,8 +40,20 @@ $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smar
                     </form>
 
                                         <div class="header-details-container">
-                                                <span>Example example</span>
-                                                <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="profilkép">
+                                                <span><?php ob_start();
+echo $_smarty_tpl->tpl_vars['belepettFelhasznalo']->value->getVezeteknev();
+$_prefixVariable1 = ob_get_clean();
+echo $_prefixVariable1;?>
+ <?php ob_start();
+echo $_smarty_tpl->tpl_vars['belepettFelhasznalo']->value->getKeresztnev();
+$_prefixVariable2 = ob_get_clean();
+echo $_prefixVariable2;?>
+</span>
+                                                <img src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['belepettFelhasznalo']->value->getProfilkep();
+$_prefixVariable3 = ob_get_clean();
+echo $_prefixVariable3;?>
+" alt="profilkép">
                     </div>
                 </div>
 
