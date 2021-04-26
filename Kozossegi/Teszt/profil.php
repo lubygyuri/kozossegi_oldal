@@ -15,17 +15,18 @@ if (!isset($_SESSION["email"])){
 }
 
 // Globális controllerek példányosítása
-$controller = new FelhasznaloController();
-$controller2 = new BejegyzesController();
-$controller3 = new KepController();
+$felhasznaloController = new FelhasznaloController();
+$bejegyzesController = new BejegyzesController();
+$kepController = new KepController();
+$likeController = new LikeController();
 
 // Profilkép feltöltése
 if (isset($_POST['profileImgUpload'])) {
-    $link = $controller3->kepFeltoltes('profileImg');
+    $link = $kepController->kepFeltoltes('profileImg');
 
     if (!$link == '') {
         $_SESSION["profilkep"] = $link;
-        $controller->updateProfileImg($link ,$_SESSION["email"]);
+        $felhasznaloController->updateProfileImg($link ,$_SESSION["email"]);
     }
 }
 
@@ -38,21 +39,21 @@ if (isset($_POST["save"])) {
     $mentendoFelhasznalo->setNeme($_POST["gender"]);
     $mentendoFelhasznalo->setIskola($_POST["school"]);
     $mentendoFelhasznalo->setMunkahely($_POST["job"]);
-    $controller->updateProfile($mentendoFelhasznalo);
+    $felhasznaloController->updateProfile($mentendoFelhasznalo);
 }
 
 // Bejegyzés közzététel
 if(isset($_POST['createPost'])) {
-    $link = $controller3->kepFeltoltes('postImage');
+    $link = $kepController->kepFeltoltes('postImage');
     $bejegyzes = new Bejegyzes();
     $bejegyzes->setUzenet($_POST['text']);
     $bejegyzes->setFelhasznaloAzonosito($_SESSION["email"]);
     $bejegyzes->setKep($link);
-    $controller2->createPost($bejegyzes);
+    $bejegyzesController->createPost($bejegyzes);
 }
 
 // Profilhoz tartozó adatok lekérése
-$data = $controller->getUserFromDB($_SESSION["email"]);
+$data = $felhasznaloController->getUserFromDB($_SESSION["email"]);
 
 $felhasznalo = new Felhasznalo();
 $felhasznalo->setEmail($data["EMAIL"]);
@@ -67,7 +68,7 @@ $felhasznalo->setProfilkep($data["PROFILKEP"]);
 // Adott profil posztjainak lekérése
 $userEmail = $data["EMAIL"];
 $posts = array();
-$postsData = $controller2->getPostsByUserEmail($userEmail);
+$postsData = $bejegyzesController->getPostsByUserEmail($userEmail);
 
 if ($postsData) {
     foreach ($postsData as $postData) {
@@ -75,8 +76,27 @@ if ($postsData) {
         $post->setAzonosito($postData["AZONOSITO"]);
         $post->setUzenet($postData["UZENET"]);
         $post->setLetrehozasIdeje($postData["LETREHOZAS_IDEJE"]);
+        $post->setFelhasznaloAzonosito($postData["FELHASZNALO_AZONOSITO"]);
         $post->setKep($postData["KEP"]);
         array_push($posts, $post);
+    }
+}
+
+// Bejegyzés likeolása
+if (isset($_POST["likePost"])) {
+    $like = new Like();
+    $likedPost = new Bejegyzes();
+    $like->setBejegyzesAzonosito($_POST["bejegyzesAzonosito"]);
+//    Azért session email, mert arra vagyunk kíváncsiak, hogy aki be van jelentkezve annak hogy látszik a likeolása
+    $like->setFelhasznaloAzonosito($_SESSION["email"]);
+    $likedPost->setAzonosito($_POST["bejegyzesAzonosito"]);
+
+    if (!$likeController->alreadyLikedPost($like)) {
+        $bejegyzesController->updateLikesOnBejegyzes($likedPost);
+        $likeController->increaseBejegyzesLike($like);
+    } else {
+        $bejegyzesController->deleteLikesOnBejegyzes($likedPost);
+        $likeController->decreaseBejegyzesLike($like);
     }
 }
 

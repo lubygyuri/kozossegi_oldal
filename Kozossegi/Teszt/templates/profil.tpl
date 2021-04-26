@@ -161,10 +161,14 @@
                                 </div>
 
                                 {* Akció gombok *}
-                                <div class="post-footer">
-                                    <button><i class="far fa-heart"></i>Tetszik</button>
-                                    <button><i class="far fa-comment-alt"></i>Hozzászólás</button>
-                                </div>
+                                <form action="profil.php" method="post">
+                                    <div class="post-footer">
+                                        <input type="text" hidden name="bejegyzesAzonosito" value="{{$bejegyzesek[$i]->getAzonosito()}}">
+                                        <input type="text" hidden name="felhasznaloAzonosito" value="{{$bejegyzesek[$i]->getFelhasznaloAzonosito()}}">
+                                        <button type="submit" name="likePost"><i class="far fa-heart"></i>Tetszik</button>
+                                        <button><i class="far fa-comment-alt"></i>Hozzászólás</button>
+                                    </div>
+                                </form>
                             </div>
                         {/for}
                     {/if}

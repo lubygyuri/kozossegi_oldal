@@ -10,16 +10,30 @@ class BejegyzesController extends DB{
 
         return $stmt->fetchAll();
     }
+
     public function getPostAll() {
         $sql = "SELECT * FROM LUBLO.BEJEGYZES ORDER BY LETREHOZAS_IDEJE desc";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll();
     }
+
     public function createPost(Bejegyzes $bejegyzes) {
         $sql = "INSERT INTO LUBLO.BEJEGYZES (uzenet, letrehozas_ideje, felhasznalo_azonosito, kep) VALUES (?, CURRENT_TIMESTAMP, ?, ?)";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$bejegyzes->getUzenet(),$bejegyzes->getFelhasznaloAzonosito(),$bejegyzes->getKep()]);
+    }
+
+    public function updateLikesOnBejegyzes(Bejegyzes $bejegyzes) {
+        $sql = "UPDATE BEJEGYZES SET LIKES = LIKES + 1 WHERE AZONOSITO = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$bejegyzes->getAzonosito()]);
+    }
+
+    public function deleteLikesOnBejegyzes(Bejegyzes $bejegyzes) {
+        $sql = "UPDATE BEJEGYZES SET LIKES = LIKES - 1 WHERE AZONOSITO = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$bejegyzes->getAzonosito()]);
     }
 
 }

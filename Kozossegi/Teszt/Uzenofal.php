@@ -14,22 +14,23 @@ if (!isset($_SESSION["email"])){
 }
 
 // Controllerek példányosítása
-$controller = new FelhasznaloController();
-$controller2 = new BejegyzesController();
-$controller3 = new KepController();
+$felhasznaloController = new FelhasznaloController();
+$bejegyzesController = new BejegyzesController();
+$kepController = new KepController();
+$likeController = new LikeController();
 
 // Bejegyzés közzététel
 if(isset($_POST["submit"])) {
     $bejegyzes = new Bejegyzes();
     $bejegyzes->setUzenet($_POST['text']);
     $bejegyzes->setFelhasznaloAzonosito($_SESSION["email"]);
-    $bejegyzes->setKep($controller3->kepFeltoltes('postImgUzenofal'));
-    $controller2->createPost($bejegyzes);
+    $bejegyzes->setKep($kepController->kepFeltoltes('postImgUzenofal'));
+    $bejegyzesController->createPost($bejegyzes);
 }
 
 // Bejegyzések listázása
 $posts = array();
-$postsData = $controller2->getPostAll();
+$postsData = $bejegyzesController->getPostAll();
 
 if ($postsData) {
     foreach ($postsData as $postData) {
@@ -39,7 +40,7 @@ if ($postsData) {
         $post->setLetrehozasIdeje($postData["LETREHOZAS_IDEJE"]);
         $post->setKep($postData["KEP"]);
 
-        $user = $controller->getUserFromDB($postData["FELHASZNALO_AZONOSITO"]);
+        $user = $felhasznaloController->getUserFromDB($postData["FELHASZNALO_AZONOSITO"]);
 
         $felhasznalo = new Felhasznalo();
         $felhasznalo->setProfilkep($user['PROFILKEP']);
