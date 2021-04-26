@@ -18,6 +18,7 @@ $felhasznaloController = new FelhasznaloController();
 $bejegyzesController = new BejegyzesController();
 $kepController = new KepController();
 $kommentController = new KommentController();
+$likeController = new LikeController();
 
 // Bejegyzés közzététel
 if(isset($_POST["submit"])) {
@@ -47,7 +48,6 @@ if ($postsData) {
         $felhasznalo->setVezeteknev($user['VEZETEKNEV']);
         $felhasznalo->setKeresztnev($user['KERESZTNEV']);
 
-
         $kommentData = $kommentController->getKommentByBejegyzes($postData["AZONOSITO"]);
         $komment = array();
         if ($kommentData !=null) {
@@ -66,6 +66,19 @@ if ($postsData) {
         }
         $post->setKommentek($komment);
         $post->setFelhasznaloAzonosito($felhasznalo);
+
+        $like = new Like();
+        $like->setBejegyzesAzonosito($post->getAzonosito());
+        $like->setFelhasznaloAzonosito($_SESSION["email"]);
+        if (!$likeController->isPostLiked($like)) {
+            $post->setIsLiked(false);
+        } else {
+            $post->setIsLiked(true);
+        }
+
+
+
+
         array_push($posts, $post);
     }
 }
@@ -75,7 +88,7 @@ $bejelentkezettF = new Felhasznalo();
 $bejelentkezettF->setProfilkep($_SESSION["profilkep"]);
 $bejelentkezettF->setKeresztnev($_SESSION["keresztnev"]);
 $bejelentkezettF->setVezeteknev($_SESSION["vezeteknev"]);
-
+$bejelentkezettF->setEmail($_SESSION["email"]);
 
 $smarty->assign("bejegyzesek",$posts);
 $smarty->assign("belepettFelhasznalo", $bejelentkezettF);

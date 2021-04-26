@@ -216,6 +216,10 @@ b-navbar-brand{
     border: none;
     padding: 5px 10px;
 }
+.post-footer div {
+    width: 100%;
+    border: none;
+}
 
 .post-footer button:hover {
     background-color: #999;

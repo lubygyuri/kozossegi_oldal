@@ -159,20 +159,17 @@
                                     {* Posztok szövege *}
                                     <p>{{$bejegyzesek[$i]->getUzenet()}}</p>
                                 </div>
-
                                 {* Akció gombok *}
-                                <form action="profil.php" method="post">
                                     <div class="post-footer">
-                                        <input type="text" hidden name="bejegyzesAzonosito" value="{{$bejegyzesek[$i]->getAzonosito()}}">
-                                        <input type="text" hidden name="felhasznaloAzonosito" value="{{$bejegyzesek[$i]->getFelhasznaloAzonosito()}}">
-                                        {if $bejegyzesek[$i]->getIsLiked()}
-                                            <button type="submit" name="likePost"><i class="fas fa-heart"></i>Tetszik</button>
-                                        {else}
-                                            <button type="submit" name="likePost"><i class="far fa-heart"></i>Tetszik</button>
-                                        {/if}
+                                        <div id="{{$bejegyzesek[$i]->getAzonosito()}}">
+                                            {if $bejegyzesek[$i]->getIsLiked()}
+                                                <button onclick="like({{$bejegyzesek[$i]->getAzonosito()}})" type="submit" name="likePost"><i class="fas fa-heart"></i>Tetszik</button>
+                                            {else}
+                                                <button onclick="like({{$bejegyzesek[$i]->getAzonosito()}})" type="submit" name="likePost"><i class="far fa-heart"></i>Tetszik</button>
+                                            {/if}
+                                        </div>
                                         <button><i class="far fa-comment-alt"></i>Hozzászólás</button>
                                     </div>
-                                </form>
                             </div>
                         {/for}
                     {/if}

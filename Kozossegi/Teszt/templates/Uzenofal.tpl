@@ -50,19 +50,16 @@
                 </b-row>
                 <b-row>
                     <b-col cols="auto" class="w-100">
-                        <b-button-group class="w-100">
-
+                        <div class="post-footer mt-3">
+                            <div id="{{$bejegyzesek[$i]->getAzonosito()}}">
                             {if $bejegyzesek[$i]->getIsLiked()}
-                                <button onclick="like()" type="submit" name="likePost"><i class="fas fa-heart"></i>Tetszik</button>
+                                <button onclick="like({{$bejegyzesek[$i]->getAzonosito()}})" type="submit" name="likePost"><i class="fas fa-heart"></i>Tetszik</button>
                             {else}
-                                <button type="submit" name="likePost"><i class="far fa-heart"></i>Tetszik</button>
+                                <button onclick="like({{$bejegyzesek[$i]->getAzonosito()}})" type="submit" name="likePost"><i class="far fa-heart"></i>Tetszik</button>
                             {/if}
-
-
-                            <b-button v-b-toggle.my-collapse{{$bejegyzesek[$i]->getAzonosito()}} id="{{$bejegyzesek[$i]->getAzonosito()}}" variant="btn-outline-primary" onchange="kommentList({{$bejegyzesek[$i]->getAzonosito()}})">
-                                <b-icon  icon="chat-left" aria-hidden="true"></b-icon> Hozzászólás
-                            </b-button>
-                        </b-button-group>
+                            </div>
+                            <button v-b-toggle.my-collapse{{$bejegyzesek[$i]->getAzonosito()}} id="{{$bejegyzesek[$i]->getAzonosito()}}"><i class="far fa-comment-alt"></i>Hozzászólás</button>
+                        </div>
                         <template>
                             <b-collapse id="my-collapse{{$bejegyzesek[$i]->getAzonosito()}}" class="mt-4">
                                 {if $bejegyzesek[$i]->getKommentek()}
