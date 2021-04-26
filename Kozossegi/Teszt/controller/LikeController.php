@@ -21,4 +21,11 @@ class LikeController extends DB{
         $stmt->execute([$like->getBejegyzesAzonosito(), $like->getFelhasznaloAzonosito()]);
         return $stmt->fetch();
     }
+
+    public function isPostLiked(Like $like) {
+        $sql = "SELECT bejegyzes_azonosito FROM BEJEGYZES_LIKE WHERE bejegyzes_azonosito = ? AND felhasznalo_azonosito = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$like->getBejegyzesAzonosito(), $like->getFelhasznaloAzonosito()]);
+        return $stmt->fetch();
+    }
 }

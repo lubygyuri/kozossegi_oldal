@@ -8,6 +8,40 @@ class Bejegyzes {
     private $felhasznaloAzonosito;
     private $kep;
     private $kommentek =array();
+    private $likes;
+    private $isLiked;
+
+    /**
+     * @return mixed
+     */
+    public function getLikes()
+    {
+        return $this->likes;
+    }
+
+    /**
+     * @param mixed $likes
+     */
+    public function setLikes($likes)
+    {
+        $this->likes = $likes;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIsLiked()
+    {
+        return $this->isLiked;
+    }
+
+    /**
+     * @param mixed $isLiked
+     */
+    public function setIsLiked($isLiked)
+    {
+        $this->isLiked = $isLiked;
+    }
 
     /**
      * @return mixed

@@ -78,6 +78,17 @@ if ($postsData) {
         $post->setLetrehozasIdeje($postData["LETREHOZAS_IDEJE"]);
         $post->setFelhasznaloAzonosito($postData["FELHASZNALO_AZONOSITO"]);
         $post->setKep($postData["KEP"]);
+
+//        Likeolta-e már a bejelentkezett felhasználó a posztot
+        $like = new Like();
+        $like->setBejegyzesAzonosito($post->getAzonosito());
+        $like->setFelhasznaloAzonosito($_SESSION["email"]);
+        if (!$likeController->isPostLiked($like)) {
+            $post->setIsLiked(false);
+        } else {
+            $post->setIsLiked(true);
+        }
+
         array_push($posts, $post);
     }
 }
@@ -100,14 +111,8 @@ if (isset($_POST["likePost"])) {
     }
 }
 
-// TODO: likeok megjelenítése, trigger használata + bejegyzes táblába likeok számának felvétele
 // TODO: kommentek lekérése
 // TODO: modell kiegészítése a likeok és a kommentek adattagokkal
-// SELECT count(*) FROM FELHASZNALO, BEJEGYZES, BEJEGYZES_LIKE
-// WHERE bejegyzes.felhasznalo_azonosito = felhasznalo.email
-// AND bejegyzes_like.bejegyzes_azonosito = bejegyzes.azonosito
-// AND felhasznalo.email = example@example.com
-// AND bejegyzes.azonosito = 1
 
 $smarty->assign("bejegyzesek", $posts);
 $smarty->assign("felhasznalo", $felhasznalo);

@@ -70,9 +70,6 @@ if ($postsData) {
     }
 }
 
-
-
-
 // Bejelentkezett felhasználó megjelenítése
 $bejelentkezettF = new Felhasznalo();
 $bejelentkezettF->setProfilkep($_SESSION["profilkep"]);

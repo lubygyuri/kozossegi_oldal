@@ -165,7 +165,11 @@
                                     <div class="post-footer">
                                         <input type="text" hidden name="bejegyzesAzonosito" value="{{$bejegyzesek[$i]->getAzonosito()}}">
                                         <input type="text" hidden name="felhasznaloAzonosito" value="{{$bejegyzesek[$i]->getFelhasznaloAzonosito()}}">
-                                        <button type="submit" name="likePost"><i class="far fa-heart"></i>Tetszik</button>
+                                        {if $bejegyzesek[$i]->getIsLiked()}
+                                            <button type="submit" name="likePost"><i class="fas fa-heart"></i>Tetszik</button>
+                                        {else}
+                                            <button type="submit" name="likePost"><i class="far fa-heart"></i>Tetszik</button>
+                                        {/if}
                                         <button><i class="far fa-comment-alt"></i>Hozzászólás</button>
                                     </div>
                                 </form>

@@ -51,11 +51,14 @@
                 <b-row>
                     <b-col cols="auto" class="w-100">
                         <b-button-group class="w-100">
-                            <b-button  variant="btn-outline-primary" @click="asd">
-                                <b-icon icon="heart" aria-hidden="true" v-if="like"></b-icon>
-                                <b-icon icon="heart-fill" aria-hidden="true" v-if="!like"></b-icon>
-                                Tetszik
-                            </b-button>
+
+                            {if $bejegyzesek[$i]->getIsLiked()}
+                                <button onclick="like()" type="submit" name="likePost"><i class="fas fa-heart"></i>Tetszik</button>
+                            {else}
+                                <button type="submit" name="likePost"><i class="far fa-heart"></i>Tetszik</button>
+                            {/if}
+
+
                             <b-button v-b-toggle.my-collapse{{$bejegyzesek[$i]->getAzonosito()}} id="{{$bejegyzesek[$i]->getAzonosito()}}" variant="btn-outline-primary" onchange="kommentList({{$bejegyzesek[$i]->getAzonosito()}})">
                                 <b-icon  icon="chat-left" aria-hidden="true"></b-icon> Hozzászólás
                             </b-button>
