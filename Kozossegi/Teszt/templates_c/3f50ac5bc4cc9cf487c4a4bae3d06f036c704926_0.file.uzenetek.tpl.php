@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-23 22:48:28
+/* Smarty version 3.1.39, created on 2021-04-26 10:12:17
   from '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/uzenetek.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6083329c72f4b1_47801087',
+  'unifunc' => 'content_608675e1e243d2_56082834',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3f50ac5bc4cc9cf487c4a4bae3d06f036c704926' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/uzenetek.tpl',
-      1 => 1619210297,
+      1 => 1619424040,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6083329c72f4b1_47801087 (Smarty_Internal_Template $_smarty_tpl) {
+function content_608675e1e243d2_56082834 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -35,7 +35,7 @@ $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smar
 
                                 <div class="messages-header">
                                         <form action="#" class="mx-auto">
-                        <input type="search" placeholder="Search">
+                        <input type="search" placeholder="Keresés...">
                         <button type="submit"><i class="fas fa-search"></i></button>
                     </form>
 
@@ -78,7 +78,7 @@ $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smar
 
                                                 <div class="chat-toolbar">
                             <form action="#">
-                                                                <input type="text" placeholder="Write something...">
+                                                                <input type="text" placeholder="Írj egy üzenetet...">
                                                                 <button><i class="far fa-paper-plane"></i></button>
                             </form>
                         </div>
@@ -92,7 +92,5 @@ $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smar
 </div>
 
 <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
-
-<?php }
+}
 }

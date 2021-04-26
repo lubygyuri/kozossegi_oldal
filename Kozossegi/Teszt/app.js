@@ -18,30 +18,15 @@ new Vue({
         Komment: false,
         like:true,
         text:'',
-        object: {
-            nev: 'Sanyi',
-            komment: 'szia',
-        },
-        object2: {
-            nev: 'Legenda',
-            komment: 'cso',
-        },
-        bejegyzes: [{
-            nev: 'Sanyi',
-            komment: 'szia',
-        },{
-            nev: 'Legenda',
-            komment: 'cso',
-        }]
+        bejegyzes: []
     },
     methods: {
         asd() {
             this.like= !this.like;
         },
-        Submit(){
-            var t= this.text;
-            var list = ['Nev', t, '']
-            this.PhpHivas('TesztKozzetetel.php',list);
+        kommentList(x){
+            this.PhpHivas('komment.php',x);
+            alert(x);
         },
         komm(){
           this.bejegyzes.push({nev:'Teszt elek', komment: this.text});
@@ -55,6 +40,8 @@ new Vue({
                 timeout: 10000,
                 data: list
             }).then(function (response) {
+                this.bejegyzes = response.data.komment;
+                alert(this.bejegyzes);
             }).catch(function (error) {
                 error => console.log(error);
             });

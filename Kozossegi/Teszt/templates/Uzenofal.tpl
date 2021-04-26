@@ -56,33 +56,43 @@
                                 <b-icon icon="heart-fill" aria-hidden="true" v-if="!like"></b-icon>
                                 Tetszik
                             </b-button>
-                            <b-button v-b-toggle.my-collapse{{$i}} variant="btn-outline-primary">
+                            <b-button v-b-toggle.my-collapse{{$bejegyzesek[$i]->getAzonosito()}} id="{{$bejegyzesek[$i]->getAzonosito()}}" variant="btn-outline-primary" onchange="kommentList({{$bejegyzesek[$i]->getAzonosito()}})">
                                 <b-icon  icon="chat-left" aria-hidden="true"></b-icon> Hozzászólás
                             </b-button>
                         </b-button-group>
                         <template>
-                            <b-collapse id="my-collapse{{$i}}" class="mt-4">
-                                 {literal}
-                                    <div class="border border-1 mt-2 rounded align-self-baseline w-100" v-for="value in bejegyzes">
-                                        <div v-for="(v,i,j) in value">
-                                            <b-img src="https://placekitten.com/g/30/30" rounded="circle"  class="d-inline-block align-top" v-if="j==0"></b-img>
-                                           <span> {{ v }}</span>
+                            <b-collapse id="my-collapse{{$bejegyzesek[$i]->getAzonosito()}}" class="mt-4">
+                                {if $bejegyzesek[$i]->getKommentek()}
+                                    {$x = $bejegyzesek[$i]->getKommentek()}
+                                {for $j=0 to $x|@count-1}
+                                    <div class="border border-1 mt-2 rounded align-self-baseline w-100">
+                                        <div class="post-header2">
+                                            <b-img src="{{$x[$j]->getFelhasznaloAzonosito()->getProfilkep()}}" rounded="circle"  class="d-inline-block align-top"></b-img>
+                                            <div class="post-header-details">
+                                           <span>{{$x[$j]->getFelhasznaloAzonosito()->getVezeteknev()}} {{$x[$j]->getFelhasznaloAzonosito()->getKeresztnev()}}</span>
+                                            </div>
                                         </div>
                                         <div>
-                                            <p class="m-3"></p>
+                                            <p class="m-3">{{$x[$j]->getUzenet()}} </p>
                                         </div>
                                     </div>
+                                {/for}
+                                {/if}
                                     <div class="border border-3 mt-2">
-                                    <b-img src="https://placekitten.com/g/30/30" rounded="circle" class="d-inline-block align-top "></b-img>
-                                    Teszt Elek
-                                    <div class="form-floating mt-3 mb-1">
+                                        <div class="post-header2">
+                                            <b-img src="{{$belepettFelhasznalo->getProfilkep()}}" rounded="circle" class="d-inline-block align-top "></b-img>
+                                            <div class="post-header-details">
+                                            <span>{{$belepettFelhasznalo->getVezeteknev()}} {{$belepettFelhasznalo->getKeresztnev()}}</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-floating mt-3 mb-1">
                                         <textarea class="form-control" placeholder="Írjon kommentet" id="floatingTextarea2" style="height: 100px" v-model="text"></textarea>
                                     </div>
 
                                     <button type="button" class="btn btn-primary" @click="komm">Közzététel</button>
                                     </div>
 
-                                {/literal}
+
                             </b-collapse>
                         </template>
                     </b-col>

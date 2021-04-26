@@ -17,6 +17,8 @@ if (!isset($_SESSION["email"])){
 $controller = new FelhasznaloController();
 $controller2 = new BejegyzesController();
 $controller3 = new KepController();
+$controller4 = new KommentController();
+
 
 // Bejegyzés közzététel
 if(isset($_POST["submit"])) {
@@ -38,18 +40,37 @@ if ($postsData) {
         $post->setUzenet($postData["UZENET"]);
         $post->setLetrehozasIdeje($postData["LETREHOZAS_IDEJE"]);
         $post->setKep($postData["KEP"]);
-
         $user = $controller->getUserFromDB($postData["FELHASZNALO_AZONOSITO"]);
-
         $felhasznalo = new Felhasznalo();
         $felhasznalo->setProfilkep($user['PROFILKEP']);
         $felhasznalo->setVezeteknev($user['VEZETEKNEV']);
         $felhasznalo->setKeresztnev($user['KERESZTNEV']);
-        $post->setFelhasznaloAzonosito($felhasznalo);
 
+
+        $kommentData = $controller4->getKommentByBejegyzes($postData["AZONOSITO"]);
+        $komment = array();
+        if ($kommentData !=null) {
+            foreach ($kommentData as $komData) {
+                $komm = new Komment();
+                $komm->setAzonosito($komData["AZONOSITO"]);
+                $komm->setUzenet($komData["UZENET"]);
+                $user1 = $controller->getUserFromDB($komData["FELHASZNALO_AZONOSITO"]);
+                $felhasznalo1 = new Felhasznalo();
+                $felhasznalo1->setProfilkep($user['PROFILKEP']);
+                $felhasznalo1->setVezeteknev($user['VEZETEKNEV']);
+                $felhasznalo1->setKeresztnev($user['KERESZTNEV']);
+                $komm->setFelhasznaloAzonosito($felhasznalo1);
+                array_push($komment, $komm);
+            }
+        }
+        $post->setKommentek($komment);
+        $post->setFelhasznaloAzonosito($felhasznalo);
         array_push($posts, $post);
     }
 }
+
+
+
 
 // Bejelentkezett felhasználó megjelenítése
 $bejelentkezettF = new Felhasznalo();
