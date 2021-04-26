@@ -22,11 +22,13 @@ $controller3 = new KepController();
 // Profilkép feltöltése
 if (isset($_POST['profileImgUpload'])) {
     $link = $controller3->kepFeltoltes('profileImg');
-    $controller->updateProfileImg($link ,$_SESSION["email"]);
-    $_SESSION["profilkep"] = $link;
+
+    if (!$link == '') {
+        $_SESSION["profilkep"] = $link;
+        $controller->updateProfileImg($link ,$_SESSION["email"]);
+    }
 }
 
-// TODO: Labelek megvalósítása
 // Profil adatainak megváltoztatása
 if (isset($_POST["save"])) {
     $mentendoFelhasznalo = new Felhasznalo();
@@ -40,18 +42,12 @@ if (isset($_POST["save"])) {
 }
 
 // Bejegyzés közzététel
-if(isset($_POST["createPost"])) {
+if(isset($_POST['createPost'])) {
+    $link = $controller3->kepFeltoltes('postImage');
     $bejegyzes = new Bejegyzes();
     $bejegyzes->setUzenet($_POST['text']);
     $bejegyzes->setFelhasznaloAzonosito($_SESSION["email"]);
-
-//    TODO: Nem működik mert külső kulcsként kezeljük a képet, szerintem engedjük el (Gyuri)
-    if ($_POST["postImg"]) {
-        $bejegyzes->setKep($controller3->kepFeltoltes('postImg'));
-    } else {
-        $bejegyzes->setKep('');
-    }
-
+    $bejegyzes->setKep($link);
     $controller2->createPost($bejegyzes);
 }
 
@@ -78,7 +74,7 @@ if ($postsData) {
         $post = new Bejegyzes();
         $post->setAzonosito($postData["AZONOSITO"]);
         $post->setUzenet($postData["UZENET"]);
-        $post->setLetrehozasDatuma($postData["LETREHOZAS_DATUMA"]);
+        $post->setLetrehozasIdeje($postData["LETREHOZAS_IDEJE"]);
         $post->setKep($postData["KEP"]);
         array_push($posts, $post);
     }

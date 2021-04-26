@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-24 02:34:15
+/* Smarty version 3.1.39, created on 2021-04-26 00:44:52
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\Uzenofal.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_608367872cdc04_75466440',
+  'unifunc' => 'content_6085f0e4e50a16_07713482',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8404c164aed75a8022edb4c9a1f2870573414e86' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\Uzenofal.tpl',
-      1 => 1619224454,
+      1 => 1619390691,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_608367872cdc04_75466440 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6085f0e4e50a16_07713482 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -31,7 +31,7 @@ $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smar
 <div id="app2"  class="container px-4 mt-5">
 
         <div class= "shadow-lg pl-3 pr-3 pb-3 bg-white rounded align-self-baseline mr-2 w-50 mb-5 mx-auto">
-        <form action="Uzenofal.php" method="post">
+        <form action="Uzenofal.php" method="post" enctype="multipart/form-data">
             <div class="post-header2">
                 <img src="<?php ob_start();
 echo $_smarty_tpl->tpl_vars['belepettFelhasznalo']->value->getProfilkep();
@@ -58,7 +58,7 @@ echo $_prefixVariable3;?>
                 <i class="fas fa-upload"></i>
                 Kép feltöltés
             </label>
-            <input id="file-input" type="file"/>
+            <input id="file-input" type="file" name="postImgUzenofal"/>
             <button type="submit" class="btn btn-primary" name="submit">Közzététel</button>
         </div>
         </form>
@@ -82,7 +82,7 @@ echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->v
 $_prefixVariable6 = ob_get_clean();
 echo $_prefixVariable6;?>
 </span><span class="small"><?php ob_start();
-echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getLetrehozasDatuma();
+echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getLetrehozasIdeje();
 $_prefixVariable7 = ob_get_clean();
 echo $_prefixVariable7;?>
 </span></div></div><div ><p class="m-3"> <?php ob_start();

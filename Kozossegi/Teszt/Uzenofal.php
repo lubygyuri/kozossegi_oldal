@@ -13,19 +13,21 @@ if (!isset($_SESSION["email"])){
     exit();
 }
 
+// Controllerek példányosítása
+$controller = new FelhasznaloController();
+$controller2 = new BejegyzesController();
+$controller3 = new KepController();
+
 // Bejegyzés közzététel
 if(isset($_POST["submit"])) {
     $bejegyzes = new Bejegyzes();
     $bejegyzes->setUzenet($_POST['text']);
     $bejegyzes->setFelhasznaloAzonosito($_SESSION["email"]);
-    $bejegyzes->setKep('');
-    $controller = new BejegyzesController();
-    $controller->createPost($bejegyzes);
+    $bejegyzes->setKep($controller3->kepFeltoltes('postImgUzenofal'));
+    $controller2->createPost($bejegyzes);
 }
 
 // Bejegyzések listázása
-$controller = new FelhasznaloController();
-$controller2 = new BejegyzesController();
 $posts = array();
 $postsData = $controller2->getPostAll();
 
@@ -34,8 +36,9 @@ if ($postsData) {
         $post = new Bejegyzes();
         $post->setAzonosito($postData["AZONOSITO"]);
         $post->setUzenet($postData["UZENET"]);
-        $post->setLetrehozasDatuma($postData["LETREHOZAS_DATUMA"]);
+        $post->setLetrehozasIdeje($postData["LETREHOZAS_IDEJE"]);
         $post->setKep($postData["KEP"]);
+
         $user = $controller->getUserFromDB($postData["FELHASZNALO_AZONOSITO"]);
 
         $felhasznalo = new Felhasznalo();

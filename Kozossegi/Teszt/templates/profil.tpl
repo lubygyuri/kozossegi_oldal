@@ -50,8 +50,8 @@
                                     <p class="mt-2">Módosításhoz változtatsd meg a kívánt mezőt:</p>
                                     <div>
                                         <form action="profil.php" class="kulso-form" method="post">
-                                            <input type="text" name="firstname" class="mt-3 p-2 h-25" value={{$felhasznalo->getVezeteknev()}}>
-                                            <input type="text" name="lastname" class="mt-3 p-2 h-25" value={{$felhasznalo->getKeresztnev()}}>
+                                            <input type="text" name="firstname" class="mt-3 p-2 h-25" placeholder="Vezetéknév" value={{$felhasznalo->getVezeteknev()}}>
+                                            <input type="text" name="lastname" class="mt-3 p-2 h-25" placeholder="Keresztnév" value={{$felhasznalo->getKeresztnev()}}>
                                             {if $felhasznalo->getIskola()}
                                                 <input type="text" name="school" class="mt-3 p-2 h-25" value="{{$felhasznalo->getIskola()}}">
                                             {else}
@@ -116,19 +116,17 @@
                         </div>
                         {* Bejegyzés írása *}
                         <div class="profile-card profile-posting">
-                            <form action="profil.php" method="post">
+                            <form action="profil.php" method="post" enctype="multipart/form-data">
                                 <h3>Bejegyzés Írása</h3>
                                 <div class="form-floating mt-3 mb-3">
                                     <textarea class="form-control" placeholder="Írjon bejegyzést" name="text" id="floatingTextarea2"></textarea>
                                 </div>
                                 <div class="flex-row">
-                                    <div class="image-upload">
-                                        <label for="file-input" class="h6">
-                                            <i class="fas fa-upload"></i>
-                                            Kép feltöltés
-                                        </label>
-                                        <input id="file-input" type="file" name="postImg"/>
-                                    </div>
+                                    <label for="postImageInput" class="h6 label-cursor">
+                                        <i class="fas fa-upload"></i>
+                                        Kép feltöltés
+                                    </label>
+                                    <input hidden id="postImageInput" type="file" name="postImage"/>
                                     <button type="submit" class="btn btn-primary" name="createPost">Közzététel</button>
                                 </div>
                             </form>
@@ -146,7 +144,7 @@
                                     {* Poszt adatok *}
                                     <div class="post-header-details">
                                         <span>{{$felhasznalo->getVezeteknev()}} {{$felhasznalo->getKeresztnev()}}</span>
-                                        <span class="small">{{$bejegyzesek[$i]->getLetrehozasDatuma()}}</span>
+                                        <span class="small">{{$bejegyzesek[$i]->getLetrehozasIdeje()}}</span>
                                     </div>
                                 </div>
 

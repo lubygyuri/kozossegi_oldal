@@ -234,3 +234,7 @@ footer {
     background-color: #2e2e2d;
     padding: 5px;
 }
+
+.label-cursor {
+    cursor: pointer;
+}

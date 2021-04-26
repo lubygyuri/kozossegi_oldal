@@ -7,7 +7,7 @@
         Közzététel
     *}
     <div class= "shadow-lg pl-3 pr-3 pb-3 bg-white rounded align-self-baseline mr-2 w-50 mb-5 mx-auto">
-        <form action="Uzenofal.php" method="post">
+        <form action="Uzenofal.php" method="post" enctype="multipart/form-data">
             <div class="post-header2">
                 <img src="{{$belepettFelhasznalo->getProfilkep()}}">
                 <div class="post-header-details">
@@ -22,7 +22,7 @@
                 <i class="fas fa-upload"></i>
                 Kép feltöltés
             </label>
-            <input id="file-input" type="file"/>
+            <input id="file-input" type="file" name="postImgUzenofal"/>
             <button type="submit" class="btn btn-primary" name="submit">Közzététel</button>
         </div>
         </form>
@@ -38,7 +38,7 @@
                         {* Poszt adatok *}
                         <div class="post-header-details">
                             <span>{{$bejegyzesek[$i]->getFelhasznaloAzonosito()->getVezeteknev()}} {{$bejegyzesek[$i]->getFelhasznaloAzonosito()->getKeresztnev()}}</span>
-                            <span class="small">{{$bejegyzesek[$i]->getLetrehozasDatuma()}}</span>
+                            <span class="small">{{$bejegyzesek[$i]->getLetrehozasIdeje()}}</span>
                         </div>
                     </div>
                     <div >

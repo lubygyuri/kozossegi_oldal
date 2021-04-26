@@ -3,6 +3,11 @@
 class KepController {
 
     public function kepFeltoltes($formName) {
+
+        if (empty($_FILES[$formName]['tmp_name'])) {
+            return '';
+        }
+
         $image = base64_encode(file_get_contents($_FILES[$formName]['tmp_name']));
 
         $options = array('http'=>array(
@@ -16,7 +21,7 @@ class KepController {
 
         $imgurURL = "https://api.imgur.com/3/image";
 
-        if ($_FILES['profileImg']['size'] > 10240000) {
+        if ($_FILES[$formName]['size'] > 10240000) {
             die("A kép túl nagy, maximum 10MB lehet.");
         }
 

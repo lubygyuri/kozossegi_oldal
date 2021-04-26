@@ -35,7 +35,7 @@ if ($postsData) {
         $post = new Bejegyzes();
         $post->setAzonosito($postData["AZONOSITO"]);
         $post->setUzenet($postData["UZENET"]);
-        $post->setLetrehozasDatuma($postData["LETREHOZAS_DATUMA"]);
+        $post->setLetrehozasIdeje($postData["LETREHOZAS_DATUMA"]);
         $post->setKep($postData["KEP"]);
         $user =$controller->getUserFromDB($postData["FELHASZNALO_AZONOSITO"]);
         $felhasznalo = new Felhasznalo();
