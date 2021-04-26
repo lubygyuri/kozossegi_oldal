@@ -78,6 +78,20 @@ function like(id) {
     xhttp.open("GET", "like.php?id="+id, true);
     xhttp.send();
 }
+function komment(id) {
+    var xhttp = new XMLHttpRequest();
+    /*document.getElementById(x).removeAttribute("onclick");*/
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var t="komment"+id;
+            document.getElementById(t).innerHTML = this.responseText;
+        }
+    };
+    var test = document.getElementById("textarea"+id).value;
+    document.getElementById("textarea"+id).value='';
+    xhttp.open("GET", "komment.php?id="+id+"&text="+test, true);
+    xhttp.send();
+}
 
 
 

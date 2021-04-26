@@ -10,4 +10,10 @@ class KommentController extends DB{
         return $stmt->fetchAll();
     }
 
+    public function createKomment(Komment $komment) {
+        $sql = "INSERT INTO LUBLO.KOMMENT (uzenet, letrehozas_datuma, felhasznalo_azonosito, bejegyzes_azonosito) VALUES (?, CURRENT_TIMESTAMP, ?, ?)";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$komment->getUzenet(),$komment->getFelhasznaloAzonosito(),$komment->getBejegyzesAzonosito()]);
+    }
+
 }

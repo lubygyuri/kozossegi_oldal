@@ -57,9 +57,9 @@ if ($postsData) {
                 $komm->setUzenet($komData["UZENET"]);
                 $user1 = $felhasznaloController->getUserFromDB($komData["FELHASZNALO_AZONOSITO"]);
                 $felhasznalo1 = new Felhasznalo();
-                $felhasznalo1->setProfilkep($user['PROFILKEP']);
-                $felhasznalo1->setVezeteknev($user['VEZETEKNEV']);
-                $felhasznalo1->setKeresztnev($user['KERESZTNEV']);
+                $felhasznalo1->setProfilkep($user1['PROFILKEP']);
+                $felhasznalo1->setVezeteknev($user1['VEZETEKNEV']);
+                $felhasznalo1->setKeresztnev($user1['KERESZTNEV']);
                 $komm->setFelhasznaloAzonosito($felhasznalo1);
                 array_push($komment, $komm);
             }

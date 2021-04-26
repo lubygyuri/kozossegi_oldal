@@ -62,6 +62,7 @@
                         </div>
                         <template>
                             <b-collapse id="my-collapse{{$bejegyzesek[$i]->getAzonosito()}}" class="mt-4">
+                                <div id="komment{{$bejegyzesek[$i]->getAzonosito()}}">
                                 {if $bejegyzesek[$i]->getKommentek()}
                                     {$x = $bejegyzesek[$i]->getKommentek()}
                                 {for $j=0 to $x|@count-1}
@@ -78,6 +79,7 @@
                                     </div>
                                 {/for}
                                 {/if}
+                                </div>
                                     <div class="border border-3 mt-2">
                                         <div class="post-header2">
                                             <b-img src="{{$belepettFelhasznalo->getProfilkep()}}" rounded="circle" class="d-inline-block align-top "></b-img>
@@ -86,10 +88,9 @@
                                             </div>
                                         </div>
                                         <div class="form-floating mt-3 mb-1">
-                                        <textarea class="form-control" placeholder="Írjon kommentet" id="floatingTextarea2" style="height: 100px" v-model="text"></textarea>
+                                        <textarea class="form-control" placeholder="Írjon kommentet" id="textarea{{$bejegyzesek[$i]->getAzonosito()}}" style="height: 100px"></textarea>
                                     </div>
-
-                                    <button type="button" class="btn btn-primary" @click="komm">Közzététel</button>
+                                    <button type="button" class="btn btn-primary" onclick="komment({{$bejegyzesek[$i]->getAzonosito()}})">Közzététel</button>
                                     </div>
 
 
