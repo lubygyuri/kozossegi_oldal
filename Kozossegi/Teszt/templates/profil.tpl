@@ -31,16 +31,18 @@
 
                     {* Profilkép feltöltés *}
                         <div class="flex-row p-3 border-top border-bottom">
-                            <form action="profil.php" method="post" enctype="multipart/form-data">
-                                <div class="image-upload align-items-end">
-                                    <label for="file-input" class="h6 mr-2">
-                                        <i class="fas fa-upload"></i>
-                                        Profilkép csere
-                                    </label>
-                                    <input id="file-input" type="file" name="profileImg"/>
-                                    <button type="submit" class="btn btn-primary" name="profileImgUpload">Feltöltés</button>
-                                </div>
-                            </form>
+                            {if $belepettFelhasznalo->getEmail() == $felhasznalo->getEmail()}
+                                <form action="profil.php?email={{$belepettFelhasznalo->getEmail()}}" method="post" enctype="multipart/form-data">
+                                    <div class="image-upload align-items-end">
+                                        <label for="file-input" class="h6 mr-2">
+                                            <i class="fas fa-upload"></i>
+                                            Profilkép csere
+                                        </label>
+                                        <input id="file-input" type="file" name="profileImg"/>
+                                        <button type="submit" class="btn btn-primary" name="profileImgUpload">Feltöltés</button>
+                                    </div>
+                                </form>
+
 
                         {* Adatok módosítása *}
                             {* Működő update profile *}
@@ -49,7 +51,7 @@
                                 <b-modal id="bv-modal-example" hide-footer title="Adatok módosítása">
                                     <p class="mt-2">Módosításhoz változtatsd meg a kívánt mezőt:</p>
                                     <div>
-                                        <form action="profil.php" class="kulso-form" method="post">
+                                        <form action="profil.php?email={{$belepettFelhasznalo->getEmail()}}" class="kulso-form" method="post">
                                             <input type="text" name="firstname" class="mt-3 p-2 h-25" placeholder="Vezetéknév" value={{$felhasznalo->getVezeteknev()}}>
                                             <input type="text" name="lastname" class="mt-3 p-2 h-25" placeholder="Keresztnév" value={{$felhasznalo->getKeresztnev()}}>
                                             {if $felhasznalo->getIskola()}
@@ -96,7 +98,12 @@
                                         </form>
                                     </div>
                                 </b-modal>
-                            </div>
+                            {else}
+                                <form action="profil.php?email={{$felhasznalo->getEmail()}}" method="post">
+                                    <button type="submit" name="friendRequest" class="btn btn-primary"><i class="fas fa-user-plus"></i>Ismerősnek jelölés</button>
+                                </form>
+                            {/if}
+                        </div>
 
                     {* Adatok és bejegyzés szekció *}
 
@@ -116,7 +123,7 @@
                         </div>
                         {* Bejegyzés írása *}
                         <div class="profile-card profile-posting">
-                            <form action="profil.php" method="post" enctype="multipart/form-data">
+                            <form action="profil.php?email={{$belepettFelhasznalo->getEmail()}}" method="post" enctype="multipart/form-data">
                                 <h3>Bejegyzés Írása</h3>
                                 <div class="form-floating mt-3 mb-3">
                                     <textarea class="form-control" placeholder="Írjon bejegyzést" name="text" id="floatingTextarea2"></textarea>

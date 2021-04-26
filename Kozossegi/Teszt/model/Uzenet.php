@@ -105,5 +105,5 @@ class Uzenet {
         $this->kep = $kep;
     }
 
-    
+
 }
