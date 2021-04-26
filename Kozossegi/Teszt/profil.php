@@ -19,6 +19,7 @@ $felhasznaloController = new FelhasznaloController();
 $bejegyzesController = new BejegyzesController();
 $kepController = new KepController();
 $likeController = new LikeController();
+$kommentController = new KommentController();
 
 // Profilkép feltöltése
 if (isset($_POST['profileImgUpload'])) {
@@ -88,6 +89,24 @@ if ($postsData) {
         } else {
             $post->setIsLiked(true);
         }
+        // kommentek
+        $kommentData = $kommentController->getKommentByBejegyzes($postData["AZONOSITO"]);
+        $komment = array();
+        if ($kommentData !=null) {
+            foreach ($kommentData as $komData) {
+                $komm = new Komment();
+                $komm->setAzonosito($komData["AZONOSITO"]);
+                $komm->setUzenet($komData["UZENET"]);
+                $user1 = $felhasznaloController->getUserFromDB($komData["FELHASZNALO_AZONOSITO"]);
+                $felhasznalo1 = new Felhasznalo();
+                $felhasznalo1->setProfilkep($user1['PROFILKEP']);
+                $felhasznalo1->setVezeteknev($user1['VEZETEKNEV']);
+                $felhasznalo1->setKeresztnev($user1['KERESZTNEV']);
+                $komm->setFelhasznaloAzonosito($felhasznalo1);
+                array_push($komment, $komm);
+            }
+        }
+        $post->setKommentek($komment);
 
         array_push($posts, $post);
     }
