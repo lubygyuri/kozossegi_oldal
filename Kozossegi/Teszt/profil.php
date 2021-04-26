@@ -14,10 +14,44 @@ if (!isset($_SESSION["email"])){
     exit();
 }
 
-// Profilhoz tartozó adatok lekérése
+// Globális controllerek példányosítása
 $controller = new FelhasznaloController();
 $controller2 = new BejegyzesController();
+$controller3 = new KepController();
 
+// Profilkép feltöltése
+if (isset($_POST['profileImgUpload'])) {
+    $link = $controller3->kepFeltoltes('profileImg');
+
+    if (!$link == '') {
+        $_SESSION["profilkep"] = $link;
+        $controller->updateProfileImg($link ,$_SESSION["email"]);
+    }
+}
+
+// Profil adatainak megváltoztatása
+if (isset($_POST["save"])) {
+    $mentendoFelhasznalo = new Felhasznalo();
+    $mentendoFelhasznalo->setEmail($_SESSION["email"]);
+    $mentendoFelhasznalo->setVezeteknev($_POST["firstname"]);
+    $mentendoFelhasznalo->setKeresztnev($_POST["lastname"]);
+    $mentendoFelhasznalo->setNeme($_POST["gender"]);
+    $mentendoFelhasznalo->setIskola($_POST["school"]);
+    $mentendoFelhasznalo->setMunkahely($_POST["job"]);
+    $controller->updateProfile($mentendoFelhasznalo);
+}
+
+// Bejegyzés közzététel
+if(isset($_POST['createPost'])) {
+    $link = $controller3->kepFeltoltes('postImage');
+    $bejegyzes = new Bejegyzes();
+    $bejegyzes->setUzenet($_POST['text']);
+    $bejegyzes->setFelhasznaloAzonosito($_SESSION["email"]);
+    $bejegyzes->setKep($link);
+    $controller2->createPost($bejegyzes);
+}
+
+// Profilhoz tartozó adatok lekérése
 $data = $controller->getUserFromDB($_SESSION["email"]);
 
 $felhasznalo = new Felhasznalo();
@@ -30,18 +64,17 @@ $felhasznalo->setIskola($data["ISKOLA"]);
 $felhasznalo->setMunkahely($data["MUNKAHELY"]);
 $felhasznalo->setProfilkep($data["PROFILKEP"]);
 
-
 // Adott profil posztjainak lekérése
-$userId = $data["AZONOSITO"];
+$userEmail = $data["EMAIL"];
 $posts = array();
-$postsData = $controller2->getPostsByUserId($userId);
+$postsData = $controller2->getPostsByUserEmail($userEmail);
 
 if ($postsData) {
     foreach ($postsData as $postData) {
         $post = new Bejegyzes();
         $post->setAzonosito($postData["AZONOSITO"]);
         $post->setUzenet($postData["UZENET"]);
-        $post->setLetrehozasDatuma($postData["LETREHOZAS_DATUMA"]);
+        $post->setLetrehozasIdeje($postData["LETREHOZAS_IDEJE"]);
         $post->setKep($postData["KEP"]);
         array_push($posts, $post);
     }
@@ -51,9 +84,9 @@ if ($postsData) {
 // TODO: kommentek lekérése
 // TODO: modell kiegészítése a likeok és a kommentek adattagokkal
 // SELECT count(*) FROM FELHASZNALO, BEJEGYZES, BEJEGYZES_LIKE
-// WHERE bejegyzes.felhasznalo_azonosito = felhasznalo.azonosito
+// WHERE bejegyzes.felhasznalo_azonosito = felhasznalo.email
 // AND bejegyzes_like.bejegyzes_azonosito = bejegyzes.azonosito
-// AND felhasznalo.azonosito = 1
+// AND felhasznalo.email = example@example.com
 // AND bejegyzes.azonosito = 1
 
 $smarty->assign("bejegyzesek", $posts);

@@ -1,4 +1,27 @@
-<div id="app">
+<?php
+/* Smarty version 3.1.39, created on 2021-04-24 02:23:31
+  from 'D:\XAMPP\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\menu.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.39',
+  'unifunc' => 'content_60836503c5eb89_20600003',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'af1bbdaa1e0b9fdc33cfd5a422d26b61fc570a1a' => 
+    array (
+      0 => 'D:\\XAMPP\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\menu.tpl',
+      1 => 1619223668,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_60836503c5eb89_20600003 (Smarty_Internal_Template $_smarty_tpl) {
+?><div id="app">
     <div class="header">
         <!-- Image and text -->
         <b-navbar variant="faded" type="dark">
@@ -35,4 +58,5 @@
         </ul>
     </nav>
 
-</div>
+</div><?php }
+}

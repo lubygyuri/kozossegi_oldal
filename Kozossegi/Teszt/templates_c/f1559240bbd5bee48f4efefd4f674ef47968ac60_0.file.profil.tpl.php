@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-26 01:55:02
-  from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\profil.tpl' */
+/* Smarty version 3.1.39, created on 2021-04-24 15:59:50
+  from 'D:\XAMPP\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\profil.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60860156d79e65_95444236',
+  'unifunc' => 'content_60842456bf9c02_90946763',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '740e58fd08c10b9345a3c7d0b573e8ff59b0f785' => 
+    'f1559240bbd5bee48f4efefd4f674ef47968ac60' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\profil.tpl',
-      1 => 1619394900,
+      0 => 'D:\\XAMPP\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\profil.tpl',
+      1 => 1619272787,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60860156d79e65_95444236 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60842456bf9c02_90946763 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -81,42 +81,25 @@ echo $_prefixVariable5;?>
                                     <button type="submit" class="btn btn-primary" name="profileImgUpload">Feltöltés</button>
                                 </div>
                             </form>
+                            
 
-                                                                                    <b-button variant="primary" @click="$bvModal.show('bv-modal-example')">Adatok módosítása</b-button>
+                            
+                                <b-button variant="success" @click="$bvModal.show('bv-modal-example')">Adatok módosítása</b-button>
 
                                 <b-modal id="bv-modal-example" hide-footer title="Adatok módosítása">
                                     <p class="mt-2">Módosításhoz változtatsd meg a kívánt mezőt:</p>
                                     <div>
                                         <form action="profil.php" class="kulso-form" method="post">
-                                            <input type="text" name="firstname" class="mt-3 p-2 h-25" placeholder="Vezetéknév" value=<?php ob_start();
+                                            <input type="text" name="firstname" placeholder="Vezetéknév" class="mt-3 p-2 h-25" value=<?php ob_start();
 echo $_smarty_tpl->tpl_vars['felhasznalo']->value->getVezeteknev();
 $_prefixVariable6 = ob_get_clean();
 echo $_prefixVariable6;?>
 >
-                                            <input type="text" name="lastname" class="mt-3 p-2 h-25" placeholder="Keresztnév" value=<?php ob_start();
+                                            <input type="text" name="lastname" placeholder="Keresztnév" class="mt-3 p-2 h-25" value=<?php ob_start();
 echo $_smarty_tpl->tpl_vars['felhasznalo']->value->getKeresztnev();
 $_prefixVariable7 = ob_get_clean();
 echo $_prefixVariable7;?>
 >
-                                            <?php if ($_smarty_tpl->tpl_vars['felhasznalo']->value->getIskola()) {?>
-                                                <input type="text" name="school" class="mt-3 p-2 h-25" value="<?php ob_start();
-echo $_smarty_tpl->tpl_vars['felhasznalo']->value->getIskola();
-$_prefixVariable8 = ob_get_clean();
-echo $_prefixVariable8;?>
-">
-                                            <?php } else { ?>
-                                                <input type="text" name="school" class="mt-3 p-2 h-25" placeholder="Tanulmányok">
-                                            <?php }?>
-                                            <?php if ($_smarty_tpl->tpl_vars['felhasznalo']->value->getMunkahely()) {?>
-                                                <input type="text" name="job" class="mt-3 p-2 h-25" value="<?php ob_start();
-echo $_smarty_tpl->tpl_vars['felhasznalo']->value->getMunkahely();
-$_prefixVariable9 = ob_get_clean();
-echo $_prefixVariable9;?>
-">
-                                            <?php } else { ?>
-                                                <input type="text" name="job" class="mt-3 p-2 h-25" placeholder="Munkahely">
-                                            <?php }?>
-
                                             <div class="flex-row mt-3 p-2 h-25">
                                                 <div class="register-genderclass rounded">
                                                     <?php if ($_smarty_tpl->tpl_vars['felhasznalo']->value->getNeme() == "férfi") {?>
@@ -159,40 +142,40 @@ echo $_prefixVariable9;?>
                             <ul>
                                 <li><i class="fas fa-user"></i><?php ob_start();
 echo ucwords($_smarty_tpl->tpl_vars['felhasznalo']->value->getNeme());
-$_prefixVariable10 = ob_get_clean();
-echo $_prefixVariable10;?>
+$_prefixVariable8 = ob_get_clean();
+echo $_prefixVariable8;?>
  (Nem)</li>
                                 <?php if ($_smarty_tpl->tpl_vars['felhasznalo']->value->getIskola()) {?>
                                     <li><i class="fas fa-graduation-cap"></i><?php ob_start();
 echo ucwords($_smarty_tpl->tpl_vars['felhasznalo']->value->getIskola());
-$_prefixVariable11 = ob_get_clean();
-echo $_prefixVariable11;?>
+$_prefixVariable9 = ob_get_clean();
+echo $_prefixVariable9;?>
  (Tanulmányok)</li>
                                 <?php }?>
                                 <?php if ($_smarty_tpl->tpl_vars['felhasznalo']->value->getMunkahely()) {?>
                                     <li><i class="fas fa-suitcase"></i><?php ob_start();
 echo ucwords($_smarty_tpl->tpl_vars['felhasznalo']->value->getMunkahely());
-$_prefixVariable12 = ob_get_clean();
-echo $_prefixVariable12;?>
+$_prefixVariable10 = ob_get_clean();
+echo $_prefixVariable10;?>
  (Munkahely)</li>
                                 <?php }?>
                             </ul>
                         </div>
                                                 <div class="profile-card profile-posting">
-                            <form action="profil.php" method="post" enctype="multipart/form-data">
-                                <h3>Bejegyzés Írása</h3>
-                                <div class="form-floating mt-3 mb-3">
-                                    <textarea class="form-control" placeholder="Írjon bejegyzést" name="text" id="floatingTextarea2"></textarea>
-                                </div>
-                                <div class="flex-row">
-                                    <label for="postImageInput" class="h6 label-cursor">
+                            <h3>Bejegyzés Írása</h3>
+                            <div class="form-floating mt-3 mb-3">
+                                <textarea class="form-control" placeholder="Írjon bejegyzést" id="floatingTextarea2"></textarea>
+                            </div>
+                            <div class="flex-row">
+                                <div class="image-upload">
+                                    <label for="file-input" class="h6">
                                         <i class="fas fa-upload"></i>
                                         Kép feltöltés
                                     </label>
-                                    <input hidden id="postImageInput" type="file" name="postImage"/>
-                                    <button type="submit" class="btn btn-primary" name="createPost">Közzététel</button>
+                                    <input id="file-input" type="file"/>
                                 </div>
-                            </form>
+                                <button type="button" class="btn btn-primary">Közzététel</button>
+                            </div>
                         </div>
                     </div>
 
@@ -206,23 +189,23 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 
                                                                 <div class="post-header">
                                                                         <img src="<?php ob_start();
 echo $_smarty_tpl->tpl_vars['felhasznalo']->value->getProfilkep();
-$_prefixVariable13 = ob_get_clean();
-echo $_prefixVariable13;?>
+$_prefixVariable11 = ob_get_clean();
+echo $_prefixVariable11;?>
 " alt="profilkép">
                                                                         <div class="post-header-details">
                                         <span><?php ob_start();
 echo $_smarty_tpl->tpl_vars['felhasznalo']->value->getVezeteknev();
-$_prefixVariable14 = ob_get_clean();
-echo $_prefixVariable14;?>
+$_prefixVariable12 = ob_get_clean();
+echo $_prefixVariable12;?>
  <?php ob_start();
 echo $_smarty_tpl->tpl_vars['felhasznalo']->value->getKeresztnev();
-$_prefixVariable15 = ob_get_clean();
-echo $_prefixVariable15;?>
+$_prefixVariable13 = ob_get_clean();
+echo $_prefixVariable13;?>
 </span>
                                         <span class="small"><?php ob_start();
-echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getLetrehozasIdeje();
-$_prefixVariable16 = ob_get_clean();
-echo $_prefixVariable16;?>
+echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getLetrehozasDatuma();
+$_prefixVariable14 = ob_get_clean();
+echo $_prefixVariable14;?>
 </span>
                                     </div>
                                 </div>
@@ -232,15 +215,15 @@ echo $_prefixVariable16;?>
                                                                                 <?php if ($_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getKep()) {?>
                                             <img src="<?php ob_start();
 echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getKep();
-$_prefixVariable17 = ob_get_clean();
-echo $_prefixVariable17;?>
+$_prefixVariable15 = ob_get_clean();
+echo $_prefixVariable15;?>
 " alt="poszt_kepe">
                                         <?php }?>
                                     </div>
                                                                         <p><?php ob_start();
 echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getUzenet();
-$_prefixVariable18 = ob_get_clean();
-echo $_prefixVariable18;?>
+$_prefixVariable16 = ob_get_clean();
+echo $_prefixVariable16;?>
 </p>
                                 </div>
 

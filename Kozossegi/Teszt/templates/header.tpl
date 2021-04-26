@@ -1,7 +1,7 @@
 <!doctype html >
 <HTML lang="hu">
 <HEAD>
-<TITLE>Teszt Feladat</TITLE>
+<TITLE>fsociety</TITLE>
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/login.css">
     <link rel="stylesheet" href="style/uzenetek.css">

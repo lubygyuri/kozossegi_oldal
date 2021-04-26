@@ -7,7 +7,7 @@
         Közzététel
     *}
     <div class= "shadow-lg pl-3 pr-3 pb-3 bg-white rounded align-self-baseline mr-2 w-50 mb-5 mx-auto">
-        <form action="Uzenofal.php" method="post">
+        <form action="Uzenofal.php" method="post" enctype="multipart/form-data">
             <div class="post-header2">
                 <img src="{{$belepettFelhasznalo->getProfilkep()}}">
                 <div class="post-header-details">
@@ -15,15 +15,16 @@
                 </div>
             </div>
         <div class="form-floating mt-3 mb-3">
-            <textarea class="form-control" placeholder="Írjon bejegyzést" id="floatingTextarea2" name="text" style="height: 100px"></textarea>
+            <textarea class="form-control" placeholder="Írjon bejegyzést..." id="floatingTextarea2" name="text" style="height: 100px"></textarea>
         </div>
         <div class="image-upload">
-            <label for="file-input">
-                <p class="h6 mb-2"><b-icon icon="upload" aria-hidden="true" class="mr-2"></b-icon>Kép feltöltés</p>
+            <label for="file-input" class="h6 mb-2">
+                <i class="fas fa-upload"></i>
+                Kép feltöltés
             </label>
-            <input id="file-input" type="file"/>
-        </div>
+            <input id="file-input" type="file" name="postImgUzenofal"/>
             <button type="submit" class="btn btn-primary" name="submit">Közzététel</button>
+        </div>
         </form>
     </div>
     {if $bejegyzesek}
@@ -37,7 +38,7 @@
                         {* Poszt adatok *}
                         <div class="post-header-details">
                             <span>{{$bejegyzesek[$i]->getFelhasznaloAzonosito()->getVezeteknev()}} {{$bejegyzesek[$i]->getFelhasznaloAzonosito()->getKeresztnev()}}</span>
-                            <span class="small">{{$bejegyzesek[$i]->getLetrehozasDatuma()}}</span>
+                            <span class="small">{{$bejegyzesek[$i]->getLetrehozasIdeje()}}</span>
                         </div>
                     </div>
                     <div >
@@ -47,7 +48,7 @@
                         {/if}
                     </div>
                 </b-row>
-                <b-row class="mt-5">
+                <b-row>
                     <b-col cols="auto" class="w-100">
                         <b-button-group class="w-100">
                             <b-button  variant="btn-outline-primary" @click="asd">

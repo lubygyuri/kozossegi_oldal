@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-24 01:33:57
-  from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\klub.tpl' */
+/* Smarty version 3.1.39, created on 2021-04-24 02:25:57
+  from 'D:\XAMPP\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\klub.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60835965bd9e41_60002339',
+  'unifunc' => 'content_60836595a58ab0_73975803',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '7102754948ca20a696ed626dc31c34f2b4d91e29' => 
+    'f43d0ca45a323739acdbf5af42be600e3ca36fda' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\klub.tpl',
-      1 => 1619220822,
+      0 => 'D:\\XAMPP\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\klub.tpl',
+      1 => 1619223668,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60835965bd9e41_60002339 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60836595a58ab0_73975803 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>

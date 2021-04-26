@@ -12,7 +12,11 @@ class FelhasznaloController extends DB {
     }
 
     public function registration(Felhasznalo $felhasznalo) {
+<<<<<<< HEAD
         $sql = "INSERT INTO LUBLO.FELHASZNALO (azonosito, email, jelszo, vezeteknev, keresztnev, szuletesi_datum, neme, csatlakozas_datuma, profilkep) VALUES (3, ?, ?, ?, ?, to_date(?, 'YYYY-MM-DD'), ?, CURRENT_DATE, ?)";
+=======
+        $sql = "INSERT INTO LUBLO.FELHASZNALO (email, jelszo, vezeteknev, keresztnev, szuletesi_datum, neme, csatlakozas_datuma, profilkep) VALUES (?, ?, ?, ?, to_date(?, 'YYYY-MM-DD'), ?, CURRENT_DATE, ?)";
+>>>>>>> 4add653d0ac314ff9848b972c8a9abbc09c8ec7e
         $stmt = $this->connect()->prepare($sql);
         $hashed_jelszo = password_hash($felhasznalo->getJelszo(), PASSWORD_DEFAULT);
         $stmt->execute([$felhasznalo->getEmail(), $hashed_jelszo, $felhasznalo->getVezeteknev(), $felhasznalo->getKeresztnev(),$felhasznalo->getSzuletesiDatum(), $felhasznalo->getNeme(), $felhasznalo->getProfilkep()]);
@@ -24,13 +28,17 @@ class FelhasznaloController extends DB {
         return $user;
     }
 
-    public function getFelhasznalo($userId) {
-        $sql = "SELECT * FROM LUBLO.FELHASZNALO WHERE AZONOSITO = ?";
+    public function updateProfileImg($profileImg, $userEmail) {
+        $sql = "UPDATE LUBLO.FELHASZNALO SET PROFILKEP = ? WHERE EMAIL = ?";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$userId]);
-        return $stmt->fetch();
+        $stmt->execute([$profileImg, $userEmail]);
     }
 
+    public function updateProfile(Felhasznalo $felhasznalo) {
+        $sql = "UPDATE LUBLO.FELHASZNALO SET VEZETEKNEV = ?, KERESZTNEV = ?, NEME = ?, ISKOLA = ?, MUNKAHELY = ? WHERE EMAIL = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$felhasznalo->getVezeteknev(), $felhasznalo->getKeresztnev(), $felhasznalo->getNeme(), $felhasznalo->getIskola(), $felhasznalo->getMunkahely(), $felhasznalo->getEmail()]);
+    }
 
 
 }

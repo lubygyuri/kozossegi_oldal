@@ -4,7 +4,7 @@
 class Bejegyzes {
     private $azonosito;
     private $uzenet;
-    private $letrehozasDatuma;
+    private $letrehozasIdeje;
     private $felhasznaloAzonosito;
     private $kep;
 
@@ -43,17 +43,19 @@ class Bejegyzes {
     /**
      * @return mixed
      */
-    public function getLetrehozasDatuma()
+    public function getLetrehozasIdeje()
     {
-        return $this->letrehozasDatuma;
+        return $this->letrehozasIdeje;
     }
 
     /**
-     * @param mixed $letrehozasDatuma
+     * @param mixed $letrehozasIdeje
      */
-    public function setLetrehozasDatuma($letrehozasDatuma)
+    public function setLetrehozasIdeje($letrehozasIdeje)
     {
-        $this->letrehozasDatuma = $letrehozasDatuma;
+
+        $this->letrehozasIdeje = $letrehozasIdeje;
+
     }
 
     /**
