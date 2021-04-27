@@ -106,16 +106,22 @@ Ennek a feladatnak az a célja, hogy bemutassa a dokumentációt és a hozzájuk
 ![ek_diagram](Diagramok/ek_diagram.png)
 
 ##### 6.1.6.2. Relációs adatmodell:
-ADMIN(**azonosító**, email, jelszó)  
-FELHASZNÁLÓ(**azonosító**, email, jelszó, vezetéknév, keresztnév, születési_dátum, neme, csatlakozás_dátuma)  
-BARÁT (**azonosító**, státusz, *kérelmező*, *kérelmezett*)  
-PROFIL(**azonosító**, profilkép, iskola, munkahely, *felhasználó_azonosító*)  
-BEJEGYZÉS(**azonosító**, üzenet, létrehozás_dátuma, *felhasználó_azonosító*)  
-BEJEGYZÉS LIKE(***bejegyzés_azonosító***, ***felhasználó_azonosító***)  
-KOMMENT(**azonosító**, tartalom, létrehozás_dátuma, *felhasználó_azonosító*, *bejegyzés_azonosító*)  
-KOMMENT LIKE(***komment_azonosító***, ***felhasználó_azonosító***)  
-KLUB(**azonosító**, leírás, láthatóság, létrehozás_dátuma)  
-TAGOK (***klub_azonosító***, ***felhasználó_azonosító***)
+FELHASZNALO(**email**, jelszo, vezeteknev, keresztnev, szuletesi_datum, neme, iskola, munkahely, csatlakozas_datuma, profilkep)
+FENYKEP_ALBUM(**azonosito**, nev, teljes_meret, *felhasznalo_azonosito*)
+FENYKEPEK(**azonosito**, kep, meret, *fenykep_album_azonosito*)
+ISMEROS (**azonosito**, statusz, *felhasznalo1*, *felhasznalo2*)   
+BEJEGYZÉS(**azonosito**, uzenet, letrehozas_ideje, kep, likes, *felhasznalo_azonosito*)  
+BEJEGYZÉS_LIKE(***bejegyzes_azonossito***, ***felhasznalo_azonosito***)  
+KOMMENT(**azonosito**, uzenet, letrehozas_ideje, likes, *felhasznalo_azonosito*, *bejegyzes_azonosito*)  
+KOMMENT_LIKE(***komment_azonosito***, ***felhasznalo_azonosito***)
+CSOPORT(**azonosito**, nev, *admin_felhasznalo*)
+CSOPORT_TAGOK(***csoport_azonosito***, ***felhasznalo_azonosito***)
+UZENET(**azonosito**, uzenet, kuldes_ideje, kep, *kuldo_azonosito*, *fogado_azonosito*)
+CSOPORT_UZENET(**azonosito**, uzenet, kuldes_ideje, *kuldo_azonosito*, *csoport_azonosito*)
+KLUB(**nev**, leiras, lathatosag, letrehozas_datuma, *admin_felhasznalo*)  
+KLUB_TAGOK (***klub_azonosito***, ***felhasznalo_azonosito***)
+KLUB_BEJEGYZES(**azonosito**, uzenet, letrehozas_ideje, kep, *felhasznalo_azonosito*, *klub_azonosito*)
+KLUB_BEJEGYZES_LIKE(***klub_bejegyzes_azonosito***, ***felhasznalo_azonosito***)
 
 ##### 6.1.6.3. Normalizálás: 
 - **1NF**: A leképezés után összetett attribútum nincs, csak a KLUB-ban lévő tagok  maradt többértékű attribútum, ehhez fel kell vennünk egy új relációs sémát, amihez külső kulcsként hozzávesszük az őt tartalmazó relációséma kulcsát. Így, teljesül az NF1.
