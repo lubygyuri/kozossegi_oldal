@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-27 04:52:24
+/* Smarty version 3.1.39, created on 2021-04-27 05:12:33
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\profil.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60877c68372323_09888074',
+  'unifunc' => 'content_608781213255f5_40459751',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '740e58fd08c10b9345a3c7d0b573e8ff59b0f785' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\profil.tpl',
-      1 => 1619491942,
+      1 => 1619493152,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60877c68372323_09888074 (Smarty_Internal_Template $_smarty_tpl) {
+function content_608781213255f5_40459751 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -203,7 +203,7 @@ $_prefixVariable16 = ob_get_clean();
 echo $_prefixVariable16;?>
 " method="post">
                                     <button type="button" class="btn btn-success"><i class="fas fa-user-check"></i>Ismerős</button>
-                                    <button type="submit" name="removeFriend" class="btn btn-danger"><i class="fas fa-user-minus"></i>Ismerős törlése</button>
+                                    <button type="submit" name="declineRequest" class="btn btn-danger"><i class="fas fa-user-minus"></i>Ismerős törlése</button>
                                 </form>
                             <?php } elseif ($_smarty_tpl->tpl_vars['belepettFelhasznalo']->value->getEmail() != $_smarty_tpl->tpl_vars['felhasznalo']->value->getEmail()) {?>
                                 <form action="profil.php?email=<?php ob_start();

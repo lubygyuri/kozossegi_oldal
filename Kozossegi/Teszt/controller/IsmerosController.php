@@ -9,12 +9,21 @@ class IsmerosController extends DB {
         $stmt->execute([$ismeros->getStatusz(), $ismeros->getFelhasznalo1(), $ismeros->getFelhasznalo2()]);
     }
 
-    public function acceptFriendRequest() {
-
+    public function acceptFriendRequest(Ismeros $ismeros) {
+        $this->updateStatus($ismeros);
+        $this->addFriend($ismeros);
     }
 
-    public function removeFriend() {
+    private function updateStatus(Ismeros $ismeros) {
+        $sql = "UPDATE LUBLO.ISMEROS SET statusz = ? WHERE felhasznalo1 = ? AND felhasznalo2 = ? OR felhasznalo1 = ? AND felhasznalo2 = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$ismeros->getStatusz(), $ismeros->getFelhasznalo1(), $ismeros->getFelhasznalo2(), $ismeros->getFelhasznalo2(), $ismeros->getFelhasznalo1()]);
+    }
 
+    public function declineRequest(Ismeros $ismeros) {
+        $sql = "DELETE FROM LUBLO.ISMEROS WHERE felhasznalo1 = ? AND felhasznalo2 = ? OR felhasznalo1 = ? AND felhasznalo2 = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$ismeros->getFelhasznalo1(), $ismeros->getFelhasznalo2(), $ismeros->getFelhasznalo2(), $ismeros->getFelhasznalo1()]);
     }
 
     public function bela(Ismeros $ismeros) {

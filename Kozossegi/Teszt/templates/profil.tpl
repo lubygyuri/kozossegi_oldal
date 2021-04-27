@@ -130,7 +130,7 @@
                                 <form action="profil.php?email={{$felhasznalo->getEmail()}}" method="post">
 {*                                    <p>belaEsJuliBaratok</p>*}
                                     <button type="button" class="btn btn-success"><i class="fas fa-user-check"></i>Ismerős</button>
-                                    <button type="submit" name="removeFriend" class="btn btn-danger"><i class="fas fa-user-minus"></i>Ismerős törlése</button>
+                                    <button type="submit" name="declineRequest" class="btn btn-danger"><i class="fas fa-user-minus"></i>Ismerős törlése</button>
                                 </form>
                             {elseif $belepettFelhasznalo->getEmail() != $felhasznalo->getEmail()}
                                 <form action="profil.php?email={{$felhasznalo->getEmail()}}" method="post">

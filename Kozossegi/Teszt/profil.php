@@ -67,6 +67,21 @@ if (isset($_GET["email"])) {
             $ismerosController->addFriend($ismeros);
         }
 
+        if (isset($_POST["declineRequest"])) {
+            $ismeros = new Ismeros();
+            $ismeros->setFelhasznalo1($_SESSION["email"]);
+            $ismeros->setFelhasznalo2($_GET["email"]);
+            $ismerosController->declineRequest($ismeros);
+        }
+
+        if (isset($_POST["friendAccept"])) {
+            $ismeros = new Ismeros();
+            $ismeros->setStatusz("friends");
+            $ismeros->setFelhasznalo1($_SESSION["email"]);
+            $ismeros->setFelhasznalo2($_GET["email"]);
+            $ismerosController->acceptFriendRequest($ismeros);
+        }
+
         // Profilhoz tartozó adatok lekérése (GET)
         $data = $felhasznaloController->getUserFromDB($_GET["email"]);
 
@@ -155,9 +170,6 @@ if (isset($_GET["email"])) {
         $ismeros_->setFelhasznalo2($_GET["email"]);
         $bela = $ismerosController->bela($ismeros_);
         $juli = $ismerosController->juli($ismeros_);
-
-//        var_dump($bela,$juli);
-//        die();
 
         if (!is_bool($bela) && $bela["STATUSZ"] == "pending" && $juli == false) {
             if ($_SESSION["email"] == $bela["FELHASZNALO1"]) {
