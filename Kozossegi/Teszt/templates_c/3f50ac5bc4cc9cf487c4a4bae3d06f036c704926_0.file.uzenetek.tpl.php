@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-26 23:26:24
+/* Smarty version 3.1.39, created on 2021-04-27 13:49:25
   from '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/uzenetek.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_608730004667b8_30134874',
+  'unifunc' => 'content_6087fa45acb842_41231187',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3f50ac5bc4cc9cf487c4a4bae3d06f036c704926' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/uzenetek.tpl',
-      1 => 1619439917,
+      1 => 1619513636,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_608730004667b8_30134874 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6087fa45acb842_41231187 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -60,16 +60,38 @@ echo $_prefixVariable3;?>
                                 <div class="messages-main">
                                         <div class="messages-friends-container">
                         <ul>
-                            <li>
-                                                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="profilkép">
-                                                                <div class="friend-details">
-                                                                        <span>Example2 Example2</span>
-                                    <div class="flex-row">
-                                                                                <p>Lorem ipsum dolor...</p>
-                                                                                <small>14:34</small>
+                            <?php if ($_smarty_tpl->tpl_vars['friendsList']->value) {?>
+                            <?php
+$_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['i']->step = 1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? count($_smarty_tpl->tpl_vars['friendsList']->value)-1+1 - (0) : 0-(count($_smarty_tpl->tpl_vars['friendsList']->value)-1)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
+if ($_smarty_tpl->tpl_vars['i']->total > 0) {
+for ($_smarty_tpl->tpl_vars['i']->value = 0, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
+$_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration === $_smarty_tpl->tpl_vars['i']->total;?>
+                                <li>
+                                                                        <img src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['friendsList']->value[$_smarty_tpl->tpl_vars['i']->value]->getProfilkep();
+$_prefixVariable4 = ob_get_clean();
+echo $_prefixVariable4;?>
+" alt="profilkép">
+                                                                        <div class="friend-details">
+                                                                                <span><?php ob_start();
+echo $_smarty_tpl->tpl_vars['friendsList']->value[$_smarty_tpl->tpl_vars['i']->value]->getVezeteknev();
+$_prefixVariable5 = ob_get_clean();
+echo $_prefixVariable5;?>
+ <?php ob_start();
+echo $_smarty_tpl->tpl_vars['friendsList']->value[$_smarty_tpl->tpl_vars['i']->value]->getKeresztnev();
+$_prefixVariable6 = ob_get_clean();
+echo $_prefixVariable6;?>
+</span>
+                                        <div class="flex-row">
+                                                                                        <p>Lorem ipsum dolor...</p>
+                                                                                        <small>14:34</small>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
+                                </li>
+                            <?php }
+}
+?>
+                            <?php }?>
                         </ul>
                     </div>
 
