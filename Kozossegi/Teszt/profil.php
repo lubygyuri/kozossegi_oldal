@@ -61,7 +61,7 @@ if (isset($_GET["email"])) {
         // Barátkérelem küldése (POST)
         if (isset($_POST["friendRequest"])) {
             $ismeros = new Ismeros();
-            $ismeros->setStatusz(0);
+            $ismeros->setStatusz("pending");
             $ismeros->setFelhasznalo1($_SESSION["email"]);
             $ismeros->setFelhasznalo2($_GET["email"]);
             $ismerosController->addFriend($ismeros);
@@ -149,6 +149,36 @@ if (isset($_GET["email"])) {
         $bejelentkezettF = new Felhasznalo();
         $bejelentkezettF->setEmail($_SESSION["email"]);
 
+        // Ismerős státuszok megjelenítése
+        $ismeros_ = new Ismeros();
+        $ismeros_->setFelhasznalo1($_SESSION["email"]);
+        $ismeros_->setFelhasznalo2($_GET["email"]);
+        $bela = $ismerosController->bela($ismeros_);
+        $juli = $ismerosController->juli($ismeros_);
+
+//        var_dump($bela,$juli);
+//        die();
+
+        if (!is_bool($bela) && $bela["STATUSZ"] == "pending" && $juli == false) {
+            if ($_SESSION["email"] == $bela["FELHASZNALO1"]) {
+                $status = "belaPendingEsBela";
+            } else {
+                $status = "belaPendingEsJuli";
+            }
+        } elseif (!is_bool($juli) && $bela == false && $juli["STATUSZ"] == 'pending') {
+            if ($_SESSION["email"] == $juli["FELHASZNALO1"]) {
+                $status = "juliPendingEsJuli";
+            } else {
+                $status = "juliPendingEsBela";;
+            }
+        } elseif (!is_bool($bela) && !is_bool($juli) && $bela["STATUSZ"] == "friends" && $juli["STATUSZ"] == "friends") {
+            $status = "belaEsJuliBaratok";
+        } else {
+            $status = "belaEsJuliIsmeretlenek";
+        }
+
+
+        $smarty->assign("friendStatus", $status);
         $smarty->assign("belepettFelhasznalo", $bejelentkezettF);
         $smarty->assign("bejegyzesek", $posts);
         $smarty->assign("felhasznalo", $felhasznalo);

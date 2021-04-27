@@ -98,8 +98,43 @@
                                         </form>
                                     </div>
                                 </b-modal>
-                            {else}
+{*                            {elseif $friendStatus != "friends" && $friendStatus != "pending"}*}
+{*                                <form action="profil.php?email={{$felhasznalo->getEmail()}}" method="post">*}
+{*                                    <button type="submit" name="friendRequest" class="btn btn-primary"><i class="fas fa-user-plus"></i>Ismerősnek jelölés</button>*}
+{*                                </form>*}
+                            {/if}
+
+                            {if $friendStatus == "belaPendingEsBela"}
                                 <form action="profil.php?email={{$felhasznalo->getEmail()}}" method="post">
+{*                                    <p>belaPendingEsBela</p>*}
+                                    <button type="submit" name="declineRequest" class="btn btn-danger"><i class="fas fa-user-times"></i>Ismerőskérelem visszavonása</button>
+                                </form>
+                            {elseif $friendStatus == "belaPendingEsJuli"}
+                                <form action="profil.php?email={{$felhasznalo->getEmail()}}" method="post">
+{*                                    <p>belaPendingEsJuli</p>*}
+                                    <button type="submit" name="friendAccept" class="btn btn-warning"><i class="fas fa-user-friends"></i>Ismerőskérelem visszaigazolása</button>
+                                    <button type="submit" name="declineRequest" class="btn btn-danger"><i class="fas fa-user-times"></i>Ismerőskérelem visszautasítása</button>
+                                </form>
+                            {elseif $friendStatus == "juliPendingEsJuli"}
+                                <form action="profil.php?email={{$felhasznalo->getEmail()}}" method="post">
+{*                                    <p>juliPendingEsJuli</p>*}
+                                    <button type="submit" name="declineRequest" class="btn btn-danger"><i class="fas fa-user-times"></i>Ismerőskérelem visszavonása</button>
+                                </form>
+                            {elseif $friendStatus == "juliPendingEsBela"}
+                                <form action="profil.php?email={{$felhasznalo->getEmail()}}" method="post">
+{*                                    <p>juliPendingEsBela</p>*}
+                                    <button type="submit" name="friendAccept" class="btn btn-warning"><i class="fas fa-user-friends"></i>Ismerőskérelem visszaigazolása</button>
+                                    <button type="submit" name="declineRequest" class="btn btn-danger"><i class="fas fa-user-times"></i>Ismerőskérelem visszautasítása</button>
+                                </form>
+                            {elseif $friendStatus == "belaEsJuliBaratok"}
+                                <form action="profil.php?email={{$felhasznalo->getEmail()}}" method="post">
+{*                                    <p>belaEsJuliBaratok</p>*}
+                                    <button type="button" class="btn btn-success"><i class="fas fa-user-check"></i>Ismerős</button>
+                                    <button type="submit" name="removeFriend" class="btn btn-danger"><i class="fas fa-user-minus"></i>Ismerős törlése</button>
+                                </form>
+                            {elseif $belepettFelhasznalo->getEmail() != $felhasznalo->getEmail()}
+                                <form action="profil.php?email={{$felhasznalo->getEmail()}}" method="post">
+{*                                    <p>Egyik se</p>*}
                                     <button type="submit" name="friendRequest" class="btn btn-primary"><i class="fas fa-user-plus"></i>Ismerősnek jelölés</button>
                                 </form>
                             {/if}
