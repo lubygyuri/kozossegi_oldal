@@ -184,63 +184,86 @@ Ennek a feladatnak az a célja, hogy bemutassa az I. prototípusig vezető utat,
 Részfeladatai a következők:
 
 #### 6.2.1. Header Frontend
-Leírás
+![header](Diagramok/frontend_ms2/header.png)
 
 
 #### 6.2.2. Footer Frontend
-Leírás
+Minimalista, fekete háttéren a copyright szöveg.
 
 
 #### 6.2.3. Regisztráció Frontend
-Leírás
+![registration](Diagramok/frontend_ms2/registration.png)
 
 
 #### 6.2.4. Bejelentkezés Frontend
-Leírás
+![login](Diagramok/frontend_ms2/login.png)
 
 
 #### 6.2.5. Üzenőfal Frontend
-Leírás
+![timeline](Diagramok/frontend_ms2/timeline.png)
 
 
 #### 6.2.6. Profil Page Frontend
-Leírás
+![profile](Diagramok/frontend_ms2/profile.png)
 
 
 #### 6.2.7. Üzenetek Frontend
-Leírás
+![messages](Diagramok/frontend_ms2/messages.png)
 
 
 #### 6.2.8. Klubbok Frontend
-Leírás
+![clubs](Diagramok/frontend_ms2/clubs.png)
 
 
 #### 6.2.9. Validálás és beléptetés
-Leírás
+##### 6.2.9.1. Regisztráció esetén
+1. Az összes mező kitöltése megtörtént
+2. Nem megfelelő email cím ellenőrzése
+3. Már létező email cím ellenőrzése
+4. Nem egyező jelszavak ellenőrzése
+5. Hibaüzenetek mindhez
+6. Siker esetén felhasználó tájékoztatésa
 
+##### 6.2.9.2. Bejelentkezés esetén
+1. Az összes mező kitöltése megtörtént
+2. Nem létező email cím ellenőrzése
+3. Nem megfelelő jelszó
+4. Hibaüzenetek mindhez
 
 #### 6.2.10. Üzenőfal Backend I.
-Leírás
-
+1. A bejelentkezett felhasználó megjelenítése, a megfelelő adatokkal
+2. Bejegyzés közzététel
+3. Likeolás megvalósítása
+4. Összes bejegyzés listázása
+5. Kommentek listázása
+6. Bejegyzéshez képfeltöltés
 
 #### 6.2.11. Profil Page Backend I.
-Leírás
+1. A bejelentkezett felhasználó megjelenítése, a megfelelő adatokkal
+2. Bejegyzés közzététel
+3. Adatainak módosítása
+4. Profilképcsere
+5. Likeolás megvalósítása
+6. Saját bejegyzéseink listázása
+7. Kommentek listázása
+8. Bejegyzéshez képfeltöltés
 
 
 #### 6.2.12. Üzenetek Backend I.
-Leírás
+1. A bejelentkezett felhasználó megjelenítése, a megfelelő adatokkal
+2. Az adott felhasználó barátainak a listázása
 
 
 #### 6.2.13. Klubbok Backend I.
-Leírás
+1. Klubok listázása 
 
 
 #### 6.2.14. Ismerősök kezelése
- - 1. Ismerősnek jelölés megvalósítása
- - 2. Ismerős kérelem elutasítása
- - 3. Ismerős kérelem elfogadása
- - 4. Ismerős törlése, ha már ismerősök vagytok
- - 5. Ismertség jelzése a felhasználó felé
+1. Ismerősnek jelölés megvalósítása
+2. Ismerős kérelem elutasítása
+3. Ismerős kérelem elfogadása
+4. Ismerős törlése, ha már ismerősök vagytok
+5. Ismertség jelzése a felhasználó felé
 
 
 ### 6.3. Prototípus II. (3. mérföldkő)
