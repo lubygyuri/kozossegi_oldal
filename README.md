@@ -183,28 +183,64 @@ Ennek a feladatnak az a célja, hogy bemutassa az I. prototípusig vezető utat,
 
 Részfeladatai a következők:
 
-#### 6.2.1. TODO: Elkészítés
+#### 6.2.1. Header Frontend
 Leírás
 
 
-#### 6.2.1. TODO: Elkészítés
+#### 6.2.2. Footer Frontend
 Leírás
 
 
-#### 6.2.1. TODO: Elkészítés
+#### 6.2.3. Regisztráció Frontend
 Leírás
 
 
-#### 6.2.1. TODO: Elkészítés
+#### 6.2.4. Bejelentkezés Frontend
 Leírás
 
 
-#### 6.2.1. TODO: Elkészítés
+#### 6.2.5. Üzenőfal Frontend
 Leírás
 
 
-#### 6.2.1. TODO: Elkészítés
+#### 6.2.6. Profil Page Frontend
 Leírás
+
+
+#### 6.2.7. Üzenetek Frontend
+Leírás
+
+
+#### 6.2.8. Klubbok Frontend
+Leírás
+
+
+#### 6.2.9. Validálás és beléptetés
+Leírás
+
+
+#### 6.2.10. Üzenőfal Backend I.
+Leírás
+
+
+#### 6.2.11. Profil Page Backend I.
+Leírás
+
+
+#### 6.2.12. Üzenetek Backend I.
+Leírás
+
+
+#### 6.2.13. Klubbok Backend I.
+Leírás
+
+
+#### 6.2.14. Ismerősök kezelése
+ - 1. Ismerősnek jelölés megvalósítása
+ - 2. Ismerős kérelem elutasítása
+ - 3. Ismerős kérelem elfogadása
+ - 4. Ismerős törlése, ha már ismerősök vagytok
+ - 5. Ismertség jelzése a felhasználó felé
 
 
 ### 6.3. Prototípus II. (3. mérföldkő)

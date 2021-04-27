@@ -4,7 +4,7 @@
 <div id="app2">
     <b-row>
         <b-col>
-            <div class="shadow-lg p-3 bg-white rounded align-self-baseline w-75 p-3 mb-5 mt-5 ml-4">
+            <div class="shadow-lg p-3 bg-white rounded align-self-baseline p-3 mb-2 mt-2 ml-2">
                 <b-list-group>
                     {if $klubbok}
                     {for $i=0 to $klubbok|@count-1}
@@ -17,7 +17,7 @@
         </b-col>
 <b-col>
 
-    <div class= "shadow-lg pl-3 pr-3 pb-3 bg-white rounded align-self-baseline mr-2 w-50 mb-5 mx-auto">
+    <div class= "shadow-lg pl-3 pr-3 pb-3 bg-white rounded align-self-baseline mr-2 mb-5 mt-2 mx-auto">
         <form action="Uzenofal.php" method="post" enctype="multipart/form-data">
             <div class="post-header2">
                 <img src="{{$belepettFelhasznalo->getProfilkep()}}">
@@ -117,7 +117,7 @@
 
 </b-col>
 <b-col>
-        <div class="shadow-lg p-3 bg-white rounded align-self-baseline w-75 p-3 mb-5 mt-5 ml-4">
+        <div class="shadow-lg p-3 bg-white rounded align-self-baseline p-3 m-2">
             <div class="input-group rounded">
                 <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
                        aria-describedby="search-addon" />

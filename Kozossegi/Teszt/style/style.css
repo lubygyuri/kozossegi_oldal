@@ -247,3 +247,7 @@ footer {
 .label-cursor {
     cursor: pointer;
 }
+
+.input-group input {
+    margin-right: 8px;
+}

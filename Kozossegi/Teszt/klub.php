@@ -77,9 +77,6 @@ if ($postsData) {
             $post->setIsLiked(true);
         }
 
-
-
-
         array_push($posts, $post);
     }
 }
@@ -88,12 +85,11 @@ if ($postsData) {
 //klubbok
 $kulobok = array();
 $klubokData = $klubController->getKlubAll();
-if ($postsData) {
-    foreach ($klubokData as $klubData) {
-        $klub=new Klub();
-        $klub->setNev($klubData['NEV']);
-        array_push($kulobok, $klub);
-    }
+
+foreach ($klubokData as $klubData) {
+    $klub = new Klub();
+    $klub->setNev($klubData['NEV']);
+    array_push($kulobok, $klub);
 }
 
 

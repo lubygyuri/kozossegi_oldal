@@ -10,6 +10,8 @@ $kommentController = new KommentController();
 $felhasznaloController = new FelhasznaloController();
 
 $komm =new Komment();
+var_dump($_GET['id']);
+die();
 $komm->setBejegyzesAzonosito($_GET['id']);
 $komm->setUzenet($_GET['text']);
 $komm->setFelhasznaloAzonosito($_SESSION["email"]);
@@ -18,7 +20,7 @@ $kommentController->createKomment($komm);
 
 $kommentData = $kommentController->getKommentByBejegyzes($_GET['id']);
 $komment = array();
-if ($kommentData !=null) {
+if ($kommentData != null) {
     foreach ($kommentData as $komData) {
         $komm = new Komment();
         $komm->setAzonosito($komData["AZONOSITO"]);
