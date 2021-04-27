@@ -124,8 +124,8 @@ KLUB_BEJEGYZES(**azonosito**, uzenet, letrehozas_ideje, kep, *felhasznalo_azonos
 KLUB_BEJEGYZES_LIKE(***klub_bejegyzes_azonosito***, ***felhasznalo_azonosito***)
 
 ##### 6.1.6.3. Normalizálás: 
-- **1NF**: A leképezés után összetett attribútum nincs, csak a KLUB-ban lévő tagok  maradt többértékű attribútum, ehhez fel kell vennünk egy új relációs sémát, amihez külső kulcsként hozzávesszük az őt tartalmazó relációséma kulcsát. Így, teljesül az NF1.
-- **2NF**: Az egyedekből leképezett sémákra triviálisan teljesül, mert minden kulcsuk egyelemű. A BEJEGYZÉS LIKE, a KOMMENT LIKE és a TAGOK sémákban is triviálisan teljesül, mert nincs bennük másodlagos attribútum. A BARÁT sémában a státusz nyilvánvalóan teljesen függ a kulcstól. Tehát a sémák 2NF-ben vannak.
+- **1NF**: A leképezés után összetett attribútum nincs, csak a FENYKEP_ALBUM táblában lévő fenykepek, és a CSOPORT és a KLUB táblákban maradt tagok maradt többértékű attribútum, ehhez fel kell vennünk egy új relációs sémát, amihez külső kulcsként hozzávesszük az őt tartalmazó relációséma kulcsát. Így, teljesül az NF1.
+- **2NF**: Az egyedekből leképezett sémákra triviálisan teljesül, mert minden kulcsuk egyelemű. A BEJEGYZÉS LIKE, a KOMMENT LIKE, CSOPORT_TAGOK, KLUB_TAGOK és a KLUB_BEJEGYZES_LIKE sémákban is triviálisan teljesül, mert nincs bennük másodlagos attribútum. Az IMSEROS sémában a statusz nyilvánvalóan teljesen függ a kulcstól. Tehát a sémák 2NF-ben vannak.
 - **3NF**: Mindegyik séma 3NF-ban van, mert mindegyik másodlagos attribútum közvetlenül függ a kulcstól.
 
 
