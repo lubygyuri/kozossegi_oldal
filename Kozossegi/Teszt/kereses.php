@@ -14,6 +14,7 @@ foreach ($keresesEredmeny as $aktualis) {
     $felhasznalo = new Felhasznalo();
     $felhasznalo->setVezeteknev($aktualis["VEZETEKNEV"]);
     $felhasznalo->setKeresztnev($aktualis["KERESZTNEV"]);
+    $felhasznalo->setEmail($aktualis["EMAIL"]);
     array_push($felhasznalok, $felhasznalo);
 }
 
