@@ -88,7 +88,7 @@
                                             </div>
                                         </div>
                                         <div class="form-floating mt-3 mb-1">
-                                        <textarea class="form-control" placeholder="Írjon kommentet" id="textarea{{$bejegyzesek[$i]->getAzonosito()}}" style="height: 100px"></textarea>
+                                        <textarea class="form-control" placeholder="Írjon kommentet" id="floatingTextarea{{$bejegyzesek[$i]->getAzonosito()}}" style="height: 100px"></textarea>
                                     </div>
                                     <button type="button" class="btn btn-primary" onclick="komment({{$bejegyzesek[$i]->getAzonosito()}})">Közzététel</button>
                                     </div>

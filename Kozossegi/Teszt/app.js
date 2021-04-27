@@ -86,8 +86,8 @@ function komment(id) {
             document.getElementById(t).innerHTML = this.responseText;
         }
     };
-    var test = document.getElementById("textarea"+id).value;
-    document.getElementById("textarea"+id).value='';
+    var test = document.getElementById("floatingTextarea"+id).value;
+    document.getElementById("floatingTextarea"+id).value='';
     xhttp.open("GET", "komment.php?id="+id+"&text="+test, true);
     xhttp.send();
 }
