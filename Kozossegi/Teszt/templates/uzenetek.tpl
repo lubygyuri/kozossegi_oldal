@@ -28,21 +28,25 @@
                     {* Barátok listázva *}
                     <div class="messages-friends-container">
                         <ul>
-                            <li>
-                                {* Barát profilképe *}
-                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="profilkép">
-                                {* Barát adatai *}
-                                <div class="friend-details">
-                                    {* Barát neve *}
-                                    <span>Example2 Example2</span>
-                                    <div class="flex-row">
-                                        {* Barát utolsó üzenete *}
-                                        <p>Lorem ipsum dolor...</p>
-                                        {* Barát utolsó üzenetének időpontja *}
-                                        <small>14:34</small>
+                            {if $friendsList}
+                            {for $i=0 to $friendsList|@count-1}
+                                <li>
+                                    {* Barát profilképe *}
+                                    <img src="{{$friendsList[$i]->getProfilkep()}}" alt="profilkép">
+                                    {* Barát adatai *}
+                                    <div class="friend-details">
+                                        {* Barát neve *}
+                                        <span>{{$friendsList[$i]->getVezeteknev()}} {{$friendsList[$i]->getKeresztnev()}}</span>
+                                        <div class="flex-row">
+                                            {* Barát utolsó üzenete *}
+                                            <p>Lorem ipsum dolor...</p>
+                                            {* Barát utolsó üzenetének időpontja *}
+                                            <small>14:34</small>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
+                                </li>
+                            {/for}
+                            {/if}
                         </ul>
                     </div>
 

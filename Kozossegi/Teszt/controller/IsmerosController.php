@@ -40,4 +40,11 @@ class IsmerosController extends DB {
         return $stmt->fetch();
     }
 
+    public function listFriends(Ismeros $ismeros) {
+        $sql = "SELECT felhasznalo2 FROM LUBLO.ISMEROS WHERE felhasznalo1 = ? AND statusz = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$ismeros->getFelhasznalo1(), $ismeros->getStatusz()]);
+        return $stmt->fetchAll();
+    }
+
 }

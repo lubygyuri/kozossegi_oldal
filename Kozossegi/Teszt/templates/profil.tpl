@@ -98,10 +98,6 @@
                                         </form>
                                     </div>
                                 </b-modal>
-{*                            {elseif $friendStatus != "friends" && $friendStatus != "pending"}*}
-{*                                <form action="profil.php?email={{$felhasznalo->getEmail()}}" method="post">*}
-{*                                    <button type="submit" name="friendRequest" class="btn btn-primary"><i class="fas fa-user-plus"></i>Ismerősnek jelölés</button>*}
-{*                                </form>*}
                             {/if}
 
                             {if $friendStatus == "belaPendingEsBela"}
