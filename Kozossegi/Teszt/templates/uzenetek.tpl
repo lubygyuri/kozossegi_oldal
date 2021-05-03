@@ -65,12 +65,12 @@
                             {* Bejövő üzenetek *}
                             <div class="incoming-messages">
                                 {* Maga a bejövő üzenet *}
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet deleniti ex iste iusto mollitia, nisi quis repellendus reprehenderit sunt unde?</p>
+                                <p>Bejövő üzenet</p>
                             </div>
                             {* Kimenő üzenetek *}
                             <div class="outgoing-messages">
                                 {* Maga a kimenő üzenet *}
-                                <p>Lorem ipsum dolor sit amet.</p>
+                                <p>Kimenő üzenet</p>
                             </div>
                         </div>
 

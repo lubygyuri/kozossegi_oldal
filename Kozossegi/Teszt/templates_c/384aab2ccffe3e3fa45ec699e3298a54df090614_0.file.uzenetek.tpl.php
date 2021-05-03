@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-27 05:48:47
+/* Smarty version 3.1.39, created on 2021-05-03 21:55:42
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\uzenetek.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6087899f575515_09596217',
+  'unifunc' => 'content_6090553e1f0b83_84799340',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '384aab2ccffe3e3fa45ec699e3298a54df090614' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\uzenetek.tpl',
-      1 => 1619495327,
+      1 => 1620071735,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6087899f575515_09596217 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6090553e1f0b83_84799340 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -67,13 +67,14 @@ if ($_smarty_tpl->tpl_vars['i']->total > 0) {
 for ($_smarty_tpl->tpl_vars['i']->value = 0, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
 $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration === $_smarty_tpl->tpl_vars['i']->total;?>
                                 <li>
-                                                                        <img src="<?php ob_start();
+                                    <button>
+                                                                                <img src="<?php ob_start();
 echo $_smarty_tpl->tpl_vars['friendsList']->value[$_smarty_tpl->tpl_vars['i']->value]->getProfilkep();
 $_prefixVariable4 = ob_get_clean();
 echo $_prefixVariable4;?>
 " alt="profilkép">
-                                                                        <div class="friend-details">
-                                                                                <span><?php ob_start();
+                                                                                <div class="friend-details">
+                                                                                        <span><?php ob_start();
 echo $_smarty_tpl->tpl_vars['friendsList']->value[$_smarty_tpl->tpl_vars['i']->value]->getVezeteknev();
 $_prefixVariable5 = ob_get_clean();
 echo $_prefixVariable5;?>
@@ -82,11 +83,12 @@ echo $_smarty_tpl->tpl_vars['friendsList']->value[$_smarty_tpl->tpl_vars['i']->v
 $_prefixVariable6 = ob_get_clean();
 echo $_prefixVariable6;?>
 </span>
-                                        <div class="flex-row">
-                                                                                        <p>Lorem ipsum dolor...</p>
-                                                                                        <small>14:34</small>
+                                            <div class="flex-row">
+                                                                                                <p>Lorem ipsum dolor...</p>
+                                                                                                <small>14:34</small>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </button>
                                 </li>
                             <?php }
 }
@@ -103,10 +105,10 @@ echo $_prefixVariable6;?>
 
                                                 <div class="chat-messages">
                                                         <div class="incoming-messages">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet deleniti ex iste iusto mollitia, nisi quis repellendus reprehenderit sunt unde?</p>
+                                                                <p>Bejövő üzenet</p>
                             </div>
                                                         <div class="outgoing-messages">
-                                                                <p>Lorem ipsum dolor sit amet.</p>
+                                                                <p>Kimenő üzenet</p>
                             </div>
                         </div>
 
