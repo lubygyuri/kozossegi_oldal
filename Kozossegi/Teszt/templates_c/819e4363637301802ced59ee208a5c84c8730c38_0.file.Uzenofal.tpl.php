@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-26 16:08:50
+/* Smarty version 3.1.39, created on 2021-04-27 14:35:30
   from '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/Uzenofal.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6086c972cd1150_65721312',
+  'unifunc' => 'content_60880512ac5d01_64807403',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '819e4363637301802ced59ee208a5c84c8730c38' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/Uzenofal.tpl',
-      1 => 1619446129,
+      1 => 1619526923,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6086c972cd1150_65721312 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60880512ac5d01_64807403 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -156,7 +156,7 @@ echo $_prefixVariable22;?>
 echo $_smarty_tpl->tpl_vars['belepettFelhasznalo']->value->getKeresztnev();
 $_prefixVariable23 = ob_get_clean();
 echo $_prefixVariable23;?>
-</span></div></div><div class="form-floating mt-3 mb-1"><textarea class="form-control" placeholder="Írjon kommentet" id="textarea<?php ob_start();
+</span></div></div><div class="form-floating mt-3 mb-1"><textarea class="form-control" placeholder="Írjon kommentet" id="floatingTextarea<?php ob_start();
 echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
 $_prefixVariable24 = ob_get_clean();
 echo $_prefixVariable24;?>

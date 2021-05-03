@@ -14,6 +14,8 @@ if (!isset($_SESSION["email"])){
 }
 
 
+
+
 // Controllerek példányosítása
 $felhasznaloController = new FelhasznaloController();
 $bejegyzesController = new KlubBejegyzesController();
@@ -21,6 +23,7 @@ $kepController = new KepController();
 $kommentController = new KommentController();
 $likeController = new LikeController();
 $klubController =new KlubController();
+$activ='';
 
 // Bejegyzés közzététel
 if(isset($_POST["submit"])) {
@@ -31,9 +34,25 @@ if(isset($_POST["submit"])) {
     $bejegyzesController->createPost($bejegyzes);
 }
 
+//klubbok
+$kulobok = array();
+$klubokData = $klubController->getKlubAll();
+
+foreach ($klubokData as $klubData) {
+    $klub = new Klub();
+    $klub->setNev($klubData['NEV']);
+    array_push($kulobok, $klub);
+}
+
 // Bejegyzések listázása
 $posts = array();
-$postsData = $bejegyzesController->getPostsByKlubAzonosito("Teszt");
+if(isset($_GET["id"])){
+    $x=$_GET["id"];
+}else {
+    $x=$kulobok[0]->getNev();
+}
+$activ=$x;
+$postsData = $bejegyzesController->getPostsByKlubAzonosito($x);
 if ($postsData) {
     foreach ($postsData as $postData) {
         $post = new KlubBejegyzes();
@@ -82,15 +101,7 @@ if ($postsData) {
 }
 
 
-//klubbok
-$kulobok = array();
-$klubokData = $klubController->getKlubAll();
 
-foreach ($klubokData as $klubData) {
-    $klub = new Klub();
-    $klub->setNev($klubData['NEV']);
-    array_push($kulobok, $klub);
-}
 
 
 
@@ -101,6 +112,7 @@ $bejelentkezettF->setKeresztnev($_SESSION["keresztnev"]);
 $bejelentkezettF->setVezeteknev($_SESSION["vezeteknev"]);
 $bejelentkezettF->setEmail($_SESSION["email"]);
 
+$smarty->assign("aktiv", $activ);
 $smarty->assign("klubbok",$kulobok);
 $smarty->assign("bejegyzesek",$posts);
 $smarty->assign("belepettFelhasznalo", $bejelentkezettF);

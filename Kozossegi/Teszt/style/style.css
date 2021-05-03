@@ -251,3 +251,11 @@ footer {
 .input-group input {
     margin-right: 8px;
 }
+
+.klub_link{
+    text-decoration: none;
+    color:#000;
+}
+.klub_link:link{
+    text-decoration: none;
+}
