@@ -20,7 +20,6 @@
             </div>
         </b-col>
 <b-col>
-
     <div class= "shadow-lg pl-3 pr-3 pb-3 bg-white rounded align-self-baseline mr-2 mb-5 mt-2 mx-auto">
         <form action="klub.php" method="post" enctype="multipart/form-data">
             <div class="post-header2">

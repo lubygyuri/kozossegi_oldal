@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-03 20:03:23
+/* Smarty version 3.1.39, created on 2021-05-03 20:13:53
   from '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/klub.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60903aeb717fa9_71533343',
+  'unifunc' => 'content_60903d61a4d399_87852881',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bec986a48e5cafd818b311d9058b919c4d2f3634' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/klub.tpl',
-      1 => 1620065000,
+      1 => 1620065629,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60903aeb717fa9_71533343 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60903d61a4d399_87852881 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -69,7 +69,6 @@ echo $_prefixVariable4;?>
             </div>
         </b-col>
 <b-col>
-
     <div class= "shadow-lg pl-3 pr-3 pb-3 bg-white rounded align-self-baseline mr-2 mb-5 mt-2 mx-auto">
         <form action="klub.php" method="post" enctype="multipart/form-data">
             <div class="post-header2">
