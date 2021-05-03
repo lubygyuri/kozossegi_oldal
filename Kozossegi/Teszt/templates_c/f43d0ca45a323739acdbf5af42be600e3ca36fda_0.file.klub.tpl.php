@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-03 21:02:15
+/* Smarty version 3.1.39, created on 2021-05-03 21:31:49
   from 'D:\XAMPP\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\klub.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_609048b704b648_82855192',
+  'unifunc' => 'content_60904fa5499671_61658081',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f43d0ca45a323739acdbf5af42be600e3ca36fda' => 
     array (
       0 => 'D:\\XAMPP\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\klub.tpl',
-      1 => 1620068532,
+      1 => 1620070307,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_609048b704b648_82855192 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60904fa5499671_61658081 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -69,7 +69,6 @@ echo $_prefixVariable4;?>
             </div>
         </b-col>
 <b-col>
-
     <div class= "shadow-lg pl-3 pr-3 pb-3 bg-white rounded align-self-baseline mr-2 mb-5 mt-2 mx-auto">
         <form action="klub.php" method="post" enctype="multipart/form-data">
             <div class="post-header2">
@@ -221,14 +220,15 @@ echo $_prefixVariable30;?>
 <b-col>
         <div class="shadow-lg p-3 bg-white rounded align-self-baseline p-3 m-2">
             <div class="input-group rounded">
-                <input type="search" class="form-control rounded" placeholder="Keresés..." aria-label="Search"
+                <input onkeyup="klubKereses()" type="search" id="searchboxclub" class="form-control rounded" placeholder="Keresés..." aria-label="Search"
                        aria-describedby="search-addon" />
                 <span class="input-group-text border-0" id="search-addon">
                     <i class="fas fa-search"></i>
                 </span>
             </div>
-            <b-button class="mt-3">Csatlakozás</b-button>
-            <b-button variant="success" class="mb-0 mt-3" @click="$bvModal.show('bv-modal-ujklubletrehozasa')">Új klub hozzáadása</b-button>
+            <div id="klubKeresesDiv">
+            </div>
+            <b-button variant="success" class="mb-0 mt-3 w-100" @click="$bvModal.show('bv-modal-ujklubletrehozasa')">Új klub hozzáadása</b-button>
          </div>
 </b-col>
 
