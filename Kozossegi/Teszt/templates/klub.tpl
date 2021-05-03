@@ -8,7 +8,11 @@
                 <b-list-group>
                     {if $klubbok}
                     {for $i=0 to $klubbok|@count-1}
-                        <b-list-group-item>{{$klubbok[$i]->getNev()}}</b-list-group-item>
+                        {if $aktiv == $klubbok[$i]->getNev()}
+                            <a class="klub_link" href="klub.php?id={{$klubbok[$i]->getNev()}}"><b-list-group-item active>{{$klubbok[$i]->getNev()}}</b-list-group-item></a>
+                        {else}
+                            <a class="klub_link" href="klub.php?id={{$klubbok[$i]->getNev()}}"><b-list-group-item>{{$klubbok[$i]->getNev()}}</b-list-group-item></a>
+                        {/if}
                     {/for}
                     {/if}
                 </b-list-group>
@@ -114,12 +118,11 @@
         {/for}
     {/if}
 
-
 </b-col>
 <b-col>
         <div class="shadow-lg p-3 bg-white rounded align-self-baseline p-3 m-2">
             <div class="input-group rounded">
-                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                <input type="search" class="form-control rounded" placeholder="Keresés..." aria-label="Search"
                        aria-describedby="search-addon" />
                 <span class="input-group-text border-0" id="search-addon">
                     <i class="fas fa-search"></i>
