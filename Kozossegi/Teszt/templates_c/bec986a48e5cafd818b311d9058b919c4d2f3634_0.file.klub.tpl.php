@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-03 20:13:53
+/* Smarty version 3.1.39, created on 2021-05-03 21:24:30
   from '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/klub.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60903d61a4d399_87852881',
+  'unifunc' => 'content_60904dee7efe85_75979109',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bec986a48e5cafd818b311d9058b919c4d2f3634' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/klub.tpl',
-      1 => 1620065629,
+      1 => 1620069869,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60903d61a4d399_87852881 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60904dee7efe85_75979109 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -115,7 +115,7 @@ $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderin
 if ($_smarty_tpl->tpl_vars['i']->total > 0) {
 for ($_smarty_tpl->tpl_vars['i']->value = 0, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
 $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration === $_smarty_tpl->tpl_vars['i']->total;?>
-            <div class= "shadow-lg pl-3 pr-3 pb-3 bg-white rounded align-self-baseline mr-2 w-50 mb-5 mx-auto"><b-row><div class="post-header"><img src="<?php ob_start();
+            <div class= "shadow-lg pl-3 pr-3 pb-3 bg-white rounded align-self-baseline mr-2 w-100 mb-5 mx-auto"><b-row><div class="post-header"><img src="<?php ob_start();
 echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getFelhasznaloAzonosito()->getProfilkep();
 $_prefixVariable9 = ob_get_clean();
 echo $_prefixVariable9;?>
@@ -220,16 +220,42 @@ echo $_prefixVariable30;?>
 <b-col>
         <div class="shadow-lg p-3 bg-white rounded align-self-baseline p-3 m-2">
             <div class="input-group rounded">
-                <input type="search" class="form-control rounded" placeholder="Keresés..." aria-label="Search"
+                <input onkeyup="klubKereses()" type="search" id="searchboxclub" class="form-control rounded" placeholder="Keresés..." aria-label="Search"
                        aria-describedby="search-addon" />
                 <span class="input-group-text border-0" id="search-addon">
                     <i class="fas fa-search"></i>
                 </span>
             </div>
+            <div id="klubKeresesDiv">
+            </div>
             <b-button class="mt-3">Csatlakozás</b-button>
-            <b-button class="mt-3">Új hozzáadás</b-button>
+            <b-button variant="success" class="mb-0 mt-3" @click="$bvModal.show('bv-modal-ujklubletrehozasa')">Új klub hozzáadása</b-button>
          </div>
 </b-col>
+
+        <b-modal id="bv-modal-ujklubletrehozasa" hide-footer title="Új klub létrehozása">
+            <p class="mt-2">Kérlek töltsd ki az alábbi adatokat:</p>
+            <div>
+                <form action="klub.php" class="kulso-form" method="post">
+                    <input type="text" name="klub_name" placeholder="Klub neve" class="mt-3 p-2 h-25" required>
+                    <input type="text" name="leiras" placeholder="Leírása" class="mt-3 p-2 h-25" required>
+                    <div class="flex-row mt-3 p-2 h-25">
+                        <div class="register-genderclass rounded">
+                            <input type="radio" id="public" name="lathatosag" value="0" checked>
+                            <label for="public">Publikus</label><br>
+                        </div>
+                        <div class="register-genderclass rounded" >
+                            <input type="radio" id="private" name="lathatosag" value="1">
+                            <label for="private">Privát</label><br>
+                        </div>
+                    </div>
+                    <div class="flex-row">
+                        <button type="submit" id="register-id" class="mt-3 p2 btn btn-success" name="submit_klub">Klub létrehozása</button>
+                        <b-button id="cancel" variant="warning" class="mt-3 p2" @click="$bvModal.hide('bv-modal-ujklubletrehozasa')">Mégse</b-button>
+                    </div>
+                </form>
+            </div>
+        </b-modal>
 
 
 
@@ -237,5 +263,7 @@ echo $_prefixVariable30;?>
 </div>
 
 <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-}
+?>
+
+<?php }
 }

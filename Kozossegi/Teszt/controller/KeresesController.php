@@ -10,5 +10,12 @@ class KeresesController extends DB {
         $stmt->execute([$keresettSzo, $keresettSzo]);
         return $stmt->fetchAll();
     }
+    public function searchingKlub($keresettSzo) {
+        $keresettSzo = '%'.$keresettSzo.'%';
+        $sql = "SELECT nev FROM LUBLO.KLUB WHERE nev LIKE ? ";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$keresettSzo]);
+        return $stmt->fetchAll();
+    }
 
 }

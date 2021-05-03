@@ -47,7 +47,7 @@
     {if $bejegyzesek}
         {for $i=0 to $bejegyzesek|@count-1}
             {strip}
-                <div class= "shadow-lg pl-3 pr-3 pb-3 bg-white rounded align-self-baseline mr-2 w-50 mb-5 mx-auto">
+                <div class= "shadow-lg pl-3 pr-3 pb-3 bg-white rounded align-self-baseline mr-2 w-100 mb-5 mx-auto">
                     <b-row>
                         <div class="post-header">
                             {* Profilkép *}
@@ -124,11 +124,13 @@
 <b-col>
         <div class="shadow-lg p-3 bg-white rounded align-self-baseline p-3 m-2">
             <div class="input-group rounded">
-                <input type="search" class="form-control rounded" placeholder="Keresés..." aria-label="Search"
+                <input onkeyup="klubKereses()" type="search" id="searchboxclub" class="form-control rounded" placeholder="Keresés..." aria-label="Search"
                        aria-describedby="search-addon" />
                 <span class="input-group-text border-0" id="search-addon">
                     <i class="fas fa-search"></i>
                 </span>
+            </div>
+            <div id="klubKeresesDiv">
             </div>
             <b-button class="mt-3">Csatlakozás</b-button>
             <b-button variant="success" class="mb-0 mt-3" @click="$bvModal.show('bv-modal-ujklubletrehozasa')">Új klub hozzáadása</b-button>
