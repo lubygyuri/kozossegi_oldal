@@ -117,6 +117,20 @@ function kereses() {
         document.getElementById("keresesUl").remove();
     }
 }
+function klubKereses() {
+    var searchValue = document.getElementById('searchboxclub').value;
+    if (searchValue.length !== 0) {
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("klubKeresesDiv").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "klubKereses.php?search="+searchValue, true);
+        xhttp.send();
+    } else {
+        document.getElementById("keresesUl").remove();
+    }
+}
 
 
 
