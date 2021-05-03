@@ -48,7 +48,7 @@
     {if $bejegyzesek}
         {for $i=0 to $bejegyzesek|@count-1}
             {strip}
-                <div class= "shadow-lg pl-3 pr-3 pb-3 bg-white rounded align-self-baseline mr-2 w-50 mb-5 mx-auto">
+                <div class= "shadow-lg pl-3 pr-3 pb-3 bg-white rounded align-self-baseline mr-2 w-100 mb-5 mx-auto">
                     <b-row>
                         <div class="post-header">
                             {* Profilkép *}
