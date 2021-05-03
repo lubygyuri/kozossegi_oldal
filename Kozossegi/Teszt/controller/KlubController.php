@@ -10,4 +10,10 @@ class KlubController extends DB {
         return $stmt->fetchAll();
     }
 
+    public function createClub(Klub $klub){
+        $sql = "INSERT INTO LUBLO.KLUB (nev, leiras, lathatosag, letrehozas_datuma, admin_felhasznalo) VALUES (?, ?, ?, CURRENT_DATE, ?)";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$klub->getNev(), $klub->getLeiras(), $klub->getLathatosag(),$klub->getAdminFelhasznalo()]);
+    }
+
 }
