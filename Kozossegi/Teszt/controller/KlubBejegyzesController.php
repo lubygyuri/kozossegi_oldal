@@ -8,4 +8,10 @@ class KlubBejegyzesController extends DB{
         $stmt->execute([$klubAzonossito]);
         return $stmt->fetchAll();
     }
+
+    public function createPost(Bejegyzes $bejegyzes) {
+        $sql = "INSERT INTO LUBLO.KLUB_BEJEGYZES (uzenet, letrehozas_ideje, felhasznalo_azonosito, klub_azonosito,kep) VALUES (?, CURRENT_TIMESTAMP, ?,?, ?)";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$bejegyzes->getUzenet(),$bejegyzes->getFelhasznaloAzonosito(),$bejegyzes->getKlubAzonosito(),$bejegyzes->getKep()]);
+    }
 }

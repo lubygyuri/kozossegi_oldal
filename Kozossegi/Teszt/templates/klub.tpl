@@ -22,7 +22,7 @@
 <b-col>
 
     <div class= "shadow-lg pl-3 pr-3 pb-3 bg-white rounded align-self-baseline mr-2 mb-5 mt-2 mx-auto">
-        <form action="Uzenofal.php" method="post" enctype="multipart/form-data">
+        <form action="klub.php" method="post" enctype="multipart/form-data">
             <div class="post-header2">
                 <img src="{{$belepettFelhasznalo->getProfilkep()}}">
                 <div class="post-header-details">
@@ -31,6 +31,7 @@
             </div>
             <div class="form-floating mt-3 mb-3">
                 <textarea class="form-control" placeholder="Írjon bejegyzést..." id="floatingTextarea2" name="text" style="height: 100px"></textarea>
+                <input  name="klubAzonosito" type="hidden" value="{{$aktiv}}"/>
             </div>
             <div class="image-upload">
                 <label for="file-input" class="h6 mb-2">
@@ -42,6 +43,8 @@
             </div>
         </form>
     </div>
+
+
     {if $bejegyzesek}
         {for $i=0 to $bejegyzesek|@count-1}
             {strip}
@@ -68,9 +71,9 @@
                             <div class="post-footer mt-3">
                                 <div id="{{$bejegyzesek[$i]->getAzonosito()}}">
                                     {if $bejegyzesek[$i]->getIsLiked()}
-                                        <button onclick="like({{$bejegyzesek[$i]->getAzonosito()}})" type="submit" name="likePost"><i class="fas fa-heart"></i>Tetszik</button>
+                                        <button onclick="klubLike({{$bejegyzesek[$i]->getAzonosito()}})" type="submit" name="likePost"><i class="fas fa-heart"></i>Tetszik</button>
                                     {else}
-                                        <button onclick="like({{$bejegyzesek[$i]->getAzonosito()}})" type="submit" name="likePost"><i class="far fa-heart"></i>Tetszik</button>
+                                        <button onclick="klubLike({{$bejegyzesek[$i]->getAzonosito()}})" type="submit" name="likePost"><i class="far fa-heart"></i>Tetszik</button>
                                     {/if}
                                 </div>
                                 <button v-b-toggle.my-collapse{{$bejegyzesek[$i]->getAzonosito()}} id="{{$bejegyzesek[$i]->getAzonosito()}}"><i class="far fa-comment-alt"></i>Hozzászólás</button>

@@ -10,6 +10,25 @@ class Bejegyzes {
     private $kommentek =array();
     private $likes;
     private $isLiked;
+    private $klub_azonosito;
+
+    /**
+     * @return mixed
+     */
+    public function getKlubAzonosito()
+    {
+        return $this->klub_azonosito;
+    }
+
+    /**
+     * @param mixed $klub_azonosito
+     */
+    public function setKlubAzonosito($klub_azonosito)
+    {
+        $this->klub_azonosito = $klub_azonosito;
+    }
+
+
 
     /**
      * @return mixed

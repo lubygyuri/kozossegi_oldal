@@ -20,16 +20,32 @@ $likeController = new LikeController();
     $like->setFelhasznaloAzonosito($_SESSION["email"]);
     $likedPost->setAzonosito($_GET["id"]);
 
-    if (!$likeController->alreadyLikedPost($like)) { //like
-        $bejegyzesController->updateLikesOnBejegyzes($likedPost);
-        $likeController->increaseBejegyzesLike($like);
-        $smarty->assign("like",true);
-        $smarty->assign("azonosito",$_GET["id"]);
-    } else { //unlike
-        $bejegyzesController->deleteLikesOnBejegyzes($likedPost);
-        $likeController->decreaseBejegyzesLike($like);
-        $smarty->assign("like",false);
-        $smarty->assign("azonosito",$_GET["id"]);
+    if(isset($_GET['klub'])){
+     /*   var_dump($likeController->klubAlreadyLikedPost($like));
+        die();*/
+        if (!$likeController->klubAlreadyLikedPost($like)) { //like
+           // $bejegyzesController->updateLikesOnBejegyzes($likedPost); // ????
+            $likeController->klubIncreaseBejegyzesLike($like); // beszurja a like-ot
+            $smarty->assign("like",true);
+            $smarty->assign("azonosito",$_GET["id"]);
+        } else { //unlike
+          //  $bejegyzesController->deleteLikesOnBejegyzes($likedPost); // ???
+            $likeController->klubDecreaseBejegyzesLike($like); // torol
+            $smarty->assign("like",false);
+            $smarty->assign("azonosito",$_GET["id"]);
+        }
+    }else {
+        if (!$likeController->alreadyLikedPost($like)) { //like
+            $bejegyzesController->updateLikesOnBejegyzes($likedPost);
+            $likeController->increaseBejegyzesLike($like);
+            $smarty->assign("like",true);
+            $smarty->assign("azonosito",$_GET["id"]);
+        } else { //unlike
+            $bejegyzesController->deleteLikesOnBejegyzes($likedPost);
+            $likeController->decreaseBejegyzesLike($like);
+            $smarty->assign("like",false);
+            $smarty->assign("azonosito",$_GET["id"]);
+        }
     }
 
 $smarty->display('likeGomb.tpl');

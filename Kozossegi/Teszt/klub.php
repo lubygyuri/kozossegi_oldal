@@ -13,9 +13,6 @@ if (!isset($_SESSION["email"])){
     exit();
 }
 
-
-
-
 // Controllerek példányosítása
 $felhasznaloController = new FelhasznaloController();
 $bejegyzesController = new KlubBejegyzesController();
@@ -24,18 +21,11 @@ $kommentController = new KommentController();
 $likeController = new LikeController();
 $klubController =new KlubController();
 $activ='';
+$kulobok = array();
 
-// Bejegyzés közzététel
-if(isset($_POST["submit"])) {
-    $bejegyzes = new Bejegyzes();
-    $bejegyzes->setUzenet($_POST['text']);
-    $bejegyzes->setFelhasznaloAzonosito($_SESSION["email"]);
-    $bejegyzes->setKep($kepController->kepFeltoltes('postImgUzenofal'));
-    $bejegyzesController->createPost($bejegyzes);
-}
 
 //klubbok
-$kulobok = array();
+
 $klubokData = $klubController->getKlubAll();
 
 foreach ($klubokData as $klubData) {
@@ -44,7 +34,9 @@ foreach ($klubokData as $klubData) {
     array_push($kulobok, $klub);
 }
 
-// Bejegyzések listázása
+
+
+//klubb azonosito
 $posts = array();
 if(isset($_GET["id"])){
     $x=$_GET["id"];
@@ -52,7 +44,23 @@ if(isset($_GET["id"])){
     $x=$kulobok[0]->getNev();
 }
 $activ=$x;
-$postsData = $bejegyzesController->getPostsByKlubAzonosito($x);
+
+
+
+// Bejegyzés közzététel
+if(isset($_POST["submit"])) {
+    $bejegyzes = new Bejegyzes();
+    $bejegyzes->setUzenet($_POST['text']);
+    $bejegyzes->setFelhasznaloAzonosito($_SESSION["email"]);
+    $bejegyzes->setKep($kepController->kepFeltoltes('postImgUzenofal'));
+    $bejegyzes->setKlubAzonosito($_POST['klubAzonosito']);
+    $bejegyzesController->createPost($bejegyzes);
+    $activ=$_POST['klubAzonosito'];
+}
+
+// Bejegyzések listázása
+
+$postsData = $bejegyzesController->getPostsByKlubAzonosito($activ);
 if ($postsData) {
     foreach ($postsData as $postData) {
         $post = new KlubBejegyzes();
@@ -90,7 +98,7 @@ if ($postsData) {
         $like = new Like();
         $like->setBejegyzesAzonosito($post->getAzonosito());
         $like->setFelhasznaloAzonosito($_SESSION["email"]);
-        if (!$likeController->isPostLiked($like)) {
+        if (!$likeController->klubIsPostLiked($like)) {
             $post->setIsLiked(false);
         } else {
             $post->setIsLiked(true);

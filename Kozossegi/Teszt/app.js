@@ -78,6 +78,16 @@ function like(id) {
     xhttp.open("GET", "like.php?id="+id, true);
     xhttp.send();
 }
+function klubLike(id) {
+    /*document.getElementById(x).removeAttribute("onclick");*/
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById(id).innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "like.php?id="+id+"&klub=true", true);
+    xhttp.send();
+}
 function komment(id) {
     /*document.getElementById(x).removeAttribute("onclick");*/
     xhttp.onreadystatechange = function() {
