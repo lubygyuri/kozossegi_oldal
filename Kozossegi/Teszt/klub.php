@@ -22,16 +22,23 @@ $likeController = new LikeController();
 $klubController =new KlubController();
 $activ='';
 $kulobok = array();
-
+$kulobok = klubblistafrissites();
 
 //klubbok
 
-$klubokData = $klubController->getKlubAll();
 
-foreach ($klubokData as $klubData) {
-    $klub = new Klub();
-    $klub->setNev($klubData['NEV']);
-    array_push($kulobok, $klub);
+
+function klubblistafrissites(){
+    $klubController =new KlubController();
+    $kulobok = array();
+    $klubokData = $klubController->getKlubAll();
+    foreach ($klubokData as $klubData) {
+        $klub = new Klub();
+        $klub->setNev($klubData['NEV']);
+        array_push($kulobok, $klub);
+    }
+
+    return $kulobok;
 }
 
 
@@ -42,9 +49,22 @@ if(isset($_GET["id"])){
     $x=$_GET["id"];
 }else {
     $x=$kulobok[0]->getNev();
+    //TODO Legyen egy alapértelmezett klubb amibe mindenki bele kerül és nem lehet belőle kilépni
 }
 $activ=$x;
 
+//klubb létrehozása
+
+if(isset($_POST["submit_klub"])) {
+    $ujklubb = new Klub();
+    $ujklubb -> setNev($_POST["klub_name"]);
+    $ujklubb ->setLeiras($_POST["leiras"]);
+    $ujklubb -> setLathatosag($_POST["lathatosag"]);
+    $ujklubb -> setAdminFelhasznalo($_SESSION["email"]);
+    $klubController -> createClub($ujklubb);
+    $kulobok = klubblistafrissites();
+
+}
 
 
 // Bejegyzés közzététel

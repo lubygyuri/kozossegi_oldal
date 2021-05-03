@@ -132,9 +132,33 @@
                 </span>
             </div>
             <b-button class="mt-3">Csatlakozás</b-button>
-            <b-button class="mt-3">Új hozzáadás</b-button>
+            <b-button variant="success" class="mb-0 mt-3" @click="$bvModal.show('bv-modal-ujklubletrehozasa')">Új klub hozzáadása</b-button>
          </div>
 </b-col>
+
+        <b-modal id="bv-modal-ujklubletrehozasa" hide-footer title="Új klub létrehozása">
+            <p class="mt-2">Kérlek töltsd ki az alábbi adatokat:</p>
+            <div>
+                <form action="klub.php" class="kulso-form" method="post">
+                    <input type="text" name="klub_name" placeholder="Klub neve" class="mt-3 p-2 h-25" required>
+                    <input type="text" name="leiras" placeholder="Leírása" class="mt-3 p-2 h-25" required>
+                    <div class="flex-row mt-3 p-2 h-25">
+                        <div class="register-genderclass rounded">
+                            <input type="radio" id="public" name="lathatosag" value="0" checked>
+                            <label for="public">Publikus</label><br>
+                        </div>
+                        <div class="register-genderclass rounded" >
+                            <input type="radio" id="private" name="lathatosag" value="1">
+                            <label for="private">Privát</label><br>
+                        </div>
+                    </div>
+                    <div class="flex-row">
+                        <button type="submit" id="register-id" class="mt-3 p2 btn btn-success" name="submit_klub">Klub létrehozása</button>
+                        <b-button id="cancel" variant="warning" class="mt-3 p2" @click="$bvModal.hide('bv-modal-ujklubletrehozasa')">Mégse</b-button>
+                    </div>
+                </form>
+            </div>
+        </b-modal>
 
 
 
@@ -142,3 +166,4 @@
 </div>
 
 {include file="footer.tpl"}
+
