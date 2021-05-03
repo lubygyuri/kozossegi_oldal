@@ -88,6 +88,6 @@ class Klub {
         $this->adminFelhasznalo = $adminFelhasznalo;
     }
 
-
+    
 
 }

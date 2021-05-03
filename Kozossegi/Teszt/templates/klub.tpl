@@ -132,8 +132,7 @@
             </div>
             <div id="klubKeresesDiv">
             </div>
-            <b-button class="mt-3">Csatlakozás</b-button>
-            <b-button variant="success" class="mb-0 mt-3" @click="$bvModal.show('bv-modal-ujklubletrehozasa')">Új klub hozzáadása</b-button>
+            <b-button variant="success" class="mb-0 mt-3 w-100" @click="$bvModal.show('bv-modal-ujklubletrehozasa')">Új klub hozzáadása</b-button>
          </div>
 </b-col>
 

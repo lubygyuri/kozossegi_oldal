@@ -16,4 +16,10 @@ class KlubController extends DB {
         $stmt->execute([$klub->getNev(), $klub->getLeiras(), $klub->getLathatosag(),$klub->getAdminFelhasznalo()]);
     }
 
+    public function getKlub($nev) {
+        $sql = "SELECT * FROM LUBLO.KLUB WHERE nev = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$nev]);
+        return $stmt->fetch();
+    }
 }
