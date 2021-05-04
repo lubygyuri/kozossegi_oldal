@@ -14,7 +14,7 @@
             </li>
         {/for}
     {else}
-        <li class="list-item"><p class="ertesitesek-form">Nincsenek új értesítéseid...</p></li>
+        <li class="list-item p-2" style="text-align: center"><p class="mb-0">Nincsenek új értesítéseid...</p></li>
     {/if}
     </ul>
 </div>

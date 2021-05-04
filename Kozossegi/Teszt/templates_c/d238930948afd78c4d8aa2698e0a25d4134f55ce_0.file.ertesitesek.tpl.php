@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-04 17:42:46
+/* Smarty version 3.1.39, created on 2021-05-04 17:54:55
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\ertesitesek.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60916b7629da46_40518089',
+  'unifunc' => 'content_60916e4fb60755_91234244',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd238930948afd78c4d8aa2698e0a25d4134f55ce' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\ertesitesek.tpl',
-      1 => 1620142964,
+      1 => 1620143693,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60916b7629da46_40518089 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60916e4fb60755_91234244 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -55,7 +55,7 @@ echo $_prefixVariable2;?>
 }
 ?>
     <?php } else { ?>
-        <li class="list-item"><p class="ertesitesek-form">Nincsenek új értesítéseid...</p></li>
+        <li class="list-item p-2" style="text-align: center"><p class="mb-0">Nincsenek új értesítéseid...</p></li>
     <?php }?>
     </ul>
 </div>
