@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-03 21:29:22
+/* Smarty version 3.1.39, created on 2021-05-04 18:18:53
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\klub.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60904f1293a491_11534423',
+  'unifunc' => 'content_609173eda9d754_70023612',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7102754948ca20a696ed626dc31c34f2b4d91e29' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\klub.tpl',
-      1 => 1620069933,
+      1 => 1620073313,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60904f1293a491_11534423 (Smarty_Internal_Template $_smarty_tpl) {
+function content_609173eda9d754_70023612 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -228,8 +228,7 @@ echo $_prefixVariable30;?>
             </div>
             <div id="klubKeresesDiv">
             </div>
-            <b-button class="mt-3">Csatlakozás</b-button>
-            <b-button variant="success" class="mb-0 mt-3" @click="$bvModal.show('bv-modal-ujklubletrehozasa')">Új klub hozzáadása</b-button>
+            <b-button variant="success" class="mb-0 mt-3 w-100" @click="$bvModal.show('bv-modal-ujklubletrehozasa')">Új klub hozzáadása</b-button>
          </div>
 </b-col>
 

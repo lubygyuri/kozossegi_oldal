@@ -13,14 +13,14 @@ if (!isset($_SESSION["email"])){
     exit();
 }
 
-//Controllerek példányosítása
+// Controllerek példányosítása
 $ertesitesekController = new ErtesitesekController();
 
 if (isset($_POST["ertesitest_torol"])) {
     $ertesitesekController->deleteErtesitesByAzonosito($_GET["ertesites_azonosito"]);
 }
 
-//Értesítések listázása
+// Értesítések listázása
 $ertesitesek = array();
 $resultFromDb = $ertesitesekController->getErtesitesekByEmail($_SESSION["email"]);
 foreach ($resultFromDb as $result) {
