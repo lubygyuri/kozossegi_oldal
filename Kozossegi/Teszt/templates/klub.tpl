@@ -87,44 +87,7 @@
                                             <button onclick="klubLike({{$bejegyzesek[$i]->getAzonosito()}})" type="submit" name="likePost"><i class="far fa-heart"></i>Tetszik</button>
                                         {/if}
                                     </div>
-                                    <button v-b-toggle.my-collapse{{$bejegyzesek[$i]->getAzonosito()}} id="{{$bejegyzesek[$i]->getAzonosito()}}"><i class="far fa-comment-alt"></i>Hozzászólás</button>
                                 </div>
-                                <template>
-                                    <b-collapse id="my-collapse{{$bejegyzesek[$i]->getAzonosito()}}" class="mt-4">
-                                        <div id="komment{{$bejegyzesek[$i]->getAzonosito()}}">
-                                            {if $bejegyzesek[$i]->getKommentek()}
-                                                {$x = $bejegyzesek[$i]->getKommentek()}
-                                                {for $j=0 to $x|@count-1}
-                                                    <div class="border border-1 mt-2 rounded align-self-baseline w-100">
-                                                        <div class="post-header2">
-                                                            <b-img src="{{$x[$j]->getFelhasznaloAzonosito()->getProfilkep()}}" rounded="circle"  class="d-inline-block align-top"></b-img>
-                                                            <div class="post-header-details">
-                                                                <span>{{$x[$j]->getFelhasznaloAzonosito()->getVezeteknev()}} {{$x[$j]->getFelhasznaloAzonosito()->getKeresztnev()}}</span>
-                                                            </div>
-                                                        </div>
-                                                        <div>
-                                                            <p class="m-3">{{$x[$j]->getUzenet()}} </p>
-                                                        </div>
-                                                    </div>
-                                                {/for}
-                                            {/if}
-                                        </div>
-                                        <div class="border border-3 mt-2">
-                                            <div class="post-header2">
-                                                <b-img src="{{$belepettFelhasznalo->getProfilkep()}}" rounded="circle" class="d-inline-block align-top "></b-img>
-                                                <div class="post-header-details">
-                                                    <span>{{$belepettFelhasznalo->getVezeteknev()}} {{$belepettFelhasznalo->getKeresztnev()}}</span>
-                                                </div>
-                                            </div>
-                                            <div class="form-floating mt-3 mb-1">
-                                                <textarea class="form-control" placeholder="Írjon kommentet" id="textarea{{$bejegyzesek[$i]->getAzonosito()}}" style="height: 100px"></textarea>
-                                            </div>
-                                            <button type="button" class="btn btn-primary" onclick="komment({{$bejegyzesek[$i]->getAzonosito()}})">Közzététel</button>
-                                        </div>
-
-
-                                    </b-collapse>
-                                </template>
                             </b-col>
                         </b-row>
                     </div>
@@ -148,7 +111,6 @@
                 <b-button variant="success" class="mb-0 mt-3 w-100" @click="$bvModal.show('bv-modal-ujklubletrehozasa')">Új klub hozzáadása</b-button>
              </div>
     </b-col>
-
         <b-modal id="bv-modal-ujklubletrehozasa" hide-footer title="Új klub létrehozása">
             <p class="mt-2">Kérlek töltsd ki az alábbi adatokat:</p>
             <div>
@@ -172,9 +134,6 @@
                 </form>
             </div>
         </b-modal>
-
-
-
     </b-row>
 </div>
 

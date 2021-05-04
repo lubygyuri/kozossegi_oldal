@@ -34,6 +34,7 @@ $likeController = new LikeController();
             $smarty->assign("like",false);
             $smarty->assign("azonosito",$_GET["id"]);
         }
+        $smarty->display('klubLikeGomb.tpl');
     }else {
         if (!$likeController->alreadyLikedPost($like)) { //like
             $bejegyzesController->updateLikesOnBejegyzes($likedPost);
@@ -46,7 +47,8 @@ $likeController = new LikeController();
             $smarty->assign("like",false);
             $smarty->assign("azonosito",$_GET["id"]);
         }
+        $smarty->display('likeGomb.tpl');
     }
 
-$smarty->display('likeGomb.tpl');
+
 
