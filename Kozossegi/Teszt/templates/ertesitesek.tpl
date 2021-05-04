@@ -6,7 +6,7 @@
     {if $ertesitesek}
         {for $i=0 to $ertesitesek|@count-1}
             <li class="list-item">
-                <form action="ertesitesek.php?ertesites_azonosito={{$ertesitesek[$i]->getAzonosito()}}" method="get" class="ertesitesek-form">
+                <form action="ertesitesek.php?ertesites_azonosito={{$ertesitesek[$i]->getAzonosito()}}" method="post" class="ertesitesek-form">
                     <i class="fas fa-bell"></i>
                     <p>{{$ertesitesek[$i]->getUzenet()}}</p>
                     <button type="submit" name="ertesitest_torol"><i class="fas fa-trash"></i></button>

@@ -16,8 +16,8 @@ if (!isset($_SESSION["email"])){
 //Controllerek példányosítása
 $ertesitesekController = new ErtesitesekController();
 
-if (isset($_GET["ertesites_azonosito"])) {
-//    TODO: törlés értesítés
+if (isset($_POST["ertesitest_torol"])) {
+    $ertesitesekController->deleteErtesitesByAzonosito($_GET["ertesites_azonosito"]);
 }
 
 //Értesítések listázása

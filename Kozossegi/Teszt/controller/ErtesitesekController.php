@@ -9,4 +9,10 @@ class ErtesitesekController extends DB {
 
         return $stmt->fetchAll();
     }
+
+    public function deleteErtesitesByAzonosito($ertesitesAzonosito) {
+        $sql = "DELETE FROM LUBLO.ERTESITESEK WHERE AZONOSITO = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$ertesitesAzonosito]);
+    }
 }

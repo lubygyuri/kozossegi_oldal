@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-04 17:54:55
+/* Smarty version 3.1.39, created on 2021-05-04 17:58:33
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\ertesitesek.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60916e4fb60755_91234244',
+  'unifunc' => 'content_60916f29840021_57031268',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd238930948afd78c4d8aa2698e0a25d4134f55ce' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\ertesitesek.tpl',
-      1 => 1620143693,
+      1 => 1620143912,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60916e4fb60755_91234244 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60916f29840021_57031268 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -41,7 +41,7 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 
 echo $_smarty_tpl->tpl_vars['ertesitesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
 $_prefixVariable1 = ob_get_clean();
 echo $_prefixVariable1;?>
-" method="get" class="ertesitesek-form">
+" method="post" class="ertesitesek-form">
                     <i class="fas fa-bell"></i>
                     <p><?php ob_start();
 echo $_smarty_tpl->tpl_vars['ertesitesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getUzenet();
