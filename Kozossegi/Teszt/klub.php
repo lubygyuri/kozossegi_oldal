@@ -31,13 +31,12 @@ $kulobok = klubblistafrissites();
 function klubblistafrissites(){
     $klubController =new KlubController();
     $kulobok = array();
-    $klubokData = $klubController->getKlubAll();
+    $klubokData = $klubController->getKlubAll($_SESSION["email"]);
     foreach ($klubokData as $klubData) {
         $klub = new Klub();
         $klub->setNev($klubData['NEV']);
         array_push($kulobok, $klub);
     }
-
     return $kulobok;
 }
 
@@ -48,7 +47,13 @@ $posts = array();
 if(isset($_GET["id"])){
     $x=$_GET["id"];
 }else {
-    $x=$kulobok[0]->getNev();
+    if($kulobok !=null){
+        $x=$kulobok[0]->getNev();
+    }else {
+        $smarty->assign("error", 'Nem vagy egy klubba se be lépve!');
+        $smarty->display('klub.tpl');
+        die();
+    }
     //TODO Legyen egy alapértelmezett klubb amibe mindenki bele kerül és nem lehet belőle kilépni
 }
 $activ=$x;
@@ -140,6 +145,7 @@ $bejelentkezettF->setKeresztnev($_SESSION["keresztnev"]);
 $bejelentkezettF->setVezeteknev($_SESSION["vezeteknev"]);
 $bejelentkezettF->setEmail($_SESSION["email"]);
 
+$smarty->assign("error", null);
 $smarty->assign("aktiv", $activ);
 $smarty->assign("klubbok",$kulobok);
 $smarty->assign("bejegyzesek",$posts);

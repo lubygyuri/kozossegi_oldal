@@ -117,6 +117,7 @@ function kereses() {
         document.getElementById("keresesUl").remove();
     }
 }
+
 function klubKereses() {
     var searchValue = document.getElementById('searchboxclub').value;
     if (searchValue.length !== 0) {

@@ -7,6 +7,24 @@ class Klub {
     private $lathatosag;
     private $letrehozasDatuma;
     private $adminFelhasznalo;
+    private $tagok=array();
+
+    /**
+     * @return array
+     */
+    public function getTagok()
+    {
+        return $this->tagok;
+    }
+
+    /**
+     * @param array $tagok
+     */
+    public function setTagok($tagok)
+    {
+        $this->tagok = $tagok;
+    }
+
 
     /**
      * @return mixed

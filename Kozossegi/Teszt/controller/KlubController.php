@@ -3,10 +3,10 @@
 
 class KlubController extends DB {
 
-    public function getKlubAll() {
-        $sql = "SELECT * FROM LUBLO.KLUB ORDER BY LETREHOZAS_DATUMA desc";
+    public function getKlubAll($felhasznalo) {
+        $sql = "SELECT * FROM LUBLO.KLUB,LUBLO.KLUB_TAGOK WHERE KLUB_TAGOK.KLUB_AZONOSITO=KLUB.NEV AND KLUB_TAGOK.FELHASZNALO_AZONOSITO=? ORDER BY LETREHOZAS_DATUMA desc";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->execute();
+        $stmt->execute([$felhasznalo]);
         return $stmt->fetchAll();
     }
 
@@ -22,4 +22,31 @@ class KlubController extends DB {
         $stmt->execute([$nev]);
         return $stmt->fetch();
     }
+
+    public function getKlubTagok($klubAzonossito) {
+        $sql = "SELECT FELHASZNALO.VEZETEKNEV,FELHASZNALO.KERESZTNEV FROM FELHASZNALO where FELHASZNALO.EMAIL=(SELECT FELHASZNALO_AZONOSITO FROM LUBLO.KLUB_TAGOK WHERE LUBLO.KLUB_TAGOK.KLUB_AZONOSITO = ?)";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$klubAzonossito]);
+        return $stmt->fetchAll();
+    }
+    public function getKlubTag($klubAzonossito,$felhasznalo_azonosito){
+        $sql= "SELECT FELHASZNALO.VEZETEKNEV,FELHASZNALO.KERESZTNEV FROM FELHASZNALO where FELHASZNALO.EMAIL=(SELECT FELHASZNALO_AZONOSITO FROM LUBLO.KLUB_TAGOK WHERE LUBLO.KLUB_TAGOK.KLUB_AZONOSITO = ? AND LUBLO.KLUB_TAGOK.FELHASZNALO_AZONOSITO = ?)";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$klubAzonossito,$felhasznalo_azonosito]);
+        return $stmt->fetch();
+    }
+
+    public function createKlubTag($klubAzonossito,$felhasznaloazonosito){
+        $sql= "INSERT INTO LUBLO.KLUB_TAGOK (klub_azonosito,felhasznalo_azonosito) VALUES (?,?)";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$klubAzonossito, $felhasznaloazonosito]);
+    }
+
+    public function deleteKlubTag($klubAzonossito,$felhasznaloazonosito){
+        $sql= "DELETE FROM LUBLO.KLUB_TAGOK WHERE klub_azonosito = ? AND felhasznalo_azonosito = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$klubAzonossito, $felhasznaloazonosito]);
+    }
+
+
 }

@@ -14,4 +14,5 @@ class KlubBejegyzesController extends DB{
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$bejegyzes->getUzenet(),$bejegyzes->getFelhasznaloAzonosito(),$bejegyzes->getKlubAzonosito(),$bejegyzes->getKep()]);
     }
+
 }

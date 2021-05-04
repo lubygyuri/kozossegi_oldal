@@ -9,12 +9,21 @@
         </div>
         <div>
             <ul class="list-group">
-                <li class="list-group-item">tag1</li>
-                <li class="list-group-item">tag2</li>
-                <li class="list-group-item">tag3</li>
-                <li class="list-group-item">további x</li>
+                {$x = $klub->getTagok()}
+                {for $i=0 to $x|@count-1}
+                <li class="list-group-item">{{$x[$i]['VEZETEKNEV']}} {{$x[$i]['KERESZTNEV']}}</li>
+                {/for}
             </ul>
         </div>
-        <button class="btn btn-primary w-100" type="submit" >Csatlakozas a csoporthoz</button>
+        {if !$csatlakozva}
+            <form action="klub_leirassal.php?nev={{$klub->getNev()}}" method="post">
+                <button class="btn btn-primary w-100" type="submit" name="csatlakozas_submit">Csatlakozas a csoporthoz</button>
+            </form>
+        {else}
+            <form action="klub_leirassal.php?nev={{$klub->getNev()}}" method="post">
+                <button class="btn btn-danger w-100" type="submit" name="kilepes_submit">Kilépés a csoportból</button>
+            </form>
+        {/if}
+
     </div>
 </div>
