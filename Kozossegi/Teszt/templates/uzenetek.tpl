@@ -30,21 +30,43 @@
                         <ul>
                             {if $friendsList}
                             {for $i=0 to $friendsList|@count-1}
-                                <li>
-                                    {* Barát profilképe *}
-                                    <img src="{{$friendsList[$i]->getProfilkep()}}" alt="profilkép">
-                                    {* Barát adatai *}
-                                    <div class="friend-details">
-                                        {* Barát neve *}
-                                        <span>{{$friendsList[$i]->getVezeteknev()}} {{$friendsList[$i]->getKeresztnev()}}</span>
-                                        <div class="flex-row">
-                                            {* Barát utolsó üzenete *}
-                                            <p>Lorem ipsum dolor...</p>
-                                            {* Barát utolsó üzenetének időpontja *}
-                                            <small>14:34</small>
-                                        </div>
-                                    </div>
-                                </li>
+                                {if $profil && $profil == $friendsList[$i]->getEmail()}
+                                    <a href="uzenetek.php?profil={{$friendsList[$i]->getEmail()}}" class="friendsList-li active">
+                                        <li>
+                                            {* Barát profilképe *}
+                                            <img src="{{$friendsList[$i]->getProfilkep()}}" alt="profilkép">
+                                            {* Barát adatai *}
+                                            <div class="friend-details">
+                                                {* Barát neve *}
+                                                <span>{{$friendsList[$i]->getVezeteknev()}} {{$friendsList[$i]->getKeresztnev()}}</span>
+                                                <div class="flex-row">
+                                                    {* Barát utolsó üzenete *}
+                                                    <p>Lorem ipsum dolor...</p>
+                                                    {* Barát utolsó üzenetének időpontja *}
+                                                    <small>14:34</small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </a>
+                                {else}
+                                    <a href="uzenetek.php?profil={{$friendsList[$i]->getEmail()}}" class="friendsList-li">
+                                        <li>
+                                            {* Barát profilképe *}
+                                            <img src="{{$friendsList[$i]->getProfilkep()}}" alt="profilkép">
+                                            {* Barát adatai *}
+                                            <div class="friend-details">
+                                                {* Barát neve *}
+                                                <span>{{$friendsList[$i]->getVezeteknev()}} {{$friendsList[$i]->getKeresztnev()}}</span>
+                                                <div class="flex-row">
+                                                    {* Barát utolsó üzenete *}
+                                                    <p>Lorem ipsum dolor...</p>
+                                                    {* Barát utolsó üzenetének időpontja *}
+                                                    <small>14:34</small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </a>
+                                {/if}
                             {/for}
                             {/if}
                         </ul>
@@ -52,27 +74,27 @@
 
                     {* Maga a chat *}
                     <div class="chat-section">
-                        {* Aktuális chat partner *}
-                        <div class="chat-partner">
-                            {* Aktuális chat partner képe *}
-                            <img src="https://images.unsplash.com/photo-1492681290082-e932832941e6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="profilkép">
-                            {* Aktuális chat partner neve*}
-                            <span>Example2 example2</span>
-                        </div>
 
                         {* Aktuális chaten megjelenő üzenetek *}
                         <div class="chat-messages">
-                            {* Bejövő üzenetek *}
-                            <div class="incoming-messages">
-                                {* Maga a bejövő üzenet *}
-                                <p>Bejövő üzenet</p>
+                        {if $uzenetek}
+                        {for $i=0 to $uzenetek|@count-1}
+                                {if $uzenetek[$i]->getFogadoAzonosito() == $belepettFelhasznalo->getEmail()}
+                                    {* Bejövő üzenetek *}
+                                    <div class="incoming-messages">
+                                        {* Maga a bejövő üzenet *}
+                                        <p>{{$uzenetek[$i]->getUzenet()}}</p>
+                                    </div>
+                                {else}
+                                    {* Kimenő üzenetek *}
+                                    <div class="outgoing-messages">
+                                        {* Maga a kimenő üzenet *}
+                                        <p>{{$uzenetek[$i]->getUzenet()}}</p>
+                                    </div>
+                                {/if}
+                        {/for}
+                        {/if}
                             </div>
-                            {* Kimenő üzenetek *}
-                            <div class="outgoing-messages">
-                                {* Maga a kimenő üzenet *}
-                                <p>Kimenő üzenet</p>
-                            </div>
-                        </div>
 
                         {* Eszköztár *}
                         <div class="chat-toolbar">
