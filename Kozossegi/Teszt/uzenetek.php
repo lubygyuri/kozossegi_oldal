@@ -50,7 +50,12 @@ if (isset($_GET["profil"])) {
         $newUzenet->setUzenet($uzenet["UZENET"]);
         $newUzenet->setKuldoAzonosito($uzenet["KULDO_AZONOSITO"]);
         $newUzenet->setFogadoAzonosito($uzenet["FOGADO_AZONOSITO"]);
-        $newUzenet->setKuldesIdeje($uzenet["KULDES_IDEJE"]);
+
+        // Idő konvertálás
+        $dt = DateTime::createFromFormat("d#M#y H#i#s*A", $uzenet["KULDES_IDEJE"]);
+        $fdt = $dt->format('H:i');
+        $newUzenet->setKuldesIdeje($fdt);
+
         $newUzenet->setKep($uzenet["KEP"]);
         array_push($uzenetekResult, $newUzenet);
     }

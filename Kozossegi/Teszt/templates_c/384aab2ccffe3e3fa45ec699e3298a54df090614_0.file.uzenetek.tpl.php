@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-05 18:29:48
+/* Smarty version 3.1.39, created on 2021-05-05 20:34:13
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\uzenetek.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6092c7fc4e83c3_83978469',
+  'unifunc' => 'content_6092e5254af882_88234529',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '384aab2ccffe3e3fa45ec699e3298a54df090614' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\uzenetek.tpl',
-      1 => 1620232187,
+      1 => 1620239648,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6092c7fc4e83c3_83978469 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6092e5254af882_88234529 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -141,20 +141,25 @@ $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderin
 if ($_smarty_tpl->tpl_vars['i']->total > 0) {
 for ($_smarty_tpl->tpl_vars['i']->value = 0, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
 $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration === $_smarty_tpl->tpl_vars['i']->total;?>
+                            <div class="chat-messages-timer"><small><?php ob_start();
+echo $_smarty_tpl->tpl_vars['uzenetek']->value[$_smarty_tpl->tpl_vars['i']->value]->getKuldesIdeje();
+$_prefixVariable12 = ob_get_clean();
+echo $_prefixVariable12;?>
+</small></div>
                                 <?php if ($_smarty_tpl->tpl_vars['uzenetek']->value[$_smarty_tpl->tpl_vars['i']->value]->getFogadoAzonosito() == $_smarty_tpl->tpl_vars['belepettFelhasznalo']->value->getEmail()) {?>
                                                                         <div class="incoming-messages">
                                                                                 <p><?php ob_start();
 echo $_smarty_tpl->tpl_vars['uzenetek']->value[$_smarty_tpl->tpl_vars['i']->value]->getUzenet();
-$_prefixVariable12 = ob_get_clean();
-echo $_prefixVariable12;?>
+$_prefixVariable13 = ob_get_clean();
+echo $_prefixVariable13;?>
 </p>
                                     </div>
                                 <?php } else { ?>
                                                                         <div class="outgoing-messages">
                                                                                 <p><?php ob_start();
 echo $_smarty_tpl->tpl_vars['uzenetek']->value[$_smarty_tpl->tpl_vars['i']->value]->getUzenet();
-$_prefixVariable13 = ob_get_clean();
-echo $_prefixVariable13;?>
+$_prefixVariable14 = ob_get_clean();
+echo $_prefixVariable14;?>
 </p>
                                     </div>
                                 <?php }?>

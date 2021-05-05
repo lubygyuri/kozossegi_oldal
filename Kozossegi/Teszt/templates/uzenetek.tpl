@@ -79,6 +79,7 @@
                         <div class="chat-messages">
                         {if $uzenetek}
                         {for $i=0 to $uzenetek|@count-1}
+                            <div class="chat-messages-timer"><small>{{$uzenetek[$i]->getKuldesIdeje()}}</small></div>
                                 {if $uzenetek[$i]->getFogadoAzonosito() == $belepettFelhasznalo->getEmail()}
                                     {* Bejövő üzenetek *}
                                     <div class="incoming-messages">
