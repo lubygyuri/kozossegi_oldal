@@ -128,7 +128,7 @@
                         </div>
                     </div>
                     <div class="flex-row">
-                        <button type="submit" id="register-id" class="mt-3 p2 btn btn-success" name="submit_klub">Klub létrehozása</button>
+                        <button type="submit" name="submit_klub" id="register-id" class="mt-3 p2 btn btn-success">Klub létrehozása</button>
                         <b-button id="cancel" variant="warning" class="mt-3 p2" @click="$bvModal.hide('bv-modal-ujklubletrehozasa')">Mégse</b-button>
                     </div>
                 </form>

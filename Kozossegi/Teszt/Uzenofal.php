@@ -38,7 +38,12 @@ if ($postsData) {
         $post = new Bejegyzes();
         $post->setAzonosito($postData["AZONOSITO"]);
         $post->setUzenet($postData["UZENET"]);
-        $post->setLetrehozasIdeje($postData["LETREHOZAS_IDEJE"]);
+
+//        Idő konvertálás
+        $dt = DateTime::createFromFormat("d#M#y H#i#s*A", $postData["LETREHOZAS_IDEJE"]);
+        $fdt = $dt->format('m-d H:i');
+        $post->setLetrehozasIdeje($fdt);
+
         $post->setKep($postData["KEP"]);
 
         $user = $felhasznaloController->getUserFromDB($postData["FELHASZNALO_AZONOSITO"]);

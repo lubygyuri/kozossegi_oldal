@@ -105,7 +105,12 @@ if (isset($_GET["email"])) {
                 $post = new Bejegyzes();
                 $post->setAzonosito($postData["AZONOSITO"]);
                 $post->setUzenet($postData["UZENET"]);
-                $post->setLetrehozasIdeje($postData["LETREHOZAS_IDEJE"]);
+
+                // Idő konvertálás
+                $dt = DateTime::createFromFormat("d#M#y H#i#s*A", $postData["LETREHOZAS_IDEJE"]);
+                $fdt = $dt->format('m-d H:i');
+                $post->setLetrehozasIdeje($fdt);
+
                 $post->setFelhasznaloAzonosito($postData["FELHASZNALO_AZONOSITO"]);
                 $post->setKep($postData["KEP"]);
 

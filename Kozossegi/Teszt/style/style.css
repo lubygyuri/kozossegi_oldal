@@ -292,3 +292,9 @@ footer {
     text-align: center;
     margin-left: 20px;
 }
+
+.ertesitesek-timer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

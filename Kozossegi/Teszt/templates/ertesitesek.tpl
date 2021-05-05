@@ -9,7 +9,10 @@
                 <form action="ertesitesek.php?ertesites_azonosito={{$ertesitesek[$i]->getAzonosito()}}" method="post" class="ertesitesek-form">
                     <i class="fas fa-bell"></i>
                     <p>{{$ertesitesek[$i]->getUzenet()}}</p>
-                    <button type="submit" name="ertesitest_torol"><i class="fas fa-trash"></i></button>
+                    <div class="ertesitesek-timer">
+                        <small>{{$ertesitesek[$i]->getErtesitesIdeje()}}</small>
+                        <button type="submit" name="ertesitest_torol"><i class="fas fa-trash"></i></button>
+                    </div>
                 </form>
             </li>
         {/for}

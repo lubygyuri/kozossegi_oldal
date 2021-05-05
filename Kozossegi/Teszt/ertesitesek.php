@@ -27,7 +27,12 @@ foreach ($resultFromDb as $result) {
     $ertesites = new Ertesites();
     $ertesites->setAzonosito($result["AZONOSITO"]);
     $ertesites->setUzenet($result["UZENET"]);
-    $ertesites->setErtesitesIdeje($result["ERTESITES_IDEJE"]);
+
+    // Idő konvertálás
+    $dt = DateTime::createFromFormat("d#M#y H#i#s*A", $result["ERTESITES_IDEJE"]);
+    $fdt = $dt->format('m-d H:i');
+    $ertesites->setErtesitesIdeje($fdt);
+
     $ertesites->setFelhasznaloAzonosito($result["FELHASZNALO_AZONOSITO"]);
     array_push($ertesitesek, $ertesites);
 }
