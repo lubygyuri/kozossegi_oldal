@@ -40,10 +40,14 @@
                                                 {* Barát neve *}
                                                 <span>{{$friendsList[$i]->getVezeteknev()}} {{$friendsList[$i]->getKeresztnev()}}</span>
                                                 <div class="flex-row">
-                                                    {* Barát utolsó üzenete *}
-                                                    <p>Lorem ipsum dolor...</p>
-                                                    {* Barát utolsó üzenetének időpontja *}
-                                                    <small>14:34</small>
+                                                    {for $j=0 to $latestMessages|@count-1}
+                                                        {if $latestMessages[$j]->getKuldoAzonosito() == $friendsList[$i]->getEmail()}
+                                                            {* Barát utolsó üzenete *}
+                                                            <p>{{$latestMessages[$j]->getUzenet()}}</p>
+                                                            {* Barát utolsó üzenetének időpontja *}
+                                                            <small>{{$latestMessages[$j]->getKuldesIdeje()}}</small>
+                                                        {/if}
+                                                    {/for}
                                                 </div>
                                             </div>
                                         </li>
@@ -58,10 +62,14 @@
                                                 {* Barát neve *}
                                                 <span>{{$friendsList[$i]->getVezeteknev()}} {{$friendsList[$i]->getKeresztnev()}}</span>
                                                 <div class="flex-row">
-                                                    {* Barát utolsó üzenete *}
-                                                    <p>Lorem ipsum dolor...</p>
-                                                    {* Barát utolsó üzenetének időpontja *}
-                                                    <small>14:34</small>
+                                                    {for $j=0 to $latestMessages|@count-1}
+                                                        {if $latestMessages[$j]->getKuldoAzonosito() == $friendsList[$i]->getEmail()}
+                                                            {* Barát utolsó üzenete *}
+                                                            <p>{{$latestMessages[$j]->getUzenet()}}</p>
+                                                            {* Barát utolsó üzenetének időpontja *}
+                                                            <small>{{$latestMessages[$j]->getKuldesIdeje()}}</small>
+                                                        {/if}
+                                                    {/for}
                                                 </div>
                                             </div>
                                         </li>

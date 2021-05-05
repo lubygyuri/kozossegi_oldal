@@ -70,6 +70,22 @@ if (isset($_GET["profil"])) {
     }
 }
 
+// Legfrisebb üzenetek és azok idejének lekérése
+$lMessages = array();
+$latestMessages = $uzenetController->getLatestMessagesByEmail($_SESSION["email"]);
+foreach ($latestMessages as $lm) {
+    $newLatestMessage = new Uzenet();
+    $newLatestMessage->setUzenet($lm["UZENET"]);
+
+    // Idő konvertálás
+    $dt = DateTime::createFromFormat("d#M#y H#i#s*A", $lm["KULDES_IDEJE"]);
+    $fdt = $dt->format('H:i');
+    $newLatestMessage->setKuldesIdeje($fdt);
+
+    $newLatestMessage->setKuldoAzonosito($lm["KULDO_AZONOSITO"]);
+    array_push($lMessages, $newLatestMessage);
+}
+
 // Bejelentkezett felhasználó megjelenítése
 $bejelentkezettF = new Felhasznalo();
 $bejelentkezettF->setEmail($_SESSION["email"]);
@@ -77,6 +93,8 @@ $bejelentkezettF->setProfilkep($_SESSION["profilkep"]);
 $bejelentkezettF->setKeresztnev($_SESSION["keresztnev"]);
 $bejelentkezettF->setVezeteknev($_SESSION["vezeteknev"]);
 
+
+$smarty->assign("latestMessages", $lMessages);
 $smarty->assign("uzenetek", $uzenetekResult);
 $smarty->assign("profil", (!empty($_GET["profil"]) ? $_GET["profil"] : null));
 $smarty->assign("friendsList", $ismerosok);

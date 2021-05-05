@@ -15,4 +15,11 @@ class UzenetController extends DB {
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$uzenet->getUzenet(), $uzenet->getKuldoAzonosito(), $uzenet->getFogadoAzonosito()]);
     }
+
+    public function getLatestMessagesByEmail($aktualisSessionEmail) {
+        $sql = "SELECT UZENET, KULDO_AZONOSITO, KULDES_IDEJE FROM UZENET WHERE KULDES_IDEJE IN (SELECT MAX(kuldes_ideje) FROM UZENET WHERE fogado_azonosito = ? GROUP BY kuldo_azonosito)";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$aktualisSessionEmail]);
+        return $stmt->fetchAll();
+    }
 }
