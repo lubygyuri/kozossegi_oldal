@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-05 20:34:13
+/* Smarty version 3.1.39, created on 2021-05-05 21:13:44
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\uzenetek.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6092e5254af882_88234529',
+  'unifunc' => 'content_6092ee681cb055_25578712',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '384aab2ccffe3e3fa45ec699e3298a54df090614' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\uzenetek.tpl',
-      1 => 1620239648,
+      1 => 1620242022,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6092e5254af882_88234529 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6092ee681cb055_25578712 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -134,7 +134,7 @@ echo $_prefixVariable11;?>
 
                                         <div class="chat-section">
 
-                                                <div class="chat-messages">
+                                                <div class="chat-messages" id="chat-messages">
                         <?php if ($_smarty_tpl->tpl_vars['uzenetek']->value) {?>
                         <?php
 $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['i']->step = 1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? count($_smarty_tpl->tpl_vars['uzenetek']->value)-1+1 - (0) : 0-(count($_smarty_tpl->tpl_vars['uzenetek']->value)-1)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
@@ -170,9 +170,13 @@ echo $_prefixVariable14;?>
                             </div>
 
                                                 <div class="chat-toolbar">
-                            <form action="#">
-                                                                <input type="text" placeholder="Írj egy üzenetet...">
-                                                                <button><i class="far fa-paper-plane"></i></button>
+                            <form action="uzenetek.php?profil=<?php ob_start();
+echo $_smarty_tpl->tpl_vars['profil']->value;
+$_prefixVariable15 = ob_get_clean();
+echo $_prefixVariable15;?>
+" method="post">
+                                                                <input type="text" name="messageInp" placeholder="Írj egy üzenetet...">
+                                                                <button type="submit" name="sendMessage"><i class="far fa-paper-plane"></i></button>
                             </form>
                         </div>
                     </div>

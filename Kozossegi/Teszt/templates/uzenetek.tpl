@@ -76,7 +76,7 @@
                     <div class="chat-section">
 
                         {* Aktuális chaten megjelenő üzenetek *}
-                        <div class="chat-messages">
+                        <div class="chat-messages" id="chat-messages">
                         {if $uzenetek}
                         {for $i=0 to $uzenetek|@count-1}
                             <div class="chat-messages-timer"><small>{{$uzenetek[$i]->getKuldesIdeje()}}</small></div>
@@ -99,11 +99,11 @@
 
                         {* Eszköztár *}
                         <div class="chat-toolbar">
-                            <form action="#">
+                            <form action="uzenetek.php?profil={{$profil}}" method="post">
                                 {* Ahova írhaod az üzeneted *}
-                                <input type="text" placeholder="Írj egy üzenetet...">
+                                <input type="text" name="messageInp" placeholder="Írj egy üzenetet...">
                                 {* A gomb amivel elküldheted az üzeneted *}
-                                <button><i class="far fa-paper-plane"></i></button>
+                                <button type="submit" name="sendMessage"><i class="far fa-paper-plane"></i></button>
                             </form>
                         </div>
                     </div>

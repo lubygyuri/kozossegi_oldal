@@ -133,6 +133,18 @@ function klubKereses() {
     }
 }
 
+// Legörgetés
+function scrollDown() {
+    try {
+        let container = document.getElementById("chat-messages");
+        container.scroll(0, container.scrollHeight);
+    } catch (err) {
+        return null;
+    }
+}
+
+
+
 
 
 

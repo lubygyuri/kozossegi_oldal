@@ -40,6 +40,15 @@ foreach ($baratok as $barat) {
     array_push($ismerosok, $b);
 }
 
+// Uzenetek kuldése
+if (isset($_POST["sendMessage"])) {
+    $createUzenet = new Uzenet();
+    $createUzenet->setUzenet($_POST["messageInp"]);
+    $createUzenet->setKuldoAzonosito($_SESSION["email"]);
+    $createUzenet->setFogadoAzonosito($_GET["profil"]);
+    $uzenetController->createMessage($createUzenet);
+}
+
 // Üzenetek lekérése
 if (isset($_GET["profil"])) {
     $uzenetek = $uzenetController->getUzenetekForSelectedUser($_SESSION["email"], $_GET["profil"]);

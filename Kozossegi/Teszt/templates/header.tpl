@@ -19,7 +19,7 @@
     <script src="https://unpkg.com/bootstrap-vue@2.21.2/dist/bootstrap-vue.min.js"></script>
     <script  src = "https://unpkg.com/bootstrap-vue@2.21.2/dist/bootstrap-vue-icons.min.js" > </script>
 </HEAD>
-<BODY>
+<BODY onload="scrollDown()">
 
 
 
