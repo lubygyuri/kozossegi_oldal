@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-05 17:08:13
+/* Smarty version 3.1.39, created on 2021-05-05 23:40:59
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\ertesitesek.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6092b4dd9316b0_44259670',
+  'unifunc' => 'content_609310ebd7c525_66114622',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd238930948afd78c4d8aa2698e0a25d4134f55ce' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\ertesitesek.tpl',
-      1 => 1620227291,
+      1 => 1620249640,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6092b4dd9316b0_44259670 (Smarty_Internal_Template $_smarty_tpl) {
+function content_609310ebd7c525_66114622 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>

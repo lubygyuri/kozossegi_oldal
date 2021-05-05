@@ -143,8 +143,16 @@ function scrollDown() {
     }
 }
 
+// Értesítések száma + hívása automatikusan 20mp-ként
+function ertesitesekSzama() {
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("ertesitesekSzama").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "ertesitesekSzama.php", true);
+    xhttp.send();
+}
 
-
-
-
-
+ertesitesekSzama();
+setInterval(function(){ ertesitesekSzama() }, 20000);

@@ -15,4 +15,11 @@ class ErtesitesekController extends DB {
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$ertesitesAzonosito]);
     }
+
+    public function getErtesitesekSzamaByEmail($sessionEmail) {
+        $sql = "SELECT COUNT(*) FROM ERTESITESEK WHERE FELHASZNALO_AZONOSITO = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$sessionEmail]);
+        return $stmt->fetch();
+    }
 }
