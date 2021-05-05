@@ -75,7 +75,15 @@ $lMessages = array();
 $latestMessages = $uzenetController->getLatestMessagesByEmail($_SESSION["email"]);
 foreach ($latestMessages as $lm) {
     $newLatestMessage = new Uzenet();
-    $newLatestMessage->setUzenet($lm["UZENET"]);
+
+    // Uzenet levágása
+    $realUzenet = $lm["UZENET"];
+    if (strlen($realUzenet) > 20) {
+        $subUzenet = substr($lm["UZENET"], 0, 30)."...";
+        $newLatestMessage->setUzenet($subUzenet);
+    } else {
+        $newLatestMessage->setUzenet($realUzenet);
+    }
 
     // Idő konvertálás
     $dt = DateTime::createFromFormat("d#M#y H#i#s*A", $lm["KULDES_IDEJE"]);
