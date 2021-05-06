@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-05 22:18:49
+/* Smarty version 3.1.39, created on 2021-05-06 20:59:25
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\uzenetek.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6092fda9148809_91828545',
+  'unifunc' => 'content_60943c8d6d1188_65905654',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '384aab2ccffe3e3fa45ec699e3298a54df090614' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\uzenetek.tpl',
-      1 => 1620245927,
+      1 => 1620316093,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6092fda9148809_91828545 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60943c8d6d1188_65905654 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -35,10 +35,10 @@ $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smar
 
                                 <div class="messages-header">
                                         <form action="#" class="mx-auto">
-                        <input type="search" placeholder="Keresés...">
+
+                        <input  id="baratkereses" onkeyup="friendsKereses()" type="search" placeholder="Keresés... "autocomplete="off">
                         <button type="submit"><i class="fas fa-search"></i></button>
                     </form>
-
                                         <div class="header-details-container">
                                                 <span><?php ob_start();
 echo $_smarty_tpl->tpl_vars['belepettFelhasznalo']->value->getVezeteknev();
@@ -55,6 +55,8 @@ $_prefixVariable3 = ob_get_clean();
 echo $_prefixVariable3;?>
 " alt="profilkép">
                     </div>
+                </div>
+                <div id="keresesDiv2">
                 </div>
 
                                 <div class="messages-main">

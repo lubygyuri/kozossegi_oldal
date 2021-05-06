@@ -67,6 +67,12 @@ new Vue({
     methods: { },
 });
 
+new Vue({
+    el: "#app6",
+    data: { },
+    methods: { },
+});
+
 var xhttp = new XMLHttpRequest();
 function like(id) {
     /*document.getElementById(x).removeAttribute("onclick");*/

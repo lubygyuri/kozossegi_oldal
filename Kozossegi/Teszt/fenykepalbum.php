@@ -16,8 +16,33 @@ if (!isset($_SESSION["email"])){
 // Controllerek példányosítása
 $fenykepAlbumController = new FenykepAlbumController();
 
-if (isset($_POST["letrehozFenykepAlbum"])) {
-    $fenykepAlbumController->createFenykepAlbum($_POST["fenykepAlbumNev"], $_SESSION["email"]);
+// Globális változók példányosítása
+$fenykepAlbumok = array();
+
+
+// Bejelentkezett felhasználó megjelenítése
+$bejelentkezettF = new Felhasznalo();
+$bejelentkezettF->setEmail($_SESSION["email"]);
+$bejelentkezettF->setVezeteknev($_SESSION["vezeteknev"]);
+$bejelentkezettF->setKeresztnev($_SESSION["keresztnev"]);
+
+
+if (isset($_POST["fenykepAlbumMegtekintes"]) || $_GET["back"] == true){
+    $albumokFromDB = $fenykepAlbumController->getAllAlbumsBySessionEmail($_SESSION["email"]);
+
+    foreach ($albumokFromDB as $albumok) {
+        $fenykepAlbum = new FenykepAlbum();
+        $fenykepAlbum->setAzonosito($albumok["AZONOSITO"]);
+        $fenykepAlbum->setNev($albumok["NEV"]);
+        $fenykepAlbum->setTeljesMeret($fenykepAlbumController->getTotalAlbumSize($fenykepAlbum->getAzonosito()));
+        $fenykepAlbum->setFelhasznaloAzonosito($albumok["FELHASZNALO_AZONOSITO"]);
+        array_push($fenykepAlbumok, $fenykepAlbum);
+    }
+
+    $smarty->assign("fenykepAlbumok", $fenykepAlbumok);
+    $smarty->assign("belepettFelhasznalo", $bejelentkezettF);
+    $smarty->display("fenykepAlbum.tpl");
+} else {
+    header("Location: profil.php?email=".$_SESSION["email"]);
 }
 
-header("Location: profil.php?email=".$_SESSION["email"]);

@@ -9,4 +9,26 @@ class FenykepAlbumController extends DB {
         $stmt->execute([$albumNeve, $sessionEmail]);
     }
 
+    public function getAllAlbumsBySessionEmail($sessionEmail) {
+        $sql = "SELECT * FROM FENYKEP_ALBUM WHERE FELHASZNALO_AZONOSITO = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$sessionEmail]);
+        return $stmt->fetchAll();
+    }
+
+    public function getFenykepAlbumNev($fenykepAlbumAzonosito) {
+        $sql = "SELECT nev FROM FENYKEP_ALBUM WHERE AZONOSITO = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$fenykepAlbumAzonosito]);
+        return $stmt->fetch();
+    }
+
+//    TODO: átírni
+    public function getTotalAlbumSize($fenykepAlbumAzonosito) {
+        $sql = "SELECT SUM(meret) AS meret FROM FENYKEPEK WHERE FENYKEP_ALBUM_AZONOSITO = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$fenykepAlbumAzonosito]);
+        return $stmt->fetch()["MERET"];
+    }
+
 }

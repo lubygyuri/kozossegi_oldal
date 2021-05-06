@@ -65,7 +65,6 @@ if (isset($_GET["profil"])) {
         $fdt = $dt->format('H:i');
         $newUzenet->setKuldesIdeje($fdt);
 
-        $newUzenet->setKep($uzenet["KEP"]);
         array_push($uzenetekResult, $newUzenet);
     }
 }

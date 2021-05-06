@@ -43,13 +43,18 @@
                                     </div>
                                 </form>
 
+                                {* Fényképalbumok megtekintése *}
+                                <form action="fenykepalbum.php" method="post">
+                                    <button type="submit" class="btn btn-primary" name="fenykepAlbumMegtekintes">Fényképalbumok megtekintése</button>
+                                </form>
+
                                 {* Fényképalbum létrehozása *}
                                 <b-button variant="primary" @click="$bvModal.show('bv-modal-fenykepAlbum')">Fényképalbum létrehozása</b-button>
 
                                 <b-modal id="bv-modal-fenykepAlbum" hide-footer title="Fényképalbum létrehozása">
                                     <p>Az alábbi mező kitöltésével új albumot hozhatsz létre:</p>
                                     <div>
-                                        <form action="fenykepalbum.php" class="kulso-form" method="post">
+                                        <form action="profil.php?email={{$belepettFelhasznalo->getEmail()}}" class="kulso-form" method="post">
                                             <input type="text" class="mt-3 p-2 h-25" name="fenykepAlbumNev" placeholder="Fénykepalbum neve">
                                             <div class="flex-row">
                                                 <button type="submit" id="register-id" class="mt-3 p2 btn btn-success" name="letrehozFenykepAlbum">Létrehozás</button>

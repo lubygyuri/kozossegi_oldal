@@ -21,6 +21,7 @@ $kepController = new KepController();
 $likeController = new LikeController();
 $kommentController = new KommentController();
 $ismerosController = new IsmerosController();
+$fenykepAlbumController = new FenykepAlbumController();
 
 // Profil oldalon megjelenő személy
 if (isset($_GET["email"])) {
@@ -163,6 +164,11 @@ if (isset($_GET["email"])) {
                 $bejegyzesController->deleteLikesOnBejegyzes($likedPost);
                 $likeController->decreaseBejegyzesLike($like);
             }
+        }
+
+        // Fényképalbum hozzáadása
+        if (isset($_POST["letrehozFenykepAlbum"])) {
+            $fenykepAlbumController->createFenykepAlbum($_POST["fenykepAlbumNev"], $_SESSION["email"]);
         }
 
         // Bejelentkezett felhasználó megjelenítése
