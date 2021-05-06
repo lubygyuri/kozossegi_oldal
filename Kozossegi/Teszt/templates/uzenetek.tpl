@@ -22,7 +22,7 @@
                         <img src="{{$belepettFelhasznalo->getProfilkep()}}" alt="profilkép">
                     </div>
                 </div>
-                <div id="keresesDiv2">
+                <div id="keresesDiv2" class="col-md-6">
                 </div>
 
                 {* Üzenetek main *}
