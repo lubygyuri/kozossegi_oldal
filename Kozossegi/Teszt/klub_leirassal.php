@@ -9,6 +9,7 @@ $klub_nev = $_GET["nev"];
 $KlubController = new KlubController();
 $klub_1 = new Klub();
 
+
 if(isset($_POST['csatlakozas_submit'])){
     $KlubController->createKlubTag($_GET["nev"],$_SESSION['email']);
 }
@@ -21,8 +22,7 @@ $klub_1 -> setAdminFelhasznalo($data["ADMIN_FELHASZNALO"]);
 $klub_1 -> setLathatosag($data["LATHATOSAG"]);
 $klub_1 -> setLeiras($data["LEIRAS"]);
 $klub_1 -> setLetrehozasDatuma($data["LETREHOZAS_DATUMA"]);
-/*var_dump($KlubController->getKlubTagok($klub_1->getNev()));
-die();*/
+
 $klub_1->setTagok($KlubController->getKlubTagok($klub_1->getNev()));
 
 $aktualis_user_tag=$KlubController->getKlubTag($klub_1->getNev(),$_SESSION['email']);
@@ -33,7 +33,8 @@ if($aktualis_user_tag != null){
     $smarty -> assign("csatlakozva", false);
 }
 
-
+/*var_dump($klub_1);
+die();*/
 $smarty -> assign("klub", $klub_1);
 
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-04 18:03:18
+/* Smarty version 3.1.39, created on 2021-05-05 22:42:49
   from '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/ertesitesek.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60917046155ff9_46930246',
+  'unifunc' => 'content_609303494497e4_37687783',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6ce2660a60e0eb7769d4badad761e0749c3bde4e' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/ertesitesek.tpl',
-      1 => 1620143963,
+      1 => 1620247219,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60917046155ff9_46930246 (Smarty_Internal_Template $_smarty_tpl) {
+function content_609303494497e4_37687783 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -48,7 +48,14 @@ echo $_smarty_tpl->tpl_vars['ertesitesek']->value[$_smarty_tpl->tpl_vars['i']->v
 $_prefixVariable2 = ob_get_clean();
 echo $_prefixVariable2;?>
 </p>
-                    <button type="submit" name="ertesitest_torol"><i class="fas fa-trash"></i></button>
+                    <div class="ertesitesek-timer">
+                        <small><?php ob_start();
+echo $_smarty_tpl->tpl_vars['ertesitesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getErtesitesIdeje();
+$_prefixVariable3 = ob_get_clean();
+echo $_prefixVariable3;?>
+</small>
+                        <button type="submit" name="ertesitest_torol"><i class="fas fa-trash"></i></button>
+                    </div>
                 </form>
             </li>
         <?php }

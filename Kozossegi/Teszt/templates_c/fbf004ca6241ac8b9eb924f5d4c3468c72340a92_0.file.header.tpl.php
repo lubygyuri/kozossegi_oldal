@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-26 18:31:02
+/* Smarty version 3.1.39, created on 2021-05-05 22:41:37
   from '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6086eac63f4092_50148983',
+  'unifunc' => 'content_60930301c37ce5_81665649',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fbf004ca6241ac8b9eb924f5d4c3468c72340a92' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/header.tpl',
-      1 => 1619454635,
+      1 => 1620247219,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6086eac63f4092_50148983 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60930301c37ce5_81665649 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html >
 <HTML lang="hu">
 <HEAD>
@@ -56,7 +56,7 @@ function content_6086eac63f4092_50148983 (Smarty_Internal_Template $_smarty_tpl)
   src = "https://unpkg.com/bootstrap-vue@2.21.2/dist/bootstrap-vue-icons.min.js" > <?php echo '</script'; ?>
 >
 </HEAD>
-<BODY>
+<BODY onload="scrollDown()">
 
 
 

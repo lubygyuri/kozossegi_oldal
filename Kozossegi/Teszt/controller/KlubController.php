@@ -24,7 +24,7 @@ class KlubController extends DB {
     }
 
     public function getKlubTagok($klubAzonossito) {
-        $sql = "SELECT FELHASZNALO.VEZETEKNEV,FELHASZNALO.KERESZTNEV FROM FELHASZNALO where FELHASZNALO.EMAIL=(SELECT FELHASZNALO_AZONOSITO FROM LUBLO.KLUB_TAGOK WHERE LUBLO.KLUB_TAGOK.KLUB_AZONOSITO = ?)";
+        $sql = "SELECT FELHASZNALO.VEZETEKNEV,FELHASZNALO.KERESZTNEV FROM FELHASZNALO where FELHASZNALO.EMAIL IN (SELECT FELHASZNALO_AZONOSITO FROM LUBLO.KLUB_TAGOK WHERE LUBLO.KLUB_TAGOK.KLUB_AZONOSITO = ?)";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$klubAzonossito]);
         return $stmt->fetchAll();
@@ -34,6 +34,10 @@ class KlubController extends DB {
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$klubAzonossito,$felhasznalo_azonosito]);
         return $stmt->fetch();
+    }
+
+    public function getKlubTagSzam(){
+
     }
 
     public function createKlubTag($klubAzonossito,$felhasznaloazonosito){
