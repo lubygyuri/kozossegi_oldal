@@ -19,6 +19,23 @@ $bejegyzesController = new BejegyzesController();
 $kepController = new KepController();
 $kommentController = new KommentController();
 $likeController = new LikeController();
+$ismerosAjanlasController = new IsmerosAjanlasController();
+
+//ismerős ajánlás
+$kit_ismerhetek=array();
+$ismerosokData =$ismerosAjanlasController->listIsmerosToIsmeros($_SESSION['email']);
+/*var_dump($ismerosokData);
+die();*/
+    foreach ($ismerosokData as $ismerosData) {
+        $felhasznalo =new Felhasznalo();
+        $felhasznalo->setEmail($ismerosData["EMAIL"]);
+        $felhasznalo->setKeresztnev($ismerosData["KERESZTNEV"]);
+        $felhasznalo->setVezeteknev($ismerosData["VEZETEKNEV"]);
+        array_push($kit_ismerhetek,$felhasznalo);
+    }
+
+
+
 
 // Bejegyzés közzététel
 if(isset($_POST["submit"])) {
@@ -81,11 +98,7 @@ if ($postsData) {
             $post->setIsLiked(true);
         }
 
-
        $post->setLikeCount($bejegyzesController->likeCount($post)['LIKE_COUNT']);
-
-
-
 
         array_push($posts, $post);
     }
@@ -98,6 +111,7 @@ $bejelentkezettF->setKeresztnev($_SESSION["keresztnev"]);
 $bejelentkezettF->setVezeteknev($_SESSION["vezeteknev"]);
 $bejelentkezettF->setEmail($_SESSION["email"]);
 
+$smarty->assign("kitIsmerhetek",$kit_ismerhetek);
 $smarty->assign("bejegyzesek",$posts);
 $smarty->assign("belepettFelhasznalo", $bejelentkezettF);
 
