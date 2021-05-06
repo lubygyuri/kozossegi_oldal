@@ -2,7 +2,7 @@
 {include file="menu.tpl"}
 <div id="app2">
 <div class="container px-4 mt-5">
-
+    {if $kitIsmerhetek != null}
     <div class="shadow-lg pl-3 pr-3 pb-3 bg-white rounded align-self-baseline mr-2 w-50 mb-5 mx-auto text-center">
         <h1>Kiket Ismerhetsz</h1>
         <ul  class="list-group list-group-horizontal overflow-auto">
@@ -11,7 +11,7 @@
             {/for}
         </ul>
     </div>
-
+    {/if}
     {*
         Közzététel
     *}

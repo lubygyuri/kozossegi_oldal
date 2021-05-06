@@ -29,6 +29,14 @@
                     {/if}
                 </b-list-group>
             </div>
+            <div class="shadow-lg p-3 bg-white rounded align-self-baseline p-3 mb-2 mt-2 ml-2 overflow-auto h-50">
+                <h5 class="text-center">Az ismerőseid ezekhez a klubbokhoz csatlakoztak</h5>
+                <ul class="list-group overflow-auto">
+                    {for $i=0 to $ajanlottKlubbok|@count-1}
+                        <a href="klub_leirassal.php?nev={{$ajanlottKlubbok[$i]}}"><li class="list-group-item">{{$ajanlottKlubbok[$i]}}</li></a>
+                    {/for}
+                </ul>
+            </div>
     </b-col>
 
     <b-col>
