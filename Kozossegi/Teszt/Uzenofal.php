@@ -24,8 +24,6 @@ $ismerosAjanlasController = new IsmerosAjanlasController();
 //ismerős ajánlás
 $kit_ismerhetek=array();
 $ismerosokData =$ismerosAjanlasController->listIsmerosToIsmeros($_SESSION['email']);
-/*var_dump($ismerosokData);
-die();*/
     foreach ($ismerosokData as $ismerosData) {
         $felhasznalo =new Felhasznalo();
         $felhasznalo->setEmail($ismerosData["EMAIL"]);

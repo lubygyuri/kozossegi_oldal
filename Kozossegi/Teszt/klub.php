@@ -20,6 +20,7 @@ $kepController = new KepController();
 $kommentController = new KommentController();
 $likeController = new LikeController();
 $klubController =new KlubController();
+$klubAjanlas = new IsmerosAjanlasController();
 $activ='';
 $kulobok = array();
 $kulobok = klubblistafrissites();
@@ -72,6 +73,12 @@ if(isset($_POST["submit_klub"])) {
 
 }
 
+// klub ajánlás
+$ajanlottKlubbok=array();
+$klubbokData =$klubAjanlas->KlubToIsmeros($_SESSION['email']);
+foreach ($klubbokData as $klubData) {
+    array_push($ajanlottKlubbok,$klubData["NEV"]);
+}
 
 // Bejegyzés közzététel
 if(isset($_POST["submit"])) {
@@ -152,6 +159,7 @@ $bejelentkezettF->setKeresztnev($_SESSION["keresztnev"]);
 $bejelentkezettF->setVezeteknev($_SESSION["vezeteknev"]);
 $bejelentkezettF->setEmail($_SESSION["email"]);
 
+$smarty->assign("ajanlottKlubbok", $ajanlottKlubbok);
 $smarty->assign("error", null);
 $smarty->assign("aktiv", $activ);
 $smarty->assign("klubbok",$kulobok);

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-06 19:57:02
+/* Smarty version 3.1.39, created on 2021-05-06 22:00:38
   from '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/Uzenofal.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60942dee7062e5_67263005',
+  'unifunc' => 'content_60944ae66aa559_60826979',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '819e4363637301802ced59ee208a5c84c8730c38' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/Uzenofal.tpl',
-      1 => 1620323820,
+      1 => 1620331236,
       2 => 'file',
     ),
   ),
@@ -23,13 +23,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60942dee7062e5_67263005 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60944ae66aa559_60826979 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div id="app2">
 <div class="container px-4 mt-5">
-
+    <?php if ($_smarty_tpl->tpl_vars['kitIsmerhetek']->value != null) {?>
     <div class="shadow-lg pl-3 pr-3 pb-3 bg-white rounded align-self-baseline mr-2 w-50 mb-5 mx-auto text-center">
         <h1>Kiket Ismerhetsz</h1>
         <ul  class="list-group list-group-horizontal overflow-auto">
@@ -56,7 +56,7 @@ echo $_prefixVariable3;?>
 ?>
         </ul>
     </div>
-
+    <?php }?>
         <div class="shadow-lg pl-3 pr-3 pb-3 bg-white rounded align-self-baseline mr-2 w-50 mb-5 mx-auto">
                 <form action="Uzenofal.php" method="post" enctype="multipart/form-data">
             <div class="post-header2">
