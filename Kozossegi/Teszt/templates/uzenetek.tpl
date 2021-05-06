@@ -10,10 +10,10 @@
                 <div class="messages-header">
                     {* Keresés a partnerek között *}
                     <form action="#" class="mx-auto">
-                        <input type="search" placeholder="Keresés...">
+
+                        <input  id="baratkereses" onkeyup="friendsKereses()" type="search" placeholder="Keresés... "autocomplete="off">
                         <button type="submit"><i class="fas fa-search"></i></button>
                     </form>
-
                     {* Üzenetek fejlécének adatai *}
                     <div class="header-details-container">
                         {* Profil név (azaz én) *}
@@ -21,6 +21,8 @@
                         {* Profilkép *}
                         <img src="{{$belepettFelhasznalo->getProfilkep()}}" alt="profilkép">
                     </div>
+                </div>
+                <div id="keresesDiv2">
                 </div>
 
                 {* Üzenetek main *}

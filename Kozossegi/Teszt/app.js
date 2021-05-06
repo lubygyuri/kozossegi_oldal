@@ -118,6 +118,23 @@ function kereses() {
     }
 }
 
+
+function friendsKereses() {
+    var searchValue = document.getElementById('baratkereses').value;
+
+    if (searchValue.length !== 0) {
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("keresesDiv2").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "kereses.php?search="+searchValue + "&barat=true", true);
+        xhttp.send();
+    } else {
+        document.getElementById("keresesUl").remove();
+    }
+}
+
 function klubKereses() {
     var searchValue = document.getElementById('searchboxclub').value;
     if (searchValue.length !== 0) {
