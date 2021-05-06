@@ -22,7 +22,7 @@ class KeresesController extends DB {
         $keresettSzo = '%'.$keresettSzo.'%';
         $sql = "SELECT vezeteknev, keresztnev, email FROM LUBLO.FELHASZNALO WHERE email in (SELECT felhasznalo2 FROM LUBLO.ismeros WHERE felhasznalo1 = ? AND statusz = 'friends') AND ( KERESZTNEV LIKE ? OR VEZETEKNEV LIKE ?)";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$keresettSzo, $keresettSzo, $useremail]);
+        $stmt->execute([$useremail, $keresettSzo, $keresettSzo]);
         return $stmt->fetchAll();
     }
 
