@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-06 22:19:55
+/* Smarty version 3.1.39, created on 2021-05-06 22:38:31
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\fenykepAlbum.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60944f6be1ebc0_72008866',
+  'unifunc' => 'content_609453c755ef12_86153711',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3cf025efd7f7e37767e6ed522378da60d4852863' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\fenykepAlbum.tpl',
-      1 => 1620332391,
+      1 => 1620333503,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_60944f6be1ebc0_72008866 (Smarty_Internal_Template $_smarty_tpl) {
+function content_609453c755ef12_86153711 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -80,6 +80,14 @@ echo $_smarty_tpl->tpl_vars['fenykepAlbumok']->value[$_smarty_tpl->tpl_vars['i']
 $_prefixVariable6 = ob_get_clean();
 echo $_prefixVariable6;
 } else { ?>0<?php }?> MB</div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
+                                    <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">Album képeinek száma</span></p>
+                                    <div class="badge badge-primary px-3 rounded-pill font-weight-normal"><?php ob_start();
+echo $_smarty_tpl->tpl_vars['fenykepAlbumok']->value[$_smarty_tpl->tpl_vars['i']->value]->getKepekSzama();
+$_prefixVariable7 = ob_get_clean();
+echo $_prefixVariable7;?>
+ db</div>
                                 </div>
                             </div>
                         </div>

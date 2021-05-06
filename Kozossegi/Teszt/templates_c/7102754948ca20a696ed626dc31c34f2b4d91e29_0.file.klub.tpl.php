@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-06 21:13:38
+/* Smarty version 3.1.39, created on 2021-05-06 22:32:05
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\klub.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60943fe2b9cf98_19524478',
+  'unifunc' => 'content_609452453f4005_71295649',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7102754948ca20a696ed626dc31c34f2b4d91e29' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\klub.tpl',
-      1 => 1620327996,
+      1 => 1620333122,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60943fe2b9cf98_19524478 (Smarty_Internal_Template $_smarty_tpl) {
+function content_609452453f4005_71295649 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -185,7 +185,7 @@ echo $_prefixVariable19;?>
                     <input onkeyup="klubKereses()" type="search" id="searchboxclub" class="form-control rounded" placeholder="Keresés..." aria-label="Search"
                            aria-describedby="search-addon" />
                     <span class="input-group-text border-0" id="search-addon">
-                        <i class="fas fa-search"></i>
+                        <i class="fas fa-search mr-0"></i>
                     </span>
                 </div>
                 <div id="klubKeresesDiv">

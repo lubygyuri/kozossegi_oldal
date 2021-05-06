@@ -6,6 +6,7 @@ class FenykepAlbum {
     private $nev;
     private $teljesMeret;
     private $felhasznaloAzonosito;
+    private $kepekSzama;
 
     /**
      * @return mixed
@@ -70,6 +71,23 @@ class FenykepAlbum {
     {
         $this->felhasznaloAzonosito = $felhasznaloAzonosito;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getKepekSzama()
+    {
+        return $this->kepekSzama;
+    }
+
+    /**
+     * @param mixed $kepekSzama
+     */
+    public function setKepekSzama($kepekSzama)
+    {
+        $this->kepekSzama = $kepekSzama;
+    }
+
 
 
 }

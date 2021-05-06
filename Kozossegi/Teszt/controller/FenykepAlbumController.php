@@ -31,4 +31,11 @@ class FenykepAlbumController extends DB {
         return $stmt->fetch()["MERET"];
     }
 
+    public function getNumberOfPicturesInAlbum($fenykepAlbumAzonosito) {
+        $sql = "SELECT COUNT(*) AS DARAB FROM FENYKEPEK WHERE FENYKEP_ALBUM_AZONOSITO = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$fenykepAlbumAzonosito]);
+        return $stmt->fetch()["DARAB"];
+    }
+
 }
