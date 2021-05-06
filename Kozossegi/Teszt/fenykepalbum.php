@@ -34,7 +34,7 @@ if (isset($_POST["fenykepAlbumMegtekintes"]) || $_GET["back"] == true){
         $fenykepAlbum = new FenykepAlbum();
         $fenykepAlbum->setAzonosito($albumok["AZONOSITO"]);
         $fenykepAlbum->setNev($albumok["NEV"]);
-        $fenykepAlbum->setTeljesMeret($fenykepAlbumController->getTotalAlbumSize($fenykepAlbum->getAzonosito()));
+        $fenykepAlbum->setTeljesMeret(round($fenykepAlbumController->getTotalAlbumSize($fenykepAlbum->getAzonosito()) / 1000000, 2));
         $fenykepAlbum->setFelhasznaloAzonosito($albumok["FELHASZNALO_AZONOSITO"]);
         array_push($fenykepAlbumok, $fenykepAlbum);
     }

@@ -25,7 +25,7 @@
                                 <h5> <a href="fenykepek.php?fenykepAlbum={{$fenykepAlbumok[$i]->getAzonosito()}}" class="text-dark">{{$fenykepAlbumok[$i]->getNev()}}</a></h5>
                                 <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
                                     <p class="small mb-0"><i class="fa fa-picture-o mr-2"></i><span class="font-weight-bold">Album mérete</span></p>
-                                    <div class="badge badge-danger px-3 rounded-pill font-weight-normal">{if $fenykepAlbumok[$i]->getTeljesMeret() > 0}{{$fenykepAlbumok[$i]->getTeljesMeret()}}{else}0{/if} byte</div>
+                                    <div class="badge badge-danger px-3 rounded-pill font-weight-normal">{if $fenykepAlbumok[$i]->getTeljesMeret() > 0}{{$fenykepAlbumok[$i]->getTeljesMeret()}}{else}0{/if} MB</div>
                                 </div>
                             </div>
                         </div>
