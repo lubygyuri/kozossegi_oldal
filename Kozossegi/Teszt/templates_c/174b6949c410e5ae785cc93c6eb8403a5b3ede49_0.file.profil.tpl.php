@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-27 10:54:35
+/* Smarty version 3.1.39, created on 2021-05-06 15:55:09
   from '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/profil.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6087d14be1ea58_31272094',
+  'unifunc' => 'content_6093f53d1c9619_48555705',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '174b6949c410e5ae785cc93c6eb8403a5b3ede49' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/profil.tpl',
-      1 => 1619513636,
+      1 => 1620307899,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6087d14be1ea58_31272094 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6093f53d1c9619_48555705 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -87,6 +87,20 @@ echo $_prefixVariable6;?>
                                     </div>
                                 </form>
 
+                                                                <b-button variant="primary" @click="$bvModal.show('bv-modal-fenykepAlbum')">Fényképalbum létrehozása</b-button>
+
+                                <b-modal id="bv-modal-fenykepAlbum" hide-footer title="Fényképalbum létrehozása">
+                                    <p>Az alábbi mező kitöltésével új albumot hozhatsz létre:</p>
+                                    <div>
+                                        <form action="profil.php" class="kulso-form" method="post">
+                                            <input type="text" class="mt-3 p-2 h-25" placeholder="Fénykepalbum neve">
+                                            <div class="flex-row">
+                                                <button type="submit" id="register-id" class="mt-3 p2 btn btn-success" name="save">Létrehozás</button>
+                                                <b-button id="cancel" variant="warning" class="mt-3 p2" @click="$bvModal.hide('bv-modal-fenykepAlbum')">Mégse</b-button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </b-modal>
 
                                                                                     <b-button variant="primary" @click="$bvModal.show('bv-modal-example')">Adatok módosítása</b-button>
 

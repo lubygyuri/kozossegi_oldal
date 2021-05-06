@@ -20,7 +20,7 @@ $likeController = new LikeController();
     $like->setFelhasznaloAzonosito($_SESSION["email"]);
     $likedPost->setAzonosito($_GET["id"]);
 
-    if(isset($_GET['klub'])){
+    if(isset($_GET['klub'])){ //klubb like
      /*   var_dump($likeController->klubAlreadyLikedPost($like));
         die();*/
         if (!$likeController->klubAlreadyLikedPost($like)) { //like
@@ -35,18 +35,18 @@ $likeController = new LikeController();
             $smarty->assign("azonosito",$_GET["id"]);
         }
         $smarty->display('klubLikeGomb.tpl');
-    }else {
+    }else { // sima like
         if (!$likeController->alreadyLikedPost($like)) { //like
             $bejegyzesController->updateLikesOnBejegyzes($likedPost);
             $likeController->increaseBejegyzesLike($like);
             $smarty->assign("like",true);
-            $smarty->assign("azonosito",$_GET["id"]);
         } else { //unlike
             $bejegyzesController->deleteLikesOnBejegyzes($likedPost);
             $likeController->decreaseBejegyzesLike($like);
             $smarty->assign("like",false);
-            $smarty->assign("azonosito",$_GET["id"]);
         }
+        $smarty->assign("bejegyzes",$likedPost);
+        $likedPost->setLikeCount($bejegyzesController->likeCount($likedPost)['LIKE_COUNT']);
         $smarty->display('likeGomb.tpl');
     }
 
