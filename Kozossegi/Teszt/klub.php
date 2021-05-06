@@ -134,6 +134,7 @@ if ($postsData) {
         } else {
             $post->setIsLiked(true);
         }
+        $post->setLikeCount($bejegyzesController->likeCount($post)['LIKE_COUNT']);
 
         array_push($posts, $post);
     }

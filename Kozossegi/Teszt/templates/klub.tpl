@@ -79,14 +79,18 @@
                         </b-row>
                         <b-row>
                             <b-col cols="auto" class="w-100">
+                                <div id="{{$bejegyzesek[$i]->getAzonosito()}}">
+                                    <!-- likek szama -->
+                                    {if $bejegyzesek[$i]->getLikeCount() > 0}
+                                        <div class="mt-3 like_count">{{$bejegyzesek[$i]->getLikeCount()}} embernek tetszik ez a bejegyzés</div>
+                                    {/if}
                                 <div class="post-footer mt-3">
-                                    <div id="{{$bejegyzesek[$i]->getAzonosito()}}">
                                         {if $bejegyzesek[$i]->getIsLiked()}
                                             <button onclick="klubLike({{$bejegyzesek[$i]->getAzonosito()}})" type="submit" name="likePost"><i class="fas fa-heart"></i>Tetszik</button>
                                         {else}
                                             <button onclick="klubLike({{$bejegyzesek[$i]->getAzonosito()}})" type="submit" name="likePost"><i class="far fa-heart"></i>Tetszik</button>
                                         {/if}
-                                    </div>
+                                </div>
                                 </div>
                             </b-col>
                         </b-row>

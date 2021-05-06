@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-05 22:43:28
+/* Smarty version 3.1.39, created on 2021-05-06 18:20:59
   from '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/klub.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60930370116a27_55065165',
+  'unifunc' => 'content_6094176b72dd90_44333555',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bec986a48e5cafd818b311d9058b919c4d2f3634' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/klub.tpl',
-      1 => 1620247219,
+      1 => 1620318058,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60930370116a27_55065165 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6094176b72dd90_44333555 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -155,18 +155,22 @@ echo $_prefixVariable14;?>
 echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getKep();
 $_prefixVariable15 = ob_get_clean();
 echo $_prefixVariable15;?>
-" class="rounded mx-auto d-block" fluid alt="Fluid image"></b-img><?php }?></div></b-row><b-row><b-col cols="auto" class="w-100"><div class="post-footer mt-3"><div id="<?php ob_start();
+" class="rounded mx-auto d-block" fluid alt="Fluid image"></b-img><?php }?></div></b-row><b-row><b-col cols="auto" class="w-100"><div id="<?php ob_start();
 echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
 $_prefixVariable16 = ob_get_clean();
 echo $_prefixVariable16;?>
-"><?php if ($_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getIsLiked()) {?><button onclick="klubLike(<?php ob_start();
-echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
+"><!-- likek szama --><?php if ($_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getLikeCount() > 0) {?><div class="mt-3 like_count"><?php ob_start();
+echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getLikeCount();
 $_prefixVariable17 = ob_get_clean();
 echo $_prefixVariable17;?>
-)" type="submit" name="likePost"><i class="fas fa-heart"></i>Tetszik</button><?php } else { ?><button onclick="klubLike(<?php ob_start();
+ embernek tetszik ez a bejegyzés</div><?php }?><div class="post-footer mt-3"><?php if ($_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getIsLiked()) {?><button onclick="klubLike(<?php ob_start();
 echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
 $_prefixVariable18 = ob_get_clean();
 echo $_prefixVariable18;?>
+)" type="submit" name="likePost"><i class="fas fa-heart"></i>Tetszik</button><?php } else { ?><button onclick="klubLike(<?php ob_start();
+echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
+$_prefixVariable19 = ob_get_clean();
+echo $_prefixVariable19;?>
 )" type="submit" name="likePost"><i class="far fa-heart"></i>Tetszik</button><?php }?></div></div></b-col></b-row></div>
             <?php }
 }
