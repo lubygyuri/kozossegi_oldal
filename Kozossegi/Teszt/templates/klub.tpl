@@ -115,7 +115,7 @@
                     <input onkeyup="klubKereses()" type="search" id="searchboxclub" class="form-control rounded" placeholder="Keresés..." aria-label="Search"
                            aria-describedby="search-addon" />
                     <span class="input-group-text border-0" id="search-addon">
-                        <i class="fas fa-search"></i>
+                        <i class="fas fa-search mr-0"></i>
                     </span>
                 </div>
                 <div id="klubKeresesDiv">

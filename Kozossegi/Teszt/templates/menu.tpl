@@ -32,7 +32,7 @@
             <form>
                 <div class="input-group rounded">
                     <input onkeyup="kereses()" type="search" id="searchbox" class="form-control rounded mr-2 sbox" placeholder="Keresés..." autocomplete="off">
-                    <button class="btn btn-primary" id="search-addon"><i class="fas fa-search"></i></button>
+                    <button class="btn btn-primary" id="search-addon"><i class="fas fa-search mr-0"></i></button>
                 </div>
                 <div id="keresesDiv">
 
