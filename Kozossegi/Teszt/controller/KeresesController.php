@@ -20,7 +20,7 @@ class KeresesController extends DB {
 
     public function searchingFriends($keresettSzo, $useremail){
         $keresettSzo = '%'.$keresettSzo.'%';
-        $sql = "SELECT vezeteknev, keresztnev, email FROM LUBLO.FELHASZNALO WHERE KERESZTNEV LIKE ? OR VEZETEKNEV LIKE ? AND email IN (SELECT felhasznalo2 FROM LUBLO.ismeros WHERE felhasznalo1 = ? AND statusz = 'friends')";
+        $sql = "SELECT vezeteknev, keresztnev, email FROM LUBLO.FELHASZNALO WHERE email in (SELECT felhasznalo2 FROM LUBLO.ismeros WHERE felhasznalo1 = ? AND statusz = 'friends') AND ( KERESZTNEV LIKE ? OR VEZETEKNEV LIKE ?)";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$keresettSzo, $keresettSzo, $useremail]);
         return $stmt->fetchAll();
