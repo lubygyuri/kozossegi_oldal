@@ -10,6 +10,23 @@ class Klub {
     private $tagok=array();
 
     /**
+     * @return mixed
+     */
+    public function getLetszam()
+    {
+        return $this->letszam;
+    }
+
+    /**
+     * @param mixed $letszam
+     */
+    public function setLetszam($letszam)
+    {
+        $this->letszam = $letszam;
+    }
+
+
+    /**
      * @return array
      */
     public function getTagok()

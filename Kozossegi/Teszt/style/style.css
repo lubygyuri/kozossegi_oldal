@@ -298,3 +298,7 @@ footer {
     justify-content: space-between;
     align-items: center;
 }
+.klub_leiras_scroll{
+    height: 300px;
+    overflow: scroll;
+}

@@ -67,6 +67,7 @@ if(isset($_POST["submit_klub"])) {
     $ujklubb -> setLathatosag($_POST["lathatosag"]);
     $ujklubb -> setAdminFelhasznalo($_SESSION["email"]);
     $klubController -> createClub($ujklubb);
+    $klubController ->createKlubTag($ujklubb->getNev(),$_SESSION['email']);
     $kulobok = klubblistafrissites();
 
 }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-05 01:21:03
+/* Smarty version 3.1.39, created on 2021-05-05 22:43:28
   from '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/klub.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6091d6df1def04_83623165',
+  'unifunc' => 'content_60930370116a27_55065165',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bec986a48e5cafd818b311d9058b919c4d2f3634' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/klub.tpl',
-      1 => 1620170462,
+      1 => 1620247219,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6091d6df1def04_83623165 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60930370116a27_55065165 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -206,7 +206,7 @@ echo $_prefixVariable18;?>
                         </div>
                     </div>
                     <div class="flex-row">
-                        <button type="submit" id="register-id" class="mt-3 p2 btn btn-success" name="submit_klub">Klub létrehozása</button>
+                        <button type="submit" name="submit_klub" id="register-id" class="mt-3 p2 btn btn-success">Klub létrehozása</button>
                         <b-button id="cancel" variant="warning" class="mt-3 p2" @click="$bvModal.hide('bv-modal-ujklubletrehozasa')">Mégse</b-button>
                     </div>
                 </form>
