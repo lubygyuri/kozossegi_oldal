@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-05 21:11:22
+/* Smarty version 3.1.39, created on 2021-05-06 14:51:00
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6092edda9a0ff9_66250289',
+  'unifunc' => 'content_6093e6346d97f7_97630961',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '407958729bce86b9dca03a47c3a96c606fdfb91f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\header.tpl',
-      1 => 1620241881,
+      1 => 1620305030,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6092edda9a0ff9_66250289 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6093e6346d97f7_97630961 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html >
 <HTML lang="hu">
 <HEAD>

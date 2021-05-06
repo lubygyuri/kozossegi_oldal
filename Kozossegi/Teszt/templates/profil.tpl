@@ -43,6 +43,21 @@
                                     </div>
                                 </form>
 
+                                {* Fényképalbum létrehozása *}
+                                <b-button variant="primary" @click="$bvModal.show('bv-modal-fenykepAlbum')">Fényképalbum létrehozása</b-button>
+
+                                <b-modal id="bv-modal-fenykepAlbum" hide-footer title="Fényképalbum létrehozása">
+                                    <p>Az alábbi mező kitöltésével új albumot hozhatsz létre:</p>
+                                    <div>
+                                        <form action="profil.php" class="kulso-form" method="post">
+                                            <input type="text" class="mt-3 p-2 h-25" placeholder="Fénykepalbum neve">
+                                            <div class="flex-row">
+                                                <button type="submit" id="register-id" class="mt-3 p2 btn btn-success" name="save">Létrehozás</button>
+                                                <b-button id="cancel" variant="warning" class="mt-3 p2" @click="$bvModal.hide('bv-modal-fenykepAlbum')">Mégse</b-button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </b-modal>
 
                         {* Adatok módosítása *}
                             {* Működő update profile *}
