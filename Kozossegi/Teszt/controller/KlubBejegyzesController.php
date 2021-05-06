@@ -14,5 +14,11 @@ class KlubBejegyzesController extends DB{
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$bejegyzes->getUzenet(),$bejegyzes->getFelhasznaloAzonosito(),$bejegyzes->getKlubAzonosito(),$bejegyzes->getKep()]);
     }
+    public function likeCount(KlubBejegyzes $bejegyzes) {
+        $sql = "SELECT COUNT(*) AS LIKE_COUNT FROM LUBLO.KLUB_BEJEGYZES_LIKE WHERE klub_bejegyzes_azonosito= ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$bejegyzes->getAzonosito()]);
+        return $stmt->fetch();
+    }
 
 }

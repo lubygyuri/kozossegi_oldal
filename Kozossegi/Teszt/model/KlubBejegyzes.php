@@ -10,6 +10,23 @@ class KlubBejegyzes{
     private $kommentek =array();
     private $likes;
     private $isLiked;
+    private $like_count;
+
+    /**
+     * @return mixed
+     */
+    public function getLikeCount()
+    {
+        return $this->like_count;
+    }
+
+    /**
+     * @param mixed $like_count
+     */
+    public function setLikeCount($like_count)
+    {
+        $this->like_count = $like_count;
+    }
 
     /**
      * @return mixed

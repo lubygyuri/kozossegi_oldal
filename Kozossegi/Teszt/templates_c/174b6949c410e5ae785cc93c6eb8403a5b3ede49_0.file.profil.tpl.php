@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-06 16:25:40
+/* Smarty version 3.1.39, created on 2021-05-06 18:19:37
   from '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/profil.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6093fc64aa30b8_29532860',
+  'unifunc' => 'content_60941719149f20_86411256',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '174b6949c410e5ae785cc93c6eb8403a5b3ede49' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/profil.tpl',
-      1 => 1620311085,
+      1 => 1620317975,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6093fc64aa30b8_29532860 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60941719149f20_86411256 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -325,46 +325,54 @@ $_prefixVariable27 = ob_get_clean();
 echo $_prefixVariable27;?>
 </p>
                                 </div>
-                                                                    <div class="post-footer">
-                                        <div id="<?php ob_start();
+                                                                <div id="<?php ob_start();
 echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
 $_prefixVariable28 = ob_get_clean();
 echo $_prefixVariable28;?>
 ">
-                                            <?php if ($_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getIsLiked()) {?>
-                                                <button onclick="like(<?php ob_start();
-echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
+                                    <!-- likek szama -->
+                                    <?php if ($_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getLikeCount() > 0) {?>
+                                        <div class="mt-3 like_count"><?php ob_start();
+echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getLikeCount();
 $_prefixVariable29 = ob_get_clean();
 echo $_prefixVariable29;?>
-)" type="submit" name="likePost"><i class="fas fa-heart"></i>Tetszik</button>
-                                            <?php } else { ?>
+ embernek tetszik ez a bejegyzés</div>
+                                    <?php }?>
+                                    <div class="post-footer">
+                                            <?php if ($_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getIsLiked()) {?>
                                                 <button onclick="like(<?php ob_start();
 echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
 $_prefixVariable30 = ob_get_clean();
 echo $_prefixVariable30;?>
-)" type="submit" name="likePost"><i class="far fa-heart"></i>Tetszik</button>
-                                            <?php }?>
-                                        </div>
-                                        <button v-b-toggle.my-collapse<?php ob_start();
+)" type="submit" name="likePost"><i class="fas fa-heart"></i>Tetszik</button>
+                                            <?php } else { ?>
+                                                <button onclick="like(<?php ob_start();
 echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
 $_prefixVariable31 = ob_get_clean();
 echo $_prefixVariable31;?>
- id="<?php ob_start();
+)" type="submit" name="likePost"><i class="far fa-heart"></i>Tetszik</button>
+                                            <?php }?>
+                                        <button v-b-toggle.my-collapse<?php ob_start();
 echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
 $_prefixVariable32 = ob_get_clean();
 echo $_prefixVariable32;?>
-"><i class="far fa-comment-alt"></i>Hozzászólás</button>
-                                    </div>
-                                <template>
-                                    <b-collapse id="my-collapse<?php ob_start();
+ id="<?php ob_start();
 echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
 $_prefixVariable33 = ob_get_clean();
 echo $_prefixVariable33;?>
-" class="mt-4">
-                                        <div id="komment<?php ob_start();
+"><i class="far fa-comment-alt"></i>Hozzászólás</button>
+                                    </div>
+                                </div>
+                                <template>
+                                    <b-collapse id="my-collapse<?php ob_start();
 echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
 $_prefixVariable34 = ob_get_clean();
 echo $_prefixVariable34;?>
+" class="mt-4">
+                                        <div id="komment<?php ob_start();
+echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
+$_prefixVariable35 = ob_get_clean();
+echo $_prefixVariable35;?>
 ">
                                             <?php if ($_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getKommentek()) {?>
                                                 <?php $_smarty_tpl->_assignInScope('x', $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getKommentek());?>
@@ -377,26 +385,26 @@ $_smarty_tpl->tpl_vars['j']->first = $_smarty_tpl->tpl_vars['j']->iteration === 
                                                         <div class="post-header2">
                                                             <b-img src="<?php ob_start();
 echo $_smarty_tpl->tpl_vars['x']->value[$_smarty_tpl->tpl_vars['j']->value]->getFelhasznaloAzonosito()->getProfilkep();
-$_prefixVariable35 = ob_get_clean();
-echo $_prefixVariable35;?>
+$_prefixVariable36 = ob_get_clean();
+echo $_prefixVariable36;?>
 " rounded="circle"  class="d-inline-block align-top"></b-img>
                                                             <div class="post-header-details">
                                                                 <span><?php ob_start();
 echo $_smarty_tpl->tpl_vars['x']->value[$_smarty_tpl->tpl_vars['j']->value]->getFelhasznaloAzonosito()->getVezeteknev();
-$_prefixVariable36 = ob_get_clean();
-echo $_prefixVariable36;?>
- <?php ob_start();
-echo $_smarty_tpl->tpl_vars['x']->value[$_smarty_tpl->tpl_vars['j']->value]->getFelhasznaloAzonosito()->getKeresztnev();
 $_prefixVariable37 = ob_get_clean();
 echo $_prefixVariable37;?>
+ <?php ob_start();
+echo $_smarty_tpl->tpl_vars['x']->value[$_smarty_tpl->tpl_vars['j']->value]->getFelhasznaloAzonosito()->getKeresztnev();
+$_prefixVariable38 = ob_get_clean();
+echo $_prefixVariable38;?>
 </span>
                                                             </div>
                                                         </div>
                                                         <div>
                                                             <p class="m-3"><?php ob_start();
 echo $_smarty_tpl->tpl_vars['x']->value[$_smarty_tpl->tpl_vars['j']->value]->getUzenet();
-$_prefixVariable38 = ob_get_clean();
-echo $_prefixVariable38;?>
+$_prefixVariable39 = ob_get_clean();
+echo $_prefixVariable39;?>
  </p>
                                                         </div>
                                                     </div>
@@ -409,32 +417,32 @@ echo $_prefixVariable38;?>
                                             <div class="post-header2">
                                                 <b-img src="<?php ob_start();
 echo $_smarty_tpl->tpl_vars['felhasznalo']->value->getProfilkep();
-$_prefixVariable39 = ob_get_clean();
-echo $_prefixVariable39;?>
+$_prefixVariable40 = ob_get_clean();
+echo $_prefixVariable40;?>
 " rounded="circle" class="d-inline-block align-top "></b-img>
                                                 <div class="post-header-details">
                                                     <span><?php ob_start();
 echo $_smarty_tpl->tpl_vars['felhasznalo']->value->getVezeteknev();
-$_prefixVariable40 = ob_get_clean();
-echo $_prefixVariable40;?>
- <?php ob_start();
-echo $_smarty_tpl->tpl_vars['felhasznalo']->value->getKeresztnev();
 $_prefixVariable41 = ob_get_clean();
 echo $_prefixVariable41;?>
+ <?php ob_start();
+echo $_smarty_tpl->tpl_vars['felhasznalo']->value->getKeresztnev();
+$_prefixVariable42 = ob_get_clean();
+echo $_prefixVariable42;?>
 </span>
                                                 </div>
                                             </div>
                                             <div class="form-floating mt-3 mb-1">
                                                 <textarea class="form-control" placeholder="Írjon kommentet" id="textarea<?php ob_start();
 echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
-$_prefixVariable42 = ob_get_clean();
-echo $_prefixVariable42;?>
+$_prefixVariable43 = ob_get_clean();
+echo $_prefixVariable43;?>
 " style="height: 100px"></textarea>
                                             </div>
                                             <button type="button" class="btn btn-primary" onclick="komment(<?php ob_start();
 echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
-$_prefixVariable43 = ob_get_clean();
-echo $_prefixVariable43;?>
+$_prefixVariable44 = ob_get_clean();
+echo $_prefixVariable44;?>
 )">Közzététel</button>
                                         </div>
                                     </b-collapse>

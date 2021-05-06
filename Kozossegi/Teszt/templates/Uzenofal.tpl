@@ -1,12 +1,24 @@
 {include file="header.tpl"}
 {include file="menu.tpl"}
+<div id="app2">
+<div class="container px-4 mt-5">
 
-<div id="app2"  class="container px-4 mt-5">
+    <div class="shadow-lg pl-3 pr-3 pb-3 bg-white rounded align-self-baseline mr-2 w-50 mb-5 mx-auto text-center">
+        <h1>Kiket Ismerhetsz</h1>
+        <ul  class="list-group list-group-horizontal overflow-auto">
+            {for $i=0 to $kitIsmerhetek|@count-1}
+            <li class="list-group-item"><a href="profil.php?email={{$kitIsmerhetek[$i]->getEmail()}}">{{$kitIsmerhetek[$i]->getVezeteknev()}} {{$kitIsmerhetek[$i]->getKeresztnev()}}</a></li>
+            {/for}
+        </ul>
+    </div>
 
     {*
         Közzététel
     *}
-    <div class= "shadow-lg pl-3 pr-3 pb-3 bg-white rounded align-self-baseline mr-2 w-50 mb-5 mx-auto">
+    <div class="shadow-lg pl-3 pr-3 pb-3 bg-white rounded align-self-baseline mr-2 w-50 mb-5 mx-auto">
+        {*
+  Ismerős ajánlás
+  *}
         <form action="Uzenofal.php" method="post" enctype="multipart/form-data">
             <div class="post-header2">
                 <img src="{{$belepettFelhasznalo->getProfilkep()}}">
@@ -107,5 +119,5 @@
     {/for}
     {/if}
 </div>
-
+</div>
 {include file="footer.tpl"}
