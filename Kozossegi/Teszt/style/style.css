@@ -235,7 +235,7 @@ footer {
     display: flex !important;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;

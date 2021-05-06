@@ -59,7 +59,7 @@
 
   </div>
 
-
 </div>
-
-{include file="footer.tpl"}
+<div id="loginfooter">
+  {include file="footer.tpl"}
+</div>

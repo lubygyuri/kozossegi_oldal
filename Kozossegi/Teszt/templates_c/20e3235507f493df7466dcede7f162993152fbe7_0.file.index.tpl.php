@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-24 15:22:22
+/* Smarty version 3.1.39, created on 2021-05-06 15:50:58
   from 'D:\XAMPP\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60841b8ea78242_23979240',
+  'unifunc' => 'content_6093f44277edc4_99395132',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '20e3235507f493df7466dcede7f162993152fbe7' => 
     array (
       0 => 'D:\\XAMPP\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\index.tpl',
-      1 => 1619226996,
+      1 => 1620309055,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60841b8ea78242_23979240 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6093f44277edc4_99395132 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -98,9 +98,10 @@ echo $_prefixVariable2;?>
 
   </div>
 
-
 </div>
-
-<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-}
+<div id="loginfooter">
+  <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+</div>
+<?php }
 }

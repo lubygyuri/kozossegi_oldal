@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-04-24 02:24:04
+/* Smarty version 3.1.39, created on 2021-05-06 15:55:48
   from 'D:\XAMPP\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\Uzenofal.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60836524f2f669_53654948',
+  'unifunc' => 'content_6093f56487e979_23685698',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '618e8822b5ca5929f80371d7deeda32dee909997' => 
     array (
       0 => 'D:\\XAMPP\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\Uzenofal.tpl',
-      1 => 1619223668,
+      1 => 1619628740,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60836524f2f669_53654948 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6093f56487e979_23685698 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -31,7 +31,7 @@ $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smar
 <div id="app2"  class="container px-4 mt-5">
 
         <div class= "shadow-lg pl-3 pr-3 pb-3 bg-white rounded align-self-baseline mr-2 w-50 mb-5 mx-auto">
-        <form action="Uzenofal.php" method="post">
+        <form action="Uzenofal.php" method="post" enctype="multipart/form-data">
             <div class="post-header2">
                 <img src="<?php ob_start();
 echo $_smarty_tpl->tpl_vars['belepettFelhasznalo']->value->getProfilkep();
@@ -58,7 +58,7 @@ echo $_prefixVariable3;?>
                 <i class="fas fa-upload"></i>
                 Kép feltöltés
             </label>
-            <input id="file-input" type="file"/>
+            <input id="file-input" type="file" name="postImgUzenofal"/>
             <button type="submit" class="btn btn-primary" name="submit">Közzététel</button>
         </div>
         </form>
@@ -82,7 +82,7 @@ echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->v
 $_prefixVariable6 = ob_get_clean();
 echo $_prefixVariable6;?>
 </span><span class="small"><?php ob_start();
-echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getLetrehozasDatuma();
+echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getLetrehozasIdeje();
 $_prefixVariable7 = ob_get_clean();
 echo $_prefixVariable7;?>
 </span></div></div><div ><p class="m-3"> <?php ob_start();
@@ -93,35 +93,78 @@ echo $_prefixVariable8;?>
 echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getKep();
 $_prefixVariable9 = ob_get_clean();
 echo $_prefixVariable9;?>
-" class="rounded mx-auto d-block" fluid alt="Fluid image"></b-img><?php }?></div></b-row><b-row class="mt-5"><b-col cols="auto" class="w-100"><b-button-group class="w-100"><b-button  variant="btn-outline-primary" @click="asd"><b-icon icon="heart" aria-hidden="true" v-if="like"></b-icon><b-icon icon="heart-fill" aria-hidden="true" v-if="!like"></b-icon>Tetszik</b-button><b-button v-b-toggle.my-collapse<?php ob_start();
-echo $_smarty_tpl->tpl_vars['i']->value;
+" class="rounded mx-auto d-block" fluid alt="Fluid image"></b-img><?php }?></div></b-row><b-row><b-col cols="auto" class="w-100"><div class="post-footer mt-3"><div id="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
 $_prefixVariable10 = ob_get_clean();
 echo $_prefixVariable10;?>
- variant="btn-outline-primary"><b-icon  icon="chat-left" aria-hidden="true"></b-icon> Hozzászólás</b-button></b-button-group><template><b-collapse id="my-collapse<?php ob_start();
-echo $_smarty_tpl->tpl_vars['i']->value;
+"><?php if ($_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getIsLiked()) {?><button onclick="like(<?php ob_start();
+echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
 $_prefixVariable11 = ob_get_clean();
 echo $_prefixVariable11;?>
-" class="mt-4">
-                                    <div class="border border-1 mt-2 rounded align-self-baseline w-100" v-for="value in bejegyzes">
-                                        <div v-for="(v,i,j) in value">
-                                            <b-img src="https://placekitten.com/g/30/30" rounded="circle"  class="d-inline-block align-top" v-if="j==0"></b-img>
-                                           <span> {{ v }}</span>
-                                        </div>
-                                        <div>
-                                            <p class="m-3"></p>
-                                        </div>
-                                    </div>
-                                    <div class="border border-3 mt-2">
-                                    <b-img src="https://placekitten.com/g/30/30" rounded="circle" class="d-inline-block align-top "></b-img>
-                                    Teszt Elek
-                                    <div class="form-floating mt-3 mb-1">
-                                        <textarea class="form-control" placeholder="Írjon kommentet" id="floatingTextarea2" style="height: 100px" v-model="text"></textarea>
-                                    </div>
-
-                                    <button type="button" class="btn btn-primary" @click="komm">Közzététel</button>
-                                    </div>
-
-                                </b-collapse></template></b-col></b-row></div>
+)" type="submit" name="likePost"><i class="fas fa-heart"></i>Tetszik</button><?php } else { ?><button onclick="like(<?php ob_start();
+echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
+$_prefixVariable12 = ob_get_clean();
+echo $_prefixVariable12;?>
+)" type="submit" name="likePost"><i class="far fa-heart"></i>Tetszik</button><?php }?></div><button v-b-toggle.my-collapse<?php ob_start();
+echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
+$_prefixVariable13 = ob_get_clean();
+echo $_prefixVariable13;?>
+ id="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
+$_prefixVariable14 = ob_get_clean();
+echo $_prefixVariable14;?>
+"><i class="far fa-comment-alt"></i>Hozzászólás</button></div><template><b-collapse id="my-collapse<?php ob_start();
+echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
+$_prefixVariable15 = ob_get_clean();
+echo $_prefixVariable15;?>
+" class="mt-4"><div id="komment<?php ob_start();
+echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
+$_prefixVariable16 = ob_get_clean();
+echo $_prefixVariable16;?>
+"><?php if ($_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getKommentek()) {
+$_smarty_tpl->_assignInScope('x', $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getKommentek());
+$_smarty_tpl->tpl_vars['j'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['j']->step = 1;$_smarty_tpl->tpl_vars['j']->total = (int) ceil(($_smarty_tpl->tpl_vars['j']->step > 0 ? count($_smarty_tpl->tpl_vars['x']->value)-1+1 - (0) : 0-(count($_smarty_tpl->tpl_vars['x']->value)-1)+1)/abs($_smarty_tpl->tpl_vars['j']->step));
+if ($_smarty_tpl->tpl_vars['j']->total > 0) {
+for ($_smarty_tpl->tpl_vars['j']->value = 0, $_smarty_tpl->tpl_vars['j']->iteration = 1;$_smarty_tpl->tpl_vars['j']->iteration <= $_smarty_tpl->tpl_vars['j']->total;$_smarty_tpl->tpl_vars['j']->value += $_smarty_tpl->tpl_vars['j']->step, $_smarty_tpl->tpl_vars['j']->iteration++) {
+$_smarty_tpl->tpl_vars['j']->first = $_smarty_tpl->tpl_vars['j']->iteration === 1;$_smarty_tpl->tpl_vars['j']->last = $_smarty_tpl->tpl_vars['j']->iteration === $_smarty_tpl->tpl_vars['j']->total;?><div class="border border-1 mt-2 rounded align-self-baseline w-100"><div class="post-header2"><b-img src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['x']->value[$_smarty_tpl->tpl_vars['j']->value]->getFelhasznaloAzonosito()->getProfilkep();
+$_prefixVariable17 = ob_get_clean();
+echo $_prefixVariable17;?>
+" rounded="circle" class="d-inline-block align-top"></b-img><div class="post-header-details"><span><?php ob_start();
+echo $_smarty_tpl->tpl_vars['x']->value[$_smarty_tpl->tpl_vars['j']->value]->getFelhasznaloAzonosito()->getVezeteknev();
+$_prefixVariable18 = ob_get_clean();
+echo $_prefixVariable18;?>
+ <?php ob_start();
+echo $_smarty_tpl->tpl_vars['x']->value[$_smarty_tpl->tpl_vars['j']->value]->getFelhasznaloAzonosito()->getKeresztnev();
+$_prefixVariable19 = ob_get_clean();
+echo $_prefixVariable19;?>
+</span></div></div><div><p class="m-3"><?php ob_start();
+echo $_smarty_tpl->tpl_vars['x']->value[$_smarty_tpl->tpl_vars['j']->value]->getUzenet();
+$_prefixVariable20 = ob_get_clean();
+echo $_prefixVariable20;?>
+ </p></div></div><?php }
+}
+}?></div><div class="border border-3 mt-2"><div class="post-header2"><b-img src="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['belepettFelhasznalo']->value->getProfilkep();
+$_prefixVariable21 = ob_get_clean();
+echo $_prefixVariable21;?>
+" rounded="circle" class="d-inline-block align-top "></b-img><div class="post-header-details"><span><?php ob_start();
+echo $_smarty_tpl->tpl_vars['belepettFelhasznalo']->value->getVezeteknev();
+$_prefixVariable22 = ob_get_clean();
+echo $_prefixVariable22;?>
+ <?php ob_start();
+echo $_smarty_tpl->tpl_vars['belepettFelhasznalo']->value->getKeresztnev();
+$_prefixVariable23 = ob_get_clean();
+echo $_prefixVariable23;?>
+</span></div></div><div class="form-floating mt-3 mb-1"><textarea class="form-control" placeholder="Írjon kommentet" id="floatingTextarea<?php ob_start();
+echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
+$_prefixVariable24 = ob_get_clean();
+echo $_prefixVariable24;?>
+" style="height: 100px"></textarea></div><button type="button" class="btn btn-primary" onclick="komment(<?php ob_start();
+echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
+$_prefixVariable25 = ob_get_clean();
+echo $_prefixVariable25;?>
+)">Közzététel</button></div></b-collapse></template></b-col></b-row></div>
     <?php }
 }
 ?>
