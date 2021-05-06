@@ -49,10 +49,10 @@
                                 <b-modal id="bv-modal-fenykepAlbum" hide-footer title="Fényképalbum létrehozása">
                                     <p>Az alábbi mező kitöltésével új albumot hozhatsz létre:</p>
                                     <div>
-                                        <form action="profil.php" class="kulso-form" method="post">
-                                            <input type="text" class="mt-3 p-2 h-25" placeholder="Fénykepalbum neve">
+                                        <form action="fenykepalbum.php" class="kulso-form" method="post">
+                                            <input type="text" class="mt-3 p-2 h-25" name="fenykepAlbumNev" placeholder="Fénykepalbum neve">
                                             <div class="flex-row">
-                                                <button type="submit" id="register-id" class="mt-3 p2 btn btn-success" name="save">Létrehozás</button>
+                                                <button type="submit" id="register-id" class="mt-3 p2 btn btn-success" name="letrehozFenykepAlbum">Létrehozás</button>
                                                 <b-button id="cancel" variant="warning" class="mt-3 p2" @click="$bvModal.hide('bv-modal-fenykepAlbum')">Mégse</b-button>
                                             </div>
                                         </form>

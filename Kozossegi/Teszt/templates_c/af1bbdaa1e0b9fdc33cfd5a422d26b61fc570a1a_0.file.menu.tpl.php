@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-03 20:17:03
+/* Smarty version 3.1.39, created on 2021-05-06 15:34:01
   from 'D:\XAMPP\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\menu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60903e1fe5e434_63625254',
+  'unifunc' => 'content_6093f0494d4989_31945806',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'af1bbdaa1e0b9fdc33cfd5a422d26b61fc570a1a' => 
     array (
       0 => 'D:\\XAMPP\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\menu.tpl',
-      1 => 1619628740,
+      1 => 1620307786,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60903e1fe5e434_63625254 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6093f0494d4989_31945806 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div id="app">
     <div class="header">
         <!-- Image and text -->
@@ -46,7 +46,7 @@ function content_60903e1fe5e434_63625254 (Smarty_Internal_Template $_smarty_tpl)
                 <a class="nav-link" href="klub.php"><b-icon icon="people-fill" aria-hidden="true" class="mr-2"></b-icon>Klubbok</a>
             </li>
             <li class="nav-item mr-4 border border-4 rounded">
-                <a class="nav-link" href="#"><b-icon icon="bell-fill" aria-hidden="true" class="mr-2"></b-icon>Értesítések</a>
+                <a class="nav-link" href="ertesitesek.php"><b-icon icon="bell-fill" aria-hidden="true" class="mr-2"></b-icon>Értesítések <span id="ertesitesekSzama"></span></a>
             </li>
             <li class="nav-item mr-4 border border-4 rounded">
                 <a class="nav-link" href="logout.php"><b-icon icon="door-closed-fill" aria-hidden="true" class="mr-2"></b-icon>Kijelentkezés</a>
