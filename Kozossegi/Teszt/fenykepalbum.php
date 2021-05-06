@@ -13,3 +13,11 @@ if (!isset($_SESSION["email"])){
     exit();
 }
 
+// Controllerek példányosítása
+$fenykepAlbumController = new FenykepAlbumController();
+
+if (isset($_POST["letrehozFenykepAlbum"])) {
+    $fenykepAlbumController->createFenykepAlbum($_POST["fenykepAlbumNev"], $_SESSION["email"]);
+}
+
+header("Location: profil.php?email=".$_SESSION["email"]);
