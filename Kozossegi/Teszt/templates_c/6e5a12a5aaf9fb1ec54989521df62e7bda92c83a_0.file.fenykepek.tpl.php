@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-06 20:30:12
+/* Smarty version 3.1.39, created on 2021-05-07 15:41:45
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\fenykepek.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_609435b41d9883_50126381',
+  'unifunc' => 'content_60954399816282_23397496',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6e5a12a5aaf9fb1ec54989521df62e7bda92c83a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\fenykepek.tpl',
-      1 => 1620325808,
+      1 => 1620394899,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_609435b41d9883_50126381 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60954399816282_23397496 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -34,15 +34,21 @@ $_prefixVariable1 = ob_get_clean();
 echo $_prefixVariable1;?>
 
         <div>
-            <b-button variant="primary" @click="$bvModal.show('bv-modal-fenykep')">Fénykép hozzáadása</b-button>
+            <?php if ($_smarty_tpl->tpl_vars['belepettFelhasznalo']->value->getEmail() == $_smarty_tpl->tpl_vars['nezettFelhasznalo']->value->getEmail()) {?>
+                <b-button variant="primary" @click="$bvModal.show('bv-modal-fenykep')">Fénykép hozzáadása</b-button>
+            <?php }?>
 
             <b-modal id="bv-modal-fenykep" hide-footer title="Fénykép feltöltése">
                 <p>Az alábbi mezőre kattintva egy új képet tölthetsz fel az albumodba:</p>
                 <div>
-                    <form action="fenykepek.php?fenykepAlbum=<?php ob_start();
-echo $_smarty_tpl->tpl_vars['recentAlbum']->value->getAzonosito();
+                    <form action="fenykepek.php?profil=<?php ob_start();
+echo $_smarty_tpl->tpl_vars['nezettFelhasznalo']->value->getEmail();
 $_prefixVariable2 = ob_get_clean();
 echo $_prefixVariable2;?>
+&fenykepAlbum=<?php ob_start();
+echo $_smarty_tpl->tpl_vars['recentAlbum']->value->getAzonosito();
+$_prefixVariable3 = ob_get_clean();
+echo $_prefixVariable3;?>
 " class="kulso-form" method="post" enctype="multipart/form-data">
                         <div class="image-upload flex-row">
                             <label for="fenykep" class="mt-3 p-2 h-25">
@@ -59,7 +65,11 @@ echo $_prefixVariable2;?>
                 </div>
             </b-modal>
 
-            <a href="fenykepalbum.php?back=true" class="btn btn-primary"><i class="fas fa-arrow-left mr-0"></i></a>
+            <a href="fenykepalbum.php?profil=<?php ob_start();
+echo $_smarty_tpl->tpl_vars['nezettFelhasznalo']->value->getEmail();
+$_prefixVariable4 = ob_get_clean();
+echo $_prefixVariable4;?>
+&back=true" class="btn btn-primary"><i class="fas fa-arrow-left mr-0"></i></a>
         </div>
     </h1>
 
@@ -76,8 +86,8 @@ $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 
                 <div class="col-lg-3 col-md-4 col-6">
                     <img class="img-fluid img-thumbnail" src="<?php ob_start();
 echo $_smarty_tpl->tpl_vars['fenykepek']->value[$_smarty_tpl->tpl_vars['i']->value]->getKep();
-$_prefixVariable3 = ob_get_clean();
-echo $_prefixVariable3;?>
+$_prefixVariable5 = ob_get_clean();
+echo $_prefixVariable5;?>
 " alt="">
                 </div>
             <?php }

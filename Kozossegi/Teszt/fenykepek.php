@@ -16,9 +16,18 @@ if (!isset($_SESSION["email"])){
 // Controllerek példányosítása
 $kepController = new KepController();
 $fenykepAlbumController = new FenykepAlbumController();
+$felhasznaloController = new FelhasznaloController();
 
 // Globális változók
 $fenykepek = array();
+
+// Belépett felhasznaló
+$belepettFelhasznalo = new Felhasznalo();
+$belepettFelhasznalo->setEmail($_SESSION["email"]);
+
+// Nézett felhasznaló
+$nezettFelhasznalo = new Felhasznalo();
+$nezettFelhasznalo->setEmail($_GET["profil"]);
 
 // TODO: kijavítani
 if (isset($_POST["fenykepFeltoltes"])) {
@@ -47,6 +56,8 @@ $recentAlbum = new FenykepAlbum();
 $recentAlbum->setAzonosito($_GET["fenykepAlbum"]);
 $recentAlbum->setNev($fenykepAlbumController->getFenykepAlbumNev($_GET["fenykepAlbum"])["NEV"]);
 
+$smarty->assign("belepettFelhasznalo", $belepettFelhasznalo);
+$smarty->assign("nezettFelhasznalo", $nezettFelhasznalo);
 $smarty->assign("recentAlbum",$recentAlbum);
 $smarty->assign("fenykepek", $fenykepek);
 $smarty->display("fenykepek.tpl");

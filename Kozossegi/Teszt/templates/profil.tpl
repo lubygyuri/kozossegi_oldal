@@ -43,11 +43,6 @@
                                     </div>
                                 </form>
 
-                                {* Fényképalbumok megtekintése *}
-                                <form action="fenykepalbum.php" method="post">
-                                    <button type="submit" class="btn btn-primary" name="fenykepAlbumMegtekintes">Fényképalbumok megtekintése</button>
-                                </form>
-
                                 {* Fényképalbum létrehozása *}
                                 <b-button variant="primary" @click="$bvModal.show('bv-modal-fenykepAlbum')">Fényképalbum létrehozása</b-button>
 
@@ -64,6 +59,14 @@
                                     </div>
                                 </b-modal>
 
+                            {/if}
+
+                            {* Fényképalbumok megtekintése *}
+                            <form action="fenykepalbum.php?profil={{$felhasznalo->getEmail()}}" method="post">
+                                <button type="submit" class="btn btn-primary" name="fenykepAlbumMegtekintes">Fényképalbumok megtekintése</button>
+                            </form>
+
+                            {if $belepettFelhasznalo->getEmail() == $felhasznalo->getEmail()}
                         {* Adatok módosítása *}
                             {* Működő update profile *}
                                 <b-button variant="primary" @click="$bvModal.show('bv-modal-example')">Adatok módosítása</b-button>

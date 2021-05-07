@@ -8,8 +8,8 @@
             <div class="col-lg-12 mx-auto">
                 <div class="p-5 shadow rounded banner">
                     <h1 class="display-4">Fényképalbumaid</h1>
-                    <p class="lead">{{$belepettFelhasznalo->getVezeteknev()}} {{$belepettFelhasznalo->getKeresztnev()}}</p>
-                    <a href="profil.php?email={{$belepettFelhasznalo->getEmail()}}" class="btn btn-primary"><i class="fas fa-arrow-left mr-0"></i></a>
+                    <p class="lead">{{$felhasznalo->getVezeteknev()}} {{$felhasznalo->getKeresztnev()}}</p>
+                    <a href="profil.php?email={{$felhasznalo->getEmail()}}" class="btn btn-primary"><i class="fas fa-arrow-left mr-0"></i></a>
                 </div>
             </div>
         </div>
@@ -23,10 +23,12 @@
                         <div class="bg-white rounded shadow"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556294929/matthew-hamilton-351641-unsplash_zmvozs.jpg" alt="kep" class="img-fluid card-img-top">
                             <div class="p-4">
                                 <h5 class="fenykepAlbum-header">
-                                    <a href="fenykepek.php?fenykepAlbum={{$fenykepAlbumok[$i]->getAzonosito()}}" class="text-dark">{{$fenykepAlbumok[$i]->getNev()}}</a>
-                                    <form action="fenykepAlbum.php?fenykepAlbum={{$fenykepAlbumok[$i]->getAzonosito()}}" method="post">
-                                        <button class="btn btn-danger" name="deleteFenykepAlbum"><i class="fas fa-trash mr-0"></i></button>
-                                    </form>
+                                    <a href="fenykepek.php?profil={{$felhasznalo->getEmail()}}&fenykepAlbum={{$fenykepAlbumok[$i]->getAzonosito()}}" class="text-dark">{{$fenykepAlbumok[$i]->getNev()}}</a>
+                                    {if $belepettFelhasznalo->getEmail() == $felhasznalo->getEmail()}
+                                        <form action="fenykepAlbum.php?fenykepAlbum={{$fenykepAlbumok[$i]->getAzonosito()}}" method="post">
+                                            <button class="btn btn-danger" name="deleteFenykepAlbum"><i class="fas fa-trash mr-0"></i></button>
+                                        </form>
+                                    {/if}
                                 </h5>
                                 <div class="d-flex align-items-center justify-content-between rounded-pill bg-light px-3 py-2 mt-4">
                                     <p class="small mb-0">

@@ -5,12 +5,14 @@
     <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0 flex-row">
         {{$recentAlbum->getNev()}}
         <div>
-            <b-button variant="primary" @click="$bvModal.show('bv-modal-fenykep')">Fénykép hozzáadása</b-button>
+            {if $belepettFelhasznalo->getEmail() == $nezettFelhasznalo->getEmail()}
+                <b-button variant="primary" @click="$bvModal.show('bv-modal-fenykep')">Fénykép hozzáadása</b-button>
+            {/if}
 
             <b-modal id="bv-modal-fenykep" hide-footer title="Fénykép feltöltése">
                 <p>Az alábbi mezőre kattintva egy új képet tölthetsz fel az albumodba:</p>
                 <div>
-                    <form action="fenykepek.php?fenykepAlbum={{$recentAlbum->getAzonosito()}}" class="kulso-form" method="post" enctype="multipart/form-data">
+                    <form action="fenykepek.php?profil={{$nezettFelhasznalo->getEmail()}}&fenykepAlbum={{$recentAlbum->getAzonosito()}}" class="kulso-form" method="post" enctype="multipart/form-data">
                         <div class="image-upload flex-row">
                             <label for="fenykep" class="mt-3 p-2 h-25">
                                 <i class="fas fa-upload"></i>
@@ -26,7 +28,7 @@
                 </div>
             </b-modal>
 
-            <a href="fenykepalbum.php?back=true" class="btn btn-primary"><i class="fas fa-arrow-left mr-0"></i></a>
+            <a href="fenykepalbum.php?profil={{$nezettFelhasznalo->getEmail()}}&back=true" class="btn btn-primary"><i class="fas fa-arrow-left mr-0"></i></a>
         </div>
     </h1>
 
