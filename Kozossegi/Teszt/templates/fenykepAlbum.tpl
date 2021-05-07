@@ -20,12 +20,15 @@
             {if $fenykepAlbumok}
                 {for $i=0 to $fenykepAlbumok|@count-1}
                     <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
-                        <div class="bg-white rounded shadow"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556294929/matthew-hamilton-351641-unsplash_zmvozs.jpg" alt="kep" class="img-fluid card-img-top">
+                        <div class="bg-white rounded shadow">
+                            {if $fenykepAlbumok[$i]->getBoritokep()}
+                                <img src="{{$fenykepAlbumok[$i]->getBoritokep()}}" alt="album_boritokep" class="img-fluid card-img-top">
+                            {/if}
                             <div class="p-4">
                                 <h5 class="fenykepAlbum-header">
                                     <a href="fenykepek.php?profil={{$felhasznalo->getEmail()}}&fenykepAlbum={{$fenykepAlbumok[$i]->getAzonosito()}}" class="text-dark">{{$fenykepAlbumok[$i]->getNev()}}</a>
                                     {if $belepettFelhasznalo->getEmail() == $felhasznalo->getEmail()}
-                                        <form action="fenykepAlbum.php?fenykepAlbum={{$fenykepAlbumok[$i]->getAzonosito()}}" method="post">
+                                        <form action="fenykepAlbum.php?profil={{$felhasznalo->getEmail()}}&fenykepAlbum={{$fenykepAlbumok[$i]->getAzonosito()}}" method="post">
                                             <button class="btn btn-danger" name="deleteFenykepAlbum"><i class="fas fa-trash mr-0"></i></button>
                                         </form>
                                     {/if}

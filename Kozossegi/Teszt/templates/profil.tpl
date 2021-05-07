@@ -50,7 +50,14 @@
                                     <p>Az alábbi mező kitöltésével új albumot hozhatsz létre:</p>
                                     <div>
                                         <form action="profil.php?email={{$belepettFelhasznalo->getEmail()}}" class="kulso-form" method="post">
-                                            <input type="text" class="mt-3 p-2 h-25" name="fenykepAlbumNev" placeholder="Fénykepalbum neve">
+                                            <input type="text" class="mt-3 p-2 h-25" name="fenykepAlbumNev" placeholder="Fénykepalbum neve" required>
+                                            <div class="image-upload flex-row">
+                                                <label for="boritokep" class="mt-3 p-2 h-25">
+                                                    <i class="fas fa-upload"></i>
+                                                    Borítókép feltöltés
+                                                </label>
+                                                <input id="boritokep" type="file" name="boritoKep">
+                                            </div>
                                             <div class="flex-row">
                                                 <button type="submit" id="register-id" class="mt-3 p2 btn btn-success" name="letrehozFenykepAlbum">Létrehozás</button>
                                                 <b-button id="cancel" variant="warning" class="mt-3 p2" @click="$bvModal.hide('bv-modal-fenykepAlbum')">Mégse</b-button>

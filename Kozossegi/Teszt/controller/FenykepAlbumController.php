@@ -3,10 +3,10 @@
 
 class FenykepAlbumController extends DB {
 
-    public function createFenykepAlbum($albumNeve, $sessionEmail) {
-        $sql = "INSERT INTO FENYKEP_ALBUM (nev, felhasznalo_azonosito) VALUES (?, ?)";
+    public function createFenykepAlbum(FenykepAlbum $fenykepAlbum) {
+        $sql = "INSERT INTO FENYKEP_ALBUM (nev, felhasznalo_azonosito, boritokep) VALUES (?, ?, ?)";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$albumNeve, $sessionEmail]);
+        $stmt->execute([$fenykepAlbum->getNev(), $fenykepAlbum->getFelhasznaloAzonosito(), $fenykepAlbum->getBoritokep()]);
     }
 
     public function getAllAlbumsBySessionEmail($sessionEmail) {

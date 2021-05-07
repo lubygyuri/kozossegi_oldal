@@ -169,7 +169,17 @@ if (isset($_GET["email"])) {
 
         // Fényképalbum hozzáadása
         if (isset($_POST["letrehozFenykepAlbum"])) {
-            $fenykepAlbumController->createFenykepAlbum($_POST["fenykepAlbumNev"], $_SESSION["email"]);
+            $lFenykepAlbum = new FenykepAlbum();
+            $lFenykepAlbum->setNev($_POST["fenykepAlbumNev"]);
+
+            if (!empty($_POST["boritoKep"])) {
+                $lFenykepAlbum->setBoritokep($kepController->kepFeltoltes('boritoKep'));
+            } else {
+                $lFenykepAlbum->setBoritokep("");
+            }
+
+            $lFenykepAlbum->setFelhasznaloAzonosito($_SESSION["email"]);
+            $fenykepAlbumController->createFenykepAlbum($lFenykepAlbum);
         }
 
         // Bejelentkezett felhasználó megjelenítése

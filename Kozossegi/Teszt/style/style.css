@@ -264,9 +264,9 @@ footer {
     border-bottom: 1px solid #999;
 }
 
-.ertesitesek-container ul li:last-child {
-    border-bottom: none;
-}
+/*.ertesitesek-container ul li:last-child {*/
+/*    border-bottom: none;*/
+/*}*/
 
 .ertesitesek-form {
     display: flex;

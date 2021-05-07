@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-07 15:12:07
+/* Smarty version 3.1.39, created on 2021-05-07 17:49:10
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\profil.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60953ca7b2cbf3_07482539',
+  'unifunc' => 'content_60956176e0f724_15886688',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '740e58fd08c10b9345a3c7d0b573e8ff59b0f785' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\profil.tpl',
-      1 => 1620393125,
+      1 => 1620402537,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60953ca7b2cbf3_07482539 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60956176e0f724_15886688 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -97,7 +97,14 @@ echo $_smarty_tpl->tpl_vars['belepettFelhasznalo']->value->getEmail();
 $_prefixVariable7 = ob_get_clean();
 echo $_prefixVariable7;?>
 " class="kulso-form" method="post">
-                                            <input type="text" class="mt-3 p-2 h-25" name="fenykepAlbumNev" placeholder="Fénykepalbum neve">
+                                            <input type="text" class="mt-3 p-2 h-25" name="fenykepAlbumNev" placeholder="Fénykepalbum neve" required>
+                                            <div class="image-upload flex-row">
+                                                <label for="boritokep" class="mt-3 p-2 h-25">
+                                                    <i class="fas fa-upload"></i>
+                                                    Borítókép feltöltés
+                                                </label>
+                                                <input id="boritokep" type="file" name="boritoKep">
+                                            </div>
                                             <div class="flex-row">
                                                 <button type="submit" id="register-id" class="mt-3 p2 btn btn-success" name="letrehozFenykepAlbum">Létrehozás</button>
                                                 <b-button id="cancel" variant="warning" class="mt-3 p2" @click="$bvModal.hide('bv-modal-fenykepAlbum')">Mégse</b-button>
