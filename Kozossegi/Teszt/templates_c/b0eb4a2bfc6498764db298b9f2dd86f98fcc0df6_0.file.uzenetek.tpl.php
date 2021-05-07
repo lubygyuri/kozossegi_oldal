@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-06 17:29:28
+/* Smarty version 3.1.39, created on 2021-05-07 18:33:09
   from 'D:\XAMPP\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\uzenetek.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60940b582b42f8_59701428',
+  'unifunc' => 'content_60956bc5c3ba02_12928579',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b0eb4a2bfc6498764db298b9f2dd86f98fcc0df6' => 
     array (
       0 => 'D:\\XAMPP\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\uzenetek.tpl',
-      1 => 1620314965,
+      1 => 1620337127,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60940b582b42f8_59701428 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60956bc5c3ba02_12928579 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -56,7 +56,7 @@ echo $_prefixVariable3;?>
 " alt="profilkép">
                     </div>
                 </div>
-                <div id="keresesDiv2">
+                <div id="keresesDiv2" class="col-md-6">
                 </div>
 
                                 <div class="messages-main">
