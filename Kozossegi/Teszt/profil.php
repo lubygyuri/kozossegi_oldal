@@ -171,13 +171,6 @@ if (isset($_GET["email"])) {
         if (isset($_POST["letrehozFenykepAlbum"])) {
             $lFenykepAlbum = new FenykepAlbum();
             $lFenykepAlbum->setNev($_POST["fenykepAlbumNev"]);
-
-            if (!empty($_POST["boritoKep"])) {
-                $lFenykepAlbum->setBoritokep($kepController->kepFeltoltes('boritoKep'));
-            } else {
-                $lFenykepAlbum->setBoritokep("");
-            }
-
             $lFenykepAlbum->setFelhasznaloAzonosito($_SESSION["email"]);
             $fenykepAlbumController->createFenykepAlbum($lFenykepAlbum);
         }
