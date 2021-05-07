@@ -21,9 +21,7 @@
                 {for $i=0 to $fenykepAlbumok|@count-1}
                     <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
                         <div class="bg-white rounded shadow">
-                            {if $fenykepAlbumok[$i]->getBoritokep()}
-                                <img src="{{$fenykepAlbumok[$i]->getBoritokep()}}" alt="album_boritokep" class="img-fluid card-img-top">
-                            {/if}
+{*                            <img src="{{$fenykepAlbumok[$i]->getBoritokep()}}" alt="album_boritokep" class="img-fluid card-img-top">*}
                             <div class="p-4">
                                 <h5 class="fenykepAlbum-header">
                                     <a href="fenykepek.php?profil={{$felhasznalo->getEmail()}}&fenykepAlbum={{$fenykepAlbumok[$i]->getAzonosito()}}" class="text-dark">{{$fenykepAlbumok[$i]->getNev()}}</a>
