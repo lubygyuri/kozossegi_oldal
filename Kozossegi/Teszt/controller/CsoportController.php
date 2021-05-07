@@ -11,8 +11,15 @@ class CsoportController extends DB {
         return $stmt->fetchAll();
     }
 
-    public function getAllCsoport($email) {
-        $sql = "SELECT (azonosito,nev,admin_felhasznalo) FROM CSOPORT,CSOPORT_TAGOK WHERE CSOPORT_AZONOSITO=AZONOSITO AND (admin_felhasznalo = ? OR felhasznalo_azonosito= ?)";
+    public function getAllCsoportWhereAdmin($email) {
+        $sql = "SELECT * FROM CSOPORT WHERE admin_felhasznalo = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$email]);
+        return $stmt->fetchAll();
+    }
+
+    public function getAllCsoportWhereGuest($email) {
+        $sql = "SELECT * FROM CSOPORT WHERE azonosito IN (SELECT csoport_azonosito FROM CSOPORT_TAGOK WHERE felhasznalo_azonosito = ?)";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$email]);
         return $stmt->fetchAll();
@@ -25,15 +32,15 @@ class CsoportController extends DB {
         return $stmt->fetchAll();
     }
 
-    public function getUzenetekForSelectedCsoport($csoportazonosito) {
-        $sql = "SELECT * FROM CSOPORT_UZENET WHERE CSOPORT_AZONOSITO = ? ORDER BY KULDES_IDEJE";
+    public function getUzenetekForSelectedCsoport($csoportAzonosito) {
+        $sql = "SELECT * FROM CSOPORT_UZENET WHERE CSOPORT_UZENET.CSOPORT_AZONOSITO = ? ORDER BY KULDES_IDEJE";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$csoportazonosito]);
+        $stmt->execute([$csoportAzonosito]);
         return $stmt->fetchAll();
     }
 
     public function createMessage(CsoportUzenet $uzenet) {
-        $sql = "INSERT INTO UZENET (uzenet, kuldes_ideje, kuldo_azonosito, csoport_azonosito) VALUES (?, CURRENT_TIMESTAMP, ?, ?)";
+        $sql = "INSERT INTO CSOPORT_UZENET (uzenet, kuldes_ideje, kuldo_azonosito, csoport_azonosito) VALUES (?, CURRENT_TIMESTAMP, ?, ?)";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$uzenet->getUzenet(), $uzenet->getKuldoAzonosito(), $uzenet->getCsoportAzonosito()]);
     }
@@ -42,7 +49,7 @@ class CsoportController extends DB {
         $sql = "SELECT FELHASZNALO.VEZETEKNEV,FELHASZNALO.KERESZTNEV FROM FELHASZNALO where email = ?";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$kuldoAzonosito]);
-        return $stmt->fetchAll();
+        return $stmt->fetch();
     }
 
     public function createCsoportTag($email,$csoportAzonosito){

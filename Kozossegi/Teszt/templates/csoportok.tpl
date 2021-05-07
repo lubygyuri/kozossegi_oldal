@@ -37,21 +37,43 @@
                     {* Csoportok listázva *}
                     <div class="messages-friends-container">
                         <ul>
-                            <a href="#" class="friendsList-li active">
-                                <li>
-                                    {* Csoport adatai *}
-                                    <div class="friend-details">
-                                        {* Csoport neve *}
-                                        <span>Csoport Neve</span>
-                                        <div class="flex-row">
-                                            {* Csoport utolsó üzenete *}
-                                            <p>Lorem ipsum dolor sit amet.</p>
-                                            {* Csoport utolsó üzenetének időpontja *}
-                                            <small>11:12</small>
-                                        </div>
-                                    </div>
-                                </li>
-                            </a>
+                            {if $csoportok}
+                            {for $i=0 to $csoportok|@count-1}
+                                {if $csoportok[$i]->getAzonosito() == $recentCsoport->getAzonosito()}
+                                    <a href="csoportok.php?csoportAzonosito={{$csoportok[$i]->getAzonosito()}}" class="friendsList-li active">
+                                        <li>
+                                            {* Csoport adatai *}
+                                            <div class="friend-details">
+                                                {* Csoport neve *}
+                                                <span>{{$csoportok[$i]->getNev()}}</span>
+                                                <div class="flex-row">
+                                                    {* Csoport utolsó üzenete *}
+                                                    <p>Lorem ipsum dolor sit amet.</p>
+                                                    {* Csoport utolsó üzenetének időpontja *}
+                                                    <small>11:12</small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </a>
+                                {else}
+                                    <a href="csoportok.php?csoportAzonosito={{$csoportok[$i]->getAzonosito()}}" class="friendsList-li">
+                                        <li>
+                                            {* Csoport adatai *}
+                                            <div class="friend-details">
+                                                {* Csoport neve *}
+                                                <span>{{$csoportok[$i]->getNev()}}</span>
+                                                <div class="flex-row">
+                                                    {* Csoport utolsó üzenete *}
+                                                    <p>Lorem ipsum dolor sit amet.</p>
+                                                    {* Csoport utolsó üzenetének időpontja *}
+                                                    <small>11:12</small>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </a>
+                                {/if}
+                            {/for}
+                            {/if}
                         </ul>
                     </div>
 
@@ -60,22 +82,29 @@
 
                         {* Aktuális chaten megjelenő üzenetek *}
                         <div class="chat-messages" id="chat-messages">
-                            <div class="chat-messages-timer"><small></small></div>
-                                {* Bejövő üzenetek *}
-                                <div class="incoming-messages">
-                                    {* Maga a bejövő üzenet *}
-                                    <p><strong class="mr-2">Név:</strong> Helloka</p>
-                                </div>
-                                {* Kimenő üzenetek *}
-                                <div class="outgoing-messages">
-                                    {* Maga a kimenő üzenet *}
-                                    <p>Hello</p>
-                            </div>
+                            {if $csoportUzenetek}
+                                {for $i=0 to $csoportUzenetek|@count-1}
+                                    <div class="chat-messages-timer"><small>{{$csoportUzenetek[$i]->getKuldesIdeje()}}</small></div>
+                                    {if $csoportUzenetek[$i]->getKuldoAzonosito() != $belepettFelhasznalo->getEmail()}
+                                        {* Bejövő üzenetek *}
+                                        <div class="incoming-messages">
+                                            {* Maga a bejövő üzenet *}
+                                            <p><strong class="mr-2">{{$csoportUzenetek[$i]->getNev()}}:</strong> {{$csoportUzenetek[$i]->getUzenet()}}</p>
+                                        </div>
+                                    {else}
+                                        {* Kimenő üzenetek *}
+                                        <div class="outgoing-messages">
+                                            {* Maga a kimenő üzenet *}
+                                            <p>{{$csoportUzenetek[$i]->getUzenet()}}</p>
+                                        </div>
+                                    {/if}
+                                {/for}
+                            {/if}
                         </div>
 
                         {* Eszköztár *}
                         <div class="chat-toolbar">
-                            <form action="csoportok.php?csoportAzonosito=" method="post">
+                            <form action="csoportok.php?csoportAzonosito={{$recentCsoport->getAzonosito()}}" method="post">
                                 {* Ahova írhaod az üzeneted *}
                                 <input type="text" name="csoportMessageInp" placeholder="Írj egy üzenetet...">
                                 {* A gomb amivel elküldheted az üzeneted *}
