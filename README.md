@@ -272,23 +272,23 @@ Ennek a feladatnak az a célja, hogy bemutassa az elkészült projektet.
 
 Részfeladatai a következők:
 
-#### 6.3.1. TODO: Elkészítés
-Leírás
+#### 6.3.1. KLUBOK KEZELÉSE
+1.Klub létrehozás 
+2.Klub listázás
+3.Csatlakozas a klubbhoz
+
+#### 6.3.1. CSOPORTOK 
+1.Csoport készítése
+2.Csatlakozás csoporthoz
 
 
-#### 6.3.1. TODO: Elkészítés
-Leírás
+#### 6.3.1. FENYKEPALBUMOK
+1.Létrehozás
+2.Teljes foglalt tárhely kiiratás
+3.Kép darabszámának kiiratása
 
+#### 6.3.1. Triggerek
 
-#### 6.3.1. TODO: Elkészítés
-Leírás
+#### 6.3.1. SEQUENCEK
 
-
-#### 6.3.1. TODO: Elkészítés
-Leírás
-
-
-#### 6.3.1. TODO: Elkészítés
-Leírás
-
-Szeged, 2021-03-18.
+Szeged, 2021-05-09.
