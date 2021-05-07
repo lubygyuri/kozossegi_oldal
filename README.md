@@ -189,6 +189,7 @@ Részfeladatai a következők:
 
 #### 6.2.2. Footer Frontend
 Minimalista, fekete háttéren a copyright szöveg.
+![footer](Diagramok/frontend_ms2/footer.png)
 
 
 #### 6.2.3. Regisztráció Frontend
