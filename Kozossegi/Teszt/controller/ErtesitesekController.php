@@ -22,4 +22,15 @@ class ErtesitesekController extends DB {
         $stmt->execute([$sessionEmail]);
         return $stmt->fetch();
     }
+
+
+    /*
+     * SELECT FELHASZNALO.VEZETEKNEV,FELHASZNALO.KERESZTNEV,FELHASZNALO.EMAIL FROM FELHASZNALO where email in (
+SELECT felhasznalo2 from ismeros where felhasznalo1 in (
+SELECT email FROM felhasznalo where EXTRACT(month FROM szuletesi_datum) = EXTRACT(month FROM SYSDATE) AND  EXTRACT(day FROM szuletesi_datum) = EXTRACT(day FROM SYSDATE)))
+     */
+
+
+
+
 }

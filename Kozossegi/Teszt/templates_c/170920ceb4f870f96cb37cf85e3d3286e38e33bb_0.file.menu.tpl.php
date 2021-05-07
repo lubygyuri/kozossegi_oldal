@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-06 14:20:37
+/* Smarty version 3.1.39, created on 2021-05-06 22:52:42
   from '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/menu.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6093df1582fc15_27528563',
+  'unifunc' => 'content_6094571a2be294_41746226',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '170920ceb4f870f96cb37cf85e3d3286e38e33bb' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/menu.tpl',
-      1 => 1620303631,
+      1 => 1620334349,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6093df1582fc15_27528563 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6094571a2be294_41746226 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div id="app">
     <div class="header">
         <!-- Image and text -->
@@ -55,7 +55,7 @@ function content_6093df1582fc15_27528563 (Smarty_Internal_Template $_smarty_tpl)
             <form>
                 <div class="input-group rounded">
                     <input onkeyup="kereses()" type="search" id="searchbox" class="form-control rounded mr-2 sbox" placeholder="Keresés..." autocomplete="off">
-                    <button class="btn btn-primary" id="search-addon"><i class="fas fa-search"></i></button>
+                    <button class="btn btn-primary" id="search-addon"><i class="fas fa-search mr-0"></i></button>
                 </div>
                 <div id="keresesDiv">
 

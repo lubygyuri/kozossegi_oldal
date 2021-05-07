@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-06 22:50:48
+/* Smarty version 3.1.39, created on 2021-05-06 22:52:43
   from '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/klub.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_609456a8d2f1d6_21174081',
+  'unifunc' => 'content_6094571be2a282_64825138',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bec986a48e5cafd818b311d9058b919c4d2f3634' => 
     array (
       0 => '/opt/lampp/htdocs/Kozossegi/kozossegi_oldal/Kozossegi/Teszt/templates/klub.tpl',
-      1 => 1620334247,
+      1 => 1620334349,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_609456a8d2f1d6_21174081 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6094571be2a282_64825138 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -207,7 +207,7 @@ echo $_prefixVariable21;?>
                     <input onkeyup="klubKereses()" type="search" id="searchboxclub" class="form-control rounded" placeholder="Keresés..." aria-label="Search"
                            aria-describedby="search-addon" />
                     <span class="input-group-text border-0" id="search-addon">
-                        <i class="fas fa-search"></i>
+                        <i class="fas fa-search mr-0"></i>
                     </span>
                 </div>
                 <div id="klubKeresesDiv">
