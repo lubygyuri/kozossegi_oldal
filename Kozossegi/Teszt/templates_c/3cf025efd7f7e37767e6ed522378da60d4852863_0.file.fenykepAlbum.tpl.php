@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-07 17:50:46
+/* Smarty version 3.1.39, created on 2021-05-07 17:56:29
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\fenykepAlbum.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_609561d65f9a29_66162514',
+  'unifunc' => 'content_6095632dbd62e0_92548600',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3cf025efd7f7e37767e6ed522378da60d4852863' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\fenykepAlbum.tpl',
-      1 => 1620402635,
+      1 => 1620402923,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_609561d65f9a29_66162514 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6095632dbd62e0_92548600 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -62,37 +62,30 @@ for ($_smarty_tpl->tpl_vars['i']->value = 0, $_smarty_tpl->tpl_vars['i']->iterat
 $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration === $_smarty_tpl->tpl_vars['i']->total;?>
                     <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
                         <div class="bg-white rounded shadow">
-                            <?php if ($_smarty_tpl->tpl_vars['fenykepAlbumok']->value[$_smarty_tpl->tpl_vars['i']->value]->getBoritokep()) {?>
-                                <img src="<?php ob_start();
-echo $_smarty_tpl->tpl_vars['fenykepAlbumok']->value[$_smarty_tpl->tpl_vars['i']->value]->getBoritokep();
-$_prefixVariable4 = ob_get_clean();
-echo $_prefixVariable4;?>
-" alt="album_boritokep" class="img-fluid card-img-top">
-                            <?php }?>
                             <div class="p-4">
                                 <h5 class="fenykepAlbum-header">
                                     <a href="fenykepek.php?profil=<?php ob_start();
 echo $_smarty_tpl->tpl_vars['felhasznalo']->value->getEmail();
-$_prefixVariable5 = ob_get_clean();
-echo $_prefixVariable5;?>
+$_prefixVariable4 = ob_get_clean();
+echo $_prefixVariable4;?>
 &fenykepAlbum=<?php ob_start();
 echo $_smarty_tpl->tpl_vars['fenykepAlbumok']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
-$_prefixVariable6 = ob_get_clean();
-echo $_prefixVariable6;?>
+$_prefixVariable5 = ob_get_clean();
+echo $_prefixVariable5;?>
 " class="text-dark"><?php ob_start();
 echo $_smarty_tpl->tpl_vars['fenykepAlbumok']->value[$_smarty_tpl->tpl_vars['i']->value]->getNev();
-$_prefixVariable7 = ob_get_clean();
-echo $_prefixVariable7;?>
+$_prefixVariable6 = ob_get_clean();
+echo $_prefixVariable6;?>
 </a>
                                     <?php if ($_smarty_tpl->tpl_vars['belepettFelhasznalo']->value->getEmail() == $_smarty_tpl->tpl_vars['felhasznalo']->value->getEmail()) {?>
                                         <form action="fenykepAlbum.php?profil=<?php ob_start();
 echo $_smarty_tpl->tpl_vars['felhasznalo']->value->getEmail();
-$_prefixVariable8 = ob_get_clean();
-echo $_prefixVariable8;?>
+$_prefixVariable7 = ob_get_clean();
+echo $_prefixVariable7;?>
 &fenykepAlbum=<?php ob_start();
 echo $_smarty_tpl->tpl_vars['fenykepAlbumok']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
-$_prefixVariable9 = ob_get_clean();
-echo $_prefixVariable9;?>
+$_prefixVariable8 = ob_get_clean();
+echo $_prefixVariable8;?>
 " method="post">
                                             <button class="btn btn-danger" name="deleteFenykepAlbum"><i class="fas fa-trash mr-0"></i></button>
                                         </form>
@@ -106,8 +99,8 @@ echo $_prefixVariable9;?>
                                         <?php if ($_smarty_tpl->tpl_vars['fenykepAlbumok']->value[$_smarty_tpl->tpl_vars['i']->value]->getTeljesMeret() > 0) {
 ob_start();
 echo $_smarty_tpl->tpl_vars['fenykepAlbumok']->value[$_smarty_tpl->tpl_vars['i']->value]->getTeljesMeret();
-$_prefixVariable10 = ob_get_clean();
-echo $_prefixVariable10;
+$_prefixVariable9 = ob_get_clean();
+echo $_prefixVariable9;
 } else { ?>0<?php }?> MB
                                     </div>
                                 </div>
@@ -118,8 +111,8 @@ echo $_prefixVariable10;
                                     <div class="badge badge-primary px-3 rounded-pill font-weight-normal">
                                         <?php ob_start();
 echo $_smarty_tpl->tpl_vars['fenykepAlbumok']->value[$_smarty_tpl->tpl_vars['i']->value]->getKepekSzama();
-$_prefixVariable11 = ob_get_clean();
-echo $_prefixVariable11;?>
+$_prefixVariable10 = ob_get_clean();
+echo $_prefixVariable10;?>
  db
                                     </div>
                                 </div>
