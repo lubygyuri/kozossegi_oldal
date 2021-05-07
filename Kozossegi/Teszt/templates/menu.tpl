@@ -23,6 +23,9 @@
                 <a class="nav-link" href="klub.php"><b-icon icon="people-fill" aria-hidden="true" class="mr-2"></b-icon>Klubbok</a>
             </li>
             <li class="nav-item mr-4 border border-4 rounded">
+                <a class="nav-link" href="csoportok.php"><b-icon icon="people-fill" aria-hidden="true" class="mr-2"></b-icon>Csoportok</a>
+            </li>
+            <li class="nav-item mr-4 border border-4 rounded">
                 <a class="nav-link" href="ertesitesek.php"><b-icon icon="bell-fill" aria-hidden="true" class="mr-2"></b-icon>Értesítések <span id="ertesitesekSzama"></span></a>
             </li>
             <li class="nav-item mr-4 border border-4 rounded">
