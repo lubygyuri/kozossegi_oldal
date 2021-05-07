@@ -65,5 +65,10 @@ class CsoportController extends DB {
         return $stmt->fetchAll();
     }
 
-
+    public function getLatestGroupMessagesByEmail() {
+        $sql = "SELECT * FROM CSOPORT_UZENET WHERE KULDES_IDEJE IN(SELECT MAX(kuldes_ideje) FROM CSOPORT_UZENET GROUP BY csoport_azonosito)";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 }

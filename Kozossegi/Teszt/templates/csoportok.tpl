@@ -47,10 +47,14 @@
                                                 {* Csoport neve *}
                                                 <span>{{$csoportok[$i]->getNev()}}</span>
                                                 <div class="flex-row">
-                                                    {* Csoport utolsó üzenete *}
-                                                    <p>Lorem ipsum dolor sit amet.</p>
-                                                    {* Csoport utolsó üzenetének időpontja *}
-                                                    <small>11:12</small>
+                                                    {for $j=0 to $latestGroupMessages|@count-1}
+                                                        {if $latestGroupMessages[$j]->getCsoportAzonosito() == $csoportok[$i]->getAzonosito()}
+                                                            {* Csoport utolsó üzenete *}
+                                                            <p><strong class="mr-2">{$latestGroupMessages[$j]->getNev()}:</strong>{{$latestGroupMessages[$j]->getUzenet()}}</p>
+                                                            {* Csoport utolsó üzenetének időpontja *}
+                                                            <small>{{$latestGroupMessages[$j]->getKuldesIdeje()}}</small>
+                                                        {/if}
+                                                    {/for}
                                                 </div>
                                             </div>
                                         </li>
@@ -63,10 +67,14 @@
                                                 {* Csoport neve *}
                                                 <span>{{$csoportok[$i]->getNev()}}</span>
                                                 <div class="flex-row">
-                                                    {* Csoport utolsó üzenete *}
-                                                    <p>Lorem ipsum dolor sit amet.</p>
-                                                    {* Csoport utolsó üzenetének időpontja *}
-                                                    <small>11:12</small>
+                                                    {for $j=0 to $latestGroupMessages|@count-1}
+                                                         {if $latestGroupMessages[$j]->getCsoportAzonosito() == $csoportok[$i]->getAzonosito()}
+                                                            {* Csoport utolsó üzenete *}
+                                                            <p><strong class="mr-2">{$latestGroupMessages[$j]->getNev()}:</strong>{{$latestGroupMessages[$j]->getUzenet()}}</p>
+                                                            {* Csoport utolsó üzenetének időpontja *}
+                                                            <small>{{$latestGroupMessages[$j]->getKuldesIdeje()}}</small>
+                                                        {/if}
+                                                    {/for}
                                                 </div>
                                             </div>
                                         </li>
