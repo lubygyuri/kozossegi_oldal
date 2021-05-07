@@ -12,7 +12,7 @@ class CsoportController extends DB {
     }
 
     public function getAllCsoport($email) {
-        $sql = "SELECT * FROM CSOPORT,CSOPORT_TAGOK WHERE CSOPORT_AZONOSITO=AZONOSITO AND (admin_felhasznalo = ? OR felhasznalo_azonosito= ?)";
+        $sql = "SELECT (azonosito,nev,admin_felhasznalo) FROM CSOPORT,CSOPORT_TAGOK WHERE CSOPORT_AZONOSITO=AZONOSITO AND (admin_felhasznalo = ? OR felhasznalo_azonosito= ?)";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$email]);
         return $stmt->fetchAll();
