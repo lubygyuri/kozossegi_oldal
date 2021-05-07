@@ -38,4 +38,10 @@ class FenykepAlbumController extends DB {
         return $stmt->fetch()["DARAB"];
     }
 
+    public function deleteFenykepAlbumByAzonosito($fenykepAlbumAzonosito) {
+        $sql = "DELETE FROM FENYKEP_ALBUM WHERE AZONOSITO = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$fenykepAlbumAzonosito]);
+    }
+
 }

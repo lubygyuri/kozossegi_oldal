@@ -1,7 +1,7 @@
 <div id="{{$bejegyzes->getAzonosito()}}">
         <!-- likek szama -->
         {if $bejegyzes->getLikeCount() > 0}
-                <div class="mt-3 like_count">{{$bejegyzes->getLikeCount()}} embernek tetszik ez a bejegyzés</div>
+                <div class="mt-3 like_count p-1">{{$bejegyzes->getLikeCount()}} embernek tetszik ez a bejegyzés</div>
         {/if}
         <div class="post-footer">
                 {if $like}

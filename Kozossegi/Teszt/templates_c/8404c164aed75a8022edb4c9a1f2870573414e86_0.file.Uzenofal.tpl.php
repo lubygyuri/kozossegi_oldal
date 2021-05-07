@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-06 21:11:12
+/* Smarty version 3.1.39, created on 2021-05-07 11:38:35
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\Uzenofal.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60943f506dc114_52288633',
+  'unifunc' => 'content_60950a9b48b5f6_44979391',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8404c164aed75a8022edb4c9a1f2870573414e86' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\Uzenofal.tpl',
-      1 => 1620327996,
+      1 => 1620380311,
       2 => 'file',
     ),
   ),
@@ -23,13 +23,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60943f506dc114_52288633 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60950a9b48b5f6_44979391 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div id="app2">
 <div class="container px-4 mt-5">
-
+    <?php if ($_smarty_tpl->tpl_vars['kitIsmerhetek']->value != null) {?>
     <div class="shadow-lg pl-3 pr-3 pb-3 bg-white rounded align-self-baseline mr-2 w-50 mb-5 mx-auto text-center">
         <h1>Kiket Ismerhetsz</h1>
         <ul  class="list-group list-group-horizontal overflow-auto">
@@ -56,7 +56,7 @@ echo $_prefixVariable3;?>
 ?>
         </ul>
     </div>
-
+    <?php }?>
         <div class="shadow-lg pl-3 pr-3 pb-3 bg-white rounded align-self-baseline mr-2 w-50 mb-5 mx-auto">
                 <form action="Uzenofal.php" method="post" enctype="multipart/form-data">
             <div class="post-header2">
@@ -124,7 +124,7 @@ echo $_prefixVariable12;?>
 echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
 $_prefixVariable13 = ob_get_clean();
 echo $_prefixVariable13;?>
-"><!-- likek szama --><?php if ($_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getLikeCount() > 0) {?><div class="mt-3 like_count"><?php ob_start();
+"><!-- likek szama --><?php if ($_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getLikeCount() > 0) {?><div class="mt-3 like_count p-1"><?php ob_start();
 echo $_smarty_tpl->tpl_vars['bejegyzesek']->value[$_smarty_tpl->tpl_vars['i']->value]->getLikeCount();
 $_prefixVariable14 = ob_get_clean();
 echo $_prefixVariable14;?>

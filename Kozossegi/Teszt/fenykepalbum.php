@@ -27,7 +27,11 @@ $bejelentkezettF->setVezeteknev($_SESSION["vezeteknev"]);
 $bejelentkezettF->setKeresztnev($_SESSION["keresztnev"]);
 
 
-if (isset($_POST["fenykepAlbumMegtekintes"]) || $_GET["back"] == true){
+if (isset($_POST["fenykepAlbumMegtekintes"]) || !empty($_GET["back"]) || isset($_POST["deleteFenykepAlbum"])){
+    if (isset($_POST["deleteFenykepAlbum"])) {
+        $fenykepAlbumController->deleteFenykepAlbumByAzonosito($_GET["fenykepAlbum"]);
+    }
+
     $albumokFromDB = $fenykepAlbumController->getAllAlbumsBySessionEmail($_SESSION["email"]);
 
     foreach ($albumokFromDB as $albumok) {

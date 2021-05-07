@@ -306,3 +306,10 @@ footer {
 .like_count{
    font-size: 13px;
 }
+
+.fenykepAlbum-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
