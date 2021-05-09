@@ -300,7 +300,7 @@ footer {
 }
 .klub_leiras_scroll{
     height: 300px;
-    overflow: scroll;
+    overflow-y: auto;
 }
 
 .like_count{

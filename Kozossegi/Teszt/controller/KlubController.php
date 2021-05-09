@@ -36,10 +36,6 @@ class KlubController extends DB {
         return $stmt->fetch();
     }
 
-    public function getKlubTagSzam(){
-
-    }
-
     public function createKlubTag($klubAzonossito,$felhasznaloazonosito){
         $sql= "INSERT INTO LUBLO.KLUB_TAGOK (klub_azonosito,felhasznalo_azonosito) VALUES (?,?)";
         $stmt = $this->connect()->prepare($sql);
@@ -52,5 +48,10 @@ class KlubController extends DB {
         $stmt->execute([$klubAzonossito, $felhasznaloazonosito]);
     }
 
-
+    public function getNonClubMembersByClubId($klubAzonosito) {
+        $sql = "SELECT email, vezeteknev, keresztnev FROM felhasznalo WHERE email NOT IN (SELECT klub_tagok.felhasznalo_azonosito FROM klub_tagok WHERE klub_azonosito = ?)";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$klubAzonosito]);
+        return $stmt->fetchAll();
+    }
 }

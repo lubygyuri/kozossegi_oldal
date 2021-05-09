@@ -21,14 +21,19 @@ $kommentController = new KommentController();
 $likeController = new LikeController();
 $klubController =new KlubController();
 $klubAjanlas = new IsmerosAjanlasController();
+
+// Globális változók
 $activ='';
 $kulobok = array();
 $kulobok = klubblistafrissites();
+$notClubMembers = array();
 
-//klubbok
+// Klubtag felvétel
+if (isset($_POST["klubTagFelvetel"]) && !empty($_GET["id"])) {
+    $klubController->createKlubTag($_GET["id"], $_POST["klubTag"]);
+}
 
-
-
+// Klublista (frissítése)
 function klubblistafrissites(){
     $klubController =new KlubController();
     $kulobok = array();
@@ -41,9 +46,7 @@ function klubblistafrissites(){
     return $kulobok;
 }
 
-
-
-//klubb azonosito
+// Klub azonosito
 $posts = array();
 if(isset($_GET["id"])){
     $x=$_GET["id"];
@@ -55,12 +58,10 @@ if(isset($_GET["id"])){
         $smarty->display('klub.tpl');
         die();
     }
-    //TODO Legyen egy alapértelmezett klubb amibe mindenki bele kerül és nem lehet belőle kilépni
 }
 $activ=$x;
 
-//klubb létrehozása
-
+// Klub létrehozása
 if(isset($_POST["submit_klub"])) {
     $ujklubb = new Klub();
     $ujklubb -> setNev($_POST["klub_name"]);
@@ -73,7 +74,7 @@ if(isset($_POST["submit_klub"])) {
 
 }
 
-// klub ajánlás
+// Klub ajánlás
 $ajanlottKlubbok=array();
 $klubbokData =$klubAjanlas->KlubToIsmeros($_SESSION['email']);
 foreach ($klubbokData as $klubData) {
@@ -92,7 +93,6 @@ if(isset($_POST["submit"])) {
 }
 
 // Bejegyzések listázása
-
 $postsData = $bejegyzesController->getPostsByKlubAzonosito($activ);
 if ($postsData) {
     foreach ($postsData as $postData) {
@@ -147,10 +147,18 @@ if ($postsData) {
     }
 }
 
+// Felhasználók listázása privát klubba való csatlakozáshoz
+if (isset($_GET["id"]) && !empty($_GET["id"])) {
+    $notClubMembersFromDb = $klubController->getNonClubMembersByClubId($_GET["id"]);
 
-
-
-
+    foreach ($notClubMembersFromDb as $ncmfd) {
+        $notClubMember = new Felhasznalo();
+        $notClubMember->setEmail($ncmfd["EMAIL"]);
+        $notClubMember->setVezeteknev($ncmfd["VEZETEKNEV"]);
+        $notClubMember->setKeresztnev($ncmfd["KERESZTNEV"]);
+        array_push($notClubMembers, $notClubMember);
+    }
+}
 
 // Bejelentkezett felhasználó megjelenítése
 $bejelentkezettF = new Felhasznalo();
@@ -159,13 +167,24 @@ $bejelentkezettF->setKeresztnev($_SESSION["keresztnev"]);
 $bejelentkezettF->setVezeteknev($_SESSION["vezeteknev"]);
 $bejelentkezettF->setEmail($_SESSION["email"]);
 
+// Aktuális klub
+if (!empty($_GET["id"])) {
+    $recentClubFromDb = $klubController->getKlub($_GET["id"]);
+
+    $recentClub = new Klub();
+    $recentClub->setNev($recentClubFromDb["NEV"]);
+    $recentClub->setLathatosag($recentClubFromDb["LATHATOSAG"]);
+
+    $smarty->assign("recentClub", $recentClub);
+} else {
+    $smarty->assign("recentClub", null);
+}
+
+$smarty->assign("notClubMembers", $notClubMembers);
 $smarty->assign("ajanlottKlubbok", $ajanlottKlubbok);
 $smarty->assign("error", null);
 $smarty->assign("aktiv", $activ);
 $smarty->assign("klubbok",$kulobok);
 $smarty->assign("bejegyzesek",$posts);
 $smarty->assign("belepettFelhasznalo", $bejelentkezettF);
-
-
 $smarty->display('klub.tpl');
-

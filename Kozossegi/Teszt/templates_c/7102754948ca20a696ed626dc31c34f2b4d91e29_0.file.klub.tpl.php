@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-07 11:41:13
+/* Smarty version 3.1.39, created on 2021-05-09 05:18:38
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\klub.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60950b39813c06_62244059',
+  'unifunc' => 'content_6097548eb64873_37979596',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7102754948ca20a696ed626dc31c34f2b4d91e29' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\klub.tpl',
-      1 => 1620380472,
+      1 => 1620530318,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60950b39813c06_62244059 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6097548eb64873_37979596 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -41,7 +41,7 @@ echo $_prefixVariable1;?>
 
                     </div>
                     <div class="alert alert-dark" role="alert">
-                       A csatlakozáshoz keresrá egy Klub nevére és csatlakoz!
+                       A csatlakozáshoz keress rá egy klub nevére és csatlakozz!
                     </div>
                 </div>
             </b-col>
@@ -203,19 +203,27 @@ echo $_prefixVariable21;?>
             <?php }?>
     <b-col>
             <div class="shadow-lg p-3 bg-white rounded align-self-baseline p-3 m-2">
-                <div class="input-group rounded">
+                                <div class="input-group rounded">
                     <input onkeyup="klubKereses()" type="search" id="searchboxclub" class="form-control rounded" placeholder="Keresés..." aria-label="Search"
                            aria-describedby="search-addon" />
                     <span class="input-group-text border-0" id="search-addon">
                         <i class="fas fa-search mr-0"></i>
                     </span>
                 </div>
-                <div id="klubKeresesDiv">
-                </div>
+
+                                <div id="klubKeresesDiv"></div>
+
                 <b-button variant="success" class="mb-0 mt-3 w-100" @click="$bvModal.show('bv-modal-ujklubletrehozasa')">Új klub hozzáadása</b-button>
              </div>
+
+                        <?php if ($_smarty_tpl->tpl_vars['recentClub']->value != null && $_smarty_tpl->tpl_vars['recentClub']->value->getLathatosag() == 1) {?>
+                <div class="shadow-lg p-3 bg-white rounded align-self-baseline p-3 m-2">
+                    <b-button variant="primary" class="mb-0 w-100" @click="$bvModal.show('bv-modal-ujKlubTag')">Új klubtag felvétele</b-button>
+                </div>
+            <?php }?>
     </b-col>
-        <b-modal id="bv-modal-ujklubletrehozasa" hide-footer title="Új klub létrehozása">
+
+                <b-modal id="bv-modal-ujklubletrehozasa" hide-footer title="Új klub létrehozása">
             <p class="mt-2">Kérlek töltsd ki az alábbi adatokat:</p>
             <div>
                 <form action="klub.php" class="kulso-form" method="post">
@@ -238,6 +246,63 @@ echo $_prefixVariable21;?>
                 </form>
             </div>
         </b-modal>
+
+                <b-modal id="bv-modal-ujKlubTag" hide-footer title="Új klubtag felvétele">
+            <p class="mt-2">Válaszd ki kit szeretnél felvenni a klubba:</p>
+            <div>
+                <form action="klub.php?id=<?php ob_start();
+echo $_smarty_tpl->tpl_vars['recentClub']->value->getNev();
+$_prefixVariable22 = ob_get_clean();
+echo $_prefixVariable22;?>
+" class="kulso-form" method="post">
+                    <select name="klubTag" class="mt-3 p-2 h-25" aria-label="Klubtag felvétel">
+                        <?php if ($_smarty_tpl->tpl_vars['notClubMembers']->value) {?>
+                            <option value="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['notClubMembers']->value[0]->getEmail();
+$_prefixVariable23 = ob_get_clean();
+echo $_prefixVariable23;?>
+" selected><?php ob_start();
+echo $_smarty_tpl->tpl_vars['notClubMembers']->value[0]->getVezeteknev();
+$_prefixVariable24 = ob_get_clean();
+echo $_prefixVariable24;?>
+ <?php ob_start();
+echo $_smarty_tpl->tpl_vars['notClubMembers']->value[0]->getKeresztnev();
+$_prefixVariable25 = ob_get_clean();
+echo $_prefixVariable25;?>
+</option>
+                            <?php
+$_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['i']->step = 1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? count($_smarty_tpl->tpl_vars['notClubMembers']->value)-1+1 - (1) : 1-(count($_smarty_tpl->tpl_vars['notClubMembers']->value)-1)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
+if ($_smarty_tpl->tpl_vars['i']->total > 0) {
+for ($_smarty_tpl->tpl_vars['i']->value = 1, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
+$_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration === $_smarty_tpl->tpl_vars['i']->total;?>
+                                <option value="<?php ob_start();
+echo $_smarty_tpl->tpl_vars['notClubMembers']->value[$_smarty_tpl->tpl_vars['i']->value]->getEmail();
+$_prefixVariable26 = ob_get_clean();
+echo $_prefixVariable26;?>
+"><?php ob_start();
+echo $_smarty_tpl->tpl_vars['notClubMembers']->value[$_smarty_tpl->tpl_vars['i']->value]->getVezeteknev();
+$_prefixVariable27 = ob_get_clean();
+echo $_prefixVariable27;?>
+ <?php ob_start();
+echo $_smarty_tpl->tpl_vars['notClubMembers']->value[$_smarty_tpl->tpl_vars['i']->value]->getKeresztnev();
+$_prefixVariable28 = ob_get_clean();
+echo $_prefixVariable28;?>
+</option>
+                            <?php }
+}
+?>
+                        <?php } else { ?>
+                            <option selected disabled>Minden felhasználó tagja a klubbodnak</option>
+                        <?php }?>
+                    </select>
+                    <div class="flex-row">
+                        <button type="submit" name="klubTagFelvetel" id="register-id" class="mt-3 p2 btn btn-success">Új klubtag felvétele</button>
+                        <b-button id="cancel" variant="warning" class="mt-3 p2" @click="$bvModal.hide('bv-modal-ujKlubTag')">Mégse</b-button>
+                    </div>
+                </form>
+            </div>
+        </b-modal>
+
     </b-row>
 </div>
 

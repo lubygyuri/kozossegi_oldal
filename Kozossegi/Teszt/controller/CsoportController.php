@@ -3,7 +3,6 @@
 
 class CsoportController extends DB {
 
-
     public function createCsoport($nev,$admin) {
         $sql = "INSERT INTO CSOPORT (nev,admin_felhasznalo) VALUES (?,?)";
         $stmt = $this->connect()->prepare($sql);
