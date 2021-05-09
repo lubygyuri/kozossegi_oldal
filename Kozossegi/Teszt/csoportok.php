@@ -15,9 +15,11 @@ if (!isset($_SESSION["email"])){
 
 // Controllerek példányosítása
 $csoportController = new CsoportController();
+
 // Globális változók
 $csoportok = array();
 $csoportUzenetek = array();
+$groupOptions = array();
 $latestGroupMessages = array();
 
 // Belépett felhasználó
@@ -34,6 +36,21 @@ $recentCsoport->setAzonosito(isset($_GET["csoportAzonosito"]) ? $_GET["csoportAz
 // Csoport létrehozása
 if (isset($_POST["csoportLetrehozas"])) {
     $csoportController->createCsoport($_POST["csoportNev"], $_SESSION["email"]);
+}
+
+// Csoporttag hozzáadás
+if (isset($_POST["csoportTagFelvétele"]) && !empty($_POST["group"]) && !empty($_POST["groupMember"])) {
+    $csoportController->createCsoportTag($_POST["group"], $_POST["groupMember"]);
+}
+
+// Csoportok listázása felvételhez
+$groupOptionsFromDb = $csoportController->getAllCsoportWhereAdmin($bejelentkezettFelhasznalo->getEmail());
+foreach ($groupOptionsFromDb as $gofd) {
+    $group = new Csoport();
+    $group->setAzonosito($gofd["AZONOSITO"]);
+    $group->setNev($gofd["NEV"]);
+    $group->setAdminFelhasznalo($gofd["ADMIN_FELHASZNALO"]);
+    array_push($groupOptions, $group);
 }
 
 // Csoport üzenet küldése
@@ -116,6 +133,7 @@ foreach ($latestMessagesFromDb as $lmfdb) {
     array_push($latestGroupMessages, $newLatestMessage);
 }
 
+$smarty->assign("groupOptions", $groupOptions);
 $smarty->assign("latestGroupMessages", $latestGroupMessages);
 $smarty->assign("csoportUzenetek", $csoportUzenetek);
 $smarty->assign("recentCsoport", $recentCsoport);

@@ -8,16 +8,44 @@
 
                 {* Csoport üzenetek fejléc *}
                 <div class="messages-header" style="justify-content: space-between !important;">
-                    <b-button variant="primary" @click="$bvModal.show('bv-modal-csoport')" class="col-md-3 ml-4">Csoport létrehozása</b-button>
+                    <div class="flex-row col-md-3" style="align-items: center !important;">
+                        <b-button variant="primary" @click="$bvModal.show('bv-modal-csoport')" class="ml-3 col-md-10">Csoport létrehozása</b-button>
+                        <b-button variant="primary" @click="$bvModal.show('bv-modal-csoportTagHozzaadasa')" class="ml-4" style="display: flex; justify-content: center;"><b-icon icon="person-plus-fill"></b-icon></b-button>
+                    </div>
 
+                    {* Csoport létrehozása *}
                     <b-modal id="bv-modal-csoport" hide-footer title="Csoport létrehozása">
                         <p>Az alábbi mező kitöltésével új csoportos beszélgetést nyithatsz:</p>
                         <div>
-                            <form action="#" class="kulso-form" method="post">
+                            <form action="csoportok.php" class="kulso-form" method="post">
                                 <input type="text" class="mt-3 p-2 h-25" name="csoportNev" placeholder="Csoport neve" required>
                                 <div class="flex-row">
                                     <button type="submit" id="register-id" class="mt-3 p2 btn btn-success" name="csoportLetrehozas">Létrehozás</button>
                                     <b-button id="cancel" variant="warning" class="mt-3 p2" @click="$bvModal.hide('bv-modal-csoport')">Mégse</b-button>
+                                </div>
+                            </form>
+                        </div>
+                    </b-modal>
+
+                    {* Csoporttag hozzáadása *}
+                    <b-modal id="bv-modal-csoportTagHozzaadasa" hide-footer title="Csoporttag hozzáadása">
+                        <p>Az alábbi mezők kitöltésével új tagot vehetsz fel az egyik csoportodba:</p>
+                        <div>
+                            <form action="csoportok.php" class="kulso-form" method="post">
+                                <select name="group" id="groups" class="form-select mt-3 p-2 h-25" aria-label="Csoport kiválasztása" onchange="getAllGroupMember()">
+                                    {if count($groupOptions) != 0}
+                                            <option selected disabled>Válassz csoportot</option>
+                                        {for $i=0 to $groupOptions|@count-1}
+                                            <option value="{{$groupOptions[$i]->getAzonosito()}}">{{$groupOptions[$i]->getNev()}}</option>
+                                        {/for}
+                                    {else}
+                                        <option selected disabled>Nincsenek csoportjaid</option>
+                                    {/if}
+                                </select>
+                                <div id="members" class="w-100"></div>
+                                <div class="flex-row">
+                                    <button type="submit" id="register-id" class="mt-3 p2 btn btn-success" name="csoportTagFelvétele">Felvétel</button>
+                                    <b-button id="cancel" variant="warning" class="mt-3 p2" @click="$bvModal.hide('bv-modal-csoportTagHozzaadasa')">Mégse</b-button>
                                 </div>
                             </form>
                         </div>

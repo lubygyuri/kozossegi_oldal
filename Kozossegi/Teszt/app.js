@@ -156,6 +156,17 @@ function klubKereses() {
     }
 }
 
+function getAllGroupMember() {
+    let groupId = document.getElementById("groups").value;
+    xhttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            document.getElementById("members").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "csoportokTagokFelvetel.php?groupId="+groupId, true);
+    xhttp.send();
+}
+
 // Legörgetés
 function scrollDown() {
     try {

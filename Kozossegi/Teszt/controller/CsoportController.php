@@ -52,16 +52,17 @@ class CsoportController extends DB {
         return $stmt->fetch();
     }
 
-    public function createCsoportTag($email,$csoportAzonosito){
-        $sql = "INSERT INTO LUBLO.csoport_tag (csoport_azonosito, felhasznalo_azonosito) VALUES (?,?)";
+    public function createCsoportTag($csoportAzonosito, $felhasznaloAzonosito){
+        $sql = "INSERT INTO CSOPORT_TAGOK (csoport_azonosito, felhasznalo_azonosito) VALUES (?, ?)";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$csoportAzonosito,$email]);
+        $stmt->execute([$csoportAzonosito, $felhasznaloAzonosito]);
         return $stmt->fetchAll();
     }
-    public function getAllTag($csoportAzonosito){
-        $sql = "SELECT * FROM CSOPORT_TAGOK WHERE csoport_azonosito = ?";
+
+    public function getAllMemberToAddGroup($sessionEmail, $csoportAzonosito){
+        $sql = "SELECT felhasznalo.email, felhasznalo.vezeteknev, felhasznalo.keresztnev FROM felhasznalo WHERE felhasznalo.email IN (SELECT ismeros.felhasznalo2 FROM ismeros WHERE ismeros.statusz = 'friends' AND ismeros.felhasznalo1 = ? AND ismeros.felhasznalo2 NOT IN (SELECT csoport_tagok.felhasznalo_azonosito FROM csoport_tagok, csoport WHERE csoport.azonosito = csoport_tagok.csoport_azonosito AND csoport.azonosito = ? AND csoport.admin_felhasznalo = ?))";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$csoportAzonosito]);
+        $stmt->execute([$sessionEmail, $csoportAzonosito, $sessionEmail]);
         return $stmt->fetchAll();
     }
 
