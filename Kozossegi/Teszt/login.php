@@ -31,6 +31,7 @@ if(isset($_POST["submit"])){
     $smarty->display("index.tpl");
     exit();
 } else {
+    $smarty->assign("errors", null);
     $smarty->display("index.tpl");
     exit();
 }
