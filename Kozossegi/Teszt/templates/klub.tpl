@@ -138,7 +138,7 @@
         <b-modal id="bv-modal-ujklubletrehozasa" hide-footer title="Új klub létrehozása">
             <p class="mt-2">Kérlek töltsd ki az alábbi adatokat:</p>
             <div>
-                <form action="klub.php" class="kulso-form" method="post">
+                <form action="klub.php?id={{$recentClub->getNev()}}" class="kulso-form" method="post">
                     <input type="text" name="klub_name" placeholder="Klub neve" class="mt-3 p-2 h-25" required>
                     <input type="text" name="leiras" placeholder="Leírása" class="mt-3 p-2 h-25" required>
                     <div class="flex-row mt-3 p-2 h-25">

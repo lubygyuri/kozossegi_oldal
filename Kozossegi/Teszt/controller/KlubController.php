@@ -54,4 +54,5 @@ class KlubController extends DB {
         $stmt->execute([$klubAzonosito]);
         return $stmt->fetchAll();
     }
+
 }

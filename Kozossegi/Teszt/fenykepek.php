@@ -6,10 +6,8 @@ $smarty = new Smarty;
 
 session_start();
 
-if (!isset($_SESSION["email"])){
-//    TODO: smarty errors megoldása
-    $smarty->assign("errors", null);
-    $smarty->display("index.tpl");
+if (!isset($_SESSION["email"])) {
+    header("Location: index.php");
     exit();
 }
 
@@ -29,7 +27,7 @@ $belepettFelhasznalo->setEmail($_SESSION["email"]);
 $nezettFelhasznalo = new Felhasznalo();
 $nezettFelhasznalo->setEmail($_GET["profil"]);
 
-// TODO: kijavítani
+// Fénykép feltöltés
 if (isset($_POST["fenykepFeltoltes"])) {
     $respArray = $kepController->kepFeltoltesMerettel('fenykep');
 
@@ -41,6 +39,7 @@ if (isset($_POST["fenykepFeltoltes"])) {
     $kepController->fenykepCreateInDatabase($kep);
 }
 
+// Fényképek listázása
 if (isset($_GET["fenykepAlbum"])) {
     $pictures = $kepController->getAllFenykepByFenykepAlbum($_GET["fenykepAlbum"]);
 

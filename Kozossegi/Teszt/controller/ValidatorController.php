@@ -35,4 +35,5 @@ class ValidatorController {
         }
         return $returnArray;
     }
+
 }

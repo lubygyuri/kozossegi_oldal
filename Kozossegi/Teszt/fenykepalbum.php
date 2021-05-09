@@ -6,10 +6,8 @@ $smarty = new Smarty;
 
 session_start();
 
-if (!isset($_SESSION["email"])){
-//    TODO: smarty errors megoldása
-    $smarty->assign("errors", null);
-    $smarty->display("index.tpl");
+if (!isset($_SESSION["email"])) {
+    header("Location: index.php");
     exit();
 }
 

@@ -3,7 +3,6 @@
 <div class="container-fluid">
     <div class="px-lg-5"">
 
-        <!-- Fejléc -->
         <div class="row py-5">
             <div class="col-lg-12 mx-auto">
                 <div class="p-5 shadow rounded banner">
@@ -13,15 +12,12 @@
                 </div>
             </div>
         </div>
-        <!-- Fejléc vége -->
 
         <div class="row">
-            <!-- Gallery item -->
             {if $fenykepAlbumok}
                 {for $i=0 to $fenykepAlbumok|@count-1}
                     <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
                         <div class="bg-white rounded shadow">
-{*                            <img src="{{$fenykepAlbumok[$i]->getBoritokep()}}" alt="album_boritokep" class="img-fluid card-img-top">*}
                             <div class="p-4">
                                 <h5 class="fenykepAlbum-header">
                                     <a href="fenykepek.php?profil={{$felhasznalo->getEmail()}}&fenykepAlbum={{$fenykepAlbumok[$i]->getAzonosito()}}" class="text-dark">{{$fenykepAlbumok[$i]->getNev()}}</a>
@@ -52,7 +48,6 @@
                     </div>
                 {/for}
             {/if}
-            <!-- End -->
         </div>
     </div>
 </div>

@@ -75,9 +75,8 @@ new Vue({
 
 var xhttp = new XMLHttpRequest();
 function like(id) {
-    /*document.getElementById(x).removeAttribute("onclick");*/
     xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState === 4 && this.status === 200) {
             document.getElementById(id).innerHTML = this.responseText;
         }
     };
@@ -85,9 +84,8 @@ function like(id) {
     xhttp.send();
 }
 function klubLike(id) {
-    /*document.getElementById(x).removeAttribute("onclick");*/
     xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState === 4 && this.status === 200) {
             document.getElementById(id).innerHTML = this.responseText;
         }
     };
@@ -95,9 +93,8 @@ function klubLike(id) {
     xhttp.send();
 }
 function komment(id) {
-    /*document.getElementById(x).removeAttribute("onclick");*/
     xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState === 4 && this.status === 200) {
             var t="komment"+id;
             document.getElementById(t).innerHTML = this.responseText;
         }
@@ -113,7 +110,7 @@ function kereses() {
 
     if (searchValue.length !== 0) {
         xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
+            if (this.readyState === 4 && this.status === 200) {
                 document.getElementById("keresesDiv").innerHTML = this.responseText;
             }
         };
@@ -130,7 +127,7 @@ function friendsKereses() {
 
     if (searchValue.length !== 0) {
         xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
+            if (this.readyState === 4 && this.status === 200) {
                 document.getElementById("keresesDiv2").innerHTML = this.responseText;
             }
         };
@@ -145,7 +142,7 @@ function klubKereses() {
     var searchValue = document.getElementById('searchboxclub').value;
     if (searchValue.length !== 0) {
         xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
+            if (this.readyState === 4 && this.status === 200) {
                 document.getElementById("klubKeresesDiv").innerHTML = this.responseText;
             }
         };
@@ -180,7 +177,7 @@ function scrollDown() {
 // Értesítések száma + hívása automatikusan 20mp-ként
 function ertesitesekSzama() {
     xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState === 4 && this.status === 200) {
             document.getElementById("ertesitesekSzama").innerHTML = this.responseText;
         }
     };

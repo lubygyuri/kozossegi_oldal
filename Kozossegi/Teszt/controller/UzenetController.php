@@ -10,7 +10,6 @@ class UzenetController extends DB {
     }
 
     public function createMessage(Uzenet $uzenet) {
-//        TODO: nem kell képet küldeni itt, vegyük ki az adatbázisból
         $sql = "INSERT INTO UZENET (uzenet, kuldes_ideje, kuldo_azonosito, fogado_azonosito) VALUES (?, CURRENT_TIMESTAMP, ?, ?)";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$uzenet->getUzenet(), $uzenet->getKuldoAzonosito(), $uzenet->getFogadoAzonosito()]);

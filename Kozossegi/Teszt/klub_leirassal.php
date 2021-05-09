@@ -1,12 +1,22 @@
 <?php
-session_start();
 include 'includes/classAutoLoad.php';
 include 'includes/controllerAutoLoad.php';
 
 require '../libs/Smarty.class.php';
 $smarty = new Smarty;
-$klub_nev = $_GET["nev"];
+
+session_start();
+
+if (!isset($_SESSION["email"])) {
+    header("Location: index.php");
+    exit();
+}
+
+// Controllerek példányosítása
 $KlubController = new KlubController();
+
+// Globális változók
+$klub_nev = $_GET["nev"];
 $klub_1 = new Klub();
 
 

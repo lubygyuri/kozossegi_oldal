@@ -1,5 +1,4 @@
 <?php
-
 include_once 'includes/classAutoLoad.php';
 include_once 'includes/controllerAutoLoad.php';
 
@@ -15,7 +14,6 @@ if (isset($_POST["submit"])) {
     $felhasznalo->setJelszo($_POST['password']);
     $felhasznalo->setSzuletesiDatum($_POST['birth-date']);
     $felhasznalo->setNeme($_POST['gender']);
-//    TODO: alapértelmezett profilkép beégetésének elhagyása
     $felhasznalo->setProfilkep("style/defaultprof.jpg");
 
     $jelszoIsmet = $_POST['password-secure'];
@@ -26,7 +24,7 @@ if (isset($_POST["submit"])) {
     if (count($errors) == 0) {
         $controller = new FelhasznaloController();
         $controller->registration($felhasznalo);
-//        TODO: smarty hülyeségtől megválni
+
         array_push($errors, "Sikeres regisztráció!");
         $smarty->assign("errors", $errors);
         $smarty->display("index.tpl");

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-07 17:54:46
+/* Smarty version 3.1.39, created on 2021-05-09 12:42:23
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\profil.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_609562c638a3e9_28420293',
+  'unifunc' => 'content_6097bc8f8a6ac4_27743140',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '740e58fd08c10b9345a3c7d0b573e8ff59b0f785' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\profil.tpl',
-      1 => 1620402807,
+      1 => 1620556914,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_609562c638a3e9_28420293 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6097bc8f8a6ac4_27743140 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -462,9 +462,6 @@ echo $_prefixVariable46;?>
                                         </div>
                                     </b-collapse>
                                 </template>
-
-
-
                             </div>
                         <?php }
 }
