@@ -15,7 +15,6 @@ if (!isset($_SESSION["email"])) {
 $kommentController = new KommentController();
 $felhasznaloController = new FelhasznaloController();
 
-
 $komm = new Komment();
 $komm->setBejegyzesAzonosito($_GET['id']);
 $komm->setUzenet($_GET['text']);

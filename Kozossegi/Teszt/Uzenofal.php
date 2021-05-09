@@ -30,9 +30,6 @@ $ismerosokData =$ismerosAjanlasController->listIsmerosToIsmeros($_SESSION['email
         array_push($kit_ismerhetek,$felhasznalo);
     }
 
-
-
-
 // Bejegyzés közzététel
 if(isset($_POST["submit"])) {
     $bejegyzes = new Bejegyzes();

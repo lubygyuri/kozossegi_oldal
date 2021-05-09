@@ -24,7 +24,7 @@ class BejegyzesController extends DB{
     }
 
     public function likeCount(Bejegyzes $bejegyzes) {
-        $sql = "SELECT COUNT(*) AS LIKE_COUNT FROM LUBLO.BEJEGYZES_LIKE WHERE bejegyzes_azonosito= ?";
+        $sql = "SELECT COUNT(*) AS LIKE_COUNT FROM BEJEGYZES_LIKE WHERE bejegyzes_azonosito = ?";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$bejegyzes->getAzonosito()]);
         return $stmt->fetch();

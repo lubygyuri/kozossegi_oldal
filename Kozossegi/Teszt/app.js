@@ -99,8 +99,9 @@ function komment(id) {
             document.getElementById(t).innerHTML = this.responseText;
         }
     };
-    var test = document.getElementById("floatingTextarea"+id).value;
+    let test = document.getElementById("floatingTextarea"+id).value;
     document.getElementById("floatingTextarea"+id).value='';
+    // alert(test);
     xhttp.open("GET", "komment.php?id="+id+"&text="+test, true);
     xhttp.send();
 }
