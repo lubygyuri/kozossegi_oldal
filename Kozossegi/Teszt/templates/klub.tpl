@@ -127,7 +127,7 @@
              </div>
 
             {* Új tag felvétele privát klub esetén *}
-            {if $recentClub != null && $recentClub->getLathatosag() == 1}
+            {if  !empty($recentClub) && $recentClub != null && $recentClub->getLathatosag() == 1}
                 <div class="shadow-lg p-3 bg-white rounded align-self-baseline p-3 m-2">
                     <b-button variant="primary" class="mb-0 w-100" @click="$bvModal.show('bv-modal-ujKlubTag')">Új klubtag felvétele</b-button>
                 </div>
@@ -138,7 +138,12 @@
         <b-modal id="bv-modal-ujklubletrehozasa" hide-footer title="Új klub létrehozása">
             <p class="mt-2">Kérlek töltsd ki az alábbi adatokat:</p>
             <div>
+                {if !empty($recentClub) && $recentClub != null}
                 <form action="klub.php?id={{$recentClub->getNev()}}" class="kulso-form" method="post">
+                {else}
+                <form action="klub.php" class="kulso-form" method="post">
+                {/if}
+
                     <input type="text" name="klub_name" placeholder="Klub neve" class="mt-3 p-2 h-25" required>
                     <input type="text" name="leiras" placeholder="Leírása" class="mt-3 p-2 h-25" required>
                     <div class="flex-row mt-3 p-2 h-25">

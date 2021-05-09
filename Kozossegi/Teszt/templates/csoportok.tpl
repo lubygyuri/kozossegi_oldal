@@ -66,49 +66,49 @@
                     <div class="messages-friends-container">
                         <ul>
                             {if $csoportok}
-                            {for $i=0 to $csoportok|@count-1}
-                                {if $csoportok[$i]->getAzonosito() == $recentCsoport->getAzonosito()}
-                                    <a href="csoportok.php?csoportAzonosito={{$csoportok[$i]->getAzonosito()}}" class="friendsList-li active">
-                                        <li>
-                                            {* Csoport adatai *}
-                                            <div class="friend-details">
-                                                {* Csoport neve *}
-                                                <span>{{$csoportok[$i]->getNev()}}</span>
-                                                <div class="flex-row">
-                                                    {for $j=0 to $latestGroupMessages|@count-1}
-                                                        {if $latestGroupMessages[$j]->getCsoportAzonosito() == $csoportok[$i]->getAzonosito()}
-                                                            {* Csoport utolsó üzenete *}
-                                                            <p><strong class="mr-2">{$latestGroupMessages[$j]->getNev()}:</strong>{{$latestGroupMessages[$j]->getUzenet()}}</p>
-                                                            {* Csoport utolsó üzenetének időpontja *}
-                                                            <small>{{$latestGroupMessages[$j]->getKuldesIdeje()}}</small>
-                                                        {/if}
-                                                    {/for}
+                                {for $i=0 to $csoportok|@count-1}
+                                    {if $csoportok[$i]->getAzonosito() == $recentCsoport->getAzonosito()}
+                                        <a href="csoportok.php?csoportAzonosito={{$csoportok[$i]->getAzonosito()}}" class="friendsList-li active">
+                                            <li>
+                                                 {* Csoport adatai *}
+                                                <div class="friend-details">
+                                                     {* Csoport neve *}
+                                                    <span>{{$csoportok[$i]->getNev()}}</span>
+                                                    <div class="flex-row">
+                                                            {for $j=0 to $latestGroupMessages|@count-1}
+                                                                {if $latestGroupMessages[$j]->getCsoportAzonosito() == $csoportok[$i]->getAzonosito()}
+                                                                     {* Csoport utolsó üzenete *}
+                                                                    <p><strong class="mr-2">{$latestGroupMessages[$j]->getNev()}:</strong>{{$latestGroupMessages[$j]->getUzenet()}}</p>
+                                                                     {* Csoport utolsó üzenetének időpontja *}
+                                                                    <small>{{$latestGroupMessages[$j]->getKuldesIdeje()}}</small>
+                                                                {/if}
+                                                            {/for}
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </li>
-                                    </a>
-                                {else}
-                                    <a href="csoportok.php?csoportAzonosito={{$csoportok[$i]->getAzonosito()}}" class="friendsList-li">
-                                        <li>
-                                            {* Csoport adatai *}
-                                            <div class="friend-details">
-                                                {* Csoport neve *}
-                                                <span>{{$csoportok[$i]->getNev()}}</span>
-                                                <div class="flex-row">
-                                                    {for $j=0 to $latestGroupMessages|@count-1}
-                                                         {if $latestGroupMessages[$j]->getCsoportAzonosito() == $csoportok[$i]->getAzonosito()}
-                                                            {* Csoport utolsó üzenete *}
-                                                            <p><strong class="mr-2">{$latestGroupMessages[$j]->getNev()}:</strong>{{$latestGroupMessages[$j]->getUzenet()}}</p>
-                                                            {* Csoport utolsó üzenetének időpontja *}
-                                                            <small>{{$latestGroupMessages[$j]->getKuldesIdeje()}}</small>
-                                                        {/if}
-                                                    {/for}
+                                            </li>
+                                        </a>
+                                    {else}
+                                        <a href="csoportok.php?csoportAzonosito={{$csoportok[$i]->getAzonosito()}}" class="friendsList-li">
+                                            <li>
+                                                {* Csoport adatai *}
+                                                <div class="friend-details">
+                                                    {* Csoport neve *}
+                                                    <span>{{$csoportok[$i]->getNev()}}</span>
+                                                    <div class="flex-row">
+                                                        {for $j=0 to $latestGroupMessages|@count-1}
+                                                             {if $latestGroupMessages[$j]->getCsoportAzonosito() == $csoportok[$i]->getAzonosito()}
+                                                                {* Csoport utolsó üzenete *}
+                                                                <p><strong class="mr-2">{$latestGroupMessages[$j]->getNev()}:</strong>{{$latestGroupMessages[$j]->getUzenet()}}</p>
+                                                                {* Csoport utolsó üzenetének időpontja *}
+                                                                <small>{{$latestGroupMessages[$j]->getKuldesIdeje()}}</small>
+                                                            {/if}
+                                                        {/for}
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </li>
-                                    </a>
-                                {/if}
-                            {/for}
+                                            </li>
+                                        </a>
+                                    {/if}
+                                {/for}
                             {/if}
                         </ul>
                     </div>

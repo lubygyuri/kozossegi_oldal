@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-09 10:45:23
+/* Smarty version 3.1.39, created on 2021-05-09 16:48:07
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\csoportok.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6097a1237f28a6_64757287',
+  'unifunc' => 'content_6097f627388c98_86041836',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd2e990510b0bb42f86a18375f0de7f588d4b3f77' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\csoportok.tpl',
-      1 => 1620549889,
+      1 => 1620571686,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6097a1237f28a6_64757287 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6097f627388c98_86041836 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -111,91 +111,91 @@ echo $_prefixVariable5;?>
                                         <div class="messages-friends-container">
                         <ul>
                             <?php if ($_smarty_tpl->tpl_vars['csoportok']->value) {?>
-                            <?php
+                                <?php
 $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['i']->step = 1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? count($_smarty_tpl->tpl_vars['csoportok']->value)-1+1 - (0) : 0-(count($_smarty_tpl->tpl_vars['csoportok']->value)-1)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
 if ($_smarty_tpl->tpl_vars['i']->total > 0) {
 for ($_smarty_tpl->tpl_vars['i']->value = 0, $_smarty_tpl->tpl_vars['i']->iteration = 1;$_smarty_tpl->tpl_vars['i']->iteration <= $_smarty_tpl->tpl_vars['i']->total;$_smarty_tpl->tpl_vars['i']->value += $_smarty_tpl->tpl_vars['i']->step, $_smarty_tpl->tpl_vars['i']->iteration++) {
 $_smarty_tpl->tpl_vars['i']->first = $_smarty_tpl->tpl_vars['i']->iteration === 1;$_smarty_tpl->tpl_vars['i']->last = $_smarty_tpl->tpl_vars['i']->iteration === $_smarty_tpl->tpl_vars['i']->total;?>
-                                <?php if ($_smarty_tpl->tpl_vars['csoportok']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito() == $_smarty_tpl->tpl_vars['recentCsoport']->value->getAzonosito()) {?>
-                                    <a href="csoportok.php?csoportAzonosito=<?php ob_start();
+                                    <?php if ($_smarty_tpl->tpl_vars['csoportok']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito() == $_smarty_tpl->tpl_vars['recentCsoport']->value->getAzonosito()) {?>
+                                        <a href="csoportok.php?csoportAzonosito=<?php ob_start();
 echo $_smarty_tpl->tpl_vars['csoportok']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
 $_prefixVariable6 = ob_get_clean();
 echo $_prefixVariable6;?>
 " class="friendsList-li active">
-                                        <li>
-                                                                                        <div class="friend-details">
-                                                                                                <span><?php ob_start();
+                                            <li>
+                                                                                                 <div class="friend-details">
+                                                                                                         <span><?php ob_start();
 echo $_smarty_tpl->tpl_vars['csoportok']->value[$_smarty_tpl->tpl_vars['i']->value]->getNev();
 $_prefixVariable7 = ob_get_clean();
 echo $_prefixVariable7;?>
 </span>
-                                                <div class="flex-row">
-                                                    <?php
+                                                    <div class="flex-row">
+                                                            <?php
 $_smarty_tpl->tpl_vars['j'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['j']->step = 1;$_smarty_tpl->tpl_vars['j']->total = (int) ceil(($_smarty_tpl->tpl_vars['j']->step > 0 ? count($_smarty_tpl->tpl_vars['latestGroupMessages']->value)-1+1 - (0) : 0-(count($_smarty_tpl->tpl_vars['latestGroupMessages']->value)-1)+1)/abs($_smarty_tpl->tpl_vars['j']->step));
 if ($_smarty_tpl->tpl_vars['j']->total > 0) {
 for ($_smarty_tpl->tpl_vars['j']->value = 0, $_smarty_tpl->tpl_vars['j']->iteration = 1;$_smarty_tpl->tpl_vars['j']->iteration <= $_smarty_tpl->tpl_vars['j']->total;$_smarty_tpl->tpl_vars['j']->value += $_smarty_tpl->tpl_vars['j']->step, $_smarty_tpl->tpl_vars['j']->iteration++) {
 $_smarty_tpl->tpl_vars['j']->first = $_smarty_tpl->tpl_vars['j']->iteration === 1;$_smarty_tpl->tpl_vars['j']->last = $_smarty_tpl->tpl_vars['j']->iteration === $_smarty_tpl->tpl_vars['j']->total;?>
-                                                        <?php if ($_smarty_tpl->tpl_vars['latestGroupMessages']->value[$_smarty_tpl->tpl_vars['j']->value]->getCsoportAzonosito() == $_smarty_tpl->tpl_vars['csoportok']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito()) {?>
-                                                                                                                        <p><strong class="mr-2"><?php echo $_smarty_tpl->tpl_vars['latestGroupMessages']->value[$_smarty_tpl->tpl_vars['j']->value]->getNev();?>
+                                                                <?php if ($_smarty_tpl->tpl_vars['latestGroupMessages']->value[$_smarty_tpl->tpl_vars['j']->value]->getCsoportAzonosito() == $_smarty_tpl->tpl_vars['csoportok']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito()) {?>
+                                                                                                                                         <p><strong class="mr-2"><?php echo $_smarty_tpl->tpl_vars['latestGroupMessages']->value[$_smarty_tpl->tpl_vars['j']->value]->getNev();?>
 :</strong><?php ob_start();
 echo $_smarty_tpl->tpl_vars['latestGroupMessages']->value[$_smarty_tpl->tpl_vars['j']->value]->getUzenet();
 $_prefixVariable8 = ob_get_clean();
 echo $_prefixVariable8;?>
 </p>
-                                                                                                                        <small><?php ob_start();
+                                                                                                                                         <small><?php ob_start();
 echo $_smarty_tpl->tpl_vars['latestGroupMessages']->value[$_smarty_tpl->tpl_vars['j']->value]->getKuldesIdeje();
 $_prefixVariable9 = ob_get_clean();
 echo $_prefixVariable9;?>
 </small>
-                                                        <?php }?>
-                                                    <?php }
+                                                                <?php }?>
+                                                            <?php }
 }
 ?>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </li>
-                                    </a>
-                                <?php } else { ?>
-                                    <a href="csoportok.php?csoportAzonosito=<?php ob_start();
+                                            </li>
+                                        </a>
+                                    <?php } else { ?>
+                                        <a href="csoportok.php?csoportAzonosito=<?php ob_start();
 echo $_smarty_tpl->tpl_vars['csoportok']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito();
 $_prefixVariable10 = ob_get_clean();
 echo $_prefixVariable10;?>
 " class="friendsList-li">
-                                        <li>
-                                                                                        <div class="friend-details">
-                                                                                                <span><?php ob_start();
+                                            <li>
+                                                                                                <div class="friend-details">
+                                                                                                        <span><?php ob_start();
 echo $_smarty_tpl->tpl_vars['csoportok']->value[$_smarty_tpl->tpl_vars['i']->value]->getNev();
 $_prefixVariable11 = ob_get_clean();
 echo $_prefixVariable11;?>
 </span>
-                                                <div class="flex-row">
-                                                    <?php
+                                                    <div class="flex-row">
+                                                        <?php
 $_smarty_tpl->tpl_vars['j'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['j']->step = 1;$_smarty_tpl->tpl_vars['j']->total = (int) ceil(($_smarty_tpl->tpl_vars['j']->step > 0 ? count($_smarty_tpl->tpl_vars['latestGroupMessages']->value)-1+1 - (0) : 0-(count($_smarty_tpl->tpl_vars['latestGroupMessages']->value)-1)+1)/abs($_smarty_tpl->tpl_vars['j']->step));
 if ($_smarty_tpl->tpl_vars['j']->total > 0) {
 for ($_smarty_tpl->tpl_vars['j']->value = 0, $_smarty_tpl->tpl_vars['j']->iteration = 1;$_smarty_tpl->tpl_vars['j']->iteration <= $_smarty_tpl->tpl_vars['j']->total;$_smarty_tpl->tpl_vars['j']->value += $_smarty_tpl->tpl_vars['j']->step, $_smarty_tpl->tpl_vars['j']->iteration++) {
 $_smarty_tpl->tpl_vars['j']->first = $_smarty_tpl->tpl_vars['j']->iteration === 1;$_smarty_tpl->tpl_vars['j']->last = $_smarty_tpl->tpl_vars['j']->iteration === $_smarty_tpl->tpl_vars['j']->total;?>
-                                                         <?php if ($_smarty_tpl->tpl_vars['latestGroupMessages']->value[$_smarty_tpl->tpl_vars['j']->value]->getCsoportAzonosito() == $_smarty_tpl->tpl_vars['csoportok']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito()) {?>
-                                                                                                                        <p><strong class="mr-2"><?php echo $_smarty_tpl->tpl_vars['latestGroupMessages']->value[$_smarty_tpl->tpl_vars['j']->value]->getNev();?>
+                                                             <?php if ($_smarty_tpl->tpl_vars['latestGroupMessages']->value[$_smarty_tpl->tpl_vars['j']->value]->getCsoportAzonosito() == $_smarty_tpl->tpl_vars['csoportok']->value[$_smarty_tpl->tpl_vars['i']->value]->getAzonosito()) {?>
+                                                                                                                                <p><strong class="mr-2"><?php echo $_smarty_tpl->tpl_vars['latestGroupMessages']->value[$_smarty_tpl->tpl_vars['j']->value]->getNev();?>
 :</strong><?php ob_start();
 echo $_smarty_tpl->tpl_vars['latestGroupMessages']->value[$_smarty_tpl->tpl_vars['j']->value]->getUzenet();
 $_prefixVariable12 = ob_get_clean();
 echo $_prefixVariable12;?>
 </p>
-                                                                                                                        <small><?php ob_start();
+                                                                                                                                <small><?php ob_start();
 echo $_smarty_tpl->tpl_vars['latestGroupMessages']->value[$_smarty_tpl->tpl_vars['j']->value]->getKuldesIdeje();
 $_prefixVariable13 = ob_get_clean();
 echo $_prefixVariable13;?>
 </small>
-                                                        <?php }?>
-                                                    <?php }
+                                                            <?php }?>
+                                                        <?php }
 }
 ?>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </li>
-                                    </a>
-                                <?php }?>
-                            <?php }
+                                            </li>
+                                        </a>
+                                    <?php }?>
+                                <?php }
 }
 ?>
                             <?php }?>

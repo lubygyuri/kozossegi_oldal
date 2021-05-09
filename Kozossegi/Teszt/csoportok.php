@@ -63,17 +63,8 @@ if (isset($_POST["sendMessage"]) && !empty($_POST["csoportMessageInp"])) {
 
 // Csoportok listázása amikben benne van a belépett felhazsnáló
 $csoportokFromDbWhereAdmin = $csoportController->getAllCsoportWhereAdmin($bejelentkezettFelhasznalo->getEmail());
-$csoportokFromDbWhereGuest = $csoportController->getAllCsoportWhereGuest($bejelentkezettFelhasznalo->getEmail());
 
 foreach ($csoportokFromDbWhereAdmin as $csoportFromDb) {
-    $csoport = new Csoport();
-    $csoport->setAzonosito($csoportFromDb["AZONOSITO"]);
-    $csoport->setNev($csoportFromDb["NEV"]);
-    $csoport->setAdminFelhasznalo($csoportFromDb["ADMIN_FELHASZNALO"]);
-    array_push($csoportok, $csoport);
-}
-
-foreach ($csoportokFromDbWhereGuest as $csoportFromDb) {
     $csoport = new Csoport();
     $csoport->setAzonosito($csoportFromDb["AZONOSITO"]);
     $csoport->setNev($csoportFromDb["NEV"]);

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-09 12:56:55
+/* Smarty version 3.1.39, created on 2021-05-09 14:47:48
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\klub.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6097bff7a185a8_13929380',
+  'unifunc' => 'content_6097d9f4b49413_40640646',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7102754948ca20a696ed626dc31c34f2b4d91e29' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\klub.tpl',
-      1 => 1620557813,
+      1 => 1620564467,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6097bff7a185a8_13929380 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6097d9f4b49413_40640646 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -216,7 +216,7 @@ echo $_prefixVariable21;?>
                 <b-button variant="success" class="mb-0 mt-3 w-100" @click="$bvModal.show('bv-modal-ujklubletrehozasa')">Új klub hozzáadása</b-button>
              </div>
 
-                        <?php if ($_smarty_tpl->tpl_vars['recentClub']->value != null && $_smarty_tpl->tpl_vars['recentClub']->value->getLathatosag() == 1) {?>
+                        <?php if (!empty($_smarty_tpl->tpl_vars['recentClub']->value) && $_smarty_tpl->tpl_vars['recentClub']->value != null && $_smarty_tpl->tpl_vars['recentClub']->value->getLathatosag() == 1) {?>
                 <div class="shadow-lg p-3 bg-white rounded align-self-baseline p-3 m-2">
                     <b-button variant="primary" class="mb-0 w-100" @click="$bvModal.show('bv-modal-ujKlubTag')">Új klubtag felvétele</b-button>
                 </div>
@@ -226,11 +226,16 @@ echo $_prefixVariable21;?>
                 <b-modal id="bv-modal-ujklubletrehozasa" hide-footer title="Új klub létrehozása">
             <p class="mt-2">Kérlek töltsd ki az alábbi adatokat:</p>
             <div>
+                <?php if (!empty($_smarty_tpl->tpl_vars['recentClub']->value) && $_smarty_tpl->tpl_vars['recentClub']->value != null) {?>
                 <form action="klub.php?id=<?php ob_start();
 echo $_smarty_tpl->tpl_vars['recentClub']->value->getNev();
 $_prefixVariable22 = ob_get_clean();
 echo $_prefixVariable22;?>
 " class="kulso-form" method="post">
+                <?php } else { ?>
+                <form action="klub.php" class="kulso-form" method="post">
+                <?php }?>
+
                     <input type="text" name="klub_name" placeholder="Klub neve" class="mt-3 p-2 h-25" required>
                     <input type="text" name="leiras" placeholder="Leírása" class="mt-3 p-2 h-25" required>
                     <div class="flex-row mt-3 p-2 h-25">

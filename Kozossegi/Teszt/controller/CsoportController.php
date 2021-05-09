@@ -11,16 +11,9 @@ class CsoportController extends DB {
     }
 
     public function getAllCsoportWhereAdmin($email) {
-        $sql = "SELECT * FROM CSOPORT WHERE admin_felhasznalo = ?";
+        $sql = "SELECT * FROM CSOPORT WHERE admin_felhasznalo = ? or azonosito IN (SELECT csoport_azonosito FROM CSOPORT_TAGOK WHERE felhasznalo_azonosito = ?)";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$email]);
-        return $stmt->fetchAll();
-    }
-
-    public function getAllCsoportWhereGuest($email) {
-        $sql = "SELECT * FROM CSOPORT WHERE azonosito IN (SELECT csoport_azonosito FROM CSOPORT_TAGOK WHERE felhasznalo_azonosito = ?)";
-        $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$email]);
+        $stmt->execute([$email, $email]);
         return $stmt->fetchAll();
     }
 
