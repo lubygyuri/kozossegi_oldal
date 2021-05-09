@@ -193,6 +193,18 @@ BEGIN
 END;
 /
 
+create or replace TRIGGER ERTESITESEK_AKCIO_3
+AFTER INSERT ON KLUB_TAGOK
+FOR EACH ROW
+DECLARE
+    v_email FELHASZNALO.EMAIL%TYPE;
+BEGIN
+    SELECT admin_felhasznalo INTO v_email from klub, klub_tagok where klub.nev = klub_tagok.klub_azonosito and klub_tagok.felhasznalo_azonosito = :NEW.FELHASZNALO_AZONOSITO and klub_tagok.klub_azonosito = :NEW.KLUB_AZONOSITO;
+  IF v_email != :NEW.FELHASZNALO_AZONOSITO THEN
+    INSERT INTO ERTESITESEK VALUES (ERTESITESEK_SEQ.NEXTVAL,  'Felvettek a ' || :NEW.KLUB_AZONOSITO || ' klubba!' , SYSTIMESTAMP, :NEW.FELHASZNALO_AZONOSITO);
+  END IF;
+END;
+/
 
 create or replace TRIGGER FENYKEPALBUM_FELVETEL
 BEFORE INSERT ON FENYKEP_ALBUM

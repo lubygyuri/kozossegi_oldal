@@ -71,4 +71,11 @@ class CsoportController extends DB {
         $stmt->execute();
         return $stmt->fetchAll();
     }
+
+    public function getCsoportAzonositoByNev($csoportNev) {
+        $sql = "SELECT AZONOSITO FROM CSOPORT WHERE NEV = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$csoportNev]);
+        return $stmt->fetch();
+    }
 }

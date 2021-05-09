@@ -35,7 +35,8 @@ $recentCsoport->setAzonosito(isset($_GET["csoportAzonosito"]) ? $_GET["csoportAz
 
 // Csoport létrehozása
 if (isset($_POST["csoportLetrehozas"])) {
-    $csoportController->createCsoport($_POST["csoportNev"], $_SESSION["email"]);
+    $csoportController->createCsoport($_POST["csoportNev"], $bejelentkezettFelhasznalo->getEmail());
+    $csoportController->createCsoportTag($csoportController->getCsoportAzonositoByNev($_POST["csoportNev"])["AZONOSITO"], $bejelentkezettFelhasznalo->getEmail());
 }
 
 // Csoporttag hozzáadás
@@ -63,8 +64,8 @@ if (isset($_POST["sendMessage"]) && !empty($_POST["csoportMessageInp"])) {
 }
 
 // Csoportok listázása amikben benne van a belépett felhazsnáló
-$csoportokFromDbWhereAdmin = $csoportController->getAllCsoportWhereAdmin($_SESSION["email"]);
-$csoportokFromDbWhereGuest = $csoportController->getAllCsoportWhereGuest($_SESSION["email"]);
+$csoportokFromDbWhereAdmin = $csoportController->getAllCsoportWhereAdmin($bejelentkezettFelhasznalo->getEmail());
+$csoportokFromDbWhereGuest = $csoportController->getAllCsoportWhereGuest($bejelentkezettFelhasznalo->getEmail());
 
 foreach ($csoportokFromDbWhereAdmin as $csoportFromDb) {
     $csoport = new Csoport();
