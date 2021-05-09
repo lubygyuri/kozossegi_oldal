@@ -63,7 +63,7 @@ D - dokumentáció, P - prototíus
 |      D2     |        Adatbázist létrehozó szkriptek bemutatása         |   2021-04-11  |
 |    P1+D3    |   Adatlekérés bemutatása grafikus felhasználói felületen |   2021-04-27  |
 |    P2+D4    |  Adatfelvitel bemutatása grafikus felhasználói felületen |   2021-05-04  |
-|    P3+D5    |                      Projektátadás                       |   2021-05-07  |
+|    P3+D5    |                      Projektátadás                       |   2021-05-09  |
 
 ## 6. Feladatlista
 
@@ -273,19 +273,19 @@ Ennek a feladatnak az a célja, hogy bemutassa az elkészült projektet.
 Részfeladatai a következők:
 
 #### 6.3.1. KLUBOK KEZELÉSE
-1.Klub létrehozás 
-2.Klub listázás
-3.Csatlakozas a klubbhoz
+1.Klub létrehozás  
+2.Klub listázás  
+3.Csatlakozas a klubbhoz  
 
 #### 6.3.1. CSOPORTOK 
-1.Csoport készítése
-2.Csatlakozás csoporthoz
+1.Csoport készítése  
+2.Csatlakozás csoporthoz  
 
 
 #### 6.3.1. FENYKEPALBUMOK
-1.Létrehozás
-2.Teljes foglalt tárhely kiiratás
-3.Kép darabszámának kiiratása
+1.Létrehozás  
+2.Teljes foglalt tárhely kiiratás  
+3.Kép darabszámának kiiratása  
 
 #### 6.3.1. Triggerek
 
