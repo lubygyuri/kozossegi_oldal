@@ -17,14 +17,12 @@ class CsoportController extends DB {
         $stmt->execute([$email]);
         return $stmt->fetchAll();
     }
-
     public function getCsoport($csoportazonosito) {
         $sql = "SELECT * FROM CSOPORT WHERE AZONOSITO = ?";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$csoportazonosito]);
         return $stmt->fetchAll();
     }
-
     public function getUzenetekForSelectedCsoport($csoportazonosito) {
         $sql = "SELECT * FROM CSOPORT_UZENET WHERE CSOPORT_AZONOSITO = ? ORDER BY KULDES_IDEJE";
         $stmt = $this->connect()->prepare($sql);
