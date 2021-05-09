@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-05-07 17:56:29
+/* Smarty version 3.1.39, created on 2021-05-09 12:51:43
   from 'C:\xampp\htdocs\kozossegi_oldal\Kozossegi\Teszt\templates\fenykepAlbum.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6095632dbd62e0_92548600',
+  'unifunc' => 'content_6097bebf828a01_80243365',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3cf025efd7f7e37767e6ed522378da60d4852863' => 
     array (
       0 => 'C:\\xampp\\htdocs\\kozossegi_oldal\\Kozossegi\\Teszt\\templates\\fenykepAlbum.tpl',
-      1 => 1620402923,
+      1 => 1620556914,
       2 => 'file',
     ),
   ),
@@ -21,14 +21,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:header.tpl' => 1,
   ),
 ),false)) {
-function content_6095632dbd62e0_92548600 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6097bebf828a01_80243365 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 <div class="container-fluid">
     <div class="px-lg-5"">
 
-        <!-- Fejléc -->
         <div class="row py-5">
             <div class="col-lg-12 mx-auto">
                 <div class="p-5 shadow rounded banner">
@@ -50,10 +49,8 @@ echo $_prefixVariable3;?>
                 </div>
             </div>
         </div>
-        <!-- Fejléc vége -->
 
         <div class="row">
-            <!-- Gallery item -->
             <?php if ($_smarty_tpl->tpl_vars['fenykepAlbumok']->value) {?>
                 <?php
 $_smarty_tpl->tpl_vars['i'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['i']->step = 1;$_smarty_tpl->tpl_vars['i']->total = (int) ceil(($_smarty_tpl->tpl_vars['i']->step > 0 ? count($_smarty_tpl->tpl_vars['fenykepAlbumok']->value)-1+1 - (0) : 0-(count($_smarty_tpl->tpl_vars['fenykepAlbumok']->value)-1)+1)/abs($_smarty_tpl->tpl_vars['i']->step));
@@ -123,7 +120,6 @@ echo $_prefixVariable10;?>
 }
 ?>
             <?php }?>
-            <!-- End -->
         </div>
     </div>
 </div><?php }

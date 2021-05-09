@@ -10,7 +10,7 @@
                         {{$error}}
                     </div>
                     <div class="alert alert-dark" role="alert">
-                       A csatlakozáshoz keresrá egy Klub nevére és csatlakoz!
+                       A csatlakozáshoz keress rá egy klub nevére és csatlakozz!
                     </div>
                 </div>
             </b-col>
@@ -111,6 +111,7 @@
             {/if}
     <b-col>
             <div class="shadow-lg p-3 bg-white rounded align-self-baseline p-3 m-2">
+                {* Klubbok keresése *}
                 <div class="input-group rounded">
                     <input onkeyup="klubKereses()" type="search" id="searchboxclub" class="form-control rounded" placeholder="Keresés..." aria-label="Search"
                            aria-describedby="search-addon" />
@@ -118,15 +119,31 @@
                         <i class="fas fa-search mr-0"></i>
                     </span>
                 </div>
-                <div id="klubKeresesDiv">
-                </div>
+
+                {* Klubbok keresésének eredménye *}
+                <div id="klubKeresesDiv"></div>
+
                 <b-button variant="success" class="mb-0 mt-3 w-100" @click="$bvModal.show('bv-modal-ujklubletrehozasa')">Új klub hozzáadása</b-button>
              </div>
+
+            {* Új tag felvétele privát klub esetén *}
+            {if  !empty($recentClub) && $recentClub != null && $recentClub->getLathatosag() == 1}
+                <div class="shadow-lg p-3 bg-white rounded align-self-baseline p-3 m-2">
+                    <b-button variant="primary" class="mb-0 w-100" @click="$bvModal.show('bv-modal-ujKlubTag')">Új klubtag felvétele</b-button>
+                </div>
+            {/if}
     </b-col>
+
+        {* Új klub létrehozása (modal) *}
         <b-modal id="bv-modal-ujklubletrehozasa" hide-footer title="Új klub létrehozása">
             <p class="mt-2">Kérlek töltsd ki az alábbi adatokat:</p>
             <div>
+                {if !empty($recentClub) && $recentClub != null}
+                <form action="klub.php?id={{$recentClub->getNev()}}" class="kulso-form" method="post">
+                {else}
                 <form action="klub.php" class="kulso-form" method="post">
+                {/if}
+
                     <input type="text" name="klub_name" placeholder="Klub neve" class="mt-3 p-2 h-25" required>
                     <input type="text" name="leiras" placeholder="Leírása" class="mt-3 p-2 h-25" required>
                     <div class="flex-row mt-3 p-2 h-25">
@@ -146,6 +163,30 @@
                 </form>
             </div>
         </b-modal>
+
+        {* Új tag felvétele a privát klubba (modal) *}
+        <b-modal id="bv-modal-ujKlubTag" hide-footer title="Új klubtag felvétele">
+            <p class="mt-2">Válaszd ki kit szeretnél felvenni a klubba:</p>
+            <div>
+                <form action="klub.php?id={{$recentClub->getNev()}}" class="kulso-form" method="post">
+                    <select name="klubTag" class="mt-3 p-2 h-25" aria-label="Klubtag felvétel">
+                        {if $notClubMembers}
+                            <option value="{{$notClubMembers[0]->getEmail()}}" selected>{{$notClubMembers[0]->getVezeteknev()}} {{$notClubMembers[0]->getKeresztnev()}}</option>
+                            {for $i=1 to $notClubMembers|@count-1}
+                                <option value="{{$notClubMembers[$i]->getEmail()}}">{{$notClubMembers[$i]->getVezeteknev()}} {{$notClubMembers[$i]->getKeresztnev()}}</option>
+                            {/for}
+                        {else}
+                            <option selected disabled>Minden felhasználó tagja a klubbodnak</option>
+                        {/if}
+                    </select>
+                    <div class="flex-row">
+                        <button type="submit" name="klubTagFelvetel" id="register-id" class="mt-3 p2 btn btn-success">Új klubtag felvétele</button>
+                        <b-button id="cancel" variant="warning" class="mt-3 p2" @click="$bvModal.hide('bv-modal-ujKlubTag')">Mégse</b-button>
+                    </div>
+                </form>
+            </div>
+        </b-modal>
+
     </b-row>
 </div>
 

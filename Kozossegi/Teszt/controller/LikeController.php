@@ -1,7 +1,7 @@
 <?php
 
 
-class LikeController extends DB{
+class LikeController extends DB {
 
     public function increaseBejegyzesLike(Like $like) {
         $sql = "INSERT INTO BEJEGYZES_LIKE (bejegyzes_azonosito, felhasznalo_azonosito) VALUES (?, ?)";

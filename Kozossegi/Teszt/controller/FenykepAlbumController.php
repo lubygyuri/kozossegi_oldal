@@ -23,7 +23,6 @@ class FenykepAlbumController extends DB {
         return $stmt->fetch();
     }
 
-//    TODO: átírni
     public function getTotalAlbumSize($fenykepAlbumAzonosito) {
         $sql = "SELECT SUM(meret) AS meret FROM FENYKEPEK WHERE FENYKEP_ALBUM_AZONOSITO = ?";
         $stmt = $this->connect()->prepare($sql);

@@ -6,10 +6,17 @@ $smarty = new Smarty;
 
 session_start();
 
+if (!isset($_SESSION["email"])) {
+    header("Location: index.php");
+    exit();
+}
+
+// Controllerek példányosítása
 $kommentController = new KommentController();
 $felhasznaloController = new FelhasznaloController();
 
-$komm =new Komment();
+
+$komm = new Komment();
 $komm->setBejegyzesAzonosito($_GET['id']);
 $komm->setUzenet($_GET['text']);
 $komm->setFelhasznaloAzonosito($_SESSION["email"]);

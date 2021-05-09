@@ -7,8 +7,26 @@ class CsoportUzenet
     private $uzenet;
     private $kuldesIdeje;
     private $kuldoAzonosito;
-    private $fogadoAzonosito;
     private $csoportAzonosito;
+    private $nev;
+
+    /**
+     * @return mixed
+     */
+    public function getNev()
+    {
+        return $this->nev;
+    }
+
+    /**
+     * @param mixed $nev
+     */
+    public function setNev($nev)
+    {
+        $this->nev = $nev;
+    }
+
+
 
     /**
      * @return mixed

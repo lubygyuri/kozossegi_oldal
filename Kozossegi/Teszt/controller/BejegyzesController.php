@@ -7,7 +7,6 @@ class BejegyzesController extends DB{
         $sql = "SELECT * FROM LUBLO.BEJEGYZES, LUBLO.FELHASZNALO WHERE LUBLO.BEJEGYZES.FELHASZNALO_AZONOSITO = LUBLO.FELHASZNALO.EMAIL AND LUBLO.FELHASZNALO.EMAIL = ? ORDER BY LETREHOZAS_IDEJE desc";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$userEmail]);
-
         return $stmt->fetchAll();
     }
 
@@ -22,18 +21,6 @@ class BejegyzesController extends DB{
         $sql = "INSERT INTO LUBLO.BEJEGYZES (uzenet, letrehozas_ideje, felhasznalo_azonosito, kep) VALUES (?, CURRENT_TIMESTAMP, ?, ?)";
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$bejegyzes->getUzenet(),$bejegyzes->getFelhasznaloAzonosito(),$bejegyzes->getKep()]);
-    }
-
-    public function updateLikesOnBejegyzes(Bejegyzes $bejegyzes) {
-        $sql = "UPDATE BEJEGYZES SET LIKES = LIKES + 1 WHERE AZONOSITO = ?";
-        $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$bejegyzes->getAzonosito()]);
-    }
-
-    public function deleteLikesOnBejegyzes(Bejegyzes $bejegyzes) {
-        $sql = "UPDATE BEJEGYZES SET LIKES = LIKES - 1 WHERE AZONOSITO = ?";
-        $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$bejegyzes->getAzonosito()]);
     }
 
     public function likeCount(Bejegyzes $bejegyzes) {
