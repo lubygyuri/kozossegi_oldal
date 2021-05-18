@@ -22,14 +22,9 @@ class CsoportController extends DB {
         $stmt->execute([$csoportazonosito]);
         return $stmt->fetchAll();
     }
-<<<<<<< HEAD
-    public function getUzenetekForSelectedCsoport($csoportazonosito) {
-        $sql = "SELECT * FROM CSOPORT_UZENET WHERE CSOPORT_AZONOSITO = ? ORDER BY KULDES_IDEJE";
-=======
 
     public function getUzenetekForSelectedCsoport($csoportAzonosito) {
         $sql = "SELECT * FROM CSOPORT_UZENET WHERE CSOPORT_UZENET.CSOPORT_AZONOSITO = ? ORDER BY KULDES_IDEJE";
->>>>>>> a477bfec43f0eeb78c44867518415067ff272fdf
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$csoportAzonosito]);
         return $stmt->fetchAll();
